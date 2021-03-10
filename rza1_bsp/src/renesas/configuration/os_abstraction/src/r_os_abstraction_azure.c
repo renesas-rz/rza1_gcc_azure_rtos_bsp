@@ -75,6 +75,7 @@ extern uint8_t _ld_uncached_heap_start;
 extern uint8_t _ld_uncached_heap_end;
 extern void pvPortsetDesiredBlockForMalloc( size_t xWantedBlock );
 
+extern void tx_timer_config(void);
 void vApplicationIdleHook (void);
 
 /*****************************************************************************
@@ -412,6 +413,10 @@ void R_OS_InitKernel (void)
 
     R_DEVLINK_Init();
 
+    /* Configure the Threadx Interrupt Timer */
+    tx_timer_config();
+
+    /* Start the Threadx OS This is done in main */
     main();
 
     while (1)

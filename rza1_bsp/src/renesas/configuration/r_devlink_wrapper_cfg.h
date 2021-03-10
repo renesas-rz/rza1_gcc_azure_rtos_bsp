@@ -130,13 +130,13 @@ static st_mount_table_t gs_mount_table[] =
 
    /** IIC Channel 1 Driver added by USER */
    {"iic1", (st_r_driver_t *)&g_riic_driver, R_SC1},
-
+#if 0
    /** RTC driver added by USER */
    {"rtc", (st_r_driver_t *)&g_rtc_driver, R_SC0},
 
    /** RTC driver added by USER */
    {"wdt", (st_r_driver_t *)&g_wdt_driver, R_SC0},
-
+#endif
    /** SSIF DMA driver added by USER */
    {"dma_ssif_wr", (st_r_driver_t *)&g_dmac_driver, R_SC0},
    {"dma_ssif_rd", (st_r_driver_t *)&g_dmac_driver, R_SC1},
