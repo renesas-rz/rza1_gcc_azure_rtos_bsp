@@ -30,6 +30,8 @@
 #include "r_typedefs.h"
 #include "r_devlink_wrapper.h"
 
+#include "tx_api.h"
+
 /* compiler specific API header */
 #include "r_compiler_abstraction_api.h"
 
@@ -55,7 +57,6 @@
 #define R_OS_PRV_LARGE_STACK_SIZE         (configDEFAULT_STACK_SIZE*2)
 #define R_OS_PRV_HUGE_STACK_SIZE          (configDEFAULT_STACK_SIZE*4)
 
-#define R_OS_PRV_DEFAULT_HEAP             (R_REGION_LARGE_CAPACITY_RAM)
 
 #define R_OS_PRV_INFINITE_DELAY               (portMAX_DELAY)
 
@@ -67,6 +68,9 @@
 #define UNCACHED_HEAP_END           ((void *) &_ld_uncached_heap_end)
 #define UNCACHED_HEAP_LENGTH		(&_ld_uncached_heap_end - &_ld_uncached_heap_start)
 
+#define OS_ABS_LAYER_NAME	"os abstraction layer"
+
+#define TASK_PREEMPT_THRES	(8)
 
 extern uint8_t _ld_mirrored_heap_start;
 extern uint8_t _ld_mirrored_heap_end;
@@ -107,6 +111,8 @@ extern uint32_t ulPortInterruptNesting;
 
 static volatile char s_pcFile[200];
 static volatile unsigned long s_ulLine;
+
+static TX_BYTE_POOL *p_os_byte_pooling;
 
 /* local functions */
 
@@ -717,6 +723,9 @@ bool_t R_OS_CreateSemaphore (semaphore_t semaphore_ptr, uint32_t count)
 {
     bool_t ret = false;
 
+    if ( tx_semaphore_create ( (TX_SEMAPHORE*) semaphore_ptr, OS_ABS_LAYER_NAME, (ULONG)count) == TX_SUCCESS )
+    	ret = true;
+
     return (ret);
 }
 /***********************************************************************************************************************
@@ -731,7 +740,7 @@ bool_t R_OS_CreateSemaphore (semaphore_t semaphore_ptr, uint32_t count)
  **********************************************************************************************************************/
 void R_OS_DeleteSemaphore (semaphore_t semaphore_ptr)
 {
-
+	tx_semaphore_delete ( (TX_SEMAPHORE*) semaphore_ptr );
 }
 /***********************************************************************************************************************
  End of function R_OS_DeleteSemaphore
@@ -749,6 +758,9 @@ void R_OS_DeleteSemaphore (semaphore_t semaphore_ptr)
 bool_t R_OS_WaitForSemaphore (semaphore_t semaphore_ptr, systime_t timeout)
 {
     bool_t ret = false;
+    if ( tx_semaphore_get ((TX_SEMAPHORE*) semaphore_ptr, (ULONG)timeout) == TX_SUCCESS )
+    	ret = true;
+
     return (ret);
 }
 /***********************************************************************************************************************
@@ -763,7 +775,7 @@ bool_t R_OS_WaitForSemaphore (semaphore_t semaphore_ptr, systime_t timeout)
  **********************************************************************************************************************/
 void R_OS_ReleaseSemaphore (semaphore_t semaphore_ptr)
 {
-
+     tx_semaphore_put ((TX_SEMAPHORE*) semaphore_ptr );
 }
 /***********************************************************************************************************************
  End of function R_OS_ReleaseSemaphore
@@ -777,7 +789,12 @@ void R_OS_ReleaseSemaphore (semaphore_t semaphore_ptr)
  **********************************************************************************************************************/
 void *R_OS_CreateMutex (void)
 {
-	return NULL;
+	TX_MUTEX *mutex_ptr;
+
+	if ( tx_mutex_create ( mutex_ptr, OS_ABS_LAYER_NAME, TX_INHERIT) != TX_SUCCESS )
+		mutex_ptr = NULL;
+
+	return mutex_ptr;
 }
 /***********************************************************************************************************************
  End of function R_OS_CreateMutex
@@ -791,7 +808,7 @@ void *R_OS_CreateMutex (void)
  **********************************************************************************************************************/
 void R_OS_DeleteMutex (void *p_mutex)
 {
-
+	tx_mutex_delete ( (TX_MUTEX*) p_mutex);
 }
 /***********************************************************************************************************************
  End of function R_OS_DeleteMutex
@@ -805,7 +822,7 @@ void R_OS_DeleteMutex (void *p_mutex)
  **********************************************************************************************************************/
 void R_OS_AcquireMutex (void *p_mutex)
 {
-
+	tx_mutex_get ( (TX_MUTEX*) p_mutex,  TX_WAIT_FOREVER );
 }
 /***********************************************************************************************************************
  End of function R_OS_AcquireMutex
@@ -819,7 +836,7 @@ void R_OS_AcquireMutex (void *p_mutex)
  **********************************************************************************************************************/
 void R_OS_ReleaseMutex (void *p_mutex)
 {
-
+	tx_mutex_put ( (TX_MUTEX*) p_mutex );
 }
 /***********************************************************************************************************************
  End of function R_OS_ReleaseMutex
@@ -834,7 +851,18 @@ void R_OS_ReleaseMutex (void *p_mutex)
  **********************************************************************************************************************/
 bool_t R_OS_EventWaitMutex (pevent_t pEvent, uint32_t dwTimeOut)
 {
-    return (false);
+	bool_t ret = false;
+	TX_MUTEX *mutex_ptr;
+
+	if ( tx_mutex_create ( mutex_ptr, OS_ABS_LAYER_NAME, TX_INHERIT) == TX_SUCCESS ) {
+
+		pEvent = (pevent_t)mutex_ptr;
+
+		if ( tx_mutex_get( mutex_ptr, dwTimeOut ) == TX_SUCCESS)
+			ret = true;
+	}
+
+    return (ret);
 }
 /***********************************************************************************************************************
  End of function R_OS_EventWaitMutex
@@ -848,6 +876,8 @@ bool_t R_OS_EventWaitMutex (pevent_t pEvent, uint32_t dwTimeOut)
  **********************************************************************************************************************/
 void R_OS_EventReleaseMutex (pevent_t pEvent)
 {
+
+	tx_mutex_put ( (TX_MUTEX*) pEvent );
 }
 /***********************************************************************************************************************
  End of function R_OS_EventReleaseMutex
@@ -861,6 +891,8 @@ void R_OS_EventReleaseMutex (pevent_t pEvent)
  **********************************************************************************************************************/
 void R_OS_EnterCritical (void)
 {
+    taskENTER_CRITICAL()
+    ;
 }
 /***********************************************************************************************************************
  End of function R_OS_EnterCritical
@@ -874,7 +906,8 @@ void R_OS_EnterCritical (void)
  **********************************************************************************************************************/
 void R_OS_ExitCritical (void)
 {
-
+    taskEXIT_CRITICAL()
+    ;
 }
 /***********************************************************************************************************************
  End of function R_OS_ExitCritical
@@ -888,9 +921,19 @@ void R_OS_ExitCritical (void)
  */
 bool_t R_OS_CreateMessageQueue (uint32_t queue_sz, os_msg_queue_handle_t *p_queue_handle)
 {
-    bool_t ret_value = false;
+    bool_t ret = false;
+    VOID *queue_start = NULL;
 
-    return (ret_value);
+    /* Allocate the message queue.  */
+    if ( tx_byte_allocate( p_os_byte_pooling, (VOID **) &queue_start, queue_sz*sizeof(uint32_t), TX_NO_WAIT) == TX_SUCCESS ) {
+
+		if ( tx_queue_create ( (TX_QUEUE*)p_queue_handle, OS_ABS_LAYER_NAME, sizeof(uint32_t), queue_start, queue_sz ) == TX_SUCCESS )
+			ret = true;
+		else
+			tx_byte_release(queue_start);
+    }
+
+    return (ret);
 }
 /*******************************************************************************
  End of function R_OS_CreateMessageQueue
@@ -904,10 +947,12 @@ bool_t R_OS_CreateMessageQueue (uint32_t queue_sz, os_msg_queue_handle_t *p_queu
  */
 bool_t R_OS_PutMessageQueue (os_msg_queue_handle_t p_queue_handle, os_msg_t p_message)
 {
-    bool_t ret_value = false;
+    bool_t ret = false;
 
-    /* return status */
-    return (ret_value);
+    if ( tx_queue_send ( (TX_QUEUE*)p_queue_handle, (VOID*) p_message, TX_NO_WAIT) == TX_SUCCESS )
+    	ret = true;
+
+    return (ret);
 }
 /*******************************************************************************
  End of function R_OS_PutMessageQueue
@@ -924,10 +969,13 @@ bool_t R_OS_PutMessageQueue (os_msg_queue_handle_t p_queue_handle, os_msg_t p_me
 bool_t R_OS_GetMessageQueue (os_msg_queue_handle_t queue, os_msg_t *ppmsg, uint32_t timeout, bool_t blocking)
 {
 
-    bool_t ret_value = false;
+    bool_t ret = false;
+
+    if ( tx_queue_receive ( (TX_QUEUE*) queue, ppmsg, timeout) == TX_SUCCESS )
+    	ret = true;
 
     /* return status */
-    return (ret_value);
+    return (ret);
 }
 /*******************************************************************************
  End of function R_OS_GetMessageQueue
@@ -940,8 +988,11 @@ bool_t R_OS_GetMessageQueue (os_msg_queue_handle_t queue, os_msg_t *ppmsg, uint3
  */
 bool_t R_OS_ClearMessageQueue (os_msg_queue_handle_t *p_queue_handle)
 {
+	bool_t ret = false;
 
-    /* NULL queue pointer as argument */
+	if ( tx_queue_flush ( (TX_QUEUE*) p_queue_handle ) == TX_SUCCESS )
+		ret = true;
+
     return (false);
 }
 /*******************************************************************************
@@ -955,6 +1006,10 @@ bool_t R_OS_ClearMessageQueue (os_msg_queue_handle_t *p_queue_handle)
  */
 bool_t R_OS_DeleteMessageQueue (os_msg_queue_handle_t *pp_queue_handle)
 {
+	bool_t ret = false;
+
+	if ( tx_queue_delete((TX_QUEUE*)pp_queue_handle ) == TX_SUCCESS )
+		ret = true;
 
     /* queue pointer is NULL to start with so nothing deleted */
     return (false);

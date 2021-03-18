@@ -44,7 +44,7 @@
  * @{
  **********************************************************************************************************************/
 #include "r_typedefs.h"
-
+#include "tx_port.h"
 #ifndef SRC_RENESAS_APPLICATION_INC_R_OS_ABSTRACTION_API_H_
 #define SRC_RENESAS_APPLICATION_INC_R_OS_ABSTRACTION_API_H_
 
@@ -122,7 +122,7 @@ typedef uint32_t systime_t;
 typedef void os_task_t;
 
 /** task body prototype */
-typedef void (*os_task_code_t)(void *params);
+typedef void (*os_task_code_t)(ULONG param);
 
 /** OS Abstraction System Initialise Kernel
  *  @brief     Generic error handler, allows use to continue execution.
