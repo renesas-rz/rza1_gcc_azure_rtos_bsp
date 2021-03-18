@@ -45,7 +45,6 @@ Includes   <System Includes> , "Project Includes"
 #include "r_rtc_drv_api.h"
 #include "r_devlink_wrapper.h"
 #include "r_os_abstraction_api.h"
-#include "freertosconfig.h"
 #include "trace.h"
 #include "r_rskrza1lu_rtc_lld.h"
 

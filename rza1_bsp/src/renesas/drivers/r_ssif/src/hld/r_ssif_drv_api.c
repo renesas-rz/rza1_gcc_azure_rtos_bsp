@@ -44,7 +44,6 @@
 #include "compiler_settings.h"
 #include "r_devlink_wrapper.h"
 #include "r_ssif_drv_api.h"
-#include "FreeRTOS.h"
 #include "ssif.h"
 #include "dev_drv.h"
 

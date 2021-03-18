@@ -48,8 +48,6 @@ Includes   <System Includes> , "Project Includes"
 #include "r_typedefs.h"
 #include "iodefine_cfg.h"
 #include "r_devlink_wrapper.h"
-#include "FreeRTOS.h"
-#include "timers.h"
 #include "trace.h"
 
 /* Adding this dependency ensures that this file is built every time because of the build counter */
@@ -62,6 +60,8 @@ Includes   <System Includes> , "Project Includes"
 #undef TRACE
 #define TRACE(x)
 #endif
+
+#define	PERIPHERAL_CLOCK0_HZ              ( 32000000UL )
 
 static int_t wdt_open(st_stream_ptr_t pStream);
 static void  wdt_close(st_stream_ptr_t pStream);
@@ -155,8 +155,8 @@ static int_t wdt_control(st_stream_ptr_t pStream, uint32_t ctlCode, void *pCtlSt
 
                 /* Cast from the iodefine file */
                 uint32_t    time_now = OSTM1.OSTMnCNT;
-                perf_timer->ulMilisecond = time_now / (portTICK_CNT_FREQ_HZ / 1000);
-                perf_timer->usSubMilisecond = (uint16_t)(time_now % (portTICK_CNT_FREQ_HZ / 1000));
+                perf_timer->ulMilisecond = time_now / (PERIPHERAL_CLOCK0_HZ / 1000);
+                perf_timer->usSubMilisecond = (uint16_t)(time_now % (PERIPHERAL_CLOCK0_HZ / 1000));
                 result = 0;
                 break;
             }
