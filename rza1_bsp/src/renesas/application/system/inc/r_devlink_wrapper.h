@@ -434,7 +434,7 @@ extern  int no_dev_open(st_stream_ptr_t pStream);
 extern  void no_dev_close(st_stream_ptr_t pStream);
 extern  int_t no_dev_io(st_stream_ptr_t pStream, uint8_t *pbyBuffer, uint32_t uiCount);
 extern  int_t no_dev_read(st_stream_ptr_t pStream, uint8_t *pbyBuffer, uint32_t uiCount);
-extern  int_t no_dev_write(st_stream_ptr_t pStream, const uint8_t *pbyBuffer, uint32_t uiCount);
+extern  int_t no_dev_write(st_stream_ptr_t pStream, uint8_t *pbyBuffer, uint32_t uiCount);
 extern  int_t no_dev_control(st_stream_ptr_t pStream, uint32_t ctlCode, void *pCtlStruct);
 extern  int_t no_dev_get_version(st_stream_ptr_t pStream, st_ver_info_ptr_t info_ptr);
 

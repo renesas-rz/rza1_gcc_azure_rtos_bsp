@@ -737,7 +737,7 @@ End of function  no_dev_read
 *                IN  uiCount - The number of bytes to read
 * Return Value : 0 for success -1 on error
 **********************************************************************************************************************/
-int_t no_dev_write(st_stream_ptr_t pStream, const uint8_t *pbyBuffer, uint32_t uiCount)
+int_t no_dev_write(st_stream_ptr_t pStream, uint8_t *pbyBuffer, uint32_t uiCount)
 {
     /* avoid unused parameter warning */
     (void)pStream;
