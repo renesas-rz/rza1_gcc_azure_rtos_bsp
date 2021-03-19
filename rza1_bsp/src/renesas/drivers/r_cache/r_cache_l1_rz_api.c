@@ -101,7 +101,7 @@ void R_CACHE_L1_InvalidLine(uint32_t line_addr, uint32_t size)
 
     for ( ; addr < end_addr; addr += L1_CACHE_LINE_SIZE)
     {
-        __v7_inv_dcache_mva(addr);
+        __v7_inv_dcache_mva((void*)addr);
     }
     return;
 }
@@ -126,7 +126,7 @@ void R_CACHE_L1_CleanLine(uint32_t line_addr, uint32_t size)
 
     for ( ; addr < end_addr; addr += L1_CACHE_LINE_SIZE)
     {
-        __v7_clean_dcache_mva(addr);
+        __v7_clean_dcache_mva((void*)addr);
     }
     return;
 }
@@ -151,7 +151,7 @@ void R_CACHE_L1_CleanInvalidLine(uint32_t line_addr, uint32_t size)
 
     for ( ; addr < end_addr; addr += L1_CACHE_LINE_SIZE)
     {
-        __v7_clean_inv_dcache_mva(addr);
+        __v7_clean_inv_dcache_mva((void*)addr);
     }
     return;
 }
