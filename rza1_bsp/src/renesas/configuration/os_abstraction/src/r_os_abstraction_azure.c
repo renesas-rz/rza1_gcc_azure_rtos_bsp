@@ -436,12 +436,12 @@ void R_OS_StopKernel (void)
  *                 priority - initial priority
  * Return Value : os_task_t - pointer to newly created task, NULL if failed
  **********************************************************************************************************************/
-os_task_t *R_OS_CreateTask (const char_t *name, os_task_code_t task_code, void *params, size_t stack_size,
+os_task_t R_OS_CreateTask (const char_t *name, os_task_code_t task_code, void *params, size_t stack_size,
         int_t priority)
 {
 	TX_THREAD *thread_ptr = NULL;
 	ULONG	*p_params = (ULONG*)params;
-	VOID*	stack_start;
+	VOID	*stack_start = NULL;
 
 	if ( tx_byte_allocate( &p_os_byte_pooling, (VOID **) &thread_ptr, sizeof(TX_THREAD), TX_NO_WAIT) == TX_SUCCESS) {
 
@@ -457,12 +457,21 @@ os_task_t *R_OS_CreateTask (const char_t *name, os_task_code_t task_code, void *
 					(UINT)priority, /* Preempt threshold */
 					(ULONG)8ul,
 					TX_AUTO_START) != TX_SUCCESS) {
+
+				tx_byte_release( thread_ptr );
 				thread_ptr = NULL;
+				tx_byte_release( stack_start );
+				stack_start = NULL;
 			}
+
+
+		} else {
+			tx_byte_release( thread_ptr );
+			thread_ptr = NULL;
 		}
 	}
 
-    return (os_task_t*)thread_ptr;
+    return (os_task_t)thread_ptr;
 }
 /***********************************************************************************************************************
  End of function R_OS_CreateTask
@@ -705,12 +714,20 @@ void R_OS_FreeMem (void *p)
  * Return Value : The function returns TRUE if the semaphore object was successfully created
  *                Otherwise, FALSE is returned
  **********************************************************************************************************************/
-bool_t R_OS_CreateSemaphore (psemaphore_t semaphore_ptr, uint32_t count)
+bool_t R_OS_CreateSemaphore (semaphore_t *semaphore_ptr, uint32_t count)
 {
     bool_t ret = false;
 
-    if ( tx_semaphore_create ( (TX_SEMAPHORE*) semaphore_ptr, OS_ABS_LAYER_NAME, (ULONG)count) == TX_SUCCESS )
-    	ret = true;
+    if ( tx_byte_allocate( &p_os_byte_pooling, (VOID **) semaphore_ptr, sizeof (TX_SEMAPHORE), TX_NO_WAIT) == TX_SUCCESS) {
+
+		if ( tx_semaphore_create ( (TX_SEMAPHORE*) *semaphore_ptr, OS_ABS_LAYER_NAME, (ULONG)count) == TX_SUCCESS )
+			ret = true;
+		else
+		{
+			tx_block_release ( semaphore_ptr );
+			semaphore_ptr = NULL;
+		}
+    }
 
     return (ret);
 }
@@ -724,7 +741,7 @@ bool_t R_OS_CreateSemaphore (psemaphore_t semaphore_ptr, uint32_t count)
  * Arguments    : semaphore_ptr - Pointer to a associated semaphore
  * Return Value : none
  **********************************************************************************************************************/
-void R_OS_DeleteSemaphore (psemaphore_t semaphore_ptr)
+void R_OS_DeleteSemaphore (semaphore_t semaphore_ptr)
 {
 	tx_semaphore_delete ( (TX_SEMAPHORE*) semaphore_ptr );
 }
@@ -741,7 +758,7 @@ void R_OS_DeleteSemaphore (psemaphore_t semaphore_ptr)
  *              : timeout       - Maximum time to wait for associated event to occur
  * Return Value : The function returns TRUE if the semaphore object was successfully set. Otherwise, FALSE is returned
  **********************************************************************************************************************/
-bool_t R_OS_WaitForSemaphore (psemaphore_t semaphore_ptr, systime_t timeout)
+bool_t R_OS_WaitForSemaphore (semaphore_t semaphore_ptr, systime_t timeout)
 {
     bool_t ret = false;
     if ( tx_semaphore_get ((TX_SEMAPHORE*) semaphore_ptr, (ULONG)timeout) == TX_SUCCESS )
@@ -759,9 +776,15 @@ bool_t R_OS_WaitForSemaphore (psemaphore_t semaphore_ptr, systime_t timeout)
  * Arguments    : semaphore_ptr - Pointer to a associated semaphore
  * Return Value : none
  **********************************************************************************************************************/
-void R_OS_ReleaseSemaphore (psemaphore_t semaphore_ptr)
+bool_t R_OS_ReleaseSemaphore (semaphore_t semaphore_ptr)
 {
-     tx_semaphore_put ((TX_SEMAPHORE*) semaphore_ptr );
+	bool_t ret = false;
+
+	if ( tx_semaphore_put ((TX_SEMAPHORE*) semaphore_ptr ) == TX_SUCCESS ) {
+		ret = true;
+	}
+
+	return (ret);
 }
 /***********************************************************************************************************************
  End of function R_OS_ReleaseSemaphore
@@ -775,10 +798,15 @@ void R_OS_ReleaseSemaphore (psemaphore_t semaphore_ptr)
  **********************************************************************************************************************/
 void *R_OS_CreateMutex (void)
 {
-	TX_MUTEX *mutex_ptr;
+	void *mutex_ptr = NULL;
 
-	if ( tx_mutex_create ( mutex_ptr, OS_ABS_LAYER_NAME, TX_INHERIT) != TX_SUCCESS )
-		mutex_ptr = NULL;
+	if ( tx_byte_allocate( &p_os_byte_pooling, (VOID **) &mutex_ptr, sizeof (TX_MUTEX), TX_NO_WAIT) == TX_SUCCESS) {
+
+		if ( tx_mutex_create ( (TX_MUTEX*) mutex_ptr, OS_ABS_LAYER_NAME, TX_INHERIT) != TX_SUCCESS ) {
+			mutex_ptr = NULL;
+			tx_block_release ( mutex_ptr );
+		}
+	}
 
 	return mutex_ptr;
 }
@@ -806,9 +834,15 @@ void R_OS_DeleteMutex (void *p_mutex)
  * Arguments    : mutex - pointer to object
  * Return Value : none
  **********************************************************************************************************************/
-void R_OS_AcquireMutex (void *p_mutex)
+bool_t R_OS_AcquireMutex (void *p_mutex)
 {
-	tx_mutex_get ( (TX_MUTEX*) p_mutex,  TX_WAIT_FOREVER );
+	bool_t ret = false;
+
+	if ( tx_mutex_get ( (TX_MUTEX*) p_mutex,  TX_WAIT_FOREVER ) == TX_SUCCESS ) {
+		ret = true;
+	}
+
+	return (ret);
 }
 /***********************************************************************************************************************
  End of function R_OS_AcquireMutex
@@ -820,9 +854,15 @@ void R_OS_AcquireMutex (void *p_mutex)
  * Arguments    : mutex - ptr to object
  * Return Value : none
  **********************************************************************************************************************/
-void R_OS_ReleaseMutex (void *p_mutex)
+bool_t R_OS_ReleaseMutex (void *p_mutex)
 {
-	tx_mutex_put ( (TX_MUTEX*) p_mutex );
+	bool_t ret = false;
+
+	if (tx_mutex_put ( (TX_MUTEX*) p_mutex ) == TX_SUCCESS ) {
+		ret = true;
+	}
+
+	return (ret);
 }
 /***********************************************************************************************************************
  End of function R_OS_ReleaseMutex
@@ -835,7 +875,7 @@ void R_OS_ReleaseMutex (void *p_mutex)
  *                dwTimeOut - wait time, maximum use R_OS_ABSTRACTION_PRV_EV_WAIT_INFINITE
  * Return Value : true if the mutex was acquired, false if not
  **********************************************************************************************************************/
-bool_t R_OS_EventWaitMutex (ppevent_t pEvent, uint32_t dwTimeOut)
+bool_t R_OS_EventWaitMutex (pevent_t pEvent, uint32_t dwTimeOut)
 {
 	bool_t ret = false;
 	TX_MUTEX *mutex_ptr;
@@ -860,7 +900,7 @@ bool_t R_OS_EventWaitMutex (ppevent_t pEvent, uint32_t dwTimeOut)
  * Arguments    : *pEvent - object to lock
  * Return Value : None
  **********************************************************************************************************************/
-void R_OS_EventReleaseMutex (ppevent_t pEvent)
+void R_OS_EventReleaseMutex (pevent_t pEvent)
 {
 	if ( pEvent != NULL ) {
 		tx_mutex_put ( (TX_MUTEX*) pEvent );
@@ -915,12 +955,25 @@ bool_t R_OS_CreateMessageQueue (uint32_t queue_sz, os_msg_queue_handle_t *p_queu
     VOID *queue_start = NULL;
 
     /* Allocate the message queue.  */
-    if ( tx_byte_allocate( &p_os_byte_pooling, (VOID **) &queue_start, queue_sz*sizeof(uint32_t), TX_NO_WAIT) == TX_SUCCESS ) {
+    if ( tx_byte_allocate( &p_os_byte_pooling, (VOID **) p_queue_handle, sizeof(TX_QUEUE), TX_NO_WAIT) == TX_SUCCESS ) {
 
-		if ( tx_queue_create ( (TX_QUEUE*)p_queue_handle, OS_ABS_LAYER_NAME, sizeof(uint32_t), queue_start, queue_sz ) == TX_SUCCESS )
-			ret = true;
-		else
-			tx_byte_release(queue_start);
+    	if ( tx_byte_allocate( &p_os_byte_pooling, (VOID **) &queue_start, queue_sz*sizeof(uint32_t), TX_NO_WAIT) == TX_SUCCESS ) {
+
+			if ( tx_queue_create ( (TX_QUEUE*)*p_queue_handle, OS_ABS_LAYER_NAME, sizeof(uint32_t), queue_start, queue_sz ) == TX_SUCCESS )
+				ret = true;
+			else
+			{
+				tx_byte_release(queue_start);
+				queue_start = NULL;
+				tx_block_release( *p_queue_handle );
+				p_queue_handle = NULL;
+			}
+    	}
+    	else
+    	{
+    		tx_block_release( *p_queue_handle );
+    		p_queue_handle = NULL;
+    	}
     }
 
     return (ret);
@@ -956,12 +1009,12 @@ bool_t R_OS_PutMessageQueue (os_msg_queue_handle_t p_queue_handle, os_msg_t p_me
  *  @param[in] blocking true = block thread/task until message received.False = not blocking
  *  @return    The function returns TRUE if the event object was successfully retrieved from the queue. Otherwise, FALSE is returned
  */
-bool_t R_OS_GetMessageQueue (os_msg_queue_handle_t queue, os_msg_t *ppmsg, uint32_t timeout, bool_t blocking)
+bool_t R_OS_GetMessageQueue (os_msg_queue_handle_t queue, os_msg_t pmsg, uint32_t timeout, bool_t blocking)
 {
 
     bool_t ret = false;
 
-    if ( tx_queue_receive ( (TX_QUEUE*) queue, ppmsg, timeout) == TX_SUCCESS )
+    if ( tx_queue_receive ( (TX_QUEUE*) queue, pmsg, timeout) == TX_SUCCESS )
     	ret = true;
 
     /* return status */
@@ -1021,8 +1074,16 @@ static size_t gstEventMax = 0UL;
 bool_t R_OS_CreateEvent (pevent_t event_ptr)
 {
 	bool_t ret = false;
-	if ( tx_event_flags_create ( (TX_EVENT_FLAGS_GROUP*) event_ptr, OS_ABS_LAYER_NAME ) == TX_SUCCESS )
-		ret = true;
+
+	if ( tx_byte_allocate( &p_os_byte_pooling, (VOID **) event_ptr, sizeof(TX_EVENT_FLAGS_GROUP), TX_NO_WAIT) == TX_SUCCESS ) {
+
+		if ( tx_event_flags_create ( (TX_EVENT_FLAGS_GROUP*) *event_ptr, OS_ABS_LAYER_NAME ) == TX_SUCCESS ) {
+			ret = true;
+		} else {
+			tx_block_release( *event_ptr );
+			event_ptr = NULL;
+		}
+	}
 
     return (ret);
 }
@@ -1036,7 +1097,7 @@ bool_t R_OS_CreateEvent (pevent_t event_ptr)
  * Arguments    : event_ptr - pointer to a associated event
  * Return Value : None
  **********************************************************************************************************************/
-void R_OS_DeleteEvent (pevent_t event_ptr)
+void R_OS_DeleteEvent (event_t event_ptr)
 {
 	tx_event_flags_delete ( (TX_EVENT_FLAGS_GROUP*) event_ptr );
 }
@@ -1050,7 +1111,7 @@ void R_OS_DeleteEvent (pevent_t event_ptr)
  * Arguments    : event_ptr - pointer to a associated event
  * Return Value : bool_t
  **********************************************************************************************************************/
-bool_t R_OS_SetEvent (pevent_t event_ptr)
+bool_t R_OS_SetEvent (event_t event_ptr)
 {
 	bool_t ret = false;
 
@@ -1069,7 +1130,7 @@ bool_t R_OS_SetEvent (pevent_t event_ptr)
  * Arguments    : event_ptr - pointer to a associated event
  * Return Value : None
  **********************************************************************************************************************/
-void R_OS_ResetEvent (pevent_t event_ptr)
+void R_OS_ResetEvent (event_t event_ptr)
 {
 	tx_event_flags_set ( (TX_EVENT_FLAGS_GROUP*) event_ptr, 0ul, TX_AND);
 }
@@ -1083,7 +1144,7 @@ void R_OS_ResetEvent (pevent_t event_ptr)
  Arguments:     IN event_ptr - pointer to the event
  Return value:  The state of the event
  *****************************************************************************/
-e_event_state_t R_OS_EventState (pevent_t event_ptr)
+e_event_state_t R_OS_EventState (event_t event_ptr)
 {
     e_event_state_t event_state = EV_RESET;
     ULONG requested_flags = 0x00000001;
@@ -1111,7 +1172,7 @@ e_event_state_t R_OS_EventState (pevent_t event_ptr)
  *                timeout   - maximum time to wait for associated event to occur
  * Return Value : The function returns TRUE if the event object was successfully set. Otherwise, FALSE is returned
  **********************************************************************************************************************/
-bool_t R_OS_WaitForEvent (pevent_t event_ptr, systime_t timeout)
+bool_t R_OS_WaitForEvent (event_t event_ptr, systime_t timeout)
 {
     e_event_state_t event_state = EV_RESET;
     ULONG requested_flags = 0x00000001;
