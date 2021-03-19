@@ -1057,7 +1057,7 @@ bool_t R_OS_SetEvent (pevent_t event_ptr)
 	if ( tx_event_flags_set ( (TX_EVENT_FLAGS_GROUP*) event_ptr, 0x1, TX_OR) == TX_SUCCESS)
 		ret = true;
 
-		return (ret);
+	return (ret);
 }
 /***********************************************************************************************************************
  End of function R_OS_SetEvent

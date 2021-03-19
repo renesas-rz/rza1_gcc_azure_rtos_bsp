@@ -215,7 +215,7 @@ static int_t led_read(st_stream_ptr_t pStream, uint8_t *pbyBuffer, uint32_t uiCo
 static int_t led_control(st_stream_ptr_t pStream, uint32_t ctrl_code, void *ctrl_ptr)
 {
     /*  */
-    static event_t led_mutex = NULL;
+    static pevent_t led_mutex;
     int_t retval = -1;
     _Bool check_mutex_restricted_control = false;
 

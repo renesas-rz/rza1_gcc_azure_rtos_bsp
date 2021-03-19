@@ -138,7 +138,7 @@ const st_r_driver_t g24C04Driver =
  Private global variables and functions
  ******************************************************************************/
 
-static event_t gsp_eeprom_mutex;
+static pevent_t gsp_eeprom_mutex;
 
 /*****************************************************************************
  * Function Name: romOpen

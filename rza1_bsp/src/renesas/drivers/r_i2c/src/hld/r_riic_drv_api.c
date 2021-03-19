@@ -86,7 +86,7 @@ static uint16_t gs_channel_open = 0;
 const st_r_driver_t g_riic_driver =
 { "I2C Device Driver", iic_hld_open, iic_hld_close, no_dev_io, no_dev_io, iic_hld_control, iic_hld_get_version };
 
-static uint32_t   iic_hld_sem;
+static semaphore_t   iic_hld_sem;
 
 /******************************************************************************
  Private global variables

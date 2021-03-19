@@ -335,7 +335,7 @@ static int_t ostm_read(st_stream_ptr_t stream_ptr, uint8_t *buffer, uint32_t cou
 static int_t ostm_control(st_stream_ptr_t stream_ptr, uint32_t ctrl_code, void *ctrl_ptr)
 {
     /*  */
-    static event_t ostm_mutex = NULL;
+    static pevent_t ostm_mutex = NULL;
     int_t retval = -1;
 
     /* The following controls require exclusive access to resource */
