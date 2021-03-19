@@ -44,7 +44,9 @@
  * @{
  **********************************************************************************************************************/
 #include "r_typedefs.h"
+#include "tx_api.h"
 #include "tx_port.h"
+
 #ifndef SRC_RENESAS_APPLICATION_INC_R_OS_ABSTRACTION_API_H_
 #define SRC_RENESAS_APPLICATION_INC_R_OS_ABSTRACTION_API_H_
 
@@ -104,10 +106,15 @@ typedef void *os_msg_t;
 typedef void *os_msg_queue_handle_t;
 
 /** semaphore handle object */
-typedef uint32_t* semaphore_t;
+typedef TX_SEMAPHORE semaphore_t;
+
+typedef semaphore_t* psemaphore_t;
+/** mutex  handle object */
+
+typedef TX_MUTEX* mutex_t;
 
 /** event handle object */
-typedef void *event_t;
+typedef TX_EVENT_FLAGS_GROUP event_t;
 
 /** pointer to event handle object */
 typedef event_t* pevent_t;
@@ -119,7 +126,7 @@ typedef pevent_t* ppevent_t;
 typedef uint32_t systime_t;
 
 /** task handle object */
-typedef void os_task_t;
+typedef TX_THREAD os_task_t;
 
 /** task body prototype */
 typedef void (*os_task_code_t)(ULONG param);
@@ -265,14 +272,14 @@ void   R_OS_FreeMem(void *p);
  *  @param[in] count The maximum count for the semaphore object. This value must be greater than zero
  *  @return    The function returns TRUE if the semaphore object was successfully created. Otherwise, FALSE is returned
  */
-bool_t R_OS_CreateSemaphore (semaphore_t semaphore_ptr, uint32_t count);
+bool_t R_OS_CreateSemaphore (psemaphore_t semaphore_ptr, uint32_t count);
 
 /** OS Abstraction DeleteSemaphore Function
  *  @brief     Delete a semaphore, freeing any associated resources.
  *  @param[in] semaphore_ptr Pointer to a associated semaphore.
  *  @return    none.
 */
-void   R_OS_DeleteSemaphore(semaphore_t  semaphore_ptr);
+void   R_OS_DeleteSemaphore(psemaphore_t  semaphore_ptr);
 
 /** OS Abstraction WaitSemaphore Function
  *  @brief     Blocks operation until one of the following occurs <br>
@@ -282,14 +289,14 @@ void   R_OS_DeleteSemaphore(semaphore_t  semaphore_ptr);
  *  @param[in] timeout Maximum time to wait for associated event to occur.
  *  @return    The function returns TRUE if the semaphore object was successfully set. Otherwise, FALSE is returned.
 */
-bool_t R_OS_WaitForSemaphore(semaphore_t semaphore_ptr, systime_t timeout);
+bool_t R_OS_WaitForSemaphore(psemaphore_t semaphore_ptr, systime_t timeout);
 
 /** OS Abstraction DeleteSemaphore Function
  *  @brief     Release a semaphore, freeing freeing it to be used by another task.
  *  @param[in] semaphore_ptr Pointer to a associated semaphore.
  *  @return    none.
 */
-void   R_OS_ReleaseSemaphore(semaphore_t semaphore_ptr);
+void   R_OS_ReleaseSemaphore(psemaphore_t semaphore_ptr);
 
 /* Mutex management */
 void * R_OS_CreateMutex (void);
@@ -300,9 +307,9 @@ void   R_OS_AcquireMutex(void *mutex);
 
 void   R_OS_ReleaseMutex(void *mutex);
 
-bool_t R_OS_EventWaitMutex(pevent_t pEvent, uint32_t dwTimeOut);
+bool_t R_OS_EventWaitMutex(ppevent_t pEvent, uint32_t dwTimeOut);
 
-void   R_OS_EventReleaseMutex(pevent_t pEvent);
+void   R_OS_EventReleaseMutex(ppevent_t pEvent);
 
 /* Queue management */
 
@@ -376,7 +383,7 @@ void   R_OS_DeleteEvent(pevent_t event_ptr);
  *  @param[in] event_ptr Pointer to a associated event.
  *  @return    none.
 */
-void   R_OS_SetEvent(pevent_t event_ptr);
+bool_t   R_OS_SetEvent(pevent_t event_ptr);
 
 /** OS Abstraction ResetEvent Function
  *  @brief     Clears the state on the associated event.

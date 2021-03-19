@@ -70,17 +70,16 @@
 
 #define OS_ABS_LAYER_NAME	"os abstraction layer"
 
-#define TASK_PREEMPT_THRES	(8)
-
 extern uint8_t _ld_mirrored_heap_start;
 extern uint8_t _ld_mirrored_heap_end;
 
 extern uint8_t _ld_uncached_heap_start;
 extern uint8_t _ld_uncached_heap_end;
-extern void pvPortsetDesiredBlockForMalloc( size_t xWantedBlock );
 
 extern void tx_timer_config(void);
-void vApplicationIdleHook (void);
+
+
+
 
 /*****************************************************************************
  Function Macros
@@ -112,7 +111,7 @@ extern uint32_t ulPortInterruptNesting;
 static volatile char s_pcFile[200];
 static volatile unsigned long s_ulLine;
 
-static TX_BYTE_POOL *p_os_byte_pooling;
+static TX_BYTE_POOL p_os_byte_pooling;
 
 /* local functions */
 
@@ -276,42 +275,6 @@ static void main_task (void)
  End of function  main_task
  *****************************************************************************/
 
-/**
- * @brief REQUIRED by FreeRTOS
- * The following functions are defined and required by FreeRTOS
- **/
-
-
-/******************************************************************************
- * Function Name: vApplicationIdleHook
- * Description  : The FreeRTOS idle application hook
- * Arguments    : none
- * Return Value : none
- ******************************************************************************/
-void vApplicationIdleHook (void)
-{
-    volatile size_t x_free_heap_space;
-
-    /* This is just a trivial example of an idle hook.  It is called on each
-     cycle of the idle task.  It must *NOT* attempt to block.  In this case the
-     idle task just queries the amount of FreeRTOS heap that remains.  See the
-     memory management section on the http://www.FreeRTOS.org web site for memory
-     management options.  If there is a lot of heap memory free then the
-     configTOTAL_HEAP_SIZE value in FreeRTOSConfig.h can be reduced to free up
-     RAM. */
-    x_free_heap_space = xPortGetFreeHeapSize();
-
-    /* Remove compiler warning about xFreeHeapSpace being set but never used. */
-    (void) x_free_heap_space;
-}
-/******************************************************************************
- End of function  vApplicationIdleHook
- ******************************************************************************/
-
-/**
- * @brief End of REQUIRED by FreeRTOS section
- **/
-
 
 /***********************************************************************************************************************
  * Function Name: R_COMPILER_Nop
@@ -358,7 +321,7 @@ void R_OS_AssertCalled (volatile const char *pcFile, volatile unsigned long ulLi
     strcat(local_string_buffer, "\0");
     printf(local_string_buffer);
     printf("\r\nStatus : ");
-    printf(get_task_status(R_OS_GetCurrentTaskName()));
+    //printf(get_task_status(R_OS_GetCurrentTaskName()));
 
 #ifdef LOG_TASK_INFO
     printf("\r\nLog of Memory transactions:\r\n");
@@ -377,8 +340,7 @@ void R_OS_AssertCalled (volatile const char *pcFile, volatile unsigned long ulLi
 
     ul = 0;
 
-    taskENTER_CRITICAL()
-    ;
+    //taskENTER_CRITICAL();
 
     /* Set ul to a non-zero value using the debugger to step out of this function */
     while (0 == ul)
@@ -386,8 +348,7 @@ void R_OS_AssertCalled (volatile const char *pcFile, volatile unsigned long ulLi
         ;
     }
 
-    taskEXIT_CRITICAL()
-    ;
+    //taskEXIT_CRITICAL();
 }
 /***********************************************************************************************************************
  End of function R_OS_AssertCalled
@@ -402,6 +363,8 @@ void R_OS_AssertCalled (volatile const char *pcFile, volatile unsigned long ulLi
  **********************************************************************************************************************/
 void R_OS_InitMemManager(void)
 {
+	/* Create OS Abstraction Memory Pool */
+	tx_byte_pool_create ( &p_os_byte_pooling, OS_ABS_LAYER_NAME, MIRROR_HEAP_START, MIRROR_HEAP_LENGTH );
 
 }
 /**********************************************************************************************************************
@@ -476,8 +439,30 @@ void R_OS_StopKernel (void)
 os_task_t *R_OS_CreateTask (const char_t *name, os_task_code_t task_code, void *params, size_t stack_size,
         int_t priority)
 {
+	TX_THREAD *thread_ptr = NULL;
+	ULONG	*p_params = (ULONG*)params;
+	VOID*	stack_start;
 
-    return NULL;
+	if ( tx_byte_allocate( &p_os_byte_pooling, (VOID **) &thread_ptr, sizeof(TX_THREAD), TX_NO_WAIT) == TX_SUCCESS) {
+
+		if ( tx_byte_allocate( &p_os_byte_pooling, (VOID **) &stack_start, stack_size, TX_NO_WAIT) == TX_SUCCESS) {
+
+			if ( tx_thread_create(thread_ptr,
+					(CHAR*)name,
+					task_code,
+					p_params[0],
+					stack_start,
+					(ULONG)stack_size,
+					priority,
+					(UINT)priority, /* Preempt threshold */
+					(ULONG)8ul,
+					TX_AUTO_START) != TX_SUCCESS) {
+				thread_ptr = NULL;
+			}
+		}
+	}
+
+    return (os_task_t*)thread_ptr;
 }
 /***********************************************************************************************************************
  End of function R_OS_CreateTask
@@ -491,7 +476,7 @@ os_task_t *R_OS_CreateTask (const char_t *name, os_task_code_t task_code, void *
  **********************************************************************************************************************/
 void R_OS_DeleteTask (os_task_t *task)
 {
-
+	tx_thread_delete( (TX_THREAD*)task );
 }
 /***********************************************************************************************************************
  End of function R_OS_DeleteTask
@@ -505,8 +490,9 @@ void R_OS_DeleteTask (os_task_t *task)
  **********************************************************************************************************************/
 bool_t R_OS_SuspendTask (os_task_t *task)
 {
-    bool_t ret;
-
+    bool_t ret = false;
+    if (tx_thread_suspend( (TX_THREAD*) task ))
+    	ret = true;
     return (ret);
 }
 /***********************************************************************************************************************
@@ -521,9 +507,10 @@ bool_t R_OS_SuspendTask (os_task_t *task)
  **********************************************************************************************************************/
 bool_t R_OS_ResumeTask (os_task_t *task)
 {
-    bool_t ret;
-
-    return (ret);
+	bool_t ret = false;
+	if (tx_thread_resume( (TX_THREAD*) task ))
+		ret = true;
+	return (ret);
 }
 /***********************************************************************************************************************
  End of function R_OS_ResumeTask
@@ -537,7 +524,7 @@ bool_t R_OS_ResumeTask (os_task_t *task)
  **********************************************************************************************************************/
 void R_OS_TaskSleep (uint32_t sleep_ms)
 {
-
+	tx_thread_sleep( (ULONG) sleep_ms );
 }
 /***********************************************************************************************************************
  End of function R_OS_TaskSleep
@@ -551,7 +538,7 @@ void R_OS_TaskSleep (uint32_t sleep_ms)
  **********************************************************************************************************************/
 void R_OS_Yield (void)
 {
-
+	tx_thread_relinquish();
 }
 /***********************************************************************************************************************
  End of function R_OS_Yield
@@ -593,7 +580,6 @@ void R_OS_ResumeAllTasks (void)
  **********************************************************************************************************************/
 void R_OS_TaskUsesFloatingPoint (void)
 {
-    portTASK_USES_FLOATING_POINT();
 }
 /***********************************************************************************************************************
  End of function R_OS_TaskUsesFloatingPoint
@@ -719,7 +705,7 @@ void R_OS_FreeMem (void *p)
  * Return Value : The function returns TRUE if the semaphore object was successfully created
  *                Otherwise, FALSE is returned
  **********************************************************************************************************************/
-bool_t R_OS_CreateSemaphore (semaphore_t semaphore_ptr, uint32_t count)
+bool_t R_OS_CreateSemaphore (psemaphore_t semaphore_ptr, uint32_t count)
 {
     bool_t ret = false;
 
@@ -738,7 +724,7 @@ bool_t R_OS_CreateSemaphore (semaphore_t semaphore_ptr, uint32_t count)
  * Arguments    : semaphore_ptr - Pointer to a associated semaphore
  * Return Value : none
  **********************************************************************************************************************/
-void R_OS_DeleteSemaphore (semaphore_t semaphore_ptr)
+void R_OS_DeleteSemaphore (psemaphore_t semaphore_ptr)
 {
 	tx_semaphore_delete ( (TX_SEMAPHORE*) semaphore_ptr );
 }
@@ -755,7 +741,7 @@ void R_OS_DeleteSemaphore (semaphore_t semaphore_ptr)
  *              : timeout       - Maximum time to wait for associated event to occur
  * Return Value : The function returns TRUE if the semaphore object was successfully set. Otherwise, FALSE is returned
  **********************************************************************************************************************/
-bool_t R_OS_WaitForSemaphore (semaphore_t semaphore_ptr, systime_t timeout)
+bool_t R_OS_WaitForSemaphore (psemaphore_t semaphore_ptr, systime_t timeout)
 {
     bool_t ret = false;
     if ( tx_semaphore_get ((TX_SEMAPHORE*) semaphore_ptr, (ULONG)timeout) == TX_SUCCESS )
@@ -773,7 +759,7 @@ bool_t R_OS_WaitForSemaphore (semaphore_t semaphore_ptr, systime_t timeout)
  * Arguments    : semaphore_ptr - Pointer to a associated semaphore
  * Return Value : none
  **********************************************************************************************************************/
-void R_OS_ReleaseSemaphore (semaphore_t semaphore_ptr)
+void R_OS_ReleaseSemaphore (psemaphore_t semaphore_ptr)
 {
      tx_semaphore_put ((TX_SEMAPHORE*) semaphore_ptr );
 }
@@ -849,14 +835,14 @@ void R_OS_ReleaseMutex (void *p_mutex)
  *                dwTimeOut - wait time, maximum use R_OS_ABSTRACTION_PRV_EV_WAIT_INFINITE
  * Return Value : true if the mutex was acquired, false if not
  **********************************************************************************************************************/
-bool_t R_OS_EventWaitMutex (pevent_t pEvent, uint32_t dwTimeOut)
+bool_t R_OS_EventWaitMutex (ppevent_t pEvent, uint32_t dwTimeOut)
 {
 	bool_t ret = false;
 	TX_MUTEX *mutex_ptr;
 
 	if ( tx_mutex_create ( mutex_ptr, OS_ABS_LAYER_NAME, TX_INHERIT) == TX_SUCCESS ) {
 
-		pEvent = (pevent_t)mutex_ptr;
+		*pEvent = (pevent_t)mutex_ptr;
 
 		if ( tx_mutex_get( mutex_ptr, dwTimeOut ) == TX_SUCCESS)
 			ret = true;
@@ -874,10 +860,14 @@ bool_t R_OS_EventWaitMutex (pevent_t pEvent, uint32_t dwTimeOut)
  * Arguments    : *pEvent - object to lock
  * Return Value : None
  **********************************************************************************************************************/
-void R_OS_EventReleaseMutex (pevent_t pEvent)
+void R_OS_EventReleaseMutex (ppevent_t pEvent)
 {
+	if ( pEvent != NULL ) {
+		tx_mutex_put ( (TX_MUTEX*) pEvent );
 
-	tx_mutex_put ( (TX_MUTEX*) pEvent );
+		tx_mutex_delete ( (TX_MUTEX*) pEvent );
+		pEvent = NULL;
+	}
 }
 /***********************************************************************************************************************
  End of function R_OS_EventReleaseMutex
@@ -891,8 +881,8 @@ void R_OS_EventReleaseMutex (pevent_t pEvent)
  **********************************************************************************************************************/
 void R_OS_EnterCritical (void)
 {
-    taskENTER_CRITICAL()
-    ;
+    //taskENTER_CRITICAL()
+    //;
 }
 /***********************************************************************************************************************
  End of function R_OS_EnterCritical
@@ -906,8 +896,8 @@ void R_OS_EnterCritical (void)
  **********************************************************************************************************************/
 void R_OS_ExitCritical (void)
 {
-    taskEXIT_CRITICAL()
-    ;
+    //taskEXIT_CRITICAL()
+    //;
 }
 /***********************************************************************************************************************
  End of function R_OS_ExitCritical
@@ -925,7 +915,7 @@ bool_t R_OS_CreateMessageQueue (uint32_t queue_sz, os_msg_queue_handle_t *p_queu
     VOID *queue_start = NULL;
 
     /* Allocate the message queue.  */
-    if ( tx_byte_allocate( p_os_byte_pooling, (VOID **) &queue_start, queue_sz*sizeof(uint32_t), TX_NO_WAIT) == TX_SUCCESS ) {
+    if ( tx_byte_allocate( &p_os_byte_pooling, (VOID **) &queue_start, queue_sz*sizeof(uint32_t), TX_NO_WAIT) == TX_SUCCESS ) {
 
 		if ( tx_queue_create ( (TX_QUEUE*)p_queue_handle, OS_ABS_LAYER_NAME, sizeof(uint32_t), queue_start, queue_sz ) == TX_SUCCESS )
 			ret = true;
@@ -1030,7 +1020,11 @@ static size_t gstEventMax = 0UL;
  **********************************************************************************************************************/
 bool_t R_OS_CreateEvent (pevent_t event_ptr)
 {
-    return (false);
+	bool_t ret = false;
+	if ( tx_event_flags_create ( (TX_EVENT_FLAGS_GROUP*) event_ptr, OS_ABS_LAYER_NAME ) == TX_SUCCESS )
+		ret = true;
+
+    return (ret);
 }
 /***********************************************************************************************************************
  End of function R_OS_CreateEvent
@@ -1044,7 +1038,7 @@ bool_t R_OS_CreateEvent (pevent_t event_ptr)
  **********************************************************************************************************************/
 void R_OS_DeleteEvent (pevent_t event_ptr)
 {
-
+	tx_event_flags_delete ( (TX_EVENT_FLAGS_GROUP*) event_ptr );
 }
 /***********************************************************************************************************************
  End of function R_OS_DeleteEvent
@@ -1054,11 +1048,16 @@ void R_OS_DeleteEvent (pevent_t event_ptr)
  * Function Name: R_OS_SetEvent
  * Description  : Sets the state on the associated event
  * Arguments    : event_ptr - pointer to a associated event
- * Return Value : None
+ * Return Value : bool_t
  **********************************************************************************************************************/
-void R_OS_SetEvent (pevent_t event_ptr)
+bool_t R_OS_SetEvent (pevent_t event_ptr)
 {
+	bool_t ret = false;
 
+	if ( tx_event_flags_set ( (TX_EVENT_FLAGS_GROUP*) event_ptr, 0x1, TX_OR) == TX_SUCCESS)
+		ret = true;
+
+		return (ret);
 }
 /***********************************************************************************************************************
  End of function R_OS_SetEvent
@@ -1072,7 +1071,7 @@ void R_OS_SetEvent (pevent_t event_ptr)
  **********************************************************************************************************************/
 void R_OS_ResetEvent (pevent_t event_ptr)
 {
-
+	tx_event_flags_set ( (TX_EVENT_FLAGS_GROUP*) event_ptr, 0ul, TX_AND);
 }
 /***********************************************************************************************************************
  End of function R_OS_ResetEvent
@@ -1087,6 +1086,15 @@ void R_OS_ResetEvent (pevent_t event_ptr)
 e_event_state_t R_OS_EventState (pevent_t event_ptr)
 {
     e_event_state_t event_state = EV_RESET;
+    ULONG requested_flags = 0x00000001;
+    ULONG actual_flags_ptr = 0;
+
+    if (tx_event_flags_get ( (TX_EVENT_FLAGS_GROUP*) event_ptr, requested_flags, TX_OR_CLEAR, &actual_flags_ptr, TX_NO_WAIT) != TX_SUCCESS)
+    	event_state = EV_INVALID;
+    else if ( actual_flags_ptr )
+    	event_state = EV_SET;
+    else
+    	event_state = EV_RESET;
 
     return event_state;
 }
@@ -1105,9 +1113,18 @@ e_event_state_t R_OS_EventState (pevent_t event_ptr)
  **********************************************************************************************************************/
 bool_t R_OS_WaitForEvent (pevent_t event_ptr, systime_t timeout)
 {
-    volatile bool_t ret_value = false;
+    e_event_state_t event_state = EV_RESET;
+    ULONG requested_flags = 0x00000001;
+    ULONG actual_flags_ptr = 0;
 
-    return (ret_value);
+    if (tx_event_flags_get ( (TX_EVENT_FLAGS_GROUP*) event_ptr, requested_flags, TX_OR_CLEAR, &actual_flags_ptr, timeout) != TX_SUCCESS)
+    	event_state = EV_INVALID;
+    else if ( actual_flags_ptr )
+    	event_state = EV_SET;
+    else
+    	event_state = EV_RESET;
+
+    return event_state;
 }
 /***********************************************************************************************************************
  End of function R_OS_WaitForEvent
@@ -1122,7 +1139,7 @@ bool_t R_OS_WaitForEvent (pevent_t event_ptr, systime_t timeout)
  **********************************************************************************************************************/
 bool_t R_OS_SetEventFromIsr (pevent_t event_ptr)
 {
-
+	R_OS_SetEvent(event_ptr);
     return (true);
 }
 /***********************************************************************************************************************
