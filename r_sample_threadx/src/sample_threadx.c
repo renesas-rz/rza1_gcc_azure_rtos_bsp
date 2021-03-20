@@ -312,7 +312,7 @@ UINT    status;
             thread_4_counter++;
 
         /* Get the semaphore with suspension.  */
-        if ( !R_OS_WaitForSemaphore( semaphore_0, TX_WAIT_FOREVER)) {
+        if ( !R_OS_WaitForSemaphore( &semaphore_0, TX_WAIT_FOREVER)) {
         	/* Check status.  */
         	break;
         }
@@ -321,7 +321,7 @@ UINT    status;
         R_OS_TaskSleep(2);
 
         /* Release the semaphore.  */
-        if ( !R_OS_ReleaseSemaphore( semaphore_0) ) {
+        if ( !R_OS_ReleaseSemaphore( &semaphore_0) ) {
         	/* Check status.  */
         	break;
         }
