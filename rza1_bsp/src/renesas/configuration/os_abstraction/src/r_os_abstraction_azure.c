@@ -685,6 +685,10 @@ void *R_OS_AllocMem (size_t size, uint32_t region)
 {
     volatile void *p;
 
+	if ( tx_byte_allocate( &p_os_byte_pooling, (VOID **) &p, size, TX_NO_WAIT) != TX_SUCCESS) {
+		p = NULL;
+	}
+
     return ((void *)p);
 }
 /***********************************************************************************************************************
@@ -699,7 +703,7 @@ void *R_OS_AllocMem (size_t size, uint32_t region)
  **********************************************************************************************************************/
 void R_OS_FreeMem (void *p)
 {
-
+	tx_block_release ( p );
 }
 /***********************************************************************************************************************
  End of function R_OS_FreeMem
@@ -714,20 +718,12 @@ void R_OS_FreeMem (void *p)
  * Return Value : The function returns TRUE if the semaphore object was successfully created
  *                Otherwise, FALSE is returned
  **********************************************************************************************************************/
-bool_t R_OS_CreateSemaphore (semaphore_t *semaphore_ptr, uint32_t count)
+bool_t R_OS_CreateSemaphore (psemaphore_t semaphore_ptr, uint32_t count)
 {
     bool_t ret = false;
 
-    if ( tx_byte_allocate( &p_os_byte_pooling, (VOID **) semaphore_ptr, sizeof (TX_SEMAPHORE), TX_NO_WAIT) == TX_SUCCESS) {
-
-		if ( tx_semaphore_create ( (TX_SEMAPHORE*) *semaphore_ptr, OS_ABS_LAYER_NAME, (ULONG)count) == TX_SUCCESS )
-			ret = true;
-		else
-		{
-			tx_block_release ( semaphore_ptr );
-			semaphore_ptr = NULL;
-		}
-    }
+	if ( tx_semaphore_create ( (TX_SEMAPHORE*) semaphore_ptr, OS_ABS_LAYER_NAME, (ULONG)count) == TX_SUCCESS )
+		ret = true;
 
     return (ret);
 }
@@ -741,7 +737,7 @@ bool_t R_OS_CreateSemaphore (semaphore_t *semaphore_ptr, uint32_t count)
  * Arguments    : semaphore_ptr - Pointer to a associated semaphore
  * Return Value : none
  **********************************************************************************************************************/
-void R_OS_DeleteSemaphore (semaphore_t semaphore_ptr)
+void R_OS_DeleteSemaphore (psemaphore_t semaphore_ptr)
 {
 	tx_semaphore_delete ( (TX_SEMAPHORE*) semaphore_ptr );
 }
@@ -758,7 +754,7 @@ void R_OS_DeleteSemaphore (semaphore_t semaphore_ptr)
  *              : timeout       - Maximum time to wait for associated event to occur
  * Return Value : The function returns TRUE if the semaphore object was successfully set. Otherwise, FALSE is returned
  **********************************************************************************************************************/
-bool_t R_OS_WaitForSemaphore (semaphore_t semaphore_ptr, systime_t timeout)
+bool_t R_OS_WaitForSemaphore (psemaphore_t semaphore_ptr, systime_t timeout)
 {
     bool_t ret = false;
     if ( tx_semaphore_get ((TX_SEMAPHORE*) semaphore_ptr, (ULONG)timeout) == TX_SUCCESS )
@@ -776,7 +772,7 @@ bool_t R_OS_WaitForSemaphore (semaphore_t semaphore_ptr, systime_t timeout)
  * Arguments    : semaphore_ptr - Pointer to a associated semaphore
  * Return Value : none
  **********************************************************************************************************************/
-bool_t R_OS_ReleaseSemaphore (semaphore_t semaphore_ptr)
+bool_t R_OS_ReleaseSemaphore (psemaphore_t semaphore_ptr)
 {
 	bool_t ret = false;
 
@@ -880,12 +876,33 @@ bool_t R_OS_EventWaitMutex (pevent_t pEvent, uint32_t dwTimeOut)
 	bool_t ret = false;
 	TX_MUTEX *mutex_ptr;
 
-	if ( tx_mutex_create ( mutex_ptr, OS_ABS_LAYER_NAME, TX_INHERIT) == TX_SUCCESS ) {
+	if ( pEvent == NULL ) {
+		if ( tx_byte_allocate( &p_os_byte_pooling, (VOID **) &mutex_ptr, sizeof (TX_MUTEX), TX_NO_WAIT) == TX_SUCCESS) {
 
-		*pEvent = (pevent_t)mutex_ptr;
+			if ( tx_mutex_create ( (TX_MUTEX*) mutex_ptr, OS_ABS_LAYER_NAME, TX_INHERIT) != TX_SUCCESS ) {
 
+				/* Failed to create mutex */
+				tx_block_release ( mutex_ptr );
+				mutex_ptr = NULL;
+				*pEvent = NULL;
+
+			} else {
+				/* Succcessfully Created Mutex */
+				*pEvent = mutex_ptr;
+			}
+		}
+
+	} else {
+
+		/* Mutex already created */
+		mutex_ptr = (TX_MUTEX*) *pEvent;
+	}
+
+	if ( pEvent != NULL  ) {
+		/* Aquire mutex */
 		if ( tx_mutex_get( mutex_ptr, dwTimeOut ) == TX_SUCCESS)
 			ret = true;
+
 	}
 
     return (ret);
