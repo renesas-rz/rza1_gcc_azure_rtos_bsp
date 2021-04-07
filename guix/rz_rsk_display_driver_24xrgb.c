@@ -76,7 +76,7 @@ void CopyCanvasToBackBuffer24xrgb(GX_CANVAS *canvas, GX_RECTANGLE *copy)
         pGetRow += canvas->gx_canvas_x_resolution;
         pPutRow += DISPLAY_XRES;
     }
-    BSP_DCache_FlushRange(flushaddress, copy_height * DISPLAY_XRES * 4);
+    l2x0_flush_range((void*)flushaddress, (void*)(flushaddress + (copy_height * DISPLAY_XRES * 4)));
 
 }
 
