@@ -1,0 +1,67 @@
+/******************************************************************************
+* DISCLAIMER
+* This software is supplied by Renesas Electronics Corporation and is only
+* intended for use with Renesas products. No other uses are authorized. This
+* software is owned by Renesas Electronics Corporation and is protected under
+* all applicable laws, including copyright laws.
+* THIS SOFTWARE IS PROVIDED "AS IS" AND RENESAS MAKES NO WARRANTIES REGARDING
+* THIS SOFTWARE, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING BUT NOT
+* LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
+* AND NON-INFRINGEMENT. ALL SUCH WARRANTIES ARE EXPRESSLY DISCLAIMED.
+* TO THE MAXIMUM EXTENT PERMITTED NOT PROHIBITED BY LAW, NEITHER RENESAS
+* ELECTRONICS CORPORATION NOR ANY OF ITS AFFILIATED COMPANIES SHALL BE LIABLE
+* FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES FOR
+* ANY REASON RELATED TO THIS SOFTWARE, EVEN IF RENESAS OR ITS AFFILIATES HAVE
+* BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+* Renesas reserves the right, without notice, to make changes to this software
+* and to discontinue the availability of this software. By using this software,
+* you agree to the additional terms and conditions found by accessing the
+* following link:
+* http://www.renesas.com/disclaimer
+*******************************************************************************
+* Copyright (C) 2018 Renesas Electronics Corporation. All rights reserved.
+
+*******************************************************************************
+* File Name    : application_cfg.h
+* Device(s)    : RZ/A1L
+* H/W Platform : Stream it! v2 board
+* Description  : Overall control of system state
+*******************************************************************************
+* History      : DD.MM.YYYY Ver. Description
+*              : 07.02.2018 1.00 First Release
+******************************************************************************/
+
+/******************************************************************************
+  WARNING!  IN ACCORDANCE WITH THE USER LICENCE THIS CODE MUST NOT BE CONVEYED
+  OR REDISTRIBUTED IN COMBINATION WITH ANY SOFTWARE LICENSED UNDER TERMS THE
+  SAME AS OR SIMILAR TO THE GNU GENERAL PUBLIC LICENCE
+******************************************************************************/
+
+
+#ifndef RENESAS_CONFIGURATION_APPLICATION_CFG_H_
+#define RENESAS_CONFIGURATION_APPLICATION_CFG_H_
+
+/* Common function controls */
+#define R_OPTION_ENABLE  (1)
+#define R_MSG_ENABLED  ("ENABLED")
+
+#define R_OPTION_DISABLE (0)
+#define R_MSG_DISABLED ("DISABLED")
+
+/* CMSIS OPTIONS Required by ARM SMSYS module */
+#define __FPU_PRESENT (R_OPTION_ENABLE)
+
+
+/* Enable support for stdio.h in application  */
+#define R_USE_ANSI_STDIO_MODE_CFG (R_OPTION_ENABLE)
+
+/* Enable control for src/application/self_test system sanity check application */
+#define R_SELF_PERFORM_SELF_TEST (R_OPTION_ENABLE)
+
+/* Enable control for src/application/app_touchscreen sample application */
+#define R_SELF_INSERT_APP_TOUCH_SCREEN (R_OPTION_ENABLE)
+
+/* Enable control for src/application/app_sdk_camera sample application */
+#define R_SELF_INSERT_APP_SDK_CAMERA (R_OPTION_ENABLE)
+
+#endif /* RENESAS_CONFIGURATION_APPLICATION_CFG_H_ */
