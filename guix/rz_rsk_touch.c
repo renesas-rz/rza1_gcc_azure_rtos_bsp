@@ -1,20 +1,16 @@
 
 #include <stdio.h>
 #include "r_typedefs.h"
+#include "dev_drv.h"
 #include "iodefine.h"
-#include "dev_drv.h"                /* Device Driver common header */
-#include "r_riic_api.h"            /* RIIC Driver Header */
-#include "r_intc.h"
-
-/* I2C RSK+RZA1H Eval-board header */
-//#include "sample_riic_rza1h_rsk.h"
-/* Low level register read/write header */
 #include "rza_io_regrw.h"
-#include "tp_if.h"
+#include "lcd_controller_if.h"
 
 #include "tx_api.h"
 #include "gx_api.h"
 
+#define TP_INT_PRI              (10uL)
+#define TP_TSK_PRI              (7uL)
 
 #define TOUCH_STATE_TOUCHED  1
 #define TOUCH_STATE_RELEASED 2
@@ -42,7 +38,6 @@ static uint8_t touch_raw_data[32];
 /**************************************************************************/
 static int32_t touch_get_coordinate ()
 {
-#if 0
     /* the touch controller sends a 32-byte packet formatted as follows
 
         byte0- devide mode
@@ -54,7 +49,7 @@ static int32_t touch_get_coordinate ()
     */
     int32_t ret;
 
-    ret = R_RIIC_rza1h_rsk_read(DEVDRV_CH_0, RZA1H_APP_I2C_FT5216, 0, 32, touch_raw_data);
+    ret = R_LCD_ReadCmd(LCD_SLAVE_ADDRESS, 0, touch_raw_data, 32);
     if (DEVDRV_SUCCESS == ret)
     {
         // test for invalid data
@@ -62,7 +57,8 @@ static int32_t touch_get_coordinate ()
             touch_raw_data[2] > 5)
         {
             // touch controller is not reponding. Try to reset I2C channel:
-            R_RIIC_rza1h_rsk_init();
+        	R_LCD_Close();
+        	touch_interrupt_configure();
             return GX_FALSE;
         }
         else if (
@@ -84,7 +80,8 @@ static int32_t touch_get_coordinate ()
           (touch_raw_data[15] == 0))
         {
             // touch controller is not reponding. Try to reset I2C channel:
-            R_RIIC_rza1h_rsk_init();
+        	R_LCD_Close();
+        	touch_interrupt_configure();
             return GX_FALSE;
         }  
             
@@ -109,9 +106,6 @@ static int32_t touch_get_coordinate ()
 
         return GX_TRUE;
     }
-#else
-
-#endif
     return GX_FALSE;
 }
 
@@ -172,29 +166,19 @@ VOID SendPenUpEvent(VOID)
 /**************************************************************************/
 VOID touch_interrupt_configure()
 {
-#if 0
-	R_INTC_Disable(INTC_ID_IRQ1);
-	R_INTC_SetPriority(INTC_ID_IRQ1, 10uL);
+	R_LCD_Init();
+	R_LCD_Open( TP_INT_PRI, 0, 0 );
+	R_LCD_EventEntry( LCDEVT_ENTRY_TP, GUIX_touch_interrupt );
 
-    /* Assign the IRQ1 function */
-    R_INTC_RegistIntFunc(INTC_ID_IRQ1, GUIX_touch_interrupt);
-
-    /* Set the interrupt as edge trigger */
-	RZA_IO_RegWrite_16(&INTCICR1,1,INTC_ICR1_IRQ10S_SHIFT,INTC_ICR1_IRQ10S | INTC_ICR1_IRQ11S);
-
-    /* Enable the touch panel interrupt */
-    R_INTC_Enable(INTC_ID_IRQ1);
-#else
-    TouchPanel_Init();
-    //TouchPanel_Open();
-#endif
+	/* Set the interrupt as edge trigger */
+	rza_io_reg_write_16(&INTCICR1,1,INTC_ICR1_IRQ10S_SHIFT,INTC_ICR1_IRQ10S | INTC_ICR1_IRQ11S);
 }
 
 /**************************************************************************/
 VOID  touch_thread_entry(ULONG thread_input)
 {
     ULONG actual_flags;
-#if 0
+
     tx_event_flags_create(&touch_events, "touch_events");
     touch_interrupt_configure();
     
@@ -228,22 +212,19 @@ VOID  touch_thread_entry(ULONG thread_input)
             bad_reads++;
         }
     }   
-#endif
 }
 
 void GUIX_touch_interrupt(uint32_t int_sense)
 {
-#if 0
     /* Clear IRQ flag  */
-    if (1 == RZA_IO_RegRead_16(&(INTCIRQRR),
+    if (1 == rza_io_reg_read_16(&(INTCIRQRR),
     		                    INTC_IRQRR_IRQ1F_SHIFT,
     		                    (0x01 << INTC_IRQRR_IRQ1F_SHIFT)))
     {
-        RZA_IO_RegWrite_16(&INTCIRQRR,
+    	rza_io_reg_write_16(&INTCIRQRR,
         		            0,
         		            INTC_IRQRR_IRQ1F_SHIFT,
         		            (0x01 << INTC_IRQRR_IRQ1F_SHIFT));
     }
     tx_event_flags_set(&touch_events, 1, TX_OR);
-#endif
 }
