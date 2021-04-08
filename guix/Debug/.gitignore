@@ -6,3 +6,4 @@
 /rz_display_driver_565rgb.d
 /rz_rsk_display_driver_24xrgb.d
 /rz_rsk_display_driver_32argb.d
+/rz_rsk_touch.d
