@@ -68,7 +68,12 @@ Macro definitions
 /******************************************************************************
  Global Vaiables
 ******************************************************************************/
-
+extern int_t LCD_Ft5216_Open (const uint32_t unIrqLv, int16_t nTskPri, uint32_t unTskStk);
+extern int_t LCD_Ft5216_Close (void);
+extern uint8_t LCD_Ft5216_WriteCmd (const uint16_t unDevAddr, const uint8_t uData, const uint32_t unSize);
+extern uint8_t LCD_Ft5216_ReadCmd (const uint16_t unDevAddr, uint8_t *puData, const uint32_t unSize);
+extern int_t LCD_Ft5216_EventEntry (const LcdEvt_EntryType eType, const LcdCBFunc function);
+extern int_t LCD_Ft5216_EventErase (const int_t nId);
 
 /*******************************************************************************
 Private global variables and functions

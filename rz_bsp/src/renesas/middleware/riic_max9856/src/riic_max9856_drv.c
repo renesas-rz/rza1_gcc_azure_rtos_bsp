@@ -338,12 +338,7 @@ Private global variables and functions
 static int32_t RIIC_CH3_REG8_Write(const uint8_t riic_addr, const uint8_t reg_addr, const uint8_t reg_data);
 static int32_t RIIC_CH3_REG8_Read(const uint8_t riic_addr, const uint8_t reg_addr, uint8_t* const p_reg_data);
 
-static riic_ch3_aio_ctrl_t s_i2c3_ctrl = 
-{
-    NULL,             /* semaphore */
-    DEVDRV_ERROR,     /* hi2c3 */
-
-};
+static riic_ch3_aio_ctrl_t s_i2c3_ctrl;
 
 /******************************************************************************
 Exported global functions (to be accessed by other files)

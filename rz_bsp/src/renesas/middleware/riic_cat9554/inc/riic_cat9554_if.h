@@ -39,7 +39,6 @@ Includes   <System Includes> , "Project Includes"
 /* nothing */
 #elif (TARGET_BOARD == TARGET_BOARD_RSK)
 
-#include "cmsis_os.h"
 #include "r_typedefs.h"
 #include "r_errno.h"
 #include "riic_cat9554_drv.h"

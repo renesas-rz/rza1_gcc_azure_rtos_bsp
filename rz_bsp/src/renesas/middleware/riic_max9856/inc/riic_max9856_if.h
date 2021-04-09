@@ -107,7 +107,6 @@ extern uint16_t RIIC_MAX9856_GetVersion(void);
 
 #elif (TARGET_BOARD == TARGET_BOARD_RSK)
 
-#include "cmsis_os.h"
 #include "r_typedefs.h"
 #include "r_errno.h"
 #include "riic_max9856_drv.h"

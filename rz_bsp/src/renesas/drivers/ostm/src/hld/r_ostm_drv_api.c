@@ -275,10 +275,10 @@ static void ostm_close(st_stream_ptr_t stream_ptr)
     /* Ensure that the driver has been closed for the final time */
     if (R_CFG_OSTM_DRV_MAXIMUM_ACCESS_PRV == gs_r_drv_ostm[stream_ptr->sc_config_index].access_handles_available)
     {
-        /* reset the state of this driver so that the next time it is opened the driver is reinitialised */
+        /* reset the state of this driver so that the next time it is opened the driver is reinitialized */
         gs_r_drv_ostm_open[stream_ptr->sc_config_index] = false;
 
-        /* Only initialise during first use */
+        /* Only initialize during first use */
         R_OSTM_UninitialiseHwIf ();
     }
 }
@@ -339,7 +339,7 @@ static int_t ostm_control(st_stream_ptr_t stream_ptr, uint32_t ctrl_code, void *
     int_t retval = -1;
 
     /* The following controls require exclusive access to resource */
-    R_OS_EventWaitMutex (&ostm_mutex, R_OS_ABSTRACTION_PRV_EV_WAIT_INFINITE);
+    R_OS_EventWaitMutex (ostm_mutex, R_OS_ABSTRACTION_PRV_EV_WAIT_INFINITE);
     switch (ctrl_code)
     {
         case CTL_OSTM_CREATE_TIMER:
@@ -376,7 +376,7 @@ static int_t ostm_control(st_stream_ptr_t stream_ptr, uint32_t ctrl_code, void *
         }
     }
 
-    R_OS_EventReleaseMutex (&ostm_mutex);
+    R_OS_EventReleaseMutex (ostm_mutex);
 
     return (retval);
 }

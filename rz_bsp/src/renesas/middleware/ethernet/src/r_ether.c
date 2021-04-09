@@ -816,32 +816,32 @@ static void lan_reg_set (int32_t link)
     /* Ethernet Controller (ETHER)
     TDLAR - Transmit Descriptor List Start Address Register
     b31:b0  TDLA[31:0] - Transmit Descriptor Start Address */
-    ETHER.TDLAR0        = &geth_desc_ptr->dsend[0];
+    ETHER.TDLAR0        = (uint32_t)&geth_desc_ptr->dsend[0];
 
     /* Ethernet Controller (ETHER)
     RDLAR - Receive Descriptor List Start Address Register
     b31:b0  RDLA[31:0] - Receive Descriptor Start Address */
-    ETHER.RDLAR0        = &geth_desc_ptr->drecv[0];
+    ETHER.RDLAR0        = (uint32_t)&geth_desc_ptr->drecv[0];
 
     /* Ethernet Controller (ETHER)
     TDFAR - Transmit Descriptor Fetch Address Register
     b31:b0  TDFA[31:0] - Transmit Descriptor Fetch Address */
-    ETHER.TDFAR0        = &geth_desc_ptr->dsend[0];
+    ETHER.TDFAR0        = (uint32_t)&geth_desc_ptr->dsend[0];
 
     /* Ethernet Controller (ETHER)
     RDFAR - Receive Descriptor Fetch Address Register
     b31:b0  RDFA[31:0] - Receive Descriptor Fetch Address */
-    ETHER.RDFAR0        = &geth_desc_ptr->drecv[0];
+    ETHER.RDFAR0        = (uint32_t)&geth_desc_ptr->drecv[0];
 
     /* Ethernet Controller (ETHER)
     TDFXR - Transmit Descriptor Finished Address Register
     b31:b0  TDFX[31:0] - Transmit Descriptor Finished Address */
-    ETHER.TDFXR0        = &geth_desc_ptr->dsend[NUM_OF_TX_DESCRIPTOR - 1];
+    ETHER.TDFXR0        = (uint32_t)&geth_desc_ptr->dsend[NUM_OF_TX_DESCRIPTOR - 1];
 
     /* Ethernet Controller (ETHER)
     RDFXR - Receive Descriptor Finished Address Register
     b31:b0  RDFX[31:0] - Receive Descriptor Finished Address */
-    ETHER.RDFXR0        = &geth_desc_ptr->drecv[NUM_OF_RX_DESCRIPTOR - 1];
+    ETHER.RDFXR0        = (uint32_t)&geth_desc_ptr->drecv[NUM_OF_RX_DESCRIPTOR - 1];
 
     /* Ethernet Controller (ETHER)
     TDFFR - Transmit Descriptor Final Flag Register

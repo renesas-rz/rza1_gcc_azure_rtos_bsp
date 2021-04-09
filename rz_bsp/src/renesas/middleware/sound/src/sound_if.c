@@ -58,7 +58,7 @@ typedef struct sound_drv_ctrl
 {
     e_sound_drv_stat_t drv_sts;
     e_sound_ch_stat_t  ch_sts[SOUND_CH_NUM];
-    uint32_t           semid;
+    semaphore_t           semid;
 } st_sound_drv_ctrl_t;
 
 /******************************************************************************
@@ -113,7 +113,7 @@ int32_t R_SOUND_Init (void)
     {
         R_OS_CreateSemaphore( &gs_gb_snd_ctrl.semid, 1);
 
-        if (0 == gs_gb_snd_ctrl.semid)
+        if (0 == &gs_gb_snd_ctrl.semid)
         {
             ercd = DEVDRV_ERROR;
         }
@@ -129,7 +129,7 @@ int32_t R_SOUND_Init (void)
         }
         else
         {
-            if (0 != gs_gb_snd_ctrl.semid)
+            if (0 != &gs_gb_snd_ctrl.semid)
             {
                 R_OS_DeleteSemaphore( &gs_gb_snd_ctrl.semid);
             }

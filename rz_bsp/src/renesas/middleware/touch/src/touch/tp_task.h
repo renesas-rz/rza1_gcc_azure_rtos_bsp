@@ -66,7 +66,7 @@ typedef enum {
 /***********************************************************************************
  Function Prototypes
 ***********************************************************************************/
-void            TP_Task(void *params);
+void 			TP_Task(ULONG params);
 TP_TASKSTAT_et  TP_GetTaskStatus( void );
 
 #if defined(__cplusplus)

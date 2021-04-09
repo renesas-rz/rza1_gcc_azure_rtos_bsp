@@ -261,7 +261,7 @@ Typedef definitions
 typedef struct riic_ch3_ctrl
 {
     bool_t           is_open;
-    uint32_t         semid;
+    semaphore_t         semid;
 } riic_ch3_ctrl_t;
 
 /******************************************************************************
@@ -276,11 +276,7 @@ Exported global variables (to be accessed by other files)
 /******************************************************************************
 Private global variables and functions
 ******************************************************************************/
-static riic_ch3_ctrl_t s_riic3_ctrl =
-{
-    false,  /* is_open */
-    0       /* semid   */
-};
+static riic_ch3_ctrl_t s_riic3_ctrl;
 
 /******************************************************************************
 Exported global functions (to be accessed by other files)
@@ -299,6 +295,7 @@ Exported global functions (to be accessed by other files)
 int32_t R_RIIC_MAX9856_Open(void)
 {
     int32_t ercd = DEVDRV_SUCCESS;
+    s_riic3_ctrl.is_open = false;
 
     if (false != s_riic3_ctrl.is_open)
     {
@@ -308,7 +305,7 @@ int32_t R_RIIC_MAX9856_Open(void)
     {
         R_OS_CreateSemaphore(&s_riic3_ctrl.semid, 1);
 
-        if (0 == s_riic3_ctrl.semid)
+        if (0 == &s_riic3_ctrl.semid)
         {
             ercd = DEVDRV_ERROR;
         }
@@ -326,7 +323,7 @@ int32_t R_RIIC_MAX9856_Open(void)
         {
             s_riic3_ctrl.is_open = false;
 
-            if (0 != s_riic3_ctrl.semid)
+            if (0 != &s_riic3_ctrl.semid)
             {
                 R_OS_DeleteSemaphore(&s_riic3_ctrl.semid);
             }

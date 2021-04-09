@@ -271,7 +271,7 @@ static int_t scif_open (st_stream_ptr_t pStream)
         gDDSCIF.smart_config_id = pStream->sc_config_index;
 
         /* Start the lower level driver */
-        if (sciOpen(&gDDSCIF, &P_SCI_BASE, &gScifDefaultConfig, pRxBuffer, pTxBuffer))
+        if (sciOpen(&gDDSCIF, &P_SCI_BASE, (PSCIFCFG)&gScifDefaultConfig, pRxBuffer, pTxBuffer))
         {
             /* Destroy the software FIFOS */
             cbDestroy(pTxBuffer);

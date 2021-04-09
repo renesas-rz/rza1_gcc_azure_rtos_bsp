@@ -92,7 +92,7 @@ static TP_TASKSTAT_et  eTpTaskStat;
 * @param         [in]void const *vpArg  : pointer to argument
 * @retval        None.
 ******************************************************************************/
-void TP_Task(void *params)
+void TP_Task(ULONG params)
 {
     UNUSED_PARAM(params);
 

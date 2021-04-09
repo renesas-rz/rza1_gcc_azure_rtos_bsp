@@ -111,6 +111,9 @@ typedef TX_SEMAPHORE semaphore_t;
 /** pointer to semaphore handle object */
 typedef semaphore_t* psemaphore_t;
 
+/* mutext handle */
+typedef void* pmutex_t;
+
 /** event handle object */
 typedef void *event_t;
 

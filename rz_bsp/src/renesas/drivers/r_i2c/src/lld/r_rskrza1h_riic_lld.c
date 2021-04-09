@@ -83,7 +83,7 @@ static const st_drv_info_t gs_lld_info =
 STDIO_RIIC_RZ_LLD_DRV_NAME };
 
 /**
- * @brief initialise the specified i2c channel
+ * @brief initialize the specified i2c channel
  * @param[in] channel : the device specific channel number (< RIIC_LLD_NUM_CHANNELS)
  * @return    DEVDRV_SUCCESS       : Success of RIIC operation
  *            DEVDRV_ERROR         : Failure of RIIC operation

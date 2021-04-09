@@ -34,7 +34,7 @@
 #include "mcu_board_select.h"
 
 #include <stdio.h>
-#include "cmsis_os.h"
+#include "r_os_abstraction_api.h"
 
 #include "r_typedefs.h"
 

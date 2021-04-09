@@ -54,7 +54,7 @@ Typedef definitions
 typedef struct riic_ch3_ctrl
 {
     bool_t           is_open;
-    uint32_t         semid;
+    semaphore_t      semid;
 } riic_ch3_ctrl_t;
 
 /******************************************************************************
@@ -101,7 +101,7 @@ int32_t R_RIIC_CAT9554_Open(void)
     {
         R_OS_CreateSemaphore(&s_riic3_ctrl.semid, 1);
 
-        if (0 == s_riic3_ctrl.semid)
+        if (0 == &s_riic3_ctrl.semid)
         {
             ercd = DEVDRV_ERROR;
         }
@@ -119,7 +119,7 @@ int32_t R_RIIC_CAT9554_Open(void)
         {
             s_riic3_ctrl.is_open = false;
 
-            if (0 != s_riic3_ctrl.semid)
+            if (0 != &s_riic3_ctrl.semid)
             {
                 R_OS_DeleteSemaphore(&s_riic3_ctrl.semid);
             }

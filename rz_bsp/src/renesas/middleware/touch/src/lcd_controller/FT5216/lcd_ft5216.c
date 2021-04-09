@@ -62,10 +62,10 @@
  ******************************************************************************/
 
 /***********************************************************************************
- Global Vaiables
+ Global Variables
  ***********************************************************************************/
-uint32_t sLcdSemIdTsk;
-uint32_t sLcdSemIdAcc;
+semaphore_t sLcdSemIdTsk;
+semaphore_t sLcdSemIdAcc;
 
 /*******************************************************************************
  Private global variables and functions
@@ -179,10 +179,9 @@ int_t LCD_Ft5216_Close (void)
     nRet = LCD_Ft5216_Int_Close();
 
     /** delete access semaphore */
-    if (sLcdSemIdAcc != 0)
+    if (&sLcdSemIdAcc != 0)
     {
         R_OS_DeleteSemaphore( &sLcdSemIdAcc);
-        sLcdSemIdAcc = 0;
     }
     else
     {
@@ -191,10 +190,9 @@ int_t LCD_Ft5216_Close (void)
     }
 
     /** delete synchronous semaphore */
-    if (sLcdSemIdTsk != 0)
+    if (&sLcdSemIdTsk != 0)
     {
         R_OS_DeleteSemaphore( &sLcdSemIdTsk);
-        sLcdSemIdTsk = 0;
     }
     else
     {
@@ -381,7 +379,7 @@ int32_t LCD_Ft5216_SendEvtMsg (const uint32_t unEvtFlg)
     nRet = 0;
 
     unEvtMsg |= unEvtFlg;
-    if (sLcdSemIdTsk == 0)
+    if (&sLcdSemIdTsk == 0)
     {
         DBG_printf_ERR("[ERROR] message is not put -- msg = 0x%0X\n", (unsigned int)unEvtFlg);
         unEvtMsg &= ~unEvtFlg;

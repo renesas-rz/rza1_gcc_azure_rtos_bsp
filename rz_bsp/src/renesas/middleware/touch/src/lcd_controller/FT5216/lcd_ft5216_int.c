@@ -81,11 +81,11 @@ typedef struct {
 /*******************************************************************************
  Private global variables and functions
 *******************************************************************************/
-SCOPE_STATIC void LCD_Ft5216_Int_Hdl( void );
+SCOPE_STATIC void LCD_Ft5216_Int_Hdl( uint32_t sense );
 SCOPE_STATIC void LCD_Ft5216_Int_SetPort( void );
 
 SCOPE_STATIC LCD_IntCnt_st gsIntCnt;
-
+extern LCDEVT_ENTRY *LCD_Ft5216_GetEventTable (const int_t nId);
 
 /**************************************************************************//**
 * Function Name: LCD_Ft5216_Int_Open
@@ -182,7 +182,7 @@ int_t LCD_Ft5216_Int_Start( void )
 * @param         None.
 * @retval        None.
 ******************************************************************************/
-SCOPE_STATIC void LCD_Ft5216_Int_Hdl( void )
+SCOPE_STATIC void LCD_Ft5216_Int_Hdl( uint32_t sense )
 {
     LCDEVT_ENTRY *psEvt;
 

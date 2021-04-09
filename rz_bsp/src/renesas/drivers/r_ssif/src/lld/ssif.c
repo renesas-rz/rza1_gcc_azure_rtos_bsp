@@ -784,7 +784,7 @@ static int_t SSIF_InitChannel(ssif_info_ch_t* const p_info_ch)
         }
         else
         {
-            if (0 != p_info_ch->sem_access)
+            if (0 != &p_info_ch->sem_access)
             {
                 R_OS_DeleteSemaphore(&p_info_ch->sem_access);
             }

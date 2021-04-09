@@ -43,7 +43,7 @@
                 				
                 <option id="toolchain.version" value="6.3.1.20170620"/>
                 				
-                <option id="toolchain.enable" value="false"/>
+                <option id="toolchain.enable" value="true"/>
                 			
             </storageModule>
             			
@@ -111,7 +111,7 @@
                             							
                             <option id="com.renesas.cdt.managedbuild.gcc.rz.option.endian.547568099" name="Endianness" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.endian" useByScannerDiscovery="true" value="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.endianness.little" valueType="enumerated"/>
                             							
-                            <option id="com.renesas.cdt.managedbuild.gcc.rz.option.warnStack.1044973626" name="Warn if stack size exceeds the limit, in bytes (-Wstack-usage)" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.warnStack" useByScannerDiscovery="false" value="100" valueType="string"/>
+                            <option id="com.renesas.cdt.managedbuild.gcc.rz.option.warnStack.1044973626" name="Warn if stack size exceeds the limit, in bytes (-Wstack-usage)" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.warnStack" useByScannerDiscovery="false" value="400" valueType="string"/>
                             							
                             <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="ilg.gnuarmeclipse.managedbuild.cross.targetPlatform.403431973" isAbstract="false" osList="all" superClass="ilg.gnuarmeclipse.managedbuild.cross.targetPlatform"/>
                             							
@@ -216,66 +216,12 @@
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/threadx/common/inc}&quot;"/>
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${ProjDirPath}/azure/ports/cortex_a9/gnu/inc&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/guix/common/inc}&quot;"/>
                                     								
                                 </option>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.defs.1936832406" name="Defined symbols (-D)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.defs" useByScannerDiscovery="true" valueType="definedSymbols">
-                                    									
-                                    <listOptionValue builtIn="false" value="USE_STREAM_IT_RZ"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="__MISC_VISIBLE"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="CORTEX_A"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="RSK"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="_DEBUG"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="LWIP_DEBUG"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="_WINSOCKAPI_"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="_WINSOCK_H"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="CPPAPP"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="eC_TARGET_ENV_FREERTOS"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="eC_TARGET_ENV_RZA1H"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="eC_TARGET_COMPILER_GCC"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="eC_USE_TRIG_TABLE"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="EC_STRING_FORMAT_UTF16"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="eGML_USE_LITTLE_HELPERS"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="STREAMRUNTIME_APPLICATION"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="GUILIANI_STREAM_GUI"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="GUILIANI_WRITE_GUI"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="PLATFORM_RENESAS_STREAMIT_V2"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="FRAME_BUFFER_WIDTH=800"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="FRAME_BUFFER_HEIGHT=480"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="VSYNC_WAIT_COUNT=1"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="VDC5_INT_PRIORITY=25"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="GUILIANI_TASK_STACK_SIZE=20480"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="FRAME_BUFFER_BITS_PER_PIXEL_16"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="_DEFAULT_SOURCE"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="NO_ICONV"/>
-                                    								
-                                </option>
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="true" id="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.defs.1936832406" name="Defined symbols (-D)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.defs" useByScannerDiscovery="true" valueType="definedSymbols"/>
                                 								
                                 <option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.std.1224380076" name="Language standard" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.std" useByScannerDiscovery="true" value="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.std.default" valueType="enumerated"/>
                                 								
@@ -343,7 +289,7 @@
                     					
                     <sourceEntries>
                         						
-                        <entry excluding="src/renesas/application/r_eventControl.c|src/renesas/configuration/os_abstraction/src/r_os_abstraction_freertos.c|src/renesas/middleware/timer" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding="src/arm|src/renesas/application/r_eventControl.c|src/renesas/configuration/os_abstraction/src/r_os_abstraction_freertos.c|src/renesas/middleware/timer" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				
@@ -627,7 +573,7 @@
                     					
                     <sourceEntries>
                         						
-                        <entry excluding="src/renesas/application/r_eventControl.c|src/renesas/configuration/os_abstraction/src/r_os_abstraction_freertos.c|src/renesas/middleware/timer" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding="src/arm|src/renesas/application/r_eventControl.c|src/renesas/configuration/os_abstraction/src/r_os_abstraction_freertos.c|src/renesas/middleware/timer" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				
@@ -669,7 +615,21 @@
     	
     <storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
     	
-    <storageModule moduleId="refreshScope"/>
+    <storageModule moduleId="refreshScope" versionNumber="2">
+        		
+        <configuration configurationName="Debug">
+            			
+            <resource resourceType="PROJECT" workspacePath="/rz_bsp"/>
+            		
+        </configuration>
+        		
+        <configuration configurationName="Release">
+            			
+            <resource resourceType="PROJECT" workspacePath="/rz_bsp"/>
+            		
+        </configuration>
+        	
+    </storageModule>
     	
     <storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
     
