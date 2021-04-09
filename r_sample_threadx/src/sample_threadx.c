@@ -1,6 +1,14 @@
 /* This is a small demo of the high-performance ThreadX kernel.  It includes examples of eight
    threads of different priorities, using a message queue, semaphore, mutex, event flags group, 
    byte pool, and block pool.  */
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <fcntl.h>
+
+#include "compiler_settings.h"
+#include "iodefine_cfg.h"
+#include "control.h"
 
 #include   "tx_api.h"
 #include	"r_os_abstraction_api.h"
