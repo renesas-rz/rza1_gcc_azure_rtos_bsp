@@ -7,7 +7,6 @@
 #include <fcntl.h>
 
 #include "compiler_settings.h"
-
 #include "iodefine_cfg.h"
 #include "control.h"
 

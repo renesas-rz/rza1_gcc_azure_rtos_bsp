@@ -24,7 +24,7 @@
 /* Include necessary system files.  */
 
 #define UX_SOURCE_CODE
-
+#include "cache-l2x0.h"
 #include "ux_api.h"
 #include "ux_dcd_rz.h"
 
@@ -253,8 +253,8 @@ ULONG           use_dma;
             _ux_dcd_rz_dma_register_write(dcd_rz, UX_RZ_DMA_N0TB(UX_RZ_DMA_RX_CH), (ULONG)payload_length);
             
             /* Flush and invalidate cache.  */
-            l2x0_flush_range((void*)payload_buffer, (void*)(payload_buffer+ payload_length));
-            l2x0_inv_range((void*)payload_buffer, (void*)(payload_buffer+ payload_length));
+            l2x0_flush_range((uint32_t)payload_buffer, (uint32_t)(payload_buffer+ payload_length));
+            l2x0_inv_range((uint32_t)payload_buffer, (uint32_t)(payload_buffer+ payload_length));
             
             /* Update status.  */
             dcd_rz->ux_dcd_rz_dma_status = UX_RZ_DMA_STATUS_READING;

@@ -10,7 +10,6 @@ RM := rm -rf *.lst *.lis *.lpp *.map
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include generate/subdir.mk
 -include common/src/subdir.mk
 -include subdir.mk
 -include objects.mk

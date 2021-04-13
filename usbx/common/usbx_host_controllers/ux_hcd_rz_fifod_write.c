@@ -24,7 +24,7 @@
 /* Include necessary system files.  */
 
 #define UX_SOURCE_CODE
-
+#include "cache-l2x0.h"
 #include "ux_api.h"
 #include "ux_hcd_rz.h"
 
@@ -235,7 +235,7 @@ ULONG           rz_register;
     _ux_hcd_rz_dma_register_write(hcd_rz, UX_RZ_DMA_N0TB(UX_RZ_DMA_TX_CH), (ULONG)payload_length);
 
     /* Flush cache.  */
-    BSP_DCache_FlushRange((void*)payload_buffer, payload_length);
+    l2x0_flush_range((uint32_t)payload_buffer, (uint32_t)(payload_buffer + payload_length));
 
     /* Check if we have a short packet.  */
     if (payload_length % max_packet_size)

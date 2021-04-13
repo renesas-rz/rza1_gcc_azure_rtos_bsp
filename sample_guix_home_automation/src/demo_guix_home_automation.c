@@ -11,7 +11,7 @@ TX_BYTE_POOL       memory_pool;
 #define SCRATCHPAD_PIXELS (PRIMARY_X_RESOLUTION * PRIMARY_Y_RESOLUTION * 2)
 
 /* Define memory for memory pool. */
-GX_COLOR           scratchpad[SCRATCHPAD_PIXELS];
+GX_COLOR           scratchpad[SCRATCHPAD_PIXELS] __attribute__ ((section(".RAM_regionCache")));
 
 GX_WINDOW_ROOT    *root;
 
@@ -61,9 +61,6 @@ const GX_CHAR *month_names[12] = {
 /******************************************************************************************/
 int main(int argc, char ** argv)
 {
-    /* Setup the hardware. */
-    hardware_setup();
- 
     /* Enter the ThreadX kernel.  */
     tx_kernel_enter();
 

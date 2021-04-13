@@ -9,6 +9,14 @@
 /**************************************************************************/
 
 /* Include necessary system files.  */
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <fcntl.h>
+
+#include "compiler_settings.h"
+#include "iodefine_cfg.h"
+#include "control.h"
 
 #include "tx_api.h"
 #include "ux_api.h"
@@ -54,9 +62,6 @@ void  hwsetup(void);
 
 int main(void)
 {
-    /* Setup the RZ board.  */
-    hwsetup();
-    
     /* Enter the ThreadX kernel.  */
     tx_kernel_enter();
 }
@@ -151,13 +156,14 @@ UX_HOST_CLASS   *storage_class;
 void  demo_thread_entry(ULONG arg)
 {
 
-ULONG       files_count = 0;
-FX_FILE     my_file;
-ULONG       requested_length;
-UINT        file_attribute;
-ULONG       error_count = 0;
+	ULONG       files_count = 0;
+	FX_FILE     my_file;
+	ULONG       requested_length;
+	UINT        file_attribute;
+	ULONG       error_count = 0;
 
-    
+	printf("RZA1H USBx Host Mass Storage Demo\n");
+
     /* Register all the USB host controllers available in this system */
     status =  ux_host_stack_hcd_register("RZ-USB0", _ux_hcd_rz_initialize, UX_RZ_HC_USB_BASE,UX_RZ_CONTROLLER_RZ);
     if (status != UX_SUCCESS)
@@ -181,7 +187,7 @@ ULONG       error_count = 0;
         /* We get here if there is at least a file in the directory.  */
         do
         {
-
+        	printf("File/Directory Found Named %s", file_name);
             /* Loop through the files in the root directory.  */
 
             /* Increment file count.  */

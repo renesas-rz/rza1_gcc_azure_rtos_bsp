@@ -1,0 +1,6 @@
+/nx_driver_renesas_rz.d
+/nx_driver_renesas_rz.o
+/nx_iperf.d
+/nx_iperf.o
+/sample_netx_duo_iperf.d
+/sample_netx_duo_iperf.o

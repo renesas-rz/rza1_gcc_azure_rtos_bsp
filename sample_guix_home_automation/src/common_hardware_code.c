@@ -1,8 +1,7 @@
 #include "common_hardware_code.h"
 
 #include <stdint.h>
-#include "devdrv_common.h"
-#include "devdrv_intc.h"
+#include "r_intc.h"
 
 /* Define the display dimensions specific to this implemenation.  */
 #define DEMO_CANVAS_WIDTH   800
@@ -23,16 +22,11 @@ static TX_THREAD touch_thread;
 static ULONG touch_thread_stack[1024];
 
 /* Define prototypes.   */
-extern VOID hwsetup();
 extern VOID demo_thread_entry(ULONG thread_input);
 extern VOID touch_thread_entry(ULONG thread_input);
 extern UINT gx_studio_display_configure(USHORT display, UINT (*driver)(GX_DISPLAY *), 
                                         USHORT language, USHORT theme, GX_WINDOW_ROOT **return_root);
 
-VOID hardware_setup(void)
-{
-    hwsetup();  
-}
 
 VOID CreateDemoThread()
 {
@@ -44,10 +38,10 @@ VOID CreateDemoThread()
 
 VOID CreateInputThread(void)
 {
-    tx_thread_create(&touch_thread, "GUIX Touch Thread", touch_thread_entry, 0,  
-                     touch_thread_stack, sizeof(touch_thread_stack), 
-                     GX_SYSTEM_THREAD_PRIORITY + 1,
-                     GX_SYSTEM_THREAD_PRIORITY + 1, TX_NO_TIME_SLICE, TX_AUTO_START);
+	tx_thread_create(&touch_thread, "GUIX Touch Thread", touch_thread_entry, 0,
+					 touch_thread_stack, sizeof(touch_thread_stack),
+					 GX_SYSTEM_THREAD_PRIORITY + 1,
+					 GX_SYSTEM_THREAD_PRIORITY + 1, TX_NO_TIME_SLICE, TX_AUTO_START);
 }
 
 GX_WINDOW_ROOT *CreateDisplay(INT display, UINT (*driver_setup)(GX_DISPLAY *), INT language, INT theme)

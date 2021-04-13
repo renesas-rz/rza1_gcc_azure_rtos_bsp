@@ -37,7 +37,7 @@ ULONG                               demo_media_write_counter;
 FX_MEDIA                            *media;
 unsigned char                       buffer[512];
 FX_MEDIA                            ram_disk;
-CHAR                                ram_disk_memory[UX_RAM_DISK_SIZE];
+CHAR                                ram_disk_memory[UX_RAM_DISK_SIZE] __attribute__ ((section(".RAM_regionCache")));
 
 
 /* Define local function prototypes.  */
