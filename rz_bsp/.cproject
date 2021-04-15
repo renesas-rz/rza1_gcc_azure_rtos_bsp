@@ -65,7 +65,7 @@
                             							
                             <option id="com.renesas.cdt.managedbuild.gcc.rz.option.datasections.1711911923" name="Data sections (-fdata-sections)" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.datasections" useByScannerDiscovery="true" value="true" valueType="boolean"/>
                             							
-                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.level.1515772617" name="Debug level" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.level" useByScannerDiscovery="true"/>
+                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.level.1515772617" name="Debug level" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.level" useByScannerDiscovery="true" value="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.level.none" valueType="enumerated"/>
                             							
                             <option id="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.format.205248975" name="Debug format" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.format" useByScannerDiscovery="true"/>
                             							
@@ -303,9 +303,9 @@
             		
         </cconfiguration>
         		
-        <cconfiguration id="com.renesas.cdt.managedbuild.gcc.rz.configuration.release.lib.114242938">
+        <cconfiguration id="com.renesas.cdt.managedbuild.gcc.rz.configuration.debug.lib.1037851682.2039775347">
             			
-            <storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.renesas.cdt.managedbuild.gcc.rz.configuration.release.lib.114242938" moduleId="org.eclipse.cdt.core.settings" name="Release">
+            <storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.renesas.cdt.managedbuild.gcc.rz.configuration.debug.lib.1037851682.2039775347" moduleId="org.eclipse.cdt.core.settings" name="Release">
                 				
                 <externalSettings>
                     					
@@ -341,93 +341,99 @@
                 				
                 <option id="toolchain.id" value="gcc-arm-embedded"/>
                 				
-                <option id="toolchain.version" value="7.2.1.20170904"/>
+                <option id="toolchain.version" value="6.3.1.20170620"/>
                 				
-                <option id="toolchain.enable" value="false"/>
+                <option id="toolchain.enable" value="true"/>
                 			
             </storageModule>
             			
             <storageModule moduleId="cdtBuildSystem" version="4.0.0">
                 				
-                <configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.staticLib" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.staticLib,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release" cleanCommand="rm -rf *.lst *.lis *.lpp *.map" description="" id="com.renesas.cdt.managedbuild.gcc.rz.configuration.release.lib.114242938" name="Release" parent="com.renesas.cdt.managedbuild.gcc.rz.configuration.release.lib">
+                <configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.staticLib" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.staticLib,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf *.lst *.lis *.lpp *.map" description="" errorParsers="org.eclipse.cdt.core.GASErrorParser;org.eclipse.cdt.core.GmakeErrorParser;org.eclipse.cdt.core.CWDLocator;org.eclipse.cdt.core.GCCErrorParser" id="com.renesas.cdt.managedbuild.gcc.rz.configuration.debug.lib.1037851682.2039775347" name="Release" parent="com.renesas.cdt.managedbuild.gcc.rz.configuration.debug.lib">
                     					
-                    <folderInfo id="com.renesas.cdt.managedbuild.gcc.rz.configuration.release.lib.114242938." name="/" resourcePath="">
+                    <folderInfo id="com.renesas.cdt.managedbuild.gcc.rz.configuration.debug.lib.1037851682.2039775347." name="/" resourcePath="">
                         						
-                        <toolChain id="com.renesas.cdt.managedbuild.gcc.rz.toolChain.release.lib.181094320" name="GCC for Renesas RZ" superClass="com.renesas.cdt.managedbuild.gcc.rz.toolChain.release.lib">
+                        <toolChain id="com.renesas.cdt.managedbuild.gcc.rz.toolChain.debug.lib.1689704835" name="GCC for Renesas RZ" superClass="com.renesas.cdt.managedbuild.gcc.rz.toolChain.debug.lib">
                             							
-                            <option id="com.renesas.cdt.managedbuild.gcc.rz.option.optimizationLevel.1166399914" name="Optimization Level" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.optimizationLevel" useByScannerDiscovery="true" value="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.level.size" valueType="enumerated"/>
+                            <option id="com.renesas.cdt.managedbuild.gcc.rz.option.optimizationLevel.20652981" name="Optimization Level" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.optimizationLevel" useByScannerDiscovery="true" value="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.level.none" valueType="enumerated"/>
                             							
-                            <option id="com.renesas.cdt.managedbuild.gcc.rz.option.messagelenght.818366194" name="Message length (-fmessage-length=0)" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.messagelenght" useByScannerDiscovery="true" value="true" valueType="boolean"/>
+                            <option id="com.renesas.cdt.managedbuild.gcc.rz.option.messagelenght.2060260908" name="Message length (-fmessage-length=0)" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.messagelenght" useByScannerDiscovery="true" value="true" valueType="boolean"/>
                             							
-                            <option id="com.renesas.cdt.managedbuild.gcc.rz.option.signedchar.1413183145" name="'char' is signed (-fsigned-char)" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.signedchar" useByScannerDiscovery="true" value="true" valueType="boolean"/>
+                            <option id="com.renesas.cdt.managedbuild.gcc.rz.option.signedchar.2037229289" name="'char' is signed (-fsigned-char)" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.signedchar" useByScannerDiscovery="true" value="true" valueType="boolean"/>
                             							
-                            <option id="com.renesas.cdt.managedbuild.gcc.rz.option.functionsection.1655164405" name="Function sections (-ffunction-sections)" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.functionsection" useByScannerDiscovery="true" value="true" valueType="boolean"/>
+                            <option id="com.renesas.cdt.managedbuild.gcc.rz.option.functionsection.529152122" name="Function sections (-ffunction-sections)" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.functionsection" useByScannerDiscovery="true" value="true" valueType="boolean"/>
                             							
-                            <option id="com.renesas.cdt.managedbuild.gcc.rz.option.datasections.453180919" name="Data sections (-fdata-sections)" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.datasections" useByScannerDiscovery="true" value="true" valueType="boolean"/>
+                            <option id="com.renesas.cdt.managedbuild.gcc.rz.option.datasections.482900893" name="Data sections (-fdata-sections)" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.datasections" useByScannerDiscovery="true" value="true" valueType="boolean"/>
                             							
-                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.level.1473346391" name="Debug level" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.level" useByScannerDiscovery="true"/>
+                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.level.1259555679" name="Debug level" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.level" useByScannerDiscovery="true"/>
                             							
-                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.format.1874120705" name="Debug format" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.format" useByScannerDiscovery="true"/>
+                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.format.441085554" name="Debug format" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.debugging.format" useByScannerDiscovery="true"/>
                             							
-                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.toolchain.name.942112547" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.toolchain.name" useByScannerDiscovery="false" value="GNU Tools for ARM Embedded Processors" valueType="string"/>
+                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.toolchain.name.1252859510" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.toolchain.name" useByScannerDiscovery="false" value="GNU Tools for ARM Embedded Processors" valueType="string"/>
                             							
-                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.architecture.1084810469" name="Architecture" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.architecture" useByScannerDiscovery="false" value="ilg.gnuarmeclipse.managedbuild.cross.option.architecture.arm" valueType="enumerated"/>
+                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.architecture.1548127591" name="Architecture" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.architecture" useByScannerDiscovery="false" value="ilg.gnuarmeclipse.managedbuild.cross.option.architecture.arm" valueType="enumerated"/>
                             							
-                            <option id="com.renesas.cdt.managedbuild.gcc.rz.option.family.1210570066" name="ARM family" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.family" useByScannerDiscovery="false" value="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.mcpu.cortex-a9" valueType="enumerated"/>
+                            <option id="com.renesas.cdt.managedbuild.gcc.rz.option.family.2073779652" name="ARM family" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.family" useByScannerDiscovery="false" value="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.mcpu.cortex-a9" valueType="enumerated"/>
                             							
-                            <option id="com.renesas.cdt.managedbuild.gcc.rz.option.instructionset.1519122251" name="Instruction set" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.instructionset" useByScannerDiscovery="false" value="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.instructionset.arm" valueType="enumerated"/>
+                            <option id="com.renesas.cdt.managedbuild.gcc.rz.option.instructionset.76056946" name="Instruction set" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.instructionset" useByScannerDiscovery="false" value="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.instructionset.arm" valueType="enumerated"/>
                             							
-                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.prefix.1482858283" name="Prefix" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.prefix" useByScannerDiscovery="false" value="arm-none-eabi-" valueType="string"/>
+                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.prefix.126321733" name="Prefix" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.prefix" useByScannerDiscovery="false" value="arm-none-eabi-" valueType="string"/>
                             							
-                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.c.1954741803" name="C compiler" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.c" useByScannerDiscovery="false" value="gcc" valueType="string"/>
+                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.c.1060909616" name="C compiler" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.c" useByScannerDiscovery="false" value="gcc" valueType="string"/>
                             							
-                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.cpp.2085578313" name="C++ compiler" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.cpp" useByScannerDiscovery="false" value="g++" valueType="string"/>
+                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.cpp.203446012" name="C++ compiler" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.cpp" useByScannerDiscovery="false" value="g++" valueType="string"/>
                             							
-                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.ar.581114218" name="Archiver" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.ar" useByScannerDiscovery="false" value="ar" valueType="string"/>
+                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.ar.670708127" name="Archiver" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.ar" useByScannerDiscovery="false" value="ar" valueType="string"/>
                             							
-                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.objcopy.1874485149" name="Hex/Bin converter" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.objcopy" useByScannerDiscovery="false" value="objcopy" valueType="string"/>
+                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.objcopy.25580278" name="Hex/Bin converter" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.objcopy" useByScannerDiscovery="false" value="objcopy" valueType="string"/>
                             							
-                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.objdump.945180315" name="Listing generator" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.objdump" useByScannerDiscovery="false" value="objdump" valueType="string"/>
+                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.objdump.1987427191" name="Listing generator" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.objdump" useByScannerDiscovery="false" value="objdump" valueType="string"/>
                             							
-                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.size.2141377422" name="Size command" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.size" useByScannerDiscovery="false" value="size" valueType="string"/>
+                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.size.2065532922" name="Size command" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.size" useByScannerDiscovery="false" value="size" valueType="string"/>
                             							
-                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.make.1686300106" name="Build command" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.make" useByScannerDiscovery="false" value="make" valueType="string"/>
+                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.make.1573245719" name="Build command" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.make" useByScannerDiscovery="false" value="make" valueType="string"/>
                             							
-                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.rm.831602193" name="Remove command" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.rm" useByScannerDiscovery="false" value="rm" valueType="string"/>
+                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.command.rm.1377677571" name="Remove command" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.command.rm" useByScannerDiscovery="false" value="rm" valueType="string"/>
                             							
-                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.addtools.createflash.764481316" name="Create flash image" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.addtools.createflash" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.addtools.createflash.2082825438" name="Create flash image" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.addtools.createflash" useByScannerDiscovery="false" value="true" valueType="boolean"/>
                             							
-                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.addtools.printsize.1410801895" name="Print size" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.addtools.printsize" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+                            <option id="ilg.gnuarmeclipse.managedbuild.cross.option.addtools.printsize.41527522" name="Print size" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.addtools.printsize" useByScannerDiscovery="false" value="true" valueType="boolean"/>
                             							
-                            <option id="com.renesas.cdt.managedbuild.gcc.rz.createlibgen.67322608" name="Create libgen" superClass="com.renesas.cdt.managedbuild.gcc.rz.createlibgen" useByScannerDiscovery="false" value="false" valueType="boolean"/>
+                            <option id="com.renesas.cdt.managedbuild.gcc.rz.createlibgen.1272646645" name="Create libgen" superClass="com.renesas.cdt.managedbuild.gcc.rz.createlibgen" useByScannerDiscovery="false" value="false" valueType="boolean"/>
                             							
-                            <option id="com.renesas.cdt.managedbuild.gcc.rz.option.architecture.1945445525" name="Architecture" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.architecture" useByScannerDiscovery="false" value="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.arch.armv7-a" valueType="enumerated"/>
+                            <option id="com.renesas.cdt.managedbuild.gcc.rz.option.architecture.1621147939" name="Architecture" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.architecture" useByScannerDiscovery="false" value="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.arch.armv7-a" valueType="enumerated"/>
                             							
-                            <option id="com.renesas.cdt.managedbuild.gcc.rz.deviceName.429187062" name="Device name" superClass="com.renesas.cdt.managedbuild.gcc.rz.deviceName" useByScannerDiscovery="false" value="R7S721001_DualSPI" valueType="string"/>
+                            <option id="com.renesas.cdt.managedbuild.gcc.rz.deviceName.2060484301" name="Device name" superClass="com.renesas.cdt.managedbuild.gcc.rz.deviceName" useByScannerDiscovery="false" value="R7S721001_DualSPI" valueType="string"/>
                             							
-                            <option id="com.renesas.cdt.managedbuild.gcc.rz.option.floatunit.25188303" name="FPU Type" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.floatunit" useByScannerDiscovery="true" value="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.fpu.unit.neon" valueType="enumerated"/>
+                            <option id="com.renesas.cdt.managedbuild.gcc.rz.option.floatunit.2106802569" name="FPU Type" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.floatunit" useByScannerDiscovery="true" value="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.fpu.unit.neon" valueType="enumerated"/>
                             							
-                            <option id="com.renesas.cdt.managedbuild.gcc.rz.option.floatabi.1213960777" name="Float ABI" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.floatabi" useByScannerDiscovery="true" value="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.fpu.abi.hard" valueType="enumerated"/>
+                            <option id="com.renesas.cdt.managedbuild.gcc.rz.option.floatabi.1711066667" name="Float ABI" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.floatabi" useByScannerDiscovery="true" value="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.fpu.abi.hard" valueType="enumerated"/>
                             							
-                            <option id="com.renesas.cdt.managedbuild.gcc.rz.option.endian.803629217" name="Endianness" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.endian" useByScannerDiscovery="true" value="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.endianness.little" valueType="enumerated"/>
+                            <option id="com.renesas.cdt.managedbuild.gcc.rz.option.endian.708694478" name="Endianness" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.endian" useByScannerDiscovery="true" value="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.endianness.little" valueType="enumerated"/>
                             							
-                            <option id="com.renesas.cdt.managedbuild.gcc.rz.option.warnStack.311142844" name="Warn if stack size exceeds the limit, in bytes (-Wstack-usage)" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.warnStack" useByScannerDiscovery="false" value="100" valueType="string"/>
+                            <option id="com.renesas.cdt.managedbuild.gcc.rz.option.warnStack.1196871511" name="Warn if stack size exceeds the limit, in bytes (-Wstack-usage)" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.warnStack" useByScannerDiscovery="false" value="400" valueType="string"/>
                             							
-                            <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="ilg.gnuarmeclipse.managedbuild.cross.targetPlatform.723511862" isAbstract="false" osList="all" superClass="ilg.gnuarmeclipse.managedbuild.cross.targetPlatform"/>
+                            <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="ilg.gnuarmeclipse.managedbuild.cross.targetPlatform.1651284659" isAbstract="false" osList="all" superClass="ilg.gnuarmeclipse.managedbuild.cross.targetPlatform"/>
                             							
-                            <builder buildPath="${workspace_loc:/rz_bsp}/Release" id="com.renesas.cdt.managedbuild.gcc.rz.builder.1299709122" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="GCC for Renesas Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="com.renesas.cdt.managedbuild.gcc.rz.builder"/>
+                            <builder buildPath="${workspace_loc:/rz_bsp}/Debug" id="com.renesas.cdt.managedbuild.gcc.rz.builder.459061942" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="GCC for Renesas Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="com.renesas.cdt.managedbuild.gcc.rz.builder"/>
                             							
-                            <tool id="com.renesas.cdt.managedbuild.gcc.rz.tool.assembler.473707882" name="Cross ARM GNU Assembler" superClass="com.renesas.cdt.managedbuild.gcc.rz.tool.assembler">
+                            <tool id="com.renesas.cdt.managedbuild.gcc.rz.tool.assembler.1327576658" name="Cross ARM GNU Assembler" superClass="com.renesas.cdt.managedbuild.gcc.rz.tool.assembler">
                                 								
-                                <option id="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.usepreprocessor.423369073" name="Use preprocessor" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.usepreprocessor" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+                                <option id="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.usepreprocessor.2098350504" name="Use preprocessor" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.usepreprocessor" useByScannerDiscovery="false" value="true" valueType="boolean"/>
                                 								
-                                <inputType id="ilg.gnuarmeclipse.managedbuild.cross.tool.assembler.input.900328791" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.assembler.input"/>
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.renesas.cdt.managedbuild.gcc.rz.option.assembler.include.2032047362" name="Include paths (-I)" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.assembler.include" useByScannerDiscovery="true" valueType="includePath">
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${ProjDirPath}/src/renesas/application/inc&quot;"/>
+                                    								
+                                </option>
+                                								
+                                <inputType id="ilg.gnuarmeclipse.managedbuild.cross.tool.assembler.input.1011413272" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.assembler.input"/>
                                 							
                             </tool>
                             							
-                            <tool id="com.renesas.cdt.managedbuild.gcc.rz.tool.compiler.c.523313975" name="Cross ARM C Compiler" superClass="com.renesas.cdt.managedbuild.gcc.rz.tool.compiler.c">
+                            <tool id="com.renesas.cdt.managedbuild.gcc.rz.tool.compiler.c.1361392315" name="Cross ARM C Compiler" superClass="com.renesas.cdt.managedbuild.gcc.rz.tool.compiler.c">
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.renesas.cdt.managedbuild.gcc.rz.option.compiler.include.364970074" name="Include paths (-I)" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.compiler.include" useByScannerDiscovery="false" valueType="includePath">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.renesas.cdt.managedbuild.gcc.rz.option.compiler.include.2081643321" name="Include paths (-I)" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.compiler.include" useByScannerDiscovery="false" valueType="includePath">
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${ProjDirPath}/src/arm/cmsis/inc&quot;"/>
                                     									
@@ -442,6 +448,8 @@
                                     <listOptionValue builtIn="false" value="&quot;${ProjDirPath}/src/renesas/application/inc&quot;"/>
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${ProjDirPath}/src/renesas/application/console/inc&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${ProjDirPath}/src/renesas/application/graphics/inc&quot;"/>
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${ProjDirPath}/src/renesas/application/system/inc&quot;"/>
                                     									
@@ -503,67 +511,75 @@
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${ProjDirPath}/src/renesas/middleware/video/inc&quot;"/>
                                     									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/renesas/middleware/ethernet/inc}&quot;"/>
+                                    									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/threadx/common/inc}&quot;"/>
                                     									
-                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/threadx/ports/cortex_a9/gnu/inc}&quot;"/>
+                                    <listOptionValue builtIn="false" value="&quot;${ProjDirPath}/azure/ports/cortex_a9/gnu/inc&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/guix/common/inc}&quot;"/>
                                     								
                                 </option>
                                 								
-                                <inputType id="ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler.input.944225788" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler.input"/>
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="true" id="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.defs.584644414" name="Defined symbols (-D)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.defs" useByScannerDiscovery="true" valueType="definedSymbols"/>
+                                								
+                                <option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.std.1814853194" name="Language standard" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.std" useByScannerDiscovery="true" value="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.std.default" valueType="enumerated"/>
+                                								
+                                <inputType id="ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler.input.1958841584" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.c.compiler.input"/>
                                 							
                             </tool>
                             							
-                            <tool id="com.renesas.cdt.managedbuild.gcc.rz.tool.compiler.cpp.1697668046" name="Cross ARM C++ Compiler" superClass="com.renesas.cdt.managedbuild.gcc.rz.tool.compiler.cpp"/>
+                            <tool id="com.renesas.cdt.managedbuild.gcc.rz.tool.compiler.cpp.1433680670" name="Cross ARM C++ Compiler" superClass="com.renesas.cdt.managedbuild.gcc.rz.tool.compiler.cpp"/>
                             							
-                            <tool id="com.renesas.cdt.managedbuild.gcc.rz.tool.linker.c.1152352065" name="Cross ARM C Linker" superClass="com.renesas.cdt.managedbuild.gcc.rz.tool.linker.c">
+                            <tool id="com.renesas.cdt.managedbuild.gcc.rz.tool.linker.c.1630716008" name="Cross ARM C Linker" superClass="com.renesas.cdt.managedbuild.gcc.rz.tool.linker.c">
                                 								
-                                <option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.gcsections.2104052056" name="Remove unused sections (-Xlinker --gc-sections)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.gcsections" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+                                <option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.gcsections.1199553333" name="Remove unused sections (-Xlinker --gc-sections)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.c.linker.gcsections" useByScannerDiscovery="false" value="true" valueType="boolean"/>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="true" id="com.renesas.cdt.managedbuild.gcc.rz.archives.includePath.260435672" name="Standard archive search directories (-L)" superClass="com.renesas.cdt.managedbuild.gcc.rz.archives.includePath" valueType="libPaths"/>
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="true" id="com.renesas.cdt.managedbuild.gcc.rz.archives.includePath.932385481" name="Standard archive search directories (-L)" superClass="com.renesas.cdt.managedbuild.gcc.rz.archives.includePath" valueType="libPaths"/>
                                 							
                             </tool>
                             							
-                            <tool id="com.renesas.cdt.managedbuild.gcc.rz.tool.linker.cpp.1343299982" name="Cross ARM C++ Linker" superClass="com.renesas.cdt.managedbuild.gcc.rz.tool.linker.cpp">
+                            <tool id="com.renesas.cdt.managedbuild.gcc.rz.tool.linker.cpp.912378711" name="Cross ARM C++ Linker" superClass="com.renesas.cdt.managedbuild.gcc.rz.tool.linker.cpp">
                                 								
-                                <option id="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.linker.gcsections.714835512" name="Remove unused sections (-Xlinker --gc-sections)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.linker.gcsections" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+                                <option id="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.linker.gcsections.1431420300" name="Remove unused sections (-Xlinker --gc-sections)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.linker.gcsections" useByScannerDiscovery="false" value="true" valueType="boolean"/>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="true" id="com.renesas.cdt.managedbuild.gcc.rz.archives.cpp.includePath.1139542781" name="Standard archive search directories (-L)" superClass="com.renesas.cdt.managedbuild.gcc.rz.archives.cpp.includePath" valueType="libPaths"/>
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="true" id="com.renesas.cdt.managedbuild.gcc.rz.archives.cpp.includePath.2134670359" name="Standard archive search directories (-L)" superClass="com.renesas.cdt.managedbuild.gcc.rz.archives.cpp.includePath" valueType="libPaths"/>
                                 							
                             </tool>
                             							
-                            <tool id="com.renesas.cdt.managedbuild.gcc.rz.tool.archiver.1410129229" name="Cross ARM GNU Archiver" superClass="com.renesas.cdt.managedbuild.gcc.rz.tool.archiver"/>
+                            <tool id="com.renesas.cdt.managedbuild.gcc.rz.tool.archiver.1845638787" name="Cross ARM GNU Archiver" superClass="com.renesas.cdt.managedbuild.gcc.rz.tool.archiver"/>
                             							
-                            <tool id="com.renesas.cdt.managedbuild.gcc.rz.tool.flash.903224488" name="Cross ARM GNU Create Flash Image" superClass="com.renesas.cdt.managedbuild.gcc.rz.tool.flash">
+                            <tool id="com.renesas.cdt.managedbuild.gcc.rz.tool.flash.1621342675" name="Cross ARM GNU Create Flash Image" superClass="com.renesas.cdt.managedbuild.gcc.rz.tool.flash">
                                 								
-                                <option id="ilg.gnuarmeclipse.managedbuild.cross.option.createflash.choice.716658720" name="Output file format (-O)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createflash.choice" useByScannerDiscovery="false" value="ilg.gnuarmeclipse.managedbuild.cross.option.createflash.choice.srec" valueType="enumerated"/>
+                                <option id="ilg.gnuarmeclipse.managedbuild.cross.option.createflash.choice.1518812443" name="Output file format (-O)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createflash.choice" useByScannerDiscovery="false" value="ilg.gnuarmeclipse.managedbuild.cross.option.createflash.choice.srec" valueType="enumerated"/>
                                 							
                             </tool>
                             							
-                            <tool id="com.renesas.cdt.managedbuild.gcc.rz.tool.listing.1993331392" name="Cross ARM GNU Create Listing" superClass="com.renesas.cdt.managedbuild.gcc.rz.tool.listing">
+                            <tool id="com.renesas.cdt.managedbuild.gcc.rz.tool.listing.510850322" name="Cross ARM GNU Create Listing" superClass="com.renesas.cdt.managedbuild.gcc.rz.tool.listing">
                                 								
-                                <option id="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.source.1113236600" name="Display source (--source|-S)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.source" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+                                <option id="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.source.956835589" name="Display source (--source|-S)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.source" useByScannerDiscovery="false" value="true" valueType="boolean"/>
                                 								
-                                <option id="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.allheaders.2074160253" name="Display all headers (--all-headers|-x)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.allheaders" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+                                <option id="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.allheaders.1072901688" name="Display all headers (--all-headers|-x)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.allheaders" useByScannerDiscovery="false" value="true" valueType="boolean"/>
                                 								
-                                <option id="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.demangle.1738379756" name="Demangle names (--demangle|-C)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.demangle" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+                                <option id="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.demangle.1170339106" name="Demangle names (--demangle|-C)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.demangle" useByScannerDiscovery="false" value="true" valueType="boolean"/>
                                 								
-                                <option id="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.linenumbers.1720342629" name="Display line numbers (--line-numbers|-l)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.linenumbers" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+                                <option id="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.linenumbers.596609885" name="Display line numbers (--line-numbers|-l)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.linenumbers" useByScannerDiscovery="false" value="true" valueType="boolean"/>
                                 								
-                                <option id="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.wide.881105967" name="Wide lines (--wide|-w)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.wide" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+                                <option id="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.wide.371005530" name="Wide lines (--wide|-w)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.createlisting.wide" useByScannerDiscovery="false" value="true" valueType="boolean"/>
                                 							
                             </tool>
                             							
-                            <tool id="com.renesas.cdt.managedbuild.gcc.rz.tool.size.268448693" name="Cross ARM GNU Print Size" superClass="com.renesas.cdt.managedbuild.gcc.rz.tool.size">
+                            <tool id="com.renesas.cdt.managedbuild.gcc.rz.tool.size.1846060681" name="Cross ARM GNU Print Size" superClass="com.renesas.cdt.managedbuild.gcc.rz.tool.size">
                                 								
-                                <option id="ilg.gnuarmeclipse.managedbuild.cross.option.printsize.format.371097366" name="Size format" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.printsize.format" useByScannerDiscovery="false"/>
+                                <option id="ilg.gnuarmeclipse.managedbuild.cross.option.printsize.format.734363511" name="Size format" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.printsize.format" useByScannerDiscovery="false"/>
                                 							
                             </tool>
                             							
-                            <tool id="com.renesas.cdt.managedbuild.gcc.rz.tool.libgen.1995683067" name="Library Generator" superClass="com.renesas.cdt.managedbuild.gcc.rz.tool.libgen">
+                            <tool id="com.renesas.cdt.managedbuild.gcc.rz.tool.libgen.335786765" name="Library Generator" superClass="com.renesas.cdt.managedbuild.gcc.rz.tool.libgen">
                                 								
-                                <option id="com.renesas.cdt.managedbuild.gcc.rz.option.selectlibrary.1819067049" name="Select Library" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.selectlibrary" useByScannerDiscovery="true" value="com.renesas.cdt.managedbuild.gcc.core.option.librarygenerator.settings.selectLibrary.newLib" valueType="enumerated"/>
+                                <option id="com.renesas.cdt.managedbuild.gcc.rz.option.selectlibrary.1823083055" name="Select Library" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.selectlibrary" useByScannerDiscovery="true" value="com.renesas.cdt.managedbuild.gcc.core.option.librarygenerator.settings.selectLibrary.newLib" valueType="enumerated"/>
                                 								
-                                <option id="com.renesas.cdt.managedbuild.gcc.rz.option.libraryType.1735979543" name="Library type" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.libraryType" useByScannerDiscovery="true" value="com.renesas.cdt.managedbuild.gcc.core.option.librarygenerator.settings.libraryType.preBuilt" valueType="enumerated"/>
+                                <option id="com.renesas.cdt.managedbuild.gcc.rz.option.libraryType.1198858391" name="Library type" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.libraryType" useByScannerDiscovery="true" value="com.renesas.cdt.managedbuild.gcc.core.option.librarygenerator.settings.libraryType.preBuilt" valueType="enumerated"/>
                                 							
                             </tool>
                             						

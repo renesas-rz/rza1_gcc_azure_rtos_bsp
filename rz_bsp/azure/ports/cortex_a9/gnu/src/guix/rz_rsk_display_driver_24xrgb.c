@@ -37,28 +37,20 @@
 
 #define DISPLAY_BACKGROUND_COLOR        0x00505090
 
-#if defined FRAME_BUFFER_BITS_PER_PIXEL_16
-static USHORT frame_buffer1[DISPLAY_XRES * DISPLAY_YRES] __attribute__ ((section(".VRAM_SECTION0")));
-#elif defined FRAME_BUFFER_BITS_PER_PIXEL_32
-static GX_COLOR frame_buffer1[DISPLAY_XRES * DISPLAY_YRES] __attribute__ ((section(".VRAM_SECTION0")));
-#endif
+void  BSP_DCache_FlushRange       (void *, unsigned long);
+
+// static GX_COLOR frame_buffer1[DISPLAY_XRES * DISPLAY_YRES] __attribute__ ((section(".VRAM_SECTION0")));
+static GX_COLOR frame_buffer1[DISPLAY_XRES * DISPLAY_YRES] __attribute__ ((aligned(4)));
 
 void CopyCanvasToBackBuffer24xrgb(GX_CANVAS *canvas, GX_RECTANGLE *copy)
 {
     GX_RECTANGLE display_size;
     GX_RECTANGLE copy_clip;
     void   *flushaddress;
-#if defined FRAME_BUFFER_BITS_PER_PIXEL_16
-    USHORT *pPutRow;
-    USHORT *pGetRow;
-    USHORT *pGet;
-    USHORT *pPut;
-#elif defined FRAME_BUFFER_BITS_PER_PIXEL_32
     ULONG *pPutRow;
     ULONG *pGetRow;
     ULONG *pGet;
     ULONG *pPut;
-#endif
     int row;
     int col;
     int copy_width;
@@ -99,7 +91,8 @@ void CopyCanvasToBackBuffer24xrgb(GX_CANVAS *canvas, GX_RECTANGLE *copy)
         pGetRow += canvas->gx_canvas_x_resolution;
         pPutRow += DISPLAY_XRES;
     }
-    l2x0_flush_range((uint32_t)flushaddress, (uint32_t)(flushaddress + (copy_height * DISPLAY_XRES * 4)));
+    // BSP_DCache_FlushRange(flushaddress, copy_height * DISPLAY_XRES * 4);
+    //l2x0_flush_range((uint32_t)flushaddress, (uint32_t)(flushaddress + (copy_height * DISPLAY_XRES * 4)));
 
 }
 
@@ -149,31 +142,19 @@ void ConfigureGUIXDisplayHardware24xrgb(GX_DISPLAY *display)
         // Set frame buffer to black
         memset((void*)frame_buffer1, 0x00, FRAMEBUFFER_STRIDE * FRAMEBUFFER_HEIGHT);
 
-#if (1) /* not use camera captured layer */
         gr_disp_cnf.layer_id         = VDC_LAYER_ID_1_RD;
-#else   /* blend over camera captured image */
-        gr_disp_cnf.layer_id         = VDC_LAYER_ID_2_RD;
-#endif
         gr_disp_cnf.disp_area.hs_rel = 0;
         gr_disp_cnf.disp_area.hw_rel = FRAMEBUFFER_WIDTH;
         gr_disp_cnf.disp_area.vs_rel = 0;
         gr_disp_cnf.disp_area.vw_rel = FRAMEBUFFER_HEIGHT;
         gr_disp_cnf.fb_buff          = &frame_buffer1[0];
         gr_disp_cnf.fb_stride        = FRAMEBUFFER_STRIDE;
-        gr_disp_cnf.read_format      = VDC_GR_FORMAT_CLUT8;
-#if defined FRAME_BUFFER_BITS_PER_PIXEL_16
-        gr_disp_cnf.read_format      = VDC_GR_FORMAT_RGB565;
-#elif defined FRAME_BUFFER_BITS_PER_PIXEL_32
         gr_disp_cnf.read_format      = VDC_GR_FORMAT_RGB888;
-#endif
         gr_disp_cnf.clut_table       = clut_table;
         gr_disp_cnf.read_ycc_swap    = VDC_GR_YCCSWAP_CBY0CRY1;
         gr_disp_cnf.read_swap        = VDC_WR_RD_WRSWA_32BIT;
-#if (1) /* not use camera captured data */
         gr_disp_cnf.disp_mode        = VDC_DISPSEL_CURRENT;
-#else   /* blend over camera captured image */
-        gr_disp_cnf.disp_mode        = VDC_DISPSEL_BLEND;
-#endif
+
         error = R_RVAPI_GraphCreateSurfaceVDC(vdc_ch, &gr_disp_cnf);
     }
 
