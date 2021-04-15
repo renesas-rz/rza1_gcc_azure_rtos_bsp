@@ -22,3 +22,4 @@
 /thermostat.o
 /weather.d
 /weather.o
+/subdir.mk
