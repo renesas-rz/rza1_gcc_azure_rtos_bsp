@@ -308,6 +308,7 @@ int32_t R_LED_GetVersion(st_ver_info_t *pinfo)
  ******************************************************************************/
 static void R_LED_InitPortExpander()
 {
+#if (TARGET_BOARD == TARGET_BOARD_RSK)
     uint8_t px_addr, px_data, px_config;
     
     R_RIIC_CAT9554_Open();
@@ -326,6 +327,7 @@ static void R_LED_InitPortExpander()
     px_data = 0;
     px_config = PX1_LED1 | PX1_LED2 | PX1_LED3;
     R_RIIC_CAT9554_Write(px_addr, px_data, px_config);
+#endif
 }
 /*******************************************************************************
  End of function R_LED_InitPortExpander

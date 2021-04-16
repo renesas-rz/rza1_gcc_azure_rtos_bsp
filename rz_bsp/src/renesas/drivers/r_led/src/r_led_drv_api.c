@@ -191,15 +191,11 @@ static void led_close(st_stream_ptr_t pStream)
  ******************************************************************************/
 static int_t led_read(st_stream_ptr_t pStream, uint8_t *pbyBuffer, uint32_t uiCount)
 {
-    int_t retval = 0; /* no error possible */
-
-    (void) uiCount;
     (void) pStream;
+    (void) pbyBuffer;
     (void) uiCount;
 
-    *pbyBuffer = R_LED_ReadLed (LED0);
-
-    return retval;
+    return DEVDRV_ERROR;
 }
 /*******************************************************************************
  End of function led_read
