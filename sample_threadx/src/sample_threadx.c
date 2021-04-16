@@ -1,8 +1,16 @@
 /* This is a small demo of the high-performance ThreadX kernel.  It includes examples of eight
    threads of different priorities, using a message queue, semaphore, mutex, event flags group, 
    byte pool, and block pool.  */
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <fcntl.h>
 
-#include   "tx_api.h"
+#include "compiler_settings.h"
+#include "iodefine_cfg.h"
+#include "control.h"
+
+#include "tx_api.h"
 
 #define     DEMO_STACK_SIZE         1024
 #define     DEMO_BYTE_POOL_SIZE     9120
@@ -177,7 +185,8 @@ void    thread_0_entry(ULONG thread_input)
 {
 
 UINT    status;
-    
+printf("Created Thread %d\n", thread_input);
+
     /* This thread simply sits in while-forever-sleep loop.  */
     while(1)
     {
@@ -203,7 +212,7 @@ void    thread_1_entry(ULONG thread_input)
 
 UINT    status;
 
-
+	printf("Created Thread %d\n", thread_input);
     /* This thread simply sends messages to a queue shared by thread 2.  */
     while(1)
     {
@@ -230,6 +239,7 @@ void    thread_2_entry(ULONG thread_input)
 ULONG   received_message;
 UINT    status;
 
+	printf("Created Thread %d\n", thread_input);
     /* This thread retrieves messages placed on the queue by thread 1.  */
     while(1)
     {
@@ -256,7 +266,7 @@ void    thread_3_and_4_entry(ULONG thread_input)
 
 UINT    status;
 
-
+	printf("Created Thread %d\n", thread_input);
     /* This function is executed from thread 3 and thread 4.  As the loop
        below shows, these function compete for ownership of semaphore_0.  */
     while(1)
@@ -294,7 +304,7 @@ void    thread_5_entry(ULONG thread_input)
 UINT    status;
 ULONG   actual_flags;
 
-
+	printf("Created Thread %d\n", thread_input);
     /* This thread simply waits for an event in a forever loop.  */
     while(1)
     {
@@ -318,7 +328,7 @@ void    thread_6_and_7_entry(ULONG thread_input)
 
 UINT    status;
 
-
+	printf("Created Thread %d\n", thread_input);
     /* This function is executed from thread 6 and thread 7.  As the loop
        below shows, these function compete for ownership of mutex_0.  */
     while(1)
