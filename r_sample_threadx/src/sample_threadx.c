@@ -22,7 +22,7 @@ os_task_t               thread_5;
 os_task_t               thread_6;
 os_task_t               thread_7;
 os_msg_queue_handle_t   queue_0;
-semaphore_t             semaphore_0;
+psemaphore_t            semaphore_0;
 event_t	                mutex_0;
 event_t	    			event_flags_0;
 TX_BYTE_POOL            byte_pool_0;
@@ -312,7 +312,7 @@ UINT    status;
             thread_4_counter++;
 
         /* Get the semaphore with suspension.  */
-        if ( !R_OS_WaitForSemaphore( &semaphore_0, TX_WAIT_FOREVER)) {
+        if ( !R_OS_WaitForSemaphore( semaphore_0, TX_WAIT_FOREVER)) {
         	/* Check status.  */
         	break;
         }
@@ -321,7 +321,7 @@ UINT    status;
         R_OS_TaskSleep(2);
 
         /* Release the semaphore.  */
-        if ( !R_OS_ReleaseSemaphore( &semaphore_0) ) {
+        if ( !R_OS_ReleaseSemaphore( semaphore_0) ) {
         	/* Check status.  */
         	break;
         }
