@@ -1,0 +1,116 @@
+/******************************************************************************
+* DISCLAIMER
+* This software is supplied by Renesas Electronics Corporation and is only
+* intended for use with Renesas products. No other uses are authorized. This
+* software is owned by Renesas Electronics Corporation and is protected under
+* all applicable laws, including copyright laws.
+* THIS SOFTWARE IS PROVIDED "AS IS" AND RENESAS MAKES NO WARRANTIES REGARDING
+* THIS SOFTWARE, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING BUT NOT
+* LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
+* AND NON-INFRINGEMENT. ALL SUCH WARRANTIES ARE EXPRESSLY DISCLAIMED.
+* TO THE MAXIMUM EXTENT PERMITTED NOT PROHIBITED BY LAW, NEITHER RENESAS
+* ELECTRONICS CORPORATION NOR ANY OF ITS AFFILIATED COMPANIES SHALL BE LIABLE
+* FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES FOR
+* ANY REASON RELATED TO THIS SOFTWARE, EVEN IF RENESAS OR ITS AFFILIATES HAVE
+* BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+* Renesas reserves the right, without notice, to make changes to this software
+* and to discontinue the availability of this software. By using this software,
+* you agree to the additional terms and conditions found by accessing the
+* following link:
+* http://www.renesas.com/disclaimer
+*******************************************************************************
+* Copyright (C) 2018 Renesas Electronics Corporation. All rights reserved.
+
+*******************************************************************************
+* File Name    : r_devlink_wrapper_cfg.h
+* Description  : Define and Configure driver sunsystem
+*******************************************************************************
+* History      : DD.MM.YYYY Ver. Description
+*              : 07.02.2018 1.00 First Release
+******************************************************************************/
+
+/******************************************************************************
+  WARNING!  IN ACCORDANCE WITH THE USER LICENCE THIS CODE MUST NOT BE CONVEYED
+  OR REDISTRIBUTED IN COMBINATION WITH ANY SOFTWARE LICENSED UNDER TERMS THE
+  SAME AS OR SIMILAR TO THE GNU GENERAL PUBLIC LICENCE
+******************************************************************************/
+
+
+
+#ifndef RENESAS_CONFIGURATION_R_DEVLINK_WRAPPER_CFG_H_
+#define RENESAS_CONFIGURATION_R_DEVLINK_WRAPPER_CFG_H_
+
+/* Modified by sc do not manually edit */
+/* End of sc modification */
+
+/* Modified by user please add your drivers here */
+#include "r_sc_cfg.h"
+#include "r_ostm_drv_api.h"
+#include "r_iic_drv_api.h"
+#include "r_sci_drv_api.h"
+#include "r_led_drv_api.h"
+#include "r_rtc_drv_api.h"
+
+/* End of user modification */
+
+
+/* Define the static "Mount Table" in which a device is associated with a
+   link name */
+typedef const struct _mount_table_t
+{
+    const char *    p_stream_name;
+    st_r_driver_t * p_device_driver;
+    const uint32_t  sc_config_index;
+} st_mount_table_t;
+
+
+/* Mount table should only be access directly by this file */
+static st_mount_table_t gs_mount_table[] =
+{
+
+ /* Modified by SC do not manually edit */
+
+ /* End of SC modification */
+
+ /* Modified by user, drivers that are not under the control of sc added here */
+ /*  */
+   {"stdin", (st_r_driver_t *)&g_scif_driver, R_SC3},
+
+ /*  */
+   {"stdout", (st_r_driver_t *)&g_scif_driver, R_SC3},
+
+ /*  */
+   {"stderr", (st_r_driver_t *)&g_scif_driver, R_SC3},
+
+
+ /*  */
+   {"ostm0",    (st_r_driver_t *)&g_ostm_driver, R_SC0},
+
+ /*  */
+   {"ostm1",    (st_r_driver_t *)&g_ostm_driver, R_SC1},
+
+ /* LED Driver added by SC */
+   {"led", (st_r_driver_t *)&g_stdio_led_driver, R_SC0},
+
+   /* IIC Channel 0 Driver added by SC */
+   {"iic0", (st_r_driver_t *)&g_riic_driver, R_SC0},
+
+   /* IIC Channel 1 Driver added by SC */
+   {"iic1", (st_r_driver_t *)&g_riic_driver, R_SC1},
+
+   /* SCI Channel 3 Driver added by SC */
+   {"scif3", (st_r_driver_t *)&g_scif_driver, R_SC3},
+
+   /* RTC driver added by CG */
+   {"rtc", (st_r_driver_t *)&g_rtc_driver, R_SC0},
+
+ /* End of user modification */
+
+};
+
+
+
+
+
+
+#endif /* RENESAS_CONFIGURATION_R_DEVLINK_WRAPPER_CFG_H_ */
