@@ -36,18 +36,30 @@
 #define RSPI0   (*(struct st_rspi    *)0xE800C800uL) /* RSPI0 */
 #define RSPI1   (*(struct st_rspi    *)0xE800D000uL) /* RSPI1 */
 #define RSPI2   (*(struct st_rspi    *)0xE800D800uL) /* RSPI2 */
+#if ((TARGET_RZA1 == TARGET_RZA1H) || (TARGET_RZA1 == TARGET_RZA1M))
+#define RSPI3   (*(struct st_rspi    *)0xE800E000uL) /* RSPI3 */
+#define RSPI4   (*(struct st_rspi    *)0xE800E800uL) /* RSPI4 */
+#endif
 
 
 /* Start of channel array defines of RSPI */
 
 /* Channel array defines of RSPI */
+#if ((TARGET_RZA1 == TARGET_RZA1H) || (TARGET_RZA1 == TARGET_RZA1M))
+/*(Sample) value = RSPI[ channel ]->SPCR; */
+#define RSPI_COUNT  (5)
+#define RSPI_ADDRESS_LIST \
+{   /* ->MISRA 11.3 */ /* ->SEC R2.7.1 */ \
+    &RSPI0, &RSPI1, &RSPI2, &RSPI3, &RSPI4 \
+}   /* <-MISRA 11.3 */ /* <-SEC R2.7.1 */ /* { } is for MISRA 19.4 */
+#else
 /*(Sample) value = RSPI[ channel ]->SPCR; */
 #define RSPI_COUNT  (3)
 #define RSPI_ADDRESS_LIST \
 {   /* ->MISRA 11.3 */ /* ->SEC R2.7.1 */ \
     &RSPI0, &RSPI1, &RSPI2 \
 }   /* <-MISRA 11.3 */ /* <-SEC R2.7.1 */ /* { } is for MISRA 19.4 */
-
+#endif
 /* End of channel array defines of RSPI */
 
 
@@ -123,6 +135,56 @@
 #define SPCMD3_2 (RSPI2.SPCMD3)
 #define SPBFCR_2 (RSPI2.SPBFCR)
 #define SPBFDR_2 (RSPI2.SPBFDR)
+#if ((TARGET_RZA1 == TARGET_RZA1H) || (TARGET_RZA1 == TARGET_RZA1M))
+#define SPCR_3 (RSPI3.SPCR)
+#define SSLP_3 (RSPI3.SSLP)
+#define SPPCR_3 (RSPI3.SPPCR)
+#define SPSR_3 (RSPI3.SPSR)
+#define SPDR_3   (RSPI3.SPDR.UINT32)
+#define SPDR_3L  (RSPI3.SPDR.UINT16[R_IO_L])
+#define SPDR_3H  (RSPI3.SPDR.UINT16[R_IO_H])
+#define SPDR_3LL (RSPI3.SPDR.UINT8[R_IO_LL])
+#define SPDR_3LH (RSPI3.SPDR.UINT8[R_IO_LH])
+#define SPDR_3HL (RSPI3.SPDR.UINT8[R_IO_HL])
+#define SPDR_3HH (RSPI3.SPDR.UINT8[R_IO_HH])
+#define SPSCR_3 (RSPI3.SPSCR)
+#define SPSSR_3 (RSPI3.SPSSR)
+#define SPBR_3 (RSPI3.SPBR)
+#define SPDCR_3 (RSPI3.SPDCR)
+#define SPCKD_3 (RSPI3.SPCKD)
+#define SSLND_3 (RSPI3.SSLND)
+#define SPND_3 (RSPI3.SPND)
+#define SPCMD0_3 (RSPI3.SPCMD0)
+#define SPCMD1_3 (RSPI3.SPCMD1)
+#define SPCMD2_3 (RSPI3.SPCMD2)
+#define SPCMD3_3 (RSPI3.SPCMD3)
+#define SPBFCR_3 (RSPI3.SPBFCR)
+#define SPBFDR_3 (RSPI3.SPBFDR)
+#define SPCR_4 (RSPI4.SPCR)
+#define SSLP_4 (RSPI4.SSLP)
+#define SPPCR_4 (RSPI4.SPPCR)
+#define SPSR_4 (RSPI4.SPSR)
+#define SPDR_4   (RSPI4.SPDR.UINT32)
+#define SPDR_4L  (RSPI4.SPDR.UINT16[R_IO_L])
+#define SPDR_4H  (RSPI4.SPDR.UINT16[R_IO_H])
+#define SPDR_4LL (RSPI4.SPDR.UINT8[R_IO_LL])
+#define SPDR_4LH (RSPI4.SPDR.UINT8[R_IO_LH])
+#define SPDR_4HL (RSPI4.SPDR.UINT8[R_IO_HL])
+#define SPDR_4HH (RSPI4.SPDR.UINT8[R_IO_HH])
+#define SPSCR_4 (RSPI4.SPSCR)
+#define SPSSR_4 (RSPI4.SPSSR)
+#define SPBR_4 (RSPI4.SPBR)
+#define SPDCR_4 (RSPI4.SPDCR)
+#define SPCKD_4 (RSPI4.SPCKD)
+#define SSLND_4 (RSPI4.SSLND)
+#define SPND_4 (RSPI4.SPND)
+#define SPCMD0_4 (RSPI4.SPCMD0)
+#define SPCMD1_4 (RSPI4.SPCMD1)
+#define SPCMD2_4 (RSPI4.SPCMD2)
+#define SPCMD3_4 (RSPI4.SPCMD3)
+#define SPBFCR_4 (RSPI4.SPBFCR)
+#define SPBFDR_4 (RSPI4.SPBFDR)
+#endif
 
 #define SPCMD_COUNT (4)
 

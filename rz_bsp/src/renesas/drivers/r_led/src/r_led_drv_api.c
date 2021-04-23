@@ -248,7 +248,7 @@ static int_t led_control(st_stream_ptr_t pStream, uint32_t ctrl_code, void *ctrl
                      * though the Renesas Compiler uses 4 bytes per pointer, this
                      * pointer will never reference memory over 0xFFFFFFFF. */
                     int32_t i_led_map = (*(int32_t*) ctrl_ptr);
-                    gs_r_drv_led.i_led_map &= (~i_led_map);
+                    gs_r_drv_led.i_led_map |= i_led_map;
                     retval = R_LED_Update (gs_r_drv_led.i_led_map);
                     break;
                 }
@@ -258,7 +258,7 @@ static int_t led_control(st_stream_ptr_t pStream, uint32_t ctrl_code, void *ctrl
                      * though the Renesas Compiler uses 4 bytes per pointer, this
                      * pointer will never reference memory over 0xFFFFFFFF. */
                     int32_t i_led_map = (*(int32_t*) ctrl_ptr);
-                    gs_r_drv_led.i_led_map |= i_led_map;
+                    gs_r_drv_led.i_led_map &= (~i_led_map);
                     retval = R_LED_Update (gs_r_drv_led.i_led_map);
                     break;
                 }

@@ -31,7 +31,7 @@
 /*******************************************************************************
 Includes <System Includes>, "Project Includes"
 *******************************************************************************/
-#include "cmsis_os.h"
+#include "r_os_abstraction_api.h"
 #include "fcntl.h"
 #include "ssif.h"
 #include "mcu_board_select.h"
@@ -300,7 +300,7 @@ static int_t R_SSIF_Open(void* const p_driver_instance, const char_t* const p_pa
         if (IOIF_ESUCCESS == ercd)
         {
             /* ->MISRA 10.6 : This macro is defined by CMSIS-RTOS that can't be modified. */
-            os_ret = R_OS_WaitForSemaphore( p_info_ch->sem_access, osWaitForever);
+            os_ret = R_OS_WaitForSemaphore( p_info_ch->sem_access, R_OS_ABSTRACTION_PRV_EV_WAIT_INFINITE);
             /* <-MISRA 10.6 */
 
             if ((-1) == os_ret)
@@ -369,7 +369,7 @@ static int_t R_SSIF_Close(void* const p_fd, int32_t* const p_errno)
     {
         /* ->MISRA 10.6 : This macro is defined by CMSIS-RTOS that can't be modified. */
         /* Get semaphore to access the channel data */
-        os_ret = R_OS_WaitForSemaphore( p_info_ch->sem_access, osWaitForever);
+        os_ret = R_OS_WaitForSemaphore( p_info_ch->sem_access, R_OS_ABSTRACTION_PRV_EV_WAIT_INFINITE);
         /* <-MISRA 10.6 */
 
         if ((-1) == os_ret)
@@ -447,7 +447,7 @@ static int_t R_SSIF_Ioctl(void* const p_fd, const int_t request, void* const p_b
         else
         {
             /* ->MISRA 10.6 : This macro is defined by CMSIS-RTOS that can't be modified. */
-            os_ret = R_OS_WaitForSemaphore( p_info_ch->sem_access, osWaitForever);
+            os_ret = R_OS_WaitForSemaphore( p_info_ch->sem_access, R_OS_ABSTRACTION_PRV_EV_WAIT_INFINITE);
             /* <-MISRA 10.6 */
 
             if ((-1) == os_ret)
@@ -641,7 +641,7 @@ static int_t R_SSIF_Cancel(void* const p_fd, AIOCB* const p_aio, int32_t* const 
     {
         /* ->MISRA 10.6 : This macro is defined by CMSIS-RTOS that can't be modified. */
         /* Get semaphore to access the channel data */
-        os_ret = R_OS_WaitForSemaphore( p_info_ch->sem_access, osWaitForever);
+        os_ret = R_OS_WaitForSemaphore( p_info_ch->sem_access, R_OS_ABSTRACTION_PRV_EV_WAIT_INFINITE);
         /* <-MISRA 10.6 */
 
         if ((-1) == os_ret)

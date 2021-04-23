@@ -42,7 +42,6 @@
 /******************************************************************************
  Includes   <System Includes> , "Project Includes"
  ******************************************************************************/
-#include <r_intc.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -53,11 +52,13 @@
 
 #include "r_sci_drv_api.h"
 #include "r_sci_drv_link.h"
+#include "r_intc.h"
 
 #include "scif_iobitmask.h"
 
 /* Common configuration file for all ISR's */
 #include "r_task_priority.h"
+#include "mcu_board_select.h"
 
 
 /******************************************************************************
@@ -65,12 +66,20 @@
  ******************************************************************************/
 
 /* Define the base pointer of the SCIF to use */
+#if (TARGET_BOARD == TARGET_BOARD_STREAM_IT2)
 #define P_SCI_BASE                  SCIF3
+#elif (TARGET_BOARD == TARGET_BOARD_RSK)
+#define P_SCI_BASE                  SCIF2
+#endif
 
 /* Define the size of the software FIFOs */
 #define SCIF_RX_SOFTWARE_FIFO_SIZE  (1024)
 #define SCIF_TX_SOFTWARE_FIFO_SIZE  (64 * 1024)
+#if (TARGET_BOARD == TARGET_BOARD_STREAM_IT2)
 #define SCI_PERIPHERAL_HZ           (64000000UL)
+#elif (TARGET_BOARD == TARGET_BOARD_RSK)
+#define SCI_PERIPHERAL_HZ           (66666666UL)
+#endif
 
 /* Define the interrupt priority in r_task_priority.h */
 #define SCIF_INTERRUPT_DISABLED     0x00
@@ -179,7 +188,7 @@ int scifOutputDebugString (uint8_t *pbyBuffer, uint32_t uiCount)
 
 /******************************************************************************
  Function Name: scif_open
- Description:   Function to open SCIF3
+ Description:   Function to open SCIF
  Arguments:     IN  pStream - Pointer to the file stream
  Return value:  0 for success otherwise -1
  ******************************************************************************/
@@ -219,6 +228,7 @@ static int_t scif_open (st_stream_ptr_t pStream)
     /* R_SCI_InitialiseHwIf needs to return DRV_SUCCESS for driver to be used */
     if(DRV_SUCCESS == res)
     {
+#if (TARGET_BOARD == TARGET_BOARD_STREAM_IT2)
         /* Get the interrupt vectors */
         R_INTC_RegistIntFunc(INTC_ID_BRI3, (void (*) (uint32_t)) INT_SCIF_BRI);
         R_INTC_RegistIntFunc(INTC_ID_ERI3, (void (*) (uint32_t)) INT_SCIF_ERI);
@@ -243,6 +253,32 @@ static int_t scif_open (st_stream_ptr_t pStream)
             cbDestroy(pRxBuffer);
             return (-1);
         }
+#elif (TARGET_BOARD == TARGET_BOARD_RSK)
+        /* Get the interrupt vectors */
+        R_INTC_RegistIntFunc(INTC_ID_BRI2, (void (*) (uint32_t)) INT_SCIF_BRI);
+        R_INTC_RegistIntFunc(INTC_ID_ERI2, (void (*) (uint32_t)) INT_SCIF_ERI);
+        R_INTC_RegistIntFunc(INTC_ID_RXI2, (void (*) (uint32_t)) INT_SCIF_RXI);
+        R_INTC_RegistIntFunc(INTC_ID_TXI2, (void (*) (uint32_t)) INT_SCIF_TXI);
+
+        /* Set the interrupt priority */
+        R_INTC_SetPriority(INTC_ID_BRI2, ISR_SCIF2_PRIORITY);
+        R_INTC_SetPriority(INTC_ID_ERI2, ISR_SCIF2_PRIORITY);
+        R_INTC_SetPriority(INTC_ID_RXI2, ISR_SCIF2_PRIORITY);
+        R_INTC_SetPriority(INTC_ID_TXI2, ISR_SCIF2_PRIORITY);
+
+        /* send the configuration id as an input to the sciOpen function */
+
+        gDDSCIF.smart_config_id = pStream->sc_config_index;
+
+        /* Start the lower level driver */
+        if (sciOpen(&gDDSCIF, &P_SCI_BASE, (PSCIFCFG)&gScifDefaultConfig, pRxBuffer, pTxBuffer))
+        {
+            /* Destroy the software FIFOS */
+            cbDestroy(pTxBuffer);
+            cbDestroy(pRxBuffer);
+            return (-1);
+        }
+#endif
 
         /* Increment the reference count */
         giRefCount++;
@@ -280,11 +316,19 @@ static void scif_close(st_stream_ptr_t pStream)
 
         /* Set pins back to default function */
         //TODO: Set SCI pins back to port pins
+#if (TARGET_BOARD == TARGET_BOARD_STREAM_IT2)
         /* Revert the interrupt priority */
         R_INTC_SetPriority(INTC_ID_BRI3, SCIF_INTERRUPT_DISABLED);
         R_INTC_SetPriority(INTC_ID_ERI3, SCIF_INTERRUPT_DISABLED);
         R_INTC_SetPriority(INTC_ID_RXI3, SCIF_INTERRUPT_DISABLED);
         R_INTC_SetPriority(INTC_ID_TXI3, SCIF_INTERRUPT_DISABLED);
+#elif (TARGET_BOARD == TARGET_BOARD_RSK)
+        /* Revert the interrupt priority */
+        R_INTC_SetPriority(INTC_ID_BRI2, SCIF_INTERRUPT_DISABLED);
+        R_INTC_SetPriority(INTC_ID_ERI2, SCIF_INTERRUPT_DISABLED);
+        R_INTC_SetPriority(INTC_ID_RXI2, SCIF_INTERRUPT_DISABLED);
+        R_INTC_SetPriority(INTC_ID_TXI2, SCIF_INTERRUPT_DISABLED);
+#endif
 
         /* Destroy the software FIFOS */
         cbDestroy(gDDSCIF.pTxBuffer);
@@ -435,17 +479,31 @@ static void sciSetIRQ (_Bool bfEnable)
 {
     if (bfEnable)
     {
+#if (TARGET_BOARD == TARGET_BOARD_STREAM_IT2)
         R_INTC_Enable(INTC_ID_BRI3);
         R_INTC_Enable(INTC_ID_ERI3);
         R_INTC_Enable(INTC_ID_RXI3);
         R_INTC_Enable(INTC_ID_TXI3);
+#elif (TARGET_BOARD == TARGET_BOARD_RSK)
+        R_INTC_Enable(INTC_ID_BRI2);
+        R_INTC_Enable(INTC_ID_ERI2);
+        R_INTC_Enable(INTC_ID_RXI2);
+        R_INTC_Enable(INTC_ID_TXI2);
+#endif
     }
     else
     {
+#if (TARGET_BOARD == TARGET_BOARD_STREAM_IT2)
         R_INTC_Disable(INTC_ID_BRI3);
         R_INTC_Disable(INTC_ID_ERI3);
         R_INTC_Disable(INTC_ID_RXI3);
         R_INTC_Disable(INTC_ID_TXI3);
+#elif (TARGET_BOARD == TARGET_BOARD_RSK)
+        R_INTC_Disable(INTC_ID_BRI2);
+        R_INTC_Disable(INTC_ID_ERI2);
+        R_INTC_Disable(INTC_ID_RXI2);
+        R_INTC_Disable(INTC_ID_TXI2);
+#endif
     }
 }
 /******************************************************************************

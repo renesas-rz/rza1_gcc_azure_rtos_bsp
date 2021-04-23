@@ -461,7 +461,7 @@ os_task_t R_OS_CreateTask (const char_t *name, os_task_code_t task_code, void *p
 					(ULONG)stack_size,
 					priority,
 					(UINT)priority, /* Preempt threshold */
-					(ULONG)8ul,
+					(ULONG)0ul,
 					TX_AUTO_START) != TX_SUCCESS) {
 
 				tx_byte_release( thread_ptr );

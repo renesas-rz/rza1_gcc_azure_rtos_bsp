@@ -81,7 +81,7 @@ static void SSIF_ERI_Handler(const uint32_t ssif_ch);
 ******************************************************************************/
 void SSIF_InterruptInit(const uint32_t ssif_ch, const uint8_t int_level)
 {
-    uint32_t ret;
+    int32_t ret;
 
     switch (ssif_ch)
     {

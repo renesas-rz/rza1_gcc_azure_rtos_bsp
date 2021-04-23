@@ -64,7 +64,7 @@
  *
  * @anchor R_SW_PKG_93_WDT_API_INSTANCES
  * @par Known Implementations:
- * This driver is used in the RZA1LU Software Package.
+ * This driver is used in the RZA1 Software Package.
  * @ref RENESAS_APPLICATION_SOFTWARE_PACKAGE
  * @{
  *****************************************************************************/

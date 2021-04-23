@@ -63,6 +63,7 @@
 #include "control.h"
 #include "ssif_if.h"
 #include "aioif.h"
+#include "mcu_board_select.h"
 
 
 
@@ -71,7 +72,17 @@ Macro definitions
 ******************************************************************************/
 /* Version Number of API */
 /** Driver Name */
+#if (TARGET_RZA1 == TARGET_RZA1LC)
+#define STDIO_SSIF_RZ_LLD_DRV_NAME ("LLD SITRZA1LC.WDT")
+#elif (TARGET_RZA1 == TARGET_RZA1L)
+#define STDIO_SSIF_RZ_LLD_DRV_NAME ("LLD SITRZA1L.WDT")
+#elif (TARGET_RZA1 == TARGET_RZA1LU)
 #define STDIO_SSIF_RZ_LLD_DRV_NAME ("LLD SITRZA1LU.WDT")
+#elif (TARGET_RZA1 == TARGET_RZA1M)
+#define STDIO_SSIF_RZ_LLD_DRV_NAME ("LLD SITRZA1M.WDT")
+#elif (TARGET_RZA1 == TARGET_RZA1H)
+#define STDIO_SSIF_RZ_LLD_DRV_NAME ("LLD SITRZA1H.WDT")
+#endif
 
 /** Major Version Number of API */
 #define STDIO_SSIF_RZ_LLD_VERSION_MAJOR      (1)
@@ -87,6 +98,11 @@ Macro definitions
 #define SSIF_CHNUM_1    (1u)
 #define SSIF_CHNUM_2    (2u)
 #define SSIF_CHNUM_3    (3u)
+#if (TARGET_RZA1 <= TARGET_RZA1LU)
+#else /* TARGET_RZA1H */
+#define SSIF_CHNUM_4    (4u)
+#define SSIF_CHNUM_5    (5u)
+#endif
 
 #define SSIF_CHSTR_0 "\\0"
 #define SSIF_CHSTR_1 "\\1"
@@ -265,6 +281,10 @@ typedef struct ssif_info_ch
     ssif_chcfg_noise_cancel_t       noise_cancel;
     ssif_chcfg_tdm_t                tdm_mode;
     ssif_chcfg_ckdv_t               clk_div;
+#if (TARGET_RZA1 <= TARGET_RZA1LU)
+#else /* TARGET_RZA1H */
+    ssif_chcfg_romdec_t             romdec_direct;
+#endif
 } ssif_info_ch_t;
 
 /** driver information structure */

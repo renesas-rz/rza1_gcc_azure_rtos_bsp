@@ -30,12 +30,11 @@
 /******************************************************************************
  Includes <System Includes>, "Project Includes"
  *****************************************************************************/
+#include "mcu_board_select.h"
 #include "ssif.h"
 #include "ssif_int.h"
 #include "fcntl.h"
 #include "Renesas_RZ_A1.h"
-#include "mcu_board_select.h"
-
 #include "r_dmac_drv_api.h"
 
 /******************************************************************************
@@ -90,12 +89,15 @@ static const e_r_drv_dmac_xfer_resource_t
 static const e_r_drv_dmac_xfer_resource_t
         s_ssif_dma_rx_resource[SSIF_NUM_CHANS] =
 {
+#if (TARGET_RZA1 <= TARGET_RZA1LU)
     DMA_RS_SSIRXI0,
     DMA_RS_SSIRXI1,
     DMA_RS_SSIRXI2,
-#if (TARGET_RZA1 <= TARGET_RZA1LU)
     DMA_RS_SSIRXI3
 #else /* TARGET_RZA1H */
+    DMA_RS_SSIRXI0,
+    DMA_RS_SSIRXI1,
+	DMA_RS_SSIRTI2,
     DMA_RS_SSIRXI3,
     DMA_RS_SSIRTI4,
     DMA_RS_SSIRXI5
@@ -222,16 +224,16 @@ int_t SSIF_InitDMA(ssif_info_ch_t * const p_info_ch)
             if (SSIF_CFG_ENABLE_ROMDEC_DIRECT != p_info_ch->romdec_direct.mode)
             {
                 /* setup short dummy transfer */
-                s_ssif_rxdma_dummy_trparam[ssif_ch].src_addr = (void *) &g_ssireg[ssif_ch]->SSIFRDR;
+                s_ssif_rxdma_dummy_trparam[ssif_ch].source_address = (void *) &g_ssireg[ssif_ch]->SSIFRDR;
                 s_ssif_rxdma_dummy_trparam[ssif_ch].destination_address = (void *) &s_ssif_rx_dummy_buf[0];
-                s_ssif_rxdma_dummy_trparam[ssif_ch].count = SSIF_DUMMY_DMA_TRN_SIZE;
+                s_ssif_rxdma_dummy_trparam[ssif_ch].count = SSIF_DUMMY_DMA_TRN_SIZE_PRV_;
             }
             else
             {
                 /* setup ROMDEC direct input transfer */
-                s_ssif_rxdma_dummy_trparam[ssif_ch].src_addr = (void *) &g_ssireg[ssif_ch]->SSIFRDR;
+                s_ssif_rxdma_dummy_trparam[ssif_ch].source_address = (void *) &g_ssireg[ssif_ch]->SSIFRDR;
                 s_ssif_rxdma_dummy_trparam[ssif_ch].destination_address = (void *) &ROMDEC.STRMDIN0;
-                s_ssif_rxdma_dummy_trparam[ssif_ch].count = SSIF_ROMDEC_DMA_SIZE;
+                s_ssif_rxdma_dummy_trparam[ssif_ch].count = SSIF_ROMDEC_DMA_SIZE_PRV_;
             }
 #endif /* (TARGET_RZA1 <= TARGET_RZA1LU) */
 

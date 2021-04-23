@@ -71,7 +71,9 @@ static void setup_peripheral (int_t channel, uint32_t cks, uint32_t brl, uint32_
 static void register_interrupts (int_t channel);
 static void channel0_port_init (void);
 static void channel1_port_init (void);
-
+#if ((TARGET_RZA1 == TARGET_RZA1H) || (TARGET_RZA1 == TARGET_RZA1M))
+static void channel3_port_init (void);
+#endif
 /* An array of pointers to the riic peripheral for easy access. */
 static const volatile struct st_riic *gsp_riic[] =
 { ( &RIIC0), ( &RIIC1), ( &RIIC2), ( &RIIC3) };
@@ -82,7 +84,7 @@ static const st_drv_info_t gs_lld_info =
 STDIO_RIIC_RZ_LLD_DRV_NAME };
 
 /**
- * @brief initialise the specified i2c channel
+ * @brief initialize the specified i2c channel
  * @param[in] channel : the device specific channel number (< RIIC_LLD_NUM_CHANNELS)
  * @return    DEVDRV_SUCCESS       : Success of RIIC operation
  *            DEVDRV_ERROR         : Failure of RIIC operation
@@ -109,7 +111,13 @@ int_t R_RIIC_InitChannel (int_t channel, e_clk_frequency_riic_t frequency)
             channel1_port_init();
         }
         break;
-
+#if ((TARGET_RZA1 == TARGET_RZA1H) || (TARGET_RZA1 == TARGET_RZA1M))
+        case R_SC3:
+        {
+            channel3_port_init();
+        }
+        break;
+#endif
         default:
         {
             /* invalid port number */
@@ -626,7 +634,7 @@ static void setup_peripheral (int_t channel, uint32_t cks, uint32_t brl, uint32_
  **/
 static void channel0_port_init (void)
 {
-    /* ---- P1_2 : SCL1 ---- */
+    /* ---- P1_0 : SCL0 ---- */
     /* Port initialise */
     rza_io_reg_write_16( &GPIO.PIBC1, 0, GPIO_PIBC1_PIBC10_SHIFT, GPIO_PIBC1_PIBC10);
     rza_io_reg_write_16( &GPIO.PBDC1, 1, GPIO_PBDC1_PBDC10_SHIFT, GPIO_PBDC1_PBDC10);
@@ -714,7 +722,54 @@ static void channel1_port_init (void)
 /*******************************************************************************
  End of function channel1_port_init
  ******************************************************************************/
+#if ((TARGET_RZA1 == TARGET_RZA1H) || (TARGET_RZA1 == TARGET_RZA1M))
+/**
+ * @brief Initialises channel 3 i2c port registers for this board
+ **/
+static void channel3_port_init (void)
+{
+    /* ---- P1_6 : SCL3 ---- */
+    /* Port initialise */
+    rza_io_reg_write_16( &GPIO.PIBC1, 0, GPIO_PIBC1_PIBC16_SHIFT, GPIO_PIBC1_PIBC16);
+    rza_io_reg_write_16( &GPIO.PBDC1, 1, GPIO_PBDC1_PBDC16_SHIFT, GPIO_PBDC1_PBDC16);
+    rza_io_reg_write_16( &GPIO.PM1, 1, GPIO_PM1_PM16_SHIFT, GPIO_PM1_PM16);
+    rza_io_reg_write_16( &GPIO.PMC1, 0, GPIO_PMC1_PMC16_SHIFT, GPIO_PMC1_PMC16);
+    rza_io_reg_write_16( &GPIO.PIPC1, 1, GPIO_PIPC1_PIPC16_SHIFT, GPIO_PIPC1_PIPC16);
 
+    /* Port mode : Multiplex mode                     */
+    /* Port function setting : 1st multiplex function */
+    /* I/O control mode : Peripheral function         */
+    /* Bidirectional mode : Enable                    */
+    rza_io_reg_write_16( &GPIO.PBDC1, 1, GPIO_PBDC1_PBDC16_SHIFT, GPIO_PBDC1_PBDC16);
+    rza_io_reg_write_16( &GPIO.PFC1, 0, GPIO_PFC1_PFC16_SHIFT, GPIO_PFC1_PFC16);
+    rza_io_reg_write_16( &GPIO.PFCE1, 0, GPIO_PFCE1_PFCE16_SHIFT, GPIO_PFCE1_PFCE16);
+    rza_io_reg_write_16( &GPIO.PFCAE1, 0, GPIO_PFCAE1_PFCAE16_SHIFT, GPIO_PFCAE1_PFCAE16);
+    rza_io_reg_write_16( &GPIO.PIPC1, 1, GPIO_PIPC1_PIPC16_SHIFT, GPIO_PIPC1_PIPC16);
+    rza_io_reg_write_16( &GPIO.PMC1, 1, GPIO_PMC1_PMC16_SHIFT, GPIO_PMC1_PMC16);
+
+    /* ---- P1_7 : SDA3 ---- */
+    /* Port initialise */
+    rza_io_reg_write_16( &GPIO.PIBC1, 0, GPIO_PIBC1_PIBC17_SHIFT, GPIO_PIBC1_PIBC17);
+    rza_io_reg_write_16( &GPIO.PBDC1, 1, GPIO_PBDC1_PBDC17_SHIFT, GPIO_PBDC1_PBDC17);
+    rza_io_reg_write_16( &GPIO.PM1, 1, GPIO_PM1_PM17_SHIFT, GPIO_PM1_PM17);
+    rza_io_reg_write_16( &GPIO.PMC1, 0, GPIO_PMC1_PMC17_SHIFT, GPIO_PMC1_PMC17);
+    rza_io_reg_write_16( &GPIO.PIPC1, 1, GPIO_PIPC1_PIPC17_SHIFT, GPIO_PIPC1_PIPC17);
+
+    /* Port mode : Multiplex mode                     */
+    /* Port function setting : 1st multiplex function */
+    /* I/O control mode : Peripheral function         */
+    /* Bidirectional mode : Enable                    */
+    rza_io_reg_write_16( &GPIO.PBDC1, 1, GPIO_PBDC1_PBDC17_SHIFT, GPIO_PBDC1_PBDC17);
+    rza_io_reg_write_16( &GPIO.PFC1, 0, GPIO_PFC1_PFC17_SHIFT, GPIO_PFC1_PFC17);
+    rza_io_reg_write_16( &GPIO.PFCE1, 0, GPIO_PFCE1_PFCE17_SHIFT, GPIO_PFCE1_PFCE17);
+    rza_io_reg_write_16( &GPIO.PFCAE1, 0, GPIO_PFCAE1_PFCAE17_SHIFT, GPIO_PFCAE1_PFCAE17);
+    rza_io_reg_write_16( &GPIO.PIPC1, 1, GPIO_PIPC1_PIPC17_SHIFT, GPIO_PIPC1_PIPC17);
+    rza_io_reg_write_16( &GPIO.PMC1, 1, GPIO_PMC1_PMC17_SHIFT, GPIO_PMC1_PMC17);
+}
+/*******************************************************************************
+ End of function channel3_port_init
+ ******************************************************************************/
+#endif
 /*******************************************************************************
  Channel Specific ISRs
  *******************************************************************************/
@@ -853,7 +908,75 @@ static void sample_riic_tei1_interrupt (uint32_t int_sense)
 /*******************************************************************************
  End of function sample_riic_tei1_interrupt
  *******************************************************************************/
+#if ((TARGET_RZA1 == TARGET_RZA1H) || (TARGET_RZA1 == TARGET_RZA1M))
+/**
+ * @brief Channel 3's receive data full interrupt handler
+ * @param[in] int_sense : Interrupt detection
+ *                        INTC_LEVEL_SENSITIVE : Level sense
+ *                        INTC_EDGE_TRIGGER    : Edge trigger
+ **/
+static void sample_riic_ri3_interrupt (uint32_t int_sense)
+{
+    /* prevent unused parameter compiler warning */
+    UNUSED_PARAM(int_sense);
 
+    /* set receive full flag */
+    r_riic_lld_set_rx_full(R_SC3);
+}
+/*******************************************************************************
+ End of function sample_riic_ri3_interrupt
+ *******************************************************************************/
+
+/**
+ * @brief Channel 3's transmit data empty interrupt handler
+ * @param[in] int_sense : Interrupt detection
+ *                        INTC_LEVEL_SENSITIVE : Level sense
+ *                        INTC_EDGE_TRIGGER    : Edge trigger
+ **/
+static void sample_riic_ti3_interrupt (uint32_t int_sense)
+{
+    /* prevent unused parameter compiler warning */
+    UNUSED_PARAM(int_sense);
+
+    /* Set transmit empty flag */
+    r_riic_lld_set_tx_empty(R_SC3);
+}
+/*******************************************************************************
+ End of function sample_riic_ti3_interrupt
+ *******************************************************************************/
+
+/**
+ * @brief Channel 3's transmission end interrupt handler
+ * @param[in] int_sense : Interrupt detection
+ *                        INTC_LEVEL_SENSITIVE : Level sense
+ *                        INTC_EDGE_TRIGGER    : Edge trigger
+ **/
+static void sample_riic_tei3_interrupt (uint32_t int_sense)
+{
+    volatile uint8_t dummy_buf_8b = 0u;
+    volatile struct st_riic *priic = ((volatile struct st_riic *) (gsp_riic[R_SC3]));
+
+    /* prevent unused parameter compiler warning */
+    UNUSED_PARAM(int_sense);
+
+    /* Suppresses the 'variable set but not used' warning */
+    UNUSED_VARIABLE(dummy_buf_8b);
+
+    /* set transmit end s/w flag */
+    r_riic_lld_set_tx_end(R_SC3);
+
+    /* Transmit end flag clear */
+    rza_io_reg_write_8( &(priic->RIICnSR2.UINT8[0]), 0,
+    RIICn_RIICnSR2_TEND_SHIFT, RIICn_RIICnSR2_TEND);
+
+    dummy_buf_8b = rza_io_reg_read_8( &(priic->RIICnSR2.UINT8[0]),
+    RIICn_RIICnSR2_TEND_SHIFT, RIICn_RIICnSR2_TEND);
+
+}
+/*******************************************************************************
+ End of function sample_riic_tei3_interrupt
+ *******************************************************************************/
+#endif
 /**
  * @brief Register interrupts for the specified channel.
  * @param[in] channel : the device specific channel number (< RIIC_LLD_NUM_CHANNELS)
@@ -900,7 +1023,26 @@ static void register_interrupts (int_t channel)
             R_INTC_Enable(INTC_ID_INTIICTEI1);
         }
         break;
+#if ((TARGET_RZA1 == TARGET_RZA1H) || (TARGET_RZA1 == TARGET_RZA1M))
+        case R_SC3:
+        {
+            /* Register active interrupts */
+            R_INTC_RegistIntFunc(INTC_ID_INTIICRI3, sample_riic_ri3_interrupt);
+            R_INTC_RegistIntFunc(INTC_ID_INTIICTI3, sample_riic_ti3_interrupt);
+            R_INTC_RegistIntFunc(INTC_ID_INTIICTEI3, sample_riic_tei3_interrupt);
 
+            /* Set active interrupt priorities */
+            R_INTC_SetPriority(INTC_ID_INTIICRI3, ISR_IIC3_PRIORITY);
+            R_INTC_SetPriority(INTC_ID_INTIICTI3, ISR_IIC3_PRIORITY);
+            R_INTC_SetPriority(INTC_ID_INTIICTEI3, ISR_IIC3_PRIORITY);
+
+            /* Enable active interrupts */
+            R_INTC_Enable(INTC_ID_INTIICRI3);
+            R_INTC_Enable(INTC_ID_INTIICTI3);
+            R_INTC_Enable(INTC_ID_INTIICTEI3);
+        }
+        break;
+#endif
         default:
         {
             /* nothing can be done */

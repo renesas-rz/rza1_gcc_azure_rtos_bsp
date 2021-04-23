@@ -28,14 +28,14 @@
  * History      : DD.MM.YYYY Version Description
  *              : 31.08.2018 1.00    First Release
  ******************************************************************************/
-
+#include "mcu_board_select.h"
+#if ( TARGET_RZA1 <= TARGET_RZA1LU )
 #include <limits.h>
 
 #ifndef R_DMAC_LLD_CFG_RZA1L_H_
 #define R_DMAC_LLD_CFG_RZA1L_H_
 
-#include "mcu_board_select.h"
-#if ( TARGET_RZA1 <= TARGET_RZA1LU )
+
 /******************************************************************************
  Macro definitions
  ******************************************************************************/

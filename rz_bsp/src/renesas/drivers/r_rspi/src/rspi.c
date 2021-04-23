@@ -55,6 +55,14 @@ Includes
 #include "compiler_settings.h"
 #include "Renesas_RZ_A1.h"
 
+#include "mcu_board_select.h"
+
+#if (TARGET_BOARD == TARGET_BOARD_STREAM_IT2)
+/* nothing */
+#elif (TARGET_BOARD == TARGET_BOARD_RSK)
+#include "riic_cat9554_if.h"
+#endif /* TARGET_BOARD */
+
 /******************************************************************************
 Global variables and functions
 ******************************************************************************/
@@ -76,6 +84,8 @@ uint16_t  g_spi_tx_count;
 
 static void port_settings(void)
 {
+
+#if (TARGET_BOARD == TARGET_BOARD_STREAM_IT2)
 
     /* Set P1_9 as PMOD_IRQ1 IRQ1(ALT2) (input) for both PMOD connectors */
     GPIO.PM1    |= (uint16_t) GPIO_BIT_N9;
@@ -158,6 +168,110 @@ static void port_settings(void)
     /* SSL20  : no connection */
     /* MOSI2  : no connection */
     /* MISO2  : no connection */
+
+#elif (TARGET_BOARD == TARGET_BOARD_RSK)
+	uint8_t px_addr, px_data, px_config;
+
+	/* Port Expander 2 setting */
+    /* PX1 EN0: High = DV */
+	R_RIIC_CAT9554_Open();
+    px_addr = CAT9554_I2C_PX2;
+    px_data = PX2_PX1_EN0;
+    px_config = PX2_PX1_EN0;
+	R_RIIC_CAT9554_Write(px_addr, px_data, px_config);
+	R_RIIC_CAT9554_Close();
+
+    /* Set P1_3 as PMOD_INT IRQ3 (input) for both PMOD connectors */
+    GPIO.PM1    |= (uint16_t) GPIO_BIT_N3;
+    GPIO.PMC1   |= (uint16_t) GPIO_BIT_N3;
+    GPIO.PFCAE1 &= (uint16_t)~GPIO_BIT_N3;
+    GPIO.PFCE1  |= (uint16_t) GPIO_BIT_N3;
+    GPIO.PFC1   |= (uint16_t) GPIO_BIT_N3;
+    GPIO.PIPC1  |= (uint16_t) GPIO_BIT_N3;
+
+    /* Set P4_15 as PMOD pin9 (output) */
+    GPIO.PM4    &= (uint16_t)~GPIO_BIT_N15;
+    GPIO.PMC4   &= (uint16_t)~GPIO_BIT_N15;
+    GPIO.PFCAE4 &= (uint16_t)~GPIO_BIT_N15;
+    GPIO.PFCE4  &= (uint16_t)~GPIO_BIT_N15;
+    GPIO.PFC4   &= (uint16_t)~GPIO_BIT_N15;
+    GPIO.PIPC4  &= (uint16_t)~GPIO_BIT_N15;
+
+    /* Set P3_7 as PMOD pin10 (output) */
+    GPIO.PM3    &= (uint16_t)~GPIO_BIT_N7;
+    GPIO.PMC3   &= (uint16_t)~GPIO_BIT_N7;
+    GPIO.PFCAE3 &= (uint16_t)~GPIO_BIT_N7;
+    GPIO.PFCE3  &= (uint16_t)~GPIO_BIT_N7;
+    GPIO.PFC3   &= (uint16_t)~GPIO_BIT_N7;
+    GPIO.PIPC3  &= (uint16_t)~GPIO_BIT_N7;
+
+    /* RSPCK1 : P11_12, Output */
+    GPIO.PIBC11   &=(uint16_t)~GPIO_BIT_N12;
+    GPIO.PBDC11   &=(uint16_t)~GPIO_BIT_N12;
+    GPIO.PM11     |= (uint16_t)GPIO_BIT_N12;
+    GPIO.PMC11    &=(uint16_t)~GPIO_BIT_N12;
+    GPIO.PIPC11   &=(uint16_t)~GPIO_BIT_N12;
+
+    GPIO.PBDC11   |= (uint16_t)GPIO_BIT_N12;
+    GPIO.PFC11    |= (uint16_t)GPIO_BIT_N12;
+    GPIO.PFCE11   &= (uint16_t)~GPIO_BIT_N12;
+    GPIO.PFCAE11  &= (uint16_t)~GPIO_BIT_N12;
+
+    GPIO.PIPC11   |= (uint16_t)GPIO_BIT_N12;
+    GPIO.PMC11    |= (uint16_t)GPIO_BIT_N12;
+
+    /* Portmode  : P1_4, Output */
+    GPIO.P1      &=(uint16_t)~GPIO_BIT_N4;
+    GPIO.PBDC1   &=(uint16_t)~GPIO_BIT_N4;
+    GPIO.PM1     &=(uint16_t)~GPIO_BIT_N4;
+    GPIO.PMC1    &=(uint16_t)~GPIO_BIT_N4;
+
+    /* MOSI1  : P11_14, Input/Output */
+    GPIO.PIBC11   &= (uint16_t)~GPIO_BIT_N14;
+    GPIO.PBDC11   &= (uint16_t)~GPIO_BIT_N14;
+    GPIO.PM11     |= (uint16_t)GPIO_BIT_N14;
+    GPIO.PMC11    &= (uint16_t)~GPIO_BIT_N14;
+    GPIO.PIPC11   &= (uint16_t)~GPIO_BIT_N14;
+
+    GPIO.PIBC11   |= (uint16_t)GPIO_BIT_N14;
+    GPIO.PFC11    |= (uint16_t)GPIO_BIT_N14;
+    GPIO.PFCE11   &= (uint16_t)~GPIO_BIT_N14;
+    GPIO.PFCAE11  &= (uint16_t)~GPIO_BIT_N14;
+
+    GPIO.PIPC11   |= (uint16_t)GPIO_BIT_N14;
+    GPIO.PMC11    |= (uint16_t)GPIO_BIT_N14;
+
+    /* MISO1  : P11_15, Input/Output */
+    GPIO.PIBC11   &= (uint16_t)~GPIO_BIT_N15;
+    GPIO.PBDC11   &= (uint16_t)~GPIO_BIT_N15;
+    GPIO.PM11     |= (uint16_t)GPIO_BIT_N15;
+    GPIO.PMC11    &= (uint16_t)~GPIO_BIT_N15;
+    GPIO.PIPC11   &= (uint16_t)~GPIO_BIT_N15;
+
+    GPIO.PIBC11   |= (uint16_t)GPIO_BIT_N15;
+    GPIO.PFC11    |= (uint16_t)GPIO_BIT_N15;
+    GPIO.PFCE11   &= (uint16_t)~GPIO_BIT_N15;
+    GPIO.PFCAE11  &= (uint16_t)~GPIO_BIT_N15;
+
+    GPIO.PIPC11   |= (uint16_t)GPIO_BIT_N15;
+    GPIO.PMC11    |= (uint16_t)GPIO_BIT_N15;
+
+    /* RSPCK2 : no connection */
+    /* SSL20  : no connection */
+    /* MOSI2  : no connection */
+    /* MISO2  : no connection */
+
+	/* Port Expander 1 setting */
+    /* PMOD1 RST */
+	R_RIIC_CAT9554_Open();
+    px_addr = CAT9554_I2C_PX1;
+    px_data = PX1_PMOD1_RST;
+    px_config = PX1_PMOD1_RST;
+	R_RIIC_CAT9554_Write(px_addr, px_data, px_config);
+	R_RIIC_CAT9554_Close();
+
+#endif /* TARGET_BOARD */
+
 }
 
 static void power_perhiperial(void)

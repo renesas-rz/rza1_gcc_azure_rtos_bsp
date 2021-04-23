@@ -37,18 +37,28 @@
 #define SSIF1   (*(struct st_ssif    *)0xE820B800uL) /* SSIF1 */
 #define SSIF2   (*(struct st_ssif    *)0xE820C000uL) /* SSIF2 */
 #define SSIF3   (*(struct st_ssif    *)0xE820C800uL) /* SSIF3 */
-
+#if ((TARGET_RZA1 == TARGET_RZA1H) || (TARGET_RZA1 == TARGET_RZA1M))
+#define SSIF4   (*(struct st_ssif    *)0xE820D000uL) /* SSIF4 */
+#define SSIF5   (*(struct st_ssif    *)0xE820D800uL) /* SSIF5 */
+#endif
 
 /* Start of channel array defines of SSIF */
 
 /* Channel array defines of SSIF */
 /*(Sample) value = SSIF[ channel ]->SSICR; */
+#if ((TARGET_RZA1 == TARGET_RZA1H) || (TARGET_RZA1 == TARGET_RZA1M))
+#define SSIF_COUNT  (6)
+#define SSIF_ADDRESS_LIST \
+{   /* ->MISRA 11.3 */ /* ->SEC R2.7.1 */ \
+    &SSIF0, &SSIF1, &SSIF2, &SSIF3, &SSIF4, &SSIF5 \
+}   /* <-MISRA 11.3 */ /* <-SEC R2.7.1 */ /* { } is for MISRA 19.4 */
+#else
 #define SSIF_COUNT  (4)
 #define SSIF_ADDRESS_LIST \
 {   /* ->MISRA 11.3 */ /* ->SEC R2.7.1 */ \
     &SSIF0, &SSIF1, &SSIF2, &SSIF3 \
 }   /* <-MISRA 11.3 */ /* <-SEC R2.7.1 */ /* { } is for MISRA 19.4 */
-
+#endif
 /* End of channel array defines of SSIF */
 
 
@@ -92,7 +102,28 @@
 #define SSIFCCR_3 (SSIF3.SSIFCCR)
 #define SSIFCMR_3 (SSIF3.SSIFCMR)
 #define SSIFCSR_3 (SSIF3.SSIFCSR)
-
+#if ((TARGET_RZA1 == TARGET_RZA1H) || (TARGET_RZA1 == TARGET_RZA1M))
+#define SSICR_4 (SSIF4.SSICR)
+#define SSISR_4 (SSIF4.SSISR)
+#define SSIFCR_4 (SSIF4.SSIFCR)
+#define SSIFSR_4 (SSIF4.SSIFSR)
+#define SSIFTDR_4 (SSIF4.SSIFTDR)
+#define SSIFRDR_4 (SSIF4.SSIFRDR)
+#define SSITDMR_4 (SSIF4.SSITDMR)
+#define SSIFCCR_4 (SSIF4.SSIFCCR)
+#define SSIFCMR_4 (SSIF4.SSIFCMR)
+#define SSIFCSR_4 (SSIF4.SSIFCSR)
+#define SSICR_5 (SSIF5.SSICR)
+#define SSISR_5 (SSIF5.SSISR)
+#define SSIFCR_5 (SSIF5.SSIFCR)
+#define SSIFSR_5 (SSIF5.SSIFSR)
+#define SSIFTDR_5 (SSIF5.SSIFTDR)
+#define SSIFRDR_5 (SSIF5.SSIFRDR)
+#define SSITDMR_5 (SSIF5.SSITDMR)
+#define SSIFCCR_5 (SSIF5.SSIFCCR)
+#define SSIFCMR_5 (SSIF5.SSIFCMR)
+#define SSIFCSR_5 (SSIF5.SSIFCSR)
+#endif
 
 typedef struct st_ssif
 {

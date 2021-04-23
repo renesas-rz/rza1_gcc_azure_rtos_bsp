@@ -245,6 +245,10 @@ typedef struct
     ssif_chcfg_ws_delay_t           ws_delay;            /* SSICR-DEL : Serial clock delay        */
     ssif_chcfg_noise_cancel_t       noise_cancel;        /* GPIO-SNCR : Noise cancel              */
     ssif_chcfg_tdm_t                tdm_mode;            /* SSITDMR-TDM: TDM mode                 */
+#if (TARGET_RZA1 <= TARGET_RZA1LU)
+#else /* TARGET_RZA1H */
+    ssif_chcfg_romdec_t             romdec_direct;       /* DMA : SSIRDR->STRMDIN0 route settings */
+#endif
 } ssif_channel_cfg_t;
 
 /******************************************************************************

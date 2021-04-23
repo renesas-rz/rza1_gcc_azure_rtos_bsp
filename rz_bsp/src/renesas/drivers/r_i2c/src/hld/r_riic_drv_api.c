@@ -80,7 +80,7 @@ static const st_drv_info_t gs_hld_info =
 STDIO_RIIC_RZ_HLD_BUILD_NUM,
 STDIO_RIIC_RZ_HLD_DRV_NAME };
 
-static uint16_t gs_channel_open = 0;
+static uint16_t gs_channel_open[R_CH15] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
 /* Define the driver function table for this implementation */
 const st_r_driver_t g_riic_driver =
@@ -106,12 +106,12 @@ static int_t iic_hld_open (st_stream_ptr_t p_stream)
 {
     int_t ret_value = DEVDRV_SUCCESS;
 
-    (void) p_stream;
+    int_t channel = riic_get_channel(p_stream);
 
     /* increase channel open count if open was successful */
-    if (gs_channel_open == 0)
+    if (gs_channel_open[channel] == 0)
     {
-        gs_channel_open = 1;
+    	gs_channel_open[channel]  = 1;
         R_OS_CreateSemaphore(&iic_hld_sem, 1);
     }
 
@@ -137,9 +137,9 @@ static void iic_hld_close (st_stream_ptr_t p_stream)
     close_channel(channel);
 
     /* decrease channel open count */
-    if (gs_channel_open == 1)
+    if (gs_channel_open[channel]  == 1)
     {
-        gs_channel_open = 0;
+    	gs_channel_open[channel]  = 0;
         R_OS_DeleteSemaphore(iic_hld_sem);
     }
 }
@@ -169,7 +169,7 @@ static int_t iic_hld_control (st_stream_ptr_t p_str, uint32_t ctl_code, void *p_
     }
 
     /* fail if the channel is not open */
-    if (0 == gs_channel_open)
+    if (0 == gs_channel_open[channel] )
     {
         return (ret_value);
     }

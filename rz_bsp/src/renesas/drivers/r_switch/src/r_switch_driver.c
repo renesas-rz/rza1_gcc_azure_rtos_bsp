@@ -50,6 +50,7 @@
 #include "r_switch_driver.h"
 #include "r_task_priority.h"
 #include "r_compiler_abstraction_api.h"
+#include "mcu_board_select.h"
 
 /*******************************************************************************
  Macro definitions
@@ -97,6 +98,7 @@ void R_SWITCH_Init (bool_t interrupt)
 {
     if (interrupt)  // Interrupt driven
     {
+#if (TARGET_BOARD == TARGET_BOARD_STREAM_IT2)
         /* Set SWITCH USER (IRQ5) as input pin (P7_9) */
         rza_io_reg_write_16(&GPIO.PBDC7, 1, GPIO_PBDC7_PBDC79_SHIFT, GPIO_PBDC7_PBDC79);
         rza_io_reg_write_16(&GPIO.PM7, 1, GPIO_PM7_PM79_SHIFT, GPIO_PM7_PM79);
@@ -118,12 +120,36 @@ void R_SWITCH_Init (bool_t interrupt)
         R_INTC_SetPriority(INTC_ID_IRQ5, ISR_SWITCH_IRQ_PRIORITY);
 
         R_INTC_Enable(INTC_ID_IRQ5);
+#elif (TARGET_BOARD == TARGET_BOARD_RSK)
+        /* Set SWITCH USER (IRQ3) as input pin (P1_9) */
+        rza_io_reg_write_16(&GPIO.PBDC1, 1, GPIO_PBDC1_PBDC19_SHIFT, GPIO_PBDC1_PBDC19);
+        rza_io_reg_write_16(&GPIO.PM1, 1, GPIO_PM1_PM19_SHIFT, GPIO_PM1_PM19);
+        rza_io_reg_write_16(&GPIO.P1, 1, GPIO_P1_P19_SHIFT, GPIO_P1_P19);
+        rza_io_reg_write_16(&GPIO.PMC1, 1, GPIO_PMC1_PMC19_SHIFT, GPIO_PMC1_PMC19);
+
+        rza_io_reg_write_16(&GPIO.PFCAE1, 0, GPIO_PFCAE1_PFCAE19_SHIFT, GPIO_PFCAE1_PFCAE19);
+        rza_io_reg_write_16(&GPIO.PFCE1, 1, GPIO_PFCE1_PFCE19_SHIFT, GPIO_PFCE1_PFCE19);
+        rza_io_reg_write_16(&GPIO.PFC1, 0, GPIO_PFC1_PFC19_SHIFT, GPIO_PFC1_PFC19);
+
+        rza_io_reg_write_16(&GPIO.PIPC1, 1, GPIO_PIPC1_PIPC19_SHIFT, GPIO_PIPC1_PIPC19);
+
+        /* Configure IRQs detections on falling edge */
+        INTC.ICR1 |= 0x0040;    // IRQ3 config = '01' = Falling Edge
+
+        /* Configure and enable IRQ5 interrupts received from the user switch */
+        R_INTC_Disable(INTC_ID_IRQ3);
+        R_INTC_RegistIntFunc(INTC_ID_IRQ3, &int_irq_switch);
+        R_INTC_SetPriority(INTC_ID_IRQ3, ISR_SWITCH_IRQ_PRIORITY);
+
+        R_INTC_Enable(INTC_ID_IRQ3);
+#endif
 
         /* Initialise MTU2 channel 4 used to de-bounce switches */
         init_switch_debounce_timer();
     }
     else  // Classic polled button
     {
+#if (TARGET_BOARD == TARGET_BOARD_STREAM_IT2)
         /* Configure SW1 (P7_9) as an input */
         rza_io_reg_write_16(&GPIO.PIBC7, 0, GPIO_PIBC7_PIBC79_SHIFT, GPIO_PIBC7_PIBC79);
         rza_io_reg_write_16(&GPIO.PBDC7, 0, GPIO_PIBC7_PIBC79_SHIFT, GPIO_PIBC7_PIBC79);
@@ -131,6 +157,15 @@ void R_SWITCH_Init (bool_t interrupt)
         rza_io_reg_write_16(&GPIO.PMC7, 0, GPIO_PMC7_PMC79_SHIFT, GPIO_PMC7_PMC79);
         rza_io_reg_write_16(&GPIO.PIPC7, 1, 9u, 0x200u);
         rza_io_reg_write_16(&GPIO.PIBC7, 1, GPIO_PIBC7_PIBC79_SHIFT, GPIO_PIBC7_PIBC79);
+#elif (TARGET_BOARD == TARGET_BOARD_RSK)
+        /* Configure SW1 (P1_9) as an input */
+        rza_io_reg_write_16(&GPIO.PIBC1, 0, GPIO_PIBC1_PIBC19_SHIFT, GPIO_PIBC1_PIBC19);
+        rza_io_reg_write_16(&GPIO.PBDC1, 0, GPIO_PIBC1_PIBC19_SHIFT, GPIO_PIBC1_PIBC19);
+        rza_io_reg_write_16(&GPIO.PM1, 1, GPIO_PM1_PM19_SHIFT, GPIO_PM1_PM19);
+        rza_io_reg_write_16(&GPIO.PMC1, 0, GPIO_PMC1_PMC19_SHIFT, GPIO_PMC1_PMC19);
+        rza_io_reg_write_16(&GPIO.PIPC1, 1, GPIO_PIPC1_PIPC19_SHIFT, GPIO_PIPC1_PIPC19);
+        rza_io_reg_write_16(&GPIO.PIBC1, 1, GPIO_PIBC1_PIBC19_SHIFT, GPIO_PIBC1_PIBC19);
+#endif
     }
 }
 /*****************************************************************************
@@ -151,7 +186,11 @@ static void int_irq_switch (uint32_t sense)
     (void) sense;
     uint16_t dummy_read;
 
+#if (TARGET_BOARD == TARGET_BOARD_STREAM_IT2)
     R_INTC_Disable(INTC_ID_IRQ5);
+#elif (TARGET_BOARD == TARGET_BOARD_RSK)
+    R_INTC_Disable(INTC_ID_IRQ3);
+#endif
 
     /* Set the user switch flag to indicate switch was pressed */
     g_switch_press_flg |= true;
@@ -169,6 +208,7 @@ static void int_irq_switch (uint32_t sense)
     /* Clearing the status flag requires a dummy read */
     dummy_read = INTC.IRQRR;
 
+#if (TARGET_BOARD == TARGET_BOARD_STREAM_IT2)
     /* Clear IRQ3/5 interrupt flag  */
     if (0u != (dummy_read & 0x0020))
     {
@@ -176,6 +216,15 @@ static void int_irq_switch (uint32_t sense)
     }
 
     R_INTC_Enable(INTC_ID_IRQ5);
+#elif (TARGET_BOARD == TARGET_BOARD_RSK)
+    /* Clear IRQ3/3 interrupt flag  */
+    if (0u != (dummy_read & 0x0008))
+    {
+        INTC.IRQRR &= ~0x0008;
+    }
+
+    R_INTC_Enable(INTC_ID_IRQ3);
+#endif
 }
 /*******************************************************************************
  * End of Function int_irq_switch

@@ -35,7 +35,7 @@
 Includes   <System Includes> , "Project Includes"
 ******************************************************************************/
 #include    "r_typedefs.h"
-#include    "iodefine.h"
+#include    "iodefine_cfg.h"
 
 
 /******************************************************************************

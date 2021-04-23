@@ -38,10 +38,22 @@
 #define SCIF2   (*(struct st_scif    *)0xE8008000uL) /* SCIF2 */
 #define SCIF3   (*(struct st_scif    *)0xE8008800uL) /* SCIF3 */
 #define SCIF4   (*(struct st_scif    *)0xE8009000uL) /* SCIF4 */
-
+#if ((TARGET_RZA1 == TARGET_RZA1H) || (TARGET_RZA1 == TARGET_RZA1M))
+#define SCIF5   (*(struct st_scif    *)0xE8009800uL) /* SCIF5 */
+#define SCIF6   (*(struct st_scif    *)0xE800A000uL) /* SCIF6 */
+#define SCIF7   (*(struct st_scif    *)0xE800A800uL) /* SCIF7 */
+#endif
 
 /* Start of channel array defines of SCIF */
-
+#if ((TARGET_RZA1 == TARGET_RZA1H) || (TARGET_RZA1 == TARGET_RZA1M))
+/* Channel array defines of SCIF */
+/*(Sample) value = SCIF[ channel ]->SCSMR; */
+#define SCIF_COUNT  (8)
+#define SCIF_ADDRESS_LIST \
+{   /* ->MISRA 11.3 */ /* ->SEC R2.7.1 */ \
+    &SCIF0, &SCIF1, &SCIF2, &SCIF3, &SCIF4, &SCIF5, &SCIF6, &SCIF7 \
+}   /* <-MISRA 11.3 */ /* <-SEC R2.7.1 */ /* { } is for MISRA 19.4 */
+#else
 /* Channel array defines of SCIF */
 /*(Sample) value = SCIF[ channel ]->SCSMR; */
 #define SCIF_COUNT  (5)
@@ -49,7 +61,7 @@
 {   /* ->MISRA 11.3 */ /* ->SEC R2.7.1 */ \
     &SCIF0, &SCIF1, &SCIF2, &SCIF3, &SCIF4 \
 }   /* <-MISRA 11.3 */ /* <-SEC R2.7.1 */ /* { } is for MISRA 19.4 */
-
+#endif
 /* End of channel array defines of SCIF */
 
 
@@ -108,7 +120,41 @@
 #define SCSPTR_4 (SCIF4.SCSPTR)
 #define SCLSR_4 (SCIF4.SCLSR)
 #define SCEMR_4 (SCIF4.SCEMR)
-
+#if ((TARGET_RZA1 == TARGET_RZA1H) || (TARGET_RZA1 == TARGET_RZA1M))
+#define SCSMR_5 (SCIF5.SCSMR)
+#define SCBRR_5 (SCIF5.SCBRR)
+#define SCSCR_5 (SCIF5.SCSCR)
+#define SCFTDR_5 (SCIF5.SCFTDR)
+#define SCFSR_5 (SCIF5.SCFSR)
+#define SCFRDR_5 (SCIF5.SCFRDR)
+#define SCFCR_5 (SCIF5.SCFCR)
+#define SCFDR_5 (SCIF5.SCFDR)
+#define SCSPTR_5 (SCIF5.SCSPTR)
+#define SCLSR_5 (SCIF5.SCLSR)
+#define SCEMR_5 (SCIF5.SCEMR)
+#define SCSMR_6 (SCIF6.SCSMR)
+#define SCBRR_6 (SCIF6.SCBRR)
+#define SCSCR_6 (SCIF6.SCSCR)
+#define SCFTDR_6 (SCIF6.SCFTDR)
+#define SCFSR_6 (SCIF6.SCFSR)
+#define SCFRDR_6 (SCIF6.SCFRDR)
+#define SCFCR_6 (SCIF6.SCFCR)
+#define SCFDR_6 (SCIF6.SCFDR)
+#define SCSPTR_6 (SCIF6.SCSPTR)
+#define SCLSR_6 (SCIF6.SCLSR)
+#define SCEMR_6 (SCIF6.SCEMR)
+#define SCSMR_7 (SCIF7.SCSMR)
+#define SCBRR_7 (SCIF7.SCBRR)
+#define SCSCR_7 (SCIF7.SCSCR)
+#define SCFTDR_7 (SCIF7.SCFTDR)
+#define SCFSR_7 (SCIF7.SCFSR)
+#define SCFRDR_7 (SCIF7.SCFRDR)
+#define SCFCR_7 (SCIF7.SCFCR)
+#define SCFDR_7 (SCIF7.SCFDR)
+#define SCSPTR_7 (SCIF7.SCSPTR)
+#define SCLSR_7 (SCIF7.SCLSR)
+#define SCEMR_7 (SCIF7.SCEMR)
+#endif
 
 typedef struct st_scif
 {

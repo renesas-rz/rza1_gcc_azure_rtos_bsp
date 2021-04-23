@@ -38,7 +38,7 @@ Includes   <System Includes> , "Project Includes"
 #if ((TARGET_RZA1 == TARGET_RZA1H) || (TARGET_RZA1 == TARGET_RZA1M))
 
 #include    "r_typedefs.h"
-#include    "iodefine.h"
+#include    "iodefine_cfg.h"
 
 
 /******************************************************************************

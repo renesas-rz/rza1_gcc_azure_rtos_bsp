@@ -28,7 +28,7 @@
 ******************************************************************************/
 #ifndef SRC_DRIVERS_INC_IODEFINE_CFG_H_
 #define SRC_DRIVERS_INC_IODEFINE_CFG_H_
-
+#include "mcu_board_select.h"
 #include "iodefine_typedef.h"                         /* (V2.00h) */
 
 #include "adc_iodefine.h"                             /* (V2.00h) */

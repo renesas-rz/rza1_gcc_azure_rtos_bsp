@@ -577,6 +577,10 @@ static int_t configure_ssif_channel (int_t channel)
     gs_ssif_cfg[channel].ws_delay = SSIF_CFG_DELAY;
     gs_ssif_cfg[channel].noise_cancel = SSIF_CFG_DISABLE_NOISE_CANCEL;
     gs_ssif_cfg[channel].tdm_mode = SSIF_CFG_DISABLE_TDM;
+#if (TARGET_RZA1 <= TARGET_RZA1LU)
+#else /* TARGET_RZA1H */
+    gs_ssif_cfg[channel].romdec_direct.mode = SSIF_CFG_DISABLE_ROMDEC_DIRECT;
+#endif
 
     /* initialise driver data structures */
     p_info_drv = ssif_init( &gs_ssif_cfg, NULL);

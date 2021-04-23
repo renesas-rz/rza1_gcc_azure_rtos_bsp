@@ -123,7 +123,7 @@ static st_dmac_internal_configuration_t s_dmac_drv_config =
 /* Define the driver function table for this implementation */
 const st_r_driver_t g_dmac_driver =
 {
-    "DMAC Device Driver", dmac_hld_open, dmac_hld_close, 
+    "DMAC Device Driver", dmac_hld_open, dmac_hld_close,
     no_dev_read, no_dev_write, dmac_hld_control, dmac_hld_get_version
 };
 

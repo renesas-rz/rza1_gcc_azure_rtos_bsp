@@ -65,6 +65,8 @@
     #include "control.h"
     #include "r_riic_drv_sc_cfg.h"
 
+    #include "mcu_board_select.h"
+
 /*******************************************************************************
  Macro definitions
  *******************************************************************************/
@@ -82,7 +84,11 @@
 
 /** Specifies what channels are supported by this low level driver.
  * It is used to inform the high level driver the supported channels */
+#if (TARGET_BOARD == TARGET_BOARD_STREAM_IT2)
     #define RIIC_LLD_SUPPORTED_CHANNELS    ((e_channel_id_t) (R_CH0 | R_CH1))
+#elif (TARGET_BOARD == TARGET_BOARD_RSK)
+    #define RIIC_LLD_SUPPORTED_CHANNELS    ((e_channel_id_t) (R_CH0 | R_CH3))
+#endif /* TARGET_BOARD */
 
 /** Specifies the total number of channels supported by this low level driver */
     #define RIIC_LLD_NUM_CHANNELS           (2)
