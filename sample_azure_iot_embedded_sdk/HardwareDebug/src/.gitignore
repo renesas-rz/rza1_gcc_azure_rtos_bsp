@@ -1,0 +1,12 @@
+/main.d
+/main.o
+/nx_azure_iot_cert.d
+/nx_azure_iot_cert.o
+/nx_azure_iot_ciphersuites.d
+/nx_azure_iot_ciphersuites.o
+/nx_driver_renesas_rz.d
+/nx_driver_renesas_rz.o
+/sample_azure_iot_embedded_sdk.d
+/sample_azure_iot_embedded_sdk.o
+/sample_device_identity.d
+/sample_device_identity.o
