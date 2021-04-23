@@ -1,0 +1,10 @@
+/common/
+/rz_display_driver_565rgb.o
+/rz_rsk_display_driver_24xrgb.o
+/rz_rsk_display_driver_32argb.o
+/rz_rsk_touch.o
+/rz_display_driver_565rgb.d
+/rz_rsk_display_driver_24xrgb.d
+/rz_rsk_display_driver_32argb.d
+/rz_rsk_touch.d
+/libguix.a
