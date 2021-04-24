@@ -72,7 +72,7 @@ STACK_LENGTH = PROGRAM_STACK_SIZE + IRQ_STACK_SIZE + FIQ_STACK_SIZE + SVC_STACK_
 STACK_START  = STACK_END - STACK_LENGTH;
 
 /* RTOS Heap size */
-OS_RAM_SECTION_SIZE	= 1024 * 256;	/* OS Abstraction Layer Renesas Drivers Minimum size*/
+OS_RAM_SECTION_SIZE	= 1024 * 1600;	/* OS Abstraction Layer Renesas Drivers Minimum size*/
 TX_RAM_SECTION_SIZE = 1024 * 1600;	/* TX Heap Size */
 
 /* The internal boot program of RZ/A1 uses the area at H'2002_0000 to H'2002_3FFF as work memory. 
