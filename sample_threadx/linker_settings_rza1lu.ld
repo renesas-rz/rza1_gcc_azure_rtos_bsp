@@ -71,6 +71,10 @@ STACK_END = VRAM_START - 0x40000000;
 STACK_LENGTH = PROGRAM_STACK_SIZE + IRQ_STACK_SIZE + FIQ_STACK_SIZE + SVC_STACK_SIZE + ABT_STACK_SIZE + TTB_SIZE;
 STACK_START  = STACK_END - STACK_LENGTH;
 
+/* RTOS Heap size */
+OS_RAM_SECTION_SIZE	= 1024 * 256;	/* OS Abstraction Layer Renesas Drivers Minimum size*/
+TX_RAM_SECTION_SIZE = 1024 * 1600;	/* TX Heap Size */
+
 /* The internal boot program of RZ/A1 uses the area at H'2002_0000 to H'2002_3FFF as work memory. 
    After e2studio has downloaded the application to internal RAM, a reset is issued and the internal boot program
    start to boot from QSPI. The QSPI loader initializes the QSPI memory system and branches to RAM_START.
@@ -256,8 +260,11 @@ SECTIONS
     .OS_RAM_SECTION (NOLOAD) : ALIGN(0x4000)
 	{		
 		PROVIDE(_ld_mirrored_heap_start = .);
-        *(.OS_RAM_SECTION)
+        . += OS_RAM_SECTION_SIZE;
 		PROVIDE(_ld_mirrored_heap_end = .);
+		PROVIDE(tx_free_memory_start = .);
+		. += TX_RAM_SECTION_SIZE;
+		PROVIDE(tx_free_memory_end = .);
 		
     } > USER_RAM 
     
@@ -293,7 +300,6 @@ SECTIONS
         .  += TTB_SIZE;
         .   = ALIGN(0x4);
         ttb_mmu1_end = .;
-        PROVIDE(tx_free_memory_start = .);
     } > STACK_RAM
         
     /* NOLOAD directs linker NOT to fill VRAMx_SECTION with 0.          */
