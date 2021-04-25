@@ -293,7 +293,7 @@
                     					
                     <sourceEntries>
                         						
-                        <entry excluding="azure/ports/cortex_a9/gnu/src/guix|src/renesas/middleware/timer|src/renesas/application/r_eventControl.c|src/renesas/configuration/os_abstraction/src/r_os_abstraction_freertos.c|src/lwip-1.4.1|src/freertos" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding="src/renesas/middleware/timer|src/renesas/application/r_eventControl.c|src/renesas/configuration/os_abstraction/src/r_os_abstraction_freertos.c|src/lwip-1.4.1|src/freertos" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				
@@ -593,7 +593,7 @@
                     					
                     <sourceEntries>
                         						
-                        <entry excluding="azure/ports/cortex_a9/gnu/src/guix|src/renesas/middleware/timer|src/renesas/application/r_eventControl.c|src/renesas/configuration/os_abstraction/src/r_os_abstraction_freertos.c|src/lwip-1.4.1|src/freertos" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding="src/renesas/middleware/timer|src/renesas/application/r_eventControl.c|src/renesas/configuration/os_abstraction/src/r_os_abstraction_freertos.c|src/lwip-1.4.1|src/freertos" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				
