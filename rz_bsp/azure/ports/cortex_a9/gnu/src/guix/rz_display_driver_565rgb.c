@@ -1,4 +1,5 @@
-
+#include "mcu_board_select.h"
+#if ((TARGET_RZA1 == TARGET_RZA1H) || (TARGET_RZA1 == TARGET_RZA1M))
 #include    <stdio.h>
 #include    <string.h>
 
@@ -216,4 +217,4 @@ UINT rz_graphics_driver_setup_565rgb(GX_DISPLAY *display)
     ConfigureGUIXDisplayHardware565rgb(display);
     return GX_SUCCESS;
 }
-    
+#endif
