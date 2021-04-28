@@ -58,6 +58,8 @@
  *****************************************************************************/
 
 #include "r_typedefs.h"
+#include "r_gpio_if.h"
+#include "r_port_if.h"
 
 /***********************************************************************************************************************
  Macro definitions
@@ -66,6 +68,7 @@
 #define USER_SWITCH_PRESSED  ((GPIO.PPR7 & GPIO_P7_P79) != GPIO_P7_P79)
 #define USER_SWITCH_RELEASED ((GPIO.PPR7 & GPIO_P7_P79) == GPIO_P7_P79)
 
+
 /***********************************************************************************************************************
  Typedef definitions
  ***********************************************************************************************************************/
@@ -73,7 +76,6 @@
 /***********************************************************************************************************************
  Exported global variables
  ***********************************************************************************************************************/
-extern volatile uint8_t g_switch_press_flg;
 
 /***********************************************************************************************************************
  Exported global functions (to be accessed by other files)
@@ -87,7 +89,11 @@ extern volatile uint8_t g_switch_press_flg;
  *                       True -  Switch is Interrupt Driven. <BR>
  * @return None.
  */
-void R_SWITCH_Init (bool_t interrupt);
+void R_SWITCH_Init (PinName pin, int (* func)(uint32_t int_sense, int count) );
+
+void R_SWITCH_remove (PinName pin);
+
+bool_t R_SWITCH_Poll ( PinName pin );
 
 /**
  * @brief       Takes a pointer to a function, and sets it as the call-back
@@ -98,7 +104,7 @@ void R_SWITCH_Init (bool_t interrupt);
  *
  * @retrun None.
  */
-void R_SWITCH_SetPressCallback (void (*func) (void));
+void R_SWITCH_SetPressCallback (int irq, int (*func) (uint32_t,int));
 
 /**
  * @brief       Takes a pointer to a function, and sets it as the call-back
@@ -107,7 +113,7 @@ void R_SWITCH_SetPressCallback (void (*func) (void));
  *
  * @param[in]   callback: Pointer to call-back function (set to NULL to disable)
  */
-void R_SWITCH_SetReleaseCallback (void (*callback) (void));
+void R_SWITCH_SetReleaseCallback (int irq, void (*callback) (int));
 
 #endif /* R_SW_PKG_93_SWITCH_API_H_INCLUDED */
 /**************************************************************************//**
