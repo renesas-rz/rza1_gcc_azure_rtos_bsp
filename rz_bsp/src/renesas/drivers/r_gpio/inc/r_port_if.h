@@ -23,6 +23,6 @@ typedef struct {
 } st_port_init_config_t;
 
 void set_pin_function( const st_port_config_t *map);
-void set_pins_function( const st_port_init_config_t *maps);
+int set_pins_function( const st_port_init_config_t *maps);
 
 #endif /* RENESAS_DRIVERS_R_GPIO_R_PORT_IF_H_ */
