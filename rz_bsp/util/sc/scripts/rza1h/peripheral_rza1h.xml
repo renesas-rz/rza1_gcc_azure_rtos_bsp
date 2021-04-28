@@ -1,0 +1,936 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<!-- this file was auto-generated. Do not modify it manually -->
+<PeripheralInformation>
+  <Dependence Dependence=""/>
+  <Peripheral Id="Power" Name="Power supply" JName="電源">
+      <Pin Id="Vcc"/>
+      <Pin Id="Vss"/>
+      <Pin Id="PVcc"/>
+      <Pin Id="PLLVcc"/>
+  </Peripheral>
+  <Peripheral Id="CPG" Name="Clock" JName="クロック">
+      <Pin Id="EXTAL"/>
+      <Pin Id="XTAL"/>
+      <Pin Id="CKIO"/>
+      <Pin Id="AUDIO_CLK"/>
+      <Pin Id="AUDIO_X1"/>
+      <Pin Id="AUDIO_X2"/>
+      <Pin Id="AUDIO_XOUT"/>
+      <Pin Id="AUDIO_XOUT2"/>
+      <Pin Id="AUDIO_XOUT3"/>
+  </Peripheral>
+  <Peripheral Id="OMC" Name="Operating mode control" JName="動作モードコントロール">
+      <Pin Id="MD_BOOT2"/>
+      <Pin Id="MD_BOOT1"/>
+      <Pin Id="MD_BOOT0"/>
+      <Pin Id="MD_CLK"/>
+      <Pin Id="MD_CLKS"/>
+      <Pin Id="BSCANP"/>
+  </Peripheral>
+  <Peripheral Id="SC" Name="System control" JName="システム制御">
+      <Pin Id="RES#"/>
+      <Pin Id="WDTOVF#"/>
+  </Peripheral>
+  <Peripheral Id="INTC" Name="Interrupt controller" JName="割り込みコントローラ">
+      <Pin Id="NMI"/>
+      <Pin Id="IRQ0"/>
+      <Pin Id="IRQ1"/>
+      <Pin Id="IRQ2"/>
+      <Pin Id="IRQ3"/>
+      <Pin Id="IRQ4"/>
+      <Pin Id="IRQ5"/>
+      <Pin Id="IRQ6"/>
+      <Pin Id="IRQ7"/>
+  </Peripheral>
+  <Peripheral Id="BSC" Name="Bus state controller" JName="バスステートコントローラ">
+      <Pin Id="A0"/>
+      <Pin Id="A1"/>
+      <Pin Id="A2"/>
+      <Pin Id="A3"/>
+      <Pin Id="A4"/>
+      <Pin Id="A5"/>
+      <Pin Id="A6"/>
+      <Pin Id="A7"/>
+      <Pin Id="A8"/>
+      <Pin Id="A9"/>
+      <Pin Id="A10"/>
+      <Pin Id="A11"/>
+      <Pin Id="A12"/>
+      <Pin Id="A13"/>
+      <Pin Id="A14"/>
+      <Pin Id="A15"/>
+      <Pin Id="A16"/>
+      <Pin Id="A17"/>
+      <Pin Id="A18"/>
+      <Pin Id="A19"/>
+      <Pin Id="A20"/>
+      <Pin Id="A21"/>
+      <Pin Id="A22"/>
+      <Pin Id="A23"/>
+      <Pin Id="A24"/>
+      <Pin Id="A25"/>
+      <Pin Id="D0"/>
+      <Pin Id="D1"/>
+      <Pin Id="D2"/>
+      <Pin Id="D3"/>
+      <Pin Id="D4"/>
+      <Pin Id="D5"/>
+      <Pin Id="D6"/>
+      <Pin Id="D7"/>
+      <Pin Id="D8"/>
+      <Pin Id="D9"/>
+      <Pin Id="D10"/>
+      <Pin Id="D11"/>
+      <Pin Id="D12"/>
+      <Pin Id="D13"/>
+      <Pin Id="D14"/>
+      <Pin Id="D15"/>
+      <Pin Id="D16"/>
+      <Pin Id="D17"/>
+      <Pin Id="D18"/>
+      <Pin Id="D19"/>
+      <Pin Id="D20"/>
+      <Pin Id="D21"/>
+      <Pin Id="D22"/>
+      <Pin Id="D23"/>
+      <Pin Id="D24"/>
+      <Pin Id="D25"/>
+      <Pin Id="D26"/>
+      <Pin Id="D27"/>
+      <Pin Id="D28"/>
+      <Pin Id="D29"/>
+      <Pin Id="D30"/>
+      <Pin Id="D31"/>
+      <Pin Id="RD#"/>
+      <Pin Id="RD/WR#"/>
+      <Pin Id="BS#"/>
+      <Pin Id="WAIT#"/>
+      <Pin Id="WE0#/DQMLL"/>
+      <Pin Id="WE1#/DQMLU"/>
+      <Pin Id="WE2#/DQMUL"/>
+      <Pin Id="WE3#/DQMUU/AH#"/>
+      <Pin Id="RAS#"/>
+      <Pin Id="CAS#"/>
+      <Pin Id="CKE"/>
+      <Pin Id="CS0#"/>
+      <Pin Id="CS1#"/>
+      <Pin Id="CS2#"/>
+      <Pin Id="CS3#"/>
+      <Pin Id="CS4#"/>
+      <Pin Id="CS5#"/>
+  </Peripheral>
+  <Peripheral Id="DMAC" Name="Direct memory access controller" JName="ダイレクトメモリアクセスコントローラ">
+      <Pin Id="DREQ0"/>
+      <Pin Id="DACK0"/>
+      <Pin Id="TEND0"/>
+  </Peripheral>
+  <Peripheral Id="MTU" Name="Multi-function timer pulse unit 2" JName="マルチファンクションタイマパルスユニット2">
+    <Peripheral Id="MTU.Common" Name="MTU" JName="MTU">
+      <Pin Id="TCLKA"/>
+      <Pin Id="TCLKB"/>
+      <Pin Id="TCLKC"/>
+      <Pin Id="TCLKD"/>
+    </Peripheral>
+    <Peripheral Id="MTU.0" Name="MTU0" JName="MTU0">
+      <Pin Id="TIOC0A"/>
+      <Pin Id="TIOC0B"/>
+      <Pin Id="TIOC0C"/>
+      <Pin Id="TIOC0D"/>
+    </Peripheral>
+    <Peripheral Id="MTU.1" Name="MTU1" JName="MTU1">
+      <Pin Id="TIOC1A"/>
+      <Pin Id="TIOC1B"/>
+    </Peripheral>
+    <Peripheral Id="MTU.2" Name="MTU2" JName="MTU2">
+      <Pin Id="TIOC2A"/>
+      <Pin Id="TIOC2B"/>
+    </Peripheral>
+    <Peripheral Id="MTU.3" Name="MTU3" JName="MTU3">
+      <Pin Id="TIOC3A"/>
+      <Pin Id="TIOC3B"/>
+      <Pin Id="TIOC3C"/>
+      <Pin Id="TIOC3D"/>
+    </Peripheral>
+    <Peripheral Id="MTU.4" Name="MTU4" JName="MTU4">
+      <Pin Id="TIOC4A"/>
+      <Pin Id="TIOC4B"/>
+      <Pin Id="TIOC4C"/>
+      <Pin Id="TIOC4D"/>
+    </Peripheral>
+  </Peripheral>
+  <Peripheral Id="RTC" Name="Realtime clock" JName="リアルタイムクロック">
+      <Pin Id="RTC_X1"/>
+      <Pin Id="RTC_X2"/>
+      <Pin Id="RTC_X3"/>
+      <Pin Id="RTC_X4"/>
+  </Peripheral>
+  <Peripheral Id="SCIF" Name="Serial communication interface with FIFO" JName="FIFO 内蔵シリアルコミュニケーションインタフェース">
+    <Peripheral Id="SCIF.0" Name="SCIF0" JName="SCIF0">
+      <Pin Id="TxD0"/>
+      <Pin Id="RxD0"/>
+      <Pin Id="SCK0"/>
+    </Peripheral>
+    <Peripheral Id="SCIF.1" Name="SCIF1" JName="SCIF1">
+      <Pin Id="TxD1"/>
+      <Pin Id="RxD1"/>
+      <Pin Id="SCK1"/>
+      <Pin Id="RTS1#"/>
+      <Pin Id="CTS1#"/>
+    </Peripheral>
+    <Peripheral Id="SCIF.2" Name="SCIF2" JName="SCIF2">
+      <Pin Id="TxD2"/>
+      <Pin Id="RxD2"/>
+      <Pin Id="SCK2"/>
+    </Peripheral>
+    <Peripheral Id="SCIF.3" Name="SCIF3" JName="SCIF3">
+      <Pin Id="TxD3"/>
+      <Pin Id="RxD3"/>
+      <Pin Id="SCK3"/>
+    </Peripheral>
+    <Peripheral Id="SCIF.4" Name="SCIF4" JName="SCIF4">
+      <Pin Id="TxD4"/>
+      <Pin Id="RxD4"/>
+      <Pin Id="SCK4"/>
+    </Peripheral>
+    <Peripheral Id="SCIF.5" Name="SCIF5" JName="SCIF5">
+      <Pin Id="TxD5"/>
+      <Pin Id="RxD5"/>
+      <Pin Id="SCK5"/>
+      <Pin Id="RTS5#"/>
+      <Pin Id="CTS5#"/>
+    </Peripheral>
+    <Peripheral Id="SCIF.6" Name="SCIF6" JName="SCIF6">
+      <Pin Id="TxD6"/>
+      <Pin Id="RxD6"/>
+      <Pin Id="SCK6"/>
+    </Peripheral>
+    <Peripheral Id="SCIF.7" Name="SCIF7" JName="SCIF7">
+      <Pin Id="TxD7"/>
+      <Pin Id="RxD7"/>
+      <Pin Id="SCK7"/>
+      <Pin Id="RTS7#"/>
+      <Pin Id="CTS7#"/>
+    </Peripheral>
+  </Peripheral>
+  <Peripheral Id="SCI" Name="Serial communication interface" JName="シリアルコミュニケーションインタフェース">
+    <Peripheral Id="SCI.0" Name="SCI0" JName="SCI0">
+      <Pin Id="SCI_SCK0"/>
+      <Pin Id="SCI_TXD0"/>
+      <Pin Id="SCI_RXD0"/>
+      <Pin Id="SCI_CTS0#/RTS0#"/>
+    </Peripheral>
+    <Peripheral Id="SCI.1" Name="SCI1" JName="SCI1">
+      <Pin Id="SCI_SCK1"/>
+      <Pin Id="SCI_TXD1"/>
+      <Pin Id="SCI_RXD1"/>
+      <Pin Id="SCI_CTS1#/RTS1#"/>
+    </Peripheral>
+  </Peripheral>
+  <Peripheral Id="RSPI" Name="Renesas serial peripheral interface" JName="ルネサスシリアルペリフェラルインタフェース">
+    <Peripheral Id="RSPI.0" Name="RSPI0" JName="RSPI0">
+      <Pin Id="MOSI0"/>
+      <Pin Id="MISO0"/>
+      <Pin Id="RSPCK0"/>
+      <Pin Id="SSL00"/>
+    </Peripheral>
+    <Peripheral Id="RSPI.1" Name="RSPI1" JName="RSPI1">
+      <Pin Id="MOSI1"/>
+      <Pin Id="MISO1"/>
+      <Pin Id="RSPCK1"/>
+      <Pin Id="SSL10"/>
+    </Peripheral>
+    <Peripheral Id="RSPI.2" Name="RSPI2" JName="RSPI2">
+      <Pin Id="MOSI2"/>
+      <Pin Id="MISO2"/>
+      <Pin Id="RSPCK2"/>
+      <Pin Id="SSL20"/>
+    </Peripheral>
+    <Peripheral Id="RSPI.3" Name="RSPI3" JName="RSPI3">
+      <Pin Id="MOSI3"/>
+      <Pin Id="MISO3"/>
+      <Pin Id="RSPCK3"/>
+      <Pin Id="SSL30"/>
+    </Peripheral>
+    <Peripheral Id="RSPI.4" Name="RSPI4" JName="RSPI4">
+      <Pin Id="MOSI4"/>
+      <Pin Id="MISO4"/>
+      <Pin Id="RSPCK4"/>
+      <Pin Id="SSL40"/>
+    </Peripheral>
+  </Peripheral>
+  <Peripheral Id="SPIBSC" Name="SPI multi I/O bus controller" JName="SPIマルチI/Oバスコントローラ">
+    <Peripheral Id="SPIBSC.0" Name="SPIBSC0" JName="SPIBSC0">
+      <Pin Id="SPBCLK_0"/>
+      <Pin Id="SPBSSL_0"/>
+      <Pin Id="SPBIO00_0"/>
+      <Pin Id="SPBIO10_0"/>
+      <Pin Id="SPBIO20_0"/>
+      <Pin Id="SPBIO30_0"/>
+      <Pin Id="SPBIO01_0"/>
+      <Pin Id="SPBIO11_0"/>
+      <Pin Id="SPBIO21_0"/>
+      <Pin Id="SPBIO31_0"/>
+    </Peripheral>
+    <Peripheral Id="SPIBSC.1" Name="SPIBSC1" JName="SPIBSC1">
+      <Pin Id="SPBCLK_1"/>
+      <Pin Id="SPBSSL_1"/>
+      <Pin Id="SPBIO00_1"/>
+      <Pin Id="SPBIO10_1"/>
+      <Pin Id="SPBIO20_1"/>
+      <Pin Id="SPBIO30_1"/>
+      <Pin Id="SPBIO01_1"/>
+      <Pin Id="SPBIO11_1"/>
+      <Pin Id="SPBIO21_1"/>
+      <Pin Id="SPBIO31_1"/>
+    </Peripheral>
+  </Peripheral>
+  <Peripheral Id="RIIC" Name="I2C bus interface" JName="I2Cバスインタフェース">
+    <Peripheral Id="RIIC.0" Name="RIIC0" JName="RIIC0">
+      <Pin Id="RIIC0SCL"/>
+      <Pin Id="RIIC0SDA"/>
+    </Peripheral>
+    <Peripheral Id="RIIC.1" Name="RIIC1" JName="RIIC1">
+      <Pin Id="RIIC1SCL"/>
+      <Pin Id="RIIC1SDA"/>
+    </Peripheral>
+    <Peripheral Id="RIIC.2" Name="RIIC2" JName="RIIC2">
+      <Pin Id="RIIC2SCL"/>
+      <Pin Id="RIIC2SDA"/>
+    </Peripheral>
+    <Peripheral Id="RIIC.3" Name="RIIC3" JName="RIIC3">
+      <Pin Id="RIIC3SCL"/>
+      <Pin Id="RIIC3SDA"/>
+    </Peripheral>
+  </Peripheral>
+  <Peripheral Id="SSI" Name="Serial sound interface" JName="シリアルサウンドインタフェース">
+    <Peripheral Id="SSI.0" Name="SSI0" JName="SSI0">
+      <Pin Id="SSITxD0"/>
+      <Pin Id="SSIRxD0"/>
+      <Pin Id="SSISCK0"/>
+      <Pin Id="SSIWS0"/>
+    </Peripheral>
+    <Peripheral Id="SSI.1" Name="SSI1" JName="SSI1">
+      <Pin Id="SSITxD1"/>
+      <Pin Id="SSIRxD1"/>
+      <Pin Id="SSISCK1"/>
+      <Pin Id="SSIWS1"/>
+    </Peripheral>
+    <Peripheral Id="SSI.2" Name="SSI2" JName="SSI2">
+      <Pin Id="SSIDATA2"/>
+      <Pin Id="SSISCK2"/>
+      <Pin Id="SSIWS2"/>
+    </Peripheral>
+    <Peripheral Id="SSI.3" Name="SSI3" JName="SSI3">
+      <Pin Id="SSITxD3"/>
+      <Pin Id="SSIRxD3"/>
+      <Pin Id="SSISCK3"/>
+      <Pin Id="SSIWS3"/>
+    </Peripheral>
+    <Peripheral Id="SSI.4" Name="SSI4" JName="SSI4">
+      <Pin Id="SSIDATA4"/>
+      <Pin Id="SSISCK4"/>
+      <Pin Id="SSIWS4"/>
+    </Peripheral>
+    <Peripheral Id="SSI.5" Name="SSI5" JName="SSI5">
+      <Pin Id="SSITxD5"/>
+      <Pin Id="SSIRxD5"/>
+      <Pin Id="SSISCK5"/>
+    </Peripheral>
+  </Peripheral>
+  <Peripheral Id="MLB" Name="Media local bus" JName="メディア・ローカル・バス">
+      <Pin Id="MLB_CLK"/>
+      <Pin Id="MLB_SIG"/>
+      <Pin Id="MLB_DAT"/>
+  </Peripheral>
+  <Peripheral Id="CAN" Name="CAN interface" JName="CANインタフェース">
+    <Peripheral Id="CAN.Common" Name="CAN" JName="CAN">
+      <Pin Id="CAN_CLK"/>
+    </Peripheral>
+    <Peripheral Id="CAN.0" Name="CAN0" JName="CAN0">
+      <Pin Id="CAN0TX"/>
+      <Pin Id="CAN0RX"/>
+    </Peripheral>
+    <Peripheral Id="CAN.1" Name="CAN1" JName="CAN1">
+      <Pin Id="CAN1TX"/>
+      <Pin Id="CAN1RX"/>
+    </Peripheral>
+    <Peripheral Id="CAN.2" Name="CAN2" JName="CAN2">
+      <Pin Id="CAN2TX"/>
+      <Pin Id="CAN2RX"/>
+    </Peripheral>
+    <Peripheral Id="CAN.3" Name="CAN3" JName="CAN3">
+      <Pin Id="CAN3TX"/>
+      <Pin Id="CAN3RX"/>
+    </Peripheral>
+    <Peripheral Id="CAN.4" Name="CAN4" JName="CAN4">
+      <Pin Id="CAN4TX"/>
+      <Pin Id="CAN4RX"/>
+    </Peripheral>
+  </Peripheral>
+  <Peripheral Id="IEBUS" Name="IEBus controller" JName="IEBus コントローラ">
+      <Pin Id="IETxD"/>
+      <Pin Id="IERxD"/>
+  </Peripheral>
+  <Peripheral Id="SPDIF" Name="Renesas SPDIF interface" JName="ルネサスSPDIFインタフェース">
+      <Pin Id="SPDIF_OUT"/>
+      <Pin Id="SPDIF_IN"/>
+  </Peripheral>
+  <Peripheral Id="RLIN3" Name="LIN interface" JName="LINインタフェース">
+    <Peripheral Id="RLIN3.0" Name="RLIN30" JName="RLIN30">
+      <Pin Id="RLIN30TX"/>
+      <Pin Id="RLIN30RX"/>
+    </Peripheral>
+    <Peripheral Id="RLIN3.1" Name="RLIN31" JName="RLIN31">
+      <Pin Id="RLIN31TX"/>
+      <Pin Id="RLIN31RX"/>
+    </Peripheral>
+  </Peripheral>
+  <Peripheral Id="ETHER" Name="Ethernet controller" JName="イーサネットコントローラ">
+    <Peripheral Id="ETHER.0" Name="ETHER0" JName="ETHER0">
+      <Pin Id="ET_TXCLK"/>
+      <Pin Id="ET_TXEN"/>
+      <Pin Id="ET_COL"/>
+      <Pin Id="ET_TXER"/>
+      <Pin Id="ET_RXCLK"/>
+      <Pin Id="ET_RXDV"/>
+      <Pin Id="ET_RXER"/>
+      <Pin Id="ET_CRS"/>
+      <Pin Id="ET_MDC"/>
+      <Pin Id="ET_MDIO"/>
+      <Pin Id="ET_TXD0"/>
+      <Pin Id="ET_RXD0"/>
+      <Pin Id="ET_TXD1"/>
+      <Pin Id="ET_RXD1"/>
+      <Pin Id="ET_TXD2"/>
+      <Pin Id="ET_RXD2"/>
+      <Pin Id="ET_TXD3"/>
+      <Pin Id="ET_RXD3"/>
+    </Peripheral>
+  </Peripheral>
+  <Peripheral Id="EthernetAVB" Name="EthernetAVB" JName="EthernetAVB">
+      <Pin Id="AVB_CAPTURE"/>
+      <Pin Id="AVB_GPTP_EXTERN"/>
+  </Peripheral>
+  <Peripheral Id="NAND" Name="NAND flash memory controller" JName="NANDフラッシュメモリコントローラ">
+      <Pin Id="FALE"/>
+      <Pin Id="FRE#"/>
+      <Pin Id="FCE#"/>
+      <Pin Id="FCLE"/>
+      <Pin Id="FRB"/>
+      <Pin Id="FEW#"/>
+      <Pin Id="NAF0"/>
+      <Pin Id="NAF1"/>
+      <Pin Id="NAF2"/>
+      <Pin Id="NAF3"/>
+      <Pin Id="NAF4"/>
+      <Pin Id="NAF5"/>
+      <Pin Id="NAF6"/>
+      <Pin Id="NAF7"/>
+  </Peripheral>
+  <Peripheral Id="USB" Name="USB2.0 host/function module" JName="USB2.0 ホスト／ファンクションモジュール">
+    <Peripheral Id="USB.Common" Name="USB" JName="USB">
+      <Pin Id="REFRIN"/>
+      <Pin Id="USB_X1"/>
+      <Pin Id="USB_X2"/>
+      <Pin Id="USBDVcc"/>
+      <Pin Id="USBDVss"/>
+      <Pin Id="USBDPVcc"/>
+      <Pin Id="USBDPVss"/>
+      <Pin Id="USBAPVcc"/>
+      <Pin Id="USBAPVss"/>
+      <Pin Id="USBAVcc"/>
+      <Pin Id="USBAVss"/>
+      <Pin Id="USBUVcc"/>
+      <Pin Id="USBUVss"/>
+    </Peripheral>
+    <Peripheral Id="USB.0" Name="USB0" JName="USB0">
+      <Pin Id="DP0"/>
+      <Pin Id="DM0"/>
+      <Pin Id="VBUS0"/>
+    </Peripheral>
+    <Peripheral Id="USB.1" Name="USB1" JName="USB1">
+      <Pin Id="DP1"/>
+      <Pin Id="DM1"/>
+      <Pin Id="VBUS1"/>
+    </Peripheral>
+  </Peripheral>
+  <Peripheral Id="DVD" Name="Digital video decoder" JName="デジタルビデオデコーダ">
+    <Peripheral Id="DVD.Common" Name="DVD" JName="DVD">
+      <Pin Id="VIDEO_X1"/>
+      <Pin Id="VIDEO_X2"/>
+      <Pin Id="VRP"/>
+      <Pin Id="VRM"/>
+      <Pin Id="REXT"/>
+      <Pin Id="VDAVcc"/>
+      <Pin Id="VDAVss"/>
+    </Peripheral>
+    <Peripheral Id="DVD.0" Name="DVD0" JName="DVD0">
+      <Pin Id="VIN1A"/>
+      <Pin Id="VIN2A"/>
+    </Peripheral>
+    <Peripheral Id="DVD.1" Name="DVD1" JName="DVD1">
+      <Pin Id="VIN1B"/>
+      <Pin Id="VIN2B"/>
+    </Peripheral>
+  </Peripheral>
+  <Peripheral Id="VDC5" Name="Video display controller 5" JName="ビデオディスプレイコントローラ5">
+    <Peripheral Id="VDC5.0" Name="VDC50" JName="VDC50">
+      <Pin Id="DV0_CLK"/>
+      <Pin Id="DV0_VSYNC"/>
+      <Pin Id="DV0_HSYNC"/>
+      <Pin Id="DV0_DATA0"/>
+      <Pin Id="DV0_DATA1"/>
+      <Pin Id="DV0_DATA2"/>
+      <Pin Id="DV0_DATA3"/>
+      <Pin Id="DV0_DATA4"/>
+      <Pin Id="DV0_DATA5"/>
+      <Pin Id="DV0_DATA6"/>
+      <Pin Id="DV0_DATA7"/>
+      <Pin Id="DV0_DATA8"/>
+      <Pin Id="DV0_DATA9"/>
+      <Pin Id="DV0_DATA10"/>
+      <Pin Id="DV0_DATA11"/>
+      <Pin Id="DV0_DATA12"/>
+      <Pin Id="DV0_DATA13"/>
+      <Pin Id="DV0_DATA14"/>
+      <Pin Id="DV0_DATA15"/>
+      <Pin Id="DV0_DATA16"/>
+      <Pin Id="DV0_DATA17"/>
+      <Pin Id="DV0_DATA18"/>
+      <Pin Id="DV0_DATA19"/>
+      <Pin Id="DV0_DATA20"/>
+      <Pin Id="DV0_DATA21"/>
+      <Pin Id="DV0_DATA22"/>
+      <Pin Id="DV0_DATA23"/>
+      <Pin Id="LCD0_CLK"/>
+      <Pin Id="LCD0_DATA0"/>
+      <Pin Id="LCD0_DATA1"/>
+      <Pin Id="LCD0_DATA2"/>
+      <Pin Id="LCD0_DATA3"/>
+      <Pin Id="LCD0_DATA4"/>
+      <Pin Id="LCD0_DATA5"/>
+      <Pin Id="LCD0_DATA6"/>
+      <Pin Id="LCD0_DATA7"/>
+      <Pin Id="LCD0_DATA8"/>
+      <Pin Id="LCD0_DATA9"/>
+      <Pin Id="LCD0_DATA10"/>
+      <Pin Id="LCD0_DATA11"/>
+      <Pin Id="LCD0_DATA12"/>
+      <Pin Id="LCD0_DATA13"/>
+      <Pin Id="LCD0_DATA14"/>
+      <Pin Id="LCD0_DATA15"/>
+      <Pin Id="LCD0_DATA16"/>
+      <Pin Id="LCD0_DATA17"/>
+      <Pin Id="LCD0_DATA18"/>
+      <Pin Id="LCD0_DATA19"/>
+      <Pin Id="LCD0_DATA20"/>
+      <Pin Id="LCD0_DATA21"/>
+      <Pin Id="LCD0_DATA22"/>
+      <Pin Id="LCD0_DATA23"/>
+      <Pin Id="LCD0_TCON0"/>
+      <Pin Id="LCD0_TCON1"/>
+      <Pin Id="LCD0_TCON2"/>
+      <Pin Id="LCD0_TCON3"/>
+      <Pin Id="LCD0_TCON4"/>
+      <Pin Id="LCD0_TCON5"/>
+      <Pin Id="LCD0_TCON6"/>
+      <Pin Id="LCD0_EXTCLK"/>
+    </Peripheral>
+    <Peripheral Id="VDC5.1" Name="VDC51" JName="VDC51">
+      <Pin Id="DV1_CLK"/>
+      <Pin Id="DV1_VSYNC"/>
+      <Pin Id="DV1_HSYNC"/>
+      <Pin Id="DV1_DATA0"/>
+      <Pin Id="DV1_DATA1"/>
+      <Pin Id="DV1_DATA2"/>
+      <Pin Id="DV1_DATA3"/>
+      <Pin Id="DV1_DATA4"/>
+      <Pin Id="DV1_DATA5"/>
+      <Pin Id="DV1_DATA6"/>
+      <Pin Id="DV1_DATA7"/>
+      <Pin Id="DV1_DATA8"/>
+      <Pin Id="DV1_DATA9"/>
+      <Pin Id="DV1_DATA10"/>
+      <Pin Id="DV1_DATA11"/>
+      <Pin Id="DV1_DATA12"/>
+      <Pin Id="DV1_DATA13"/>
+      <Pin Id="DV1_DATA14"/>
+      <Pin Id="DV1_DATA15"/>
+      <Pin Id="DV1_DATA16"/>
+      <Pin Id="DV1_DATA17"/>
+      <Pin Id="DV1_DATA18"/>
+      <Pin Id="DV1_DATA19"/>
+      <Pin Id="DV1_DATA20"/>
+      <Pin Id="DV1_DATA21"/>
+      <Pin Id="DV1_DATA22"/>
+      <Pin Id="DV1_DATA23"/>
+      <Pin Id="LCD1_CLK"/>
+      <Pin Id="LCD1_DATA0"/>
+      <Pin Id="LCD1_DATA1"/>
+      <Pin Id="LCD1_DATA2"/>
+      <Pin Id="LCD1_DATA3"/>
+      <Pin Id="LCD1_DATA4"/>
+      <Pin Id="LCD1_DATA5"/>
+      <Pin Id="LCD1_DATA6"/>
+      <Pin Id="LCD1_DATA7"/>
+      <Pin Id="LCD1_DATA8"/>
+      <Pin Id="LCD1_DATA9"/>
+      <Pin Id="LCD1_DATA10"/>
+      <Pin Id="LCD1_DATA11"/>
+      <Pin Id="LCD1_DATA12"/>
+      <Pin Id="LCD1_DATA13"/>
+      <Pin Id="LCD1_DATA14"/>
+      <Pin Id="LCD1_DATA15"/>
+      <Pin Id="LCD1_DATA16"/>
+      <Pin Id="LCD1_DATA17"/>
+      <Pin Id="LCD1_DATA18"/>
+      <Pin Id="LCD1_DATA19"/>
+      <Pin Id="LCD1_DATA20"/>
+      <Pin Id="LCD1_DATA21"/>
+      <Pin Id="LCD1_DATA22"/>
+      <Pin Id="LCD1_DATA23"/>
+      <Pin Id="LCD1_TCON0"/>
+      <Pin Id="LCD1_TCON1"/>
+      <Pin Id="LCD1_TCON2"/>
+      <Pin Id="LCD1_TCON3"/>
+      <Pin Id="LCD1_TCON4"/>
+      <Pin Id="LCD1_TCON5"/>
+      <Pin Id="LCD1_TCON6"/>
+      <Pin Id="LCD1_EXTCLK"/>
+    </Peripheral>
+  </Peripheral>
+  <Peripheral Id="LVDS" Name="LVDS output interface" JName="LVDS出力インタフェース">
+      <Pin Id="TXCLKOUTP"/>
+      <Pin Id="TXCLKOUTM"/>
+      <Pin Id="TXOUT0P"/>
+      <Pin Id="TXOUT1P"/>
+      <Pin Id="TXOUT2P"/>
+      <Pin Id="TXOUT0M"/>
+      <Pin Id="TXOUT1M"/>
+      <Pin Id="TXOUT2M"/>
+      <Pin Id="LVDSREFRIN"/>
+      <Pin Id="LVDSAPVcc"/>
+      <Pin Id="LVDSAPVss"/>
+      <Pin Id="LVDSPLLVcc"/>
+  </Peripheral>
+  <Peripheral Id="CEU" Name="Capture engine unit" JName="キャプチャエンジンユニット">
+      <Pin Id="VIO_D0"/>
+      <Pin Id="VIO_D1"/>
+      <Pin Id="VIO_D2"/>
+      <Pin Id="VIO_D3"/>
+      <Pin Id="VIO_D4"/>
+      <Pin Id="VIO_D5"/>
+      <Pin Id="VIO_D6"/>
+      <Pin Id="VIO_D7"/>
+      <Pin Id="VIO_D8"/>
+      <Pin Id="VIO_D9"/>
+      <Pin Id="VIO_D10"/>
+      <Pin Id="VIO_D11"/>
+      <Pin Id="VIO_D12"/>
+      <Pin Id="VIO_D13"/>
+      <Pin Id="VIO_D14"/>
+      <Pin Id="VIO_D15"/>
+      <Pin Id="VIO_CLK"/>
+      <Pin Id="VIO_VD"/>
+      <Pin Id="VIO_HD"/>
+      <Pin Id="VIO_FLD"/>
+  </Peripheral>
+  <Peripheral Id="SG" Name="Sound generator" JName="サウンドジェネレータ">
+    <Peripheral Id="SG.0" Name="SG0" JName="SG0">
+      <Pin Id="SGOUT_0"/>
+    </Peripheral>
+    <Peripheral Id="SG.1" Name="SG1" JName="SG1">
+      <Pin Id="SGOUT_1"/>
+    </Peripheral>
+    <Peripheral Id="SG.2" Name="SG2" JName="SG2">
+      <Pin Id="SGOUT_2"/>
+    </Peripheral>
+    <Peripheral Id="SG.3" Name="SG3" JName="SG3">
+      <Pin Id="SGOUT_3"/>
+    </Peripheral>
+  </Peripheral>
+  <Peripheral Id="SDHI" Name="SD host interface" JName="SDホストインタフェース">
+    <Peripheral Id="SDHI.0" Name="SDHI0" JName="SDHI0">
+      <Pin Id="SD_CLK_0"/>
+      <Pin Id="SD_CMD_0"/>
+      <Pin Id="SD_D0_0"/>
+      <Pin Id="SD_D1_0"/>
+      <Pin Id="SD_D2_0"/>
+      <Pin Id="SD_D3_0"/>
+      <Pin Id="SD_CD_0"/>
+      <Pin Id="SD_WP_0"/>
+    </Peripheral>
+    <Peripheral Id="SDHI.1" Name="SDHI1" JName="SDHI1">
+      <Pin Id="SD_CLK_1"/>
+      <Pin Id="SD_CMD_1"/>
+      <Pin Id="SD_D0_1"/>
+      <Pin Id="SD_D1_1"/>
+      <Pin Id="SD_D2_1"/>
+      <Pin Id="SD_D3_1"/>
+      <Pin Id="SD_CD_1"/>
+      <Pin Id="SD_WP_1"/>
+    </Peripheral>
+  </Peripheral>
+  <Peripheral Id="MMCHI" Name="MMC host interface" JName="MMCホストインタフェース">
+      <Pin Id="MMC_CLK"/>
+      <Pin Id="MMC_CMD"/>
+      <Pin Id="MMC_D0"/>
+      <Pin Id="MMC_D1"/>
+      <Pin Id="MMC_D2"/>
+      <Pin Id="MMC_D3"/>
+      <Pin Id="MMC_D4"/>
+      <Pin Id="MMC_D5"/>
+      <Pin Id="MMC_D6"/>
+      <Pin Id="MMC_D7"/>
+      <Pin Id="MMC_CD"/>
+  </Peripheral>
+  <Peripheral Id="PWM" Name="Motor control PWM timer" JName="モータコントロールPWMタイマ">
+    <Peripheral Id="PWM.1" Name="PWM1" JName="PWM1">
+      <Pin Id="PWM1A"/>
+      <Pin Id="PWM1B"/>
+      <Pin Id="PWM1C"/>
+      <Pin Id="PWM1D"/>
+      <Pin Id="PWM1E"/>
+      <Pin Id="PWM1F"/>
+      <Pin Id="PWM1G"/>
+      <Pin Id="PWM1H"/>
+    </Peripheral>
+    <Peripheral Id="PWM.2" Name="PWM2" JName="PWM2">
+      <Pin Id="PWM2A"/>
+      <Pin Id="PWM2B"/>
+      <Pin Id="PWM2C"/>
+      <Pin Id="PWM2D"/>
+      <Pin Id="PWM2E"/>
+      <Pin Id="PWM2F"/>
+      <Pin Id="PWM2G"/>
+      <Pin Id="PWM2H"/>
+    </Peripheral>
+  </Peripheral>
+  <Peripheral Id="ADC" Name="A/D converter" JName="A/D変換器">
+      <Pin Id="AVcc"/>
+      <Pin Id="AVss"/>
+      <Pin Id="AVref"/>
+      <Pin Id="AN0"/>
+      <Pin Id="AN1"/>
+      <Pin Id="AN2"/>
+      <Pin Id="AN3"/>
+      <Pin Id="AN4"/>
+      <Pin Id="AN5"/>
+      <Pin Id="AN6"/>
+      <Pin Id="AN7"/>
+      <Pin Id="ADTRG#"/>
+  </Peripheral>
+  <Peripheral Id="GPIO" Name="General I/O ports" JName="汎用入出力ポート">
+    <Peripheral Id="GPIO.JP" Name="GPIOJP" JName="GPIOJP">
+      <Pin Id="JP0_0"/>
+      <Pin Id="JP0_1"/>
+    </Peripheral>
+    <Peripheral Id="GPIO.0" Name="GPIO0" JName="GPIO0">
+      <Pin Id="P0_0"/>
+      <Pin Id="P0_1"/>
+      <Pin Id="P0_2"/>
+      <Pin Id="P0_3"/>
+      <Pin Id="P0_4"/>
+      <Pin Id="P0_5"/>
+    </Peripheral>
+    <Peripheral Id="GPIO.1" Name="GPIO1" JName="GPIO1">
+      <Pin Id="P1_0"/>
+      <Pin Id="P1_1"/>
+      <Pin Id="P1_2"/>
+      <Pin Id="P1_3"/>
+      <Pin Id="P1_4"/>
+      <Pin Id="P1_5"/>
+      <Pin Id="P1_6"/>
+      <Pin Id="P1_7"/>
+      <Pin Id="P1_8"/>
+      <Pin Id="P1_9"/>
+      <Pin Id="P1_10"/>
+      <Pin Id="P1_11"/>
+      <Pin Id="P1_12"/>
+      <Pin Id="P1_13"/>
+      <Pin Id="P1_14"/>
+      <Pin Id="P1_15"/>
+    </Peripheral>
+    <Peripheral Id="GPIO.2" Name="GPIO2" JName="GPIO2">
+      <Pin Id="P2_0"/>
+      <Pin Id="P2_1"/>
+      <Pin Id="P2_2"/>
+      <Pin Id="P2_3"/>
+      <Pin Id="P2_4"/>
+      <Pin Id="P2_5"/>
+      <Pin Id="P2_6"/>
+      <Pin Id="P2_7"/>
+      <Pin Id="P2_8"/>
+      <Pin Id="P2_9"/>
+      <Pin Id="P2_10"/>
+      <Pin Id="P2_11"/>
+      <Pin Id="P2_12"/>
+      <Pin Id="P2_13"/>
+      <Pin Id="P2_14"/>
+      <Pin Id="P2_15"/>
+    </Peripheral>
+    <Peripheral Id="GPIO.3" Name="GPIO3" JName="GPIO3">
+      <Pin Id="P3_0"/>
+      <Pin Id="P3_1"/>
+      <Pin Id="P3_2"/>
+      <Pin Id="P3_3"/>
+      <Pin Id="P3_4"/>
+      <Pin Id="P3_5"/>
+      <Pin Id="P3_6"/>
+      <Pin Id="P3_7"/>
+      <Pin Id="P3_8"/>
+      <Pin Id="P3_9"/>
+      <Pin Id="P3_10"/>
+      <Pin Id="P3_11"/>
+      <Pin Id="P3_12"/>
+      <Pin Id="P3_13"/>
+      <Pin Id="P3_14"/>
+      <Pin Id="P3_15"/>
+    </Peripheral>
+    <Peripheral Id="GPIO.4" Name="GPIO4" JName="GPIO4">
+      <Pin Id="P4_0"/>
+      <Pin Id="P4_1"/>
+      <Pin Id="P4_2"/>
+      <Pin Id="P4_3"/>
+      <Pin Id="P4_4"/>
+      <Pin Id="P4_5"/>
+      <Pin Id="P4_6"/>
+      <Pin Id="P4_7"/>
+      <Pin Id="P4_8"/>
+      <Pin Id="P4_9"/>
+      <Pin Id="P4_10"/>
+      <Pin Id="P4_11"/>
+      <Pin Id="P4_12"/>
+      <Pin Id="P4_13"/>
+      <Pin Id="P4_14"/>
+      <Pin Id="P4_15"/>
+    </Peripheral>
+    <Peripheral Id="GPIO.5" Name="GPIO5" JName="GPIO5">
+      <Pin Id="P5_0"/>
+      <Pin Id="P5_1"/>
+      <Pin Id="P5_2"/>
+      <Pin Id="P5_3"/>
+      <Pin Id="P5_4"/>
+      <Pin Id="P5_5"/>
+      <Pin Id="P5_6"/>
+      <Pin Id="P5_7"/>
+      <Pin Id="P5_8"/>
+      <Pin Id="P5_9"/>
+      <Pin Id="P5_10"/>
+    </Peripheral>
+    <Peripheral Id="GPIO.6" Name="GPIO6" JName="GPIO6">
+      <Pin Id="P6_0"/>
+      <Pin Id="P6_1"/>
+      <Pin Id="P6_2"/>
+      <Pin Id="P6_3"/>
+      <Pin Id="P6_4"/>
+      <Pin Id="P6_5"/>
+      <Pin Id="P6_6"/>
+      <Pin Id="P6_7"/>
+      <Pin Id="P6_8"/>
+      <Pin Id="P6_9"/>
+      <Pin Id="P6_10"/>
+      <Pin Id="P6_11"/>
+      <Pin Id="P6_12"/>
+      <Pin Id="P6_13"/>
+      <Pin Id="P6_14"/>
+      <Pin Id="P6_15"/>
+    </Peripheral>
+    <Peripheral Id="GPIO.7" Name="GPIO7" JName="GPIO7">
+      <Pin Id="P7_0"/>
+      <Pin Id="P7_1"/>
+      <Pin Id="P7_2"/>
+      <Pin Id="P7_3"/>
+      <Pin Id="P7_4"/>
+      <Pin Id="P7_5"/>
+      <Pin Id="P7_6"/>
+      <Pin Id="P7_7"/>
+      <Pin Id="P7_8"/>
+      <Pin Id="P7_9"/>
+      <Pin Id="P7_10"/>
+      <Pin Id="P7_11"/>
+      <Pin Id="P7_12"/>
+      <Pin Id="P7_13"/>
+      <Pin Id="P7_14"/>
+      <Pin Id="P7_15"/>
+    </Peripheral>
+    <Peripheral Id="GPIO.8" Name="GPIO8" JName="GPIO8">
+      <Pin Id="P8_0"/>
+      <Pin Id="P8_1"/>
+      <Pin Id="P8_2"/>
+      <Pin Id="P8_3"/>
+      <Pin Id="P8_4"/>
+      <Pin Id="P8_5"/>
+      <Pin Id="P8_6"/>
+      <Pin Id="P8_7"/>
+      <Pin Id="P8_8"/>
+      <Pin Id="P8_9"/>
+      <Pin Id="P8_10"/>
+      <Pin Id="P8_11"/>
+      <Pin Id="P8_12"/>
+      <Pin Id="P8_13"/>
+      <Pin Id="P8_14"/>
+      <Pin Id="P8_15"/>
+    </Peripheral>
+    <Peripheral Id="GPIO.9" Name="GPIO9" JName="GPIO9">
+      <Pin Id="P9_0"/>
+      <Pin Id="P9_1"/>
+      <Pin Id="P9_2"/>
+      <Pin Id="P9_3"/>
+      <Pin Id="P9_4"/>
+      <Pin Id="P9_5"/>
+      <Pin Id="P9_6"/>
+      <Pin Id="P9_7"/>
+    </Peripheral>
+    <Peripheral Id="GPIO.10" Name="GPIO10" JName="GPIO10">
+      <Pin Id="P10_0"/>
+      <Pin Id="P10_1"/>
+      <Pin Id="P10_2"/>
+      <Pin Id="P10_3"/>
+      <Pin Id="P10_4"/>
+      <Pin Id="P10_5"/>
+      <Pin Id="P10_6"/>
+      <Pin Id="P10_7"/>
+      <Pin Id="P10_8"/>
+      <Pin Id="P10_9"/>
+      <Pin Id="P10_10"/>
+      <Pin Id="P10_11"/>
+      <Pin Id="P10_12"/>
+      <Pin Id="P10_13"/>
+      <Pin Id="P10_14"/>
+      <Pin Id="P10_15"/>
+    </Peripheral>
+    <Peripheral Id="GPIO.11" Name="GPIO11" JName="GPIO11">
+      <Pin Id="P11_0"/>
+      <Pin Id="P11_1"/>
+      <Pin Id="P11_2"/>
+      <Pin Id="P11_3"/>
+      <Pin Id="P11_4"/>
+      <Pin Id="P11_5"/>
+      <Pin Id="P11_6"/>
+      <Pin Id="P11_7"/>
+      <Pin Id="P11_8"/>
+      <Pin Id="P11_9"/>
+      <Pin Id="P11_10"/>
+      <Pin Id="P11_11"/>
+      <Pin Id="P11_12"/>
+      <Pin Id="P11_13"/>
+      <Pin Id="P11_14"/>
+      <Pin Id="P11_15"/>
+    </Peripheral>
+  </Peripheral>
+  <Peripheral Id="DEBUG" Name="Debugging interface" JName="デバッグインタフェース">
+      <Pin Id="TCK"/>
+      <Pin Id="TMS"/>
+      <Pin Id="TDI"/>
+      <Pin Id="TDO"/>
+      <Pin Id="TRST#"/>
+      <Pin Id="TRACEDATA0"/>
+      <Pin Id="TRACEDATA1"/>
+      <Pin Id="TRACEDATA2"/>
+      <Pin Id="TRACEDATA3"/>
+      <Pin Id="TRACECLK"/>
+      <Pin Id="TRACECTL"/>
+  </Peripheral>
+</PeripheralInformation>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<smc>
+<general version="2.0.0.0">
+<configuration active="true" id="com.renesas.smc.toolchain.gnuarm.configuration.release">
+<property id="com.renesas.smc.service.project.buildArtefactType" values="com.renesas.smc.service.project.buildArtefactType.exe"/>
+<toolchain id="com.renesas.smc.toolchain.gnuarm.noneeabi">
+<option id="com.renesas.smc.toolchain.option.rtos" key="com.renesas.smc.toolchain.option.rtos.none">
+<item id="com.renesas.smc.toolchain.option.rtos.freertos" value=""/>
+</option>
+</toolchain>
+</configuration>
+<platform id="R7S721001VCBG"/>
+<option id="board" value="Custom User Board"/>
+</general>
+<tool id="Pins" version="1.0.1.0">
+<pinItem allocation="M2" comments="" direction="None" id="LCD0_DATA1" status="0"/>
+<pinItem allocation="M3" comments="" direction="None" id="LCD0_DATA0" status="0"/>
+<pinItem allocation="B4" comments="" direction="None" id="LCD0_DATA5" status="0"/>
+<pinItem allocation="C5" comments="" direction="None" id="LCD0_DATA4" status="0"/>
+<pinItem allocation="L4" comments="" direction="None" id="LCD0_DATA3" status="0"/>
+<pinItem allocation="L1" comments="" direction="None" id="LCD0_DATA2" status="0"/>
+<pinItem allocation="D22" comments="" direction="None" id="LCD0_DATA9" status="0"/>
+<pinItem allocation="D21" comments="" direction="None" id="LCD0_DATA8" status="0"/>
+<pinItem allocation="A4" comments="" direction="None" id="LCD0_DATA7" status="0"/>
+<pinItem allocation="C6" comments="" direction="None" id="LCD0_DATA6" status="0"/>
+<pinItem allocation="H21" comments="" direction="None" id="LCD0_DATA13" status="0"/>
+<pinItem allocation="J20" comments="" direction="None" id="LCD0_DATA14" status="0"/>
+<pinItem allocation="J21" comments="" direction="None" id="LCD0_DATA15" status="0"/>
+<pinItem allocation="M22" comments="" direction="None" id="LCD0_DATA16" status="0"/>
+<pinItem allocation="N21" comments="" direction="None" id="LCD0_DATA17" status="0"/>
+<pinItem allocation="N20" comments="" direction="None" id="LCD0_DATA18" status="0"/>
+<pinItem allocation="N19" comments="" direction="None" id="LCD0_DATA19" status="0"/>
+<pinItem allocation="F20" comments="" direction="None" id="LCD0_DATA10" status="0"/>
+<pinItem allocation="E21" comments="" direction="None" id="LCD0_DATA11" status="0"/>
+<pinItem allocation="H20" comments="" direction="None" id="LCD0_DATA12" status="0"/>
+<pinItem allocation="J4" comments="" direction="None" id="LCD0_CLK" status="0"/>
+<pinItem allocation="AB5" comments="" direction="None" id="LCD0_DATA20" status="0"/>
+<pinItem allocation="Y6" comments="" direction="None" id="LCD0_DATA21" status="0"/>
+<pinItem allocation="AA5" comments="" direction="None" id="LCD0_DATA22" status="0"/>
+<pinItem allocation="AB4" comments="" direction="None" id="LCD0_DATA23" status="0"/>
+<pinItem allocation="U3" comments="" direction="None" id="LCD0_TCON3" status="0"/>
+<pinItem allocation="G2" comments="" direction="None" id="LCD0_TCON2" status="0"/>
+<pinItem allocation="T3" comments="" direction="None" id="LCD0_TCON4" status="0"/>
+<pinItem allocation="G1" comments="" direction="None" id="LCD0_TCON1" status="0"/>
+<pinItem allocation="H3" comments="" direction="None" id="LCD0_TCON0" status="0"/>
+<pinItem allocation="T1" comments="" direction="None" id="LCD0_TCON6" status="0"/>
+<pinItem allocation="T2" comments="" direction="None" id="LCD0_TCON5" status="0"/>
+<pinItem allocation="C17" comments="" direction="None" id="RIIC0SDA" status="0"/>
+<pinItem allocation="A19" comments="" direction="None" id="RIIC0SCL" status="0"/>
+<pinItem allocation="K21" comments="Touch IRQ" direction="None" id="IRQ1" status="0"/>
+<pinItem allocation="AB12" comments="" direction="None" id="DM0" status="0"/>
+<pinItem allocation="AA11" comments="" direction="None" id="DM1" status="0"/>
+<pinItem allocation="AB11" comments="" direction="None" id="DP1" status="0"/>
+<pinItem allocation="AA12" comments="" direction="None" id="DP0" status="0"/>
+<pinItem allocation="AB15" comments="" direction="None" id="USB_X1" status="0"/>
+<pinItem allocation="AA15" comments="" direction="None" id="USB_X2" status="0"/>
+<pinItem allocation="Y11" comments="" direction="None" id="VBUS1" status="0"/>
+<pinItem allocation="Y12" comments="" direction="None" id="VBUS0" status="0"/>
+<pinItem allocation="B22" comments="" direction="None" id="ET_RXD2" status="0"/>
+<pinItem allocation="E19" comments="" direction="None" id="ET_RXD3" status="0"/>
+<pinItem allocation="D20" comments="" direction="None" id="ET_RXD0" status="0"/>
+<pinItem allocation="C21" comments="" direction="None" id="ET_RXD1" status="0"/>
+<pinItem allocation="AB3" comments="" direction="None" id="ET_RXDV" status="0"/>
+<pinItem allocation="AA6" comments="" direction="None" id="ET_MDIO" status="0"/>
+<pinItem allocation="G20" comments="" direction="None" id="ET_CRS" status="0"/>
+<pinItem allocation="K22" comments="" direction="None" id="ET_TXER" status="0"/>
+<pinItem allocation="C22" comments="" direction="None" id="ET_TXD3" status="0"/>
+<pinItem allocation="E20" comments="" direction="None" id="ET_TXD2" status="0"/>
+<pinItem allocation="E22" comments="" direction="None" id="ET_TXD1" status="0"/>
+<pinItem allocation="F19" comments="" direction="None" id="ET_TXD0" status="0"/>
+<pinItem allocation="F21" comments="" direction="None" id="ET_TXEN" status="0"/>
+<pinItem allocation="AA4" comments="" direction="None" id="ET_RXER" status="0"/>
+<pinItem allocation="L21" comments="" direction="None" id="ET_TXCLK" status="0"/>
+<pinItem allocation="Y5" comments="" direction="None" id="ET_RXCLK" status="0"/>
+<pinItem allocation="M20" comments="" direction="None" id="SSIWS0" status="0"/>
+<pinItem allocation="B16" comments="Ether MAC EEPROM and Audio Codec" direction="None" id="RIIC3SDA" status="0"/>
+<pinItem allocation="M21" comments="" direction="None" id="SSISCK0" status="0"/>
+<pinItem allocation="G19" comments="Ethernet IRQ" direction="None" id="IRQ6" status="0"/>
+<pinItem allocation="R20" comments="" direction="None" id="TRACECTL" status="0"/>
+<pinItem allocation="V22" comments="" direction="None" id="TMS" status="0"/>
+<pinItem allocation="V20" comments="" direction="None" id="TRST#" status="0"/>
+<pinItem allocation="Y9" comments="NMI Switch" direction="None" id="NMI" status="0"/>
+<pinItem allocation="L22" comments="" direction="None" id="SSIRxD0" status="0"/>
+<pinItem allocation="L20" comments="" direction="None" id="SSITxD0" status="0"/>
+<pinItem allocation="U21" comments="" direction="None" id="TCK" status="0"/>
+<pinItem allocation="T21" comments="" direction="None" id="TRACEDATA3" status="0"/>
+<pinItem allocation="W20" comments="" direction="None" id="TRACEDATA1" status="0"/>
+<pinItem allocation="T20" comments="" direction="None" id="TRACEDATA2" status="0"/>
+<pinItem allocation="V19" comments="" direction="None" id="TRACEDATA0" status="0"/>
+<pinItem allocation="V21" comments="" direction="None" id="TDI" status="0"/>
+<pinItem allocation="A17" comments="Ether MAC EEPROM and Audio Codec" direction="None" id="RIIC3SCL" status="0"/>
+<pinItem allocation="U20" comments="" direction="None" id="TDO" status="0"/>
+<pinItem allocation="R21" comments="" direction="None" id="TRACECLK" status="0"/>
+<pinItem allocation="H2" comments="LED0" direction="None" id="P7_1" status="0"/>
+<pinItem allocation="AA17" comments="Switch 2" direction="None" id="IRQ2" status="0"/>
+<pinItem allocation="Y7" comments="SDIO Comunication Rx" direction="None" id="RxD2" status="0"/>
+<pinItem allocation="" comments="" direction="None" id="SCK2" status="0"/>
+<pinItem allocation="AB6" comments="SDIO Comunication Tx" direction="None" id="TxD2" status="0"/>
+<pinItem allocation="K1" comments="" direction="None" id="A1" status="0"/>
+<pinItem allocation="L3" comments="" direction="None" id="A2" status="0"/>
+<pinItem allocation="L2" comments="" direction="None" id="A3" status="0"/>
+<pinItem allocation="M1" comments="" direction="None" id="A4" status="0"/>
+<pinItem allocation="N1" comments="" direction="None" id="A5" status="0"/>
+<pinItem allocation="N2" comments="" direction="None" id="A6" status="0"/>
+<pinItem allocation="N3" comments="" direction="None" id="A7" status="0"/>
+<pinItem allocation="P1" comments="" direction="None" id="A8" status="0"/>
+<pinItem allocation="P2" comments="" direction="None" id="A9" status="0"/>
+<pinItem allocation="K4" comments="" direction="None" id="RD#" status="0"/>
+<pinItem allocation="K2" comments="" direction="None" id="WE1#/DQMLU" status="0"/>
+<pinItem allocation="B3" comments="" direction="None" id="D0" status="0"/>
+<pinItem allocation="D6" comments="" direction="None" id="D1" status="0"/>
+<pinItem allocation="C4" comments="" direction="None" id="D2" status="0"/>
+<pinItem allocation="D5" comments="" direction="None" id="D3" status="0"/>
+<pinItem allocation="A2" comments="" direction="None" id="D4" status="0"/>
+<pinItem allocation="C1" comments="" direction="None" id="D5" status="0"/>
+<pinItem allocation="D2" comments="" direction="None" id="D6" status="0"/>
+<pinItem allocation="D1" comments="" direction="None" id="D7" status="0"/>
+<pinItem allocation="E3" comments="" direction="None" id="D8" status="0"/>
+<pinItem allocation="E2" comments="" direction="None" id="D9" status="0"/>
+<pinItem allocation="J1" comments="" direction="None" id="RD/WR#" status="0"/>
+<pinItem allocation="H1" comments="" direction="None" id="RAS#" status="0"/>
+<pinItem allocation="J2" comments="" direction="None" id="CKE" status="0"/>
+<pinItem allocation="C7" comments="" direction="None" id="SPBIO10_0" status="0"/>
+<pinItem allocation="A20" comments="" direction="None" id="SPBIO11_0" status="0"/>
+<pinItem allocation="E1" comments="" direction="None" id="D10" status="0"/>
+<pinItem allocation="G4" comments="" direction="None" id="D12" status="0"/>
+<pinItem allocation="F3" comments="" direction="None" id="D11" status="0"/>
+<pinItem allocation="F1" comments="" direction="None" id="D14" status="0"/>
+<pinItem allocation="F2" comments="" direction="None" id="D13" status="0"/>
+<pinItem allocation="G3" comments="" direction="None" id="D15" status="0"/>
+<pinItem allocation="B6" comments="" direction="None" id="SPBIO00_0" status="0"/>
+<pinItem allocation="K3" comments="" direction="None" id="WE0#/DQMLL" status="0"/>
+<pinItem allocation="A21" comments="" direction="None" id="SPBIO01_0" status="0"/>
+<pinItem allocation="P3" comments="" direction="None" id="A10" status="0"/>
+<pinItem allocation="R1" comments="" direction="None" id="A11" status="0"/>
+<pinItem allocation="R2" comments="" direction="None" id="A12" status="0"/>
+<pinItem allocation="R3" comments="" direction="None" id="A13" status="0"/>
+<pinItem allocation="U2" comments="" direction="None" id="A14" status="0"/>
+<pinItem allocation="U4" comments="" direction="None" id="A15" status="0"/>
+<pinItem allocation="B5" comments="" direction="None" id="SPBIO30_0" status="0"/>
+<pinItem allocation="B19" comments="" direction="None" id="SPBIO31_0" status="0"/>
+<pinItem allocation="A5" comments="" direction="None" id="SPBIO20_0" status="0"/>
+<pinItem allocation="B8" comments="" direction="None" id="CS2#" status="0"/>
+<pinItem allocation="C18" comments="" direction="None" id="SPBIO21_0" status="0"/>
+<pinItem allocation="A6" comments="" direction="None" id="SPBSSL_0" status="0"/>
+<pinItem allocation="C8" comments="" direction="None" id="SPBCLK_0" status="0"/>
+</tool>
+</smc>

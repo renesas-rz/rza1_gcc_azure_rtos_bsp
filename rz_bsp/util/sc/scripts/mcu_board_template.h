@@ -44,4 +44,5 @@
 /* User Select macro */
 #define TARGET_RZA1             (TARGET_RZA1H)
 #define TARGET_BOARD            (TARGET_BOARD_RSK)
-#endif /* MCU_SEL_H */
+
+#endif /* MCU_SEL_H */

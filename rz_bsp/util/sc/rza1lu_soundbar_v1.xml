@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Board>
+    <Device Family="RZA1LU" PartNumber="R7S721031VLFP" Package="QFP" PinCount="208"/>
+    <Pin>
+        <Function Id="SSIWS1" Pin="61" Port="P7_9" Group=""/>
+        <Function Id="SSIWS0" Pin="38" Port="P6_9" Group=""/>
+        <Function Id="RIIC3SDA" Pin="156" Port="P1_7" Group=""/>
+        <Function Id="SSISCK0" Pin="33" Port="P6_8" Group=""/>
+        <Function Id="SSISCK1" Pin="60" Port="P7_8" Group=""/>
+        <Function Id="IRQ2" Pin="96" Port="P1_10" Group=""/>
+        <Function Id="IRQ3" Pin="97" Port="P1_11" Group=""/>
+        <Function Id="IRQ0" Pin="94" Port="P1_8" Group=""/>
+        <Function Id="IRQ1" Pin="95" Port="P1_9" Group=""/>
+        <Function Id="IRQ4" Pin="98" Port="P1_12" Group=""/>
+        <Function Id="AUDIO_X1" Pin="107" Port="AUDIO_X1" Group=""/>
+        <Function Id="SCI_RXD0/IrRXD" Pin="51" Port="P7_1" Group=""/>
+        <Function Id="AUDIO_CLK" Pin="138" Port="P3_8" Group=""/>
+        <Function Id="LCD0_DATA1" Pin="120" Port="P3_1" Group=""/>
+        <Function Id="LCD0_DATA0" Pin="119" Port="P3_0" Group=""/>
+        <Function Id="LCD0_DATA5" Pin="131" Port="P3_5" Group=""/>
+        <Function Id="LCD0_DATA4" Pin="200" Port="P8_4" Group=""/>
+        <Function Id="LCD0_DATA3" Pin="124" Port="P3_3" Group=""/>
+        <Function Id="LCD0_DATA2" Pin="122" Port="P3_2" Group=""/>
+        <Function Id="LCD0_DATA9" Pin="19" Port="P6_1" Group=""/>
+        <Function Id="LCD0_DATA8" Pin="17" Port="P6_0" Group=""/>
+        <Function Id="LCD0_DATA7" Pin="133" Port="P3_7" Group=""/>
+        <Function Id="LCD0_DATA6" Pin="132" Port="P3_6" Group=""/>
+        <Function Id="LCD0_DATA13" Pin="26" Port="P6_5" Group=""/>
+        <Function Id="LCD0_DATA14" Pin="31" Port="P6_6" Group=""/>
+        <Function Id="LCD0_DATA15" Pin="32" Port="P6_7" Group=""/>
+        <Function Id="LCD0_DATA10" Pin="20" Port="P6_2" Group=""/>
+        <Function Id="LCD0_DATA11" Pin="22" Port="P6_3" Group=""/>
+        <Function Id="LCD0_DATA12" Pin="24" Port="P6_4" Group=""/>
+        <Function Id="SSIRxD0" Pin="41" Port="P6_11" Group=""/>
+        <Function Id="SSIRxD1" Pin="63" Port="P7_11" Group=""/>
+        <Function Id="RIIC0SDA" Pin="150" Port="P1_1" Group=""/>
+        <Function Id="RIIC0SCL" Pin="149" Port="P1_0" Group=""/>
+        <Function Id="SSITxD0" Pin="40" Port="P6_10" Group=""/>
+        <Function Id="SSITxD1" Pin="62" Port="P7_10" Group=""/>
+        <Function Id="LCD0_CLK" Pin="55" Port="P7_4" Group=""/>
+        <Function Id="RIIC1SCL" Pin="151" Port="P1_2" Group=""/>
+        <Function Id="RIIC1SDA" Pin="152" Port="P1_3" Group=""/>
+        <Function Id="SCI_TXD0/IrTXD" Pin="52" Port="P7_2" Group=""/>
+        <Function Id="LCD0_TCON3" Pin="1" Port="P5_3" Group=""/>
+        <Function Id="LCD0_TCON2" Pin="35" Port="P8_10" Group=""/>
+        <Function Id="LCD0_TCON4" Pin="56" Port="P7_5" Group=""/>
+        <Function Id="RIIC3SCL" Pin="155" Port="P1_6" Group=""/>
+    </Pin>
+</Board>

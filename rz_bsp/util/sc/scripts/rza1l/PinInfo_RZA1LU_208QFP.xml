@@ -1,0 +1,1145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<!-- this file was auto-generated. Do not modify it manually -->
+<PinInformation>
+  <Dependence Dependence=""/>
+  <Pin Id="1" PinNumber="1">
+    <Function Id="P5_3" FunctionName="P5_3" PinInputOutput="IO"/>
+    <Function Id="D3" FunctionName="D3" PinInputOutput="IO"/>
+    <Function Id="MMC_D7" FunctionName="MMC_D7" PinInputOutput="IO"/>
+    <Function Id="ET_TXD3" FunctionName="ET_TXD3" PinInputOutput="O"/>
+    <Function Id="DV0_DATA19" FunctionName="DV0_DATA19" PinInputOutput="I"/>
+    <Function Id="LCD0_TCON3" FunctionName="LCD0_TCON3" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="2" PinNumber="2">
+    <Function Id="P5_4" FunctionName="P5_4" PinInputOutput="IO"/>
+    <Function Id="D4" FunctionName="D4" PinInputOutput="IO"/>
+    <Function Id="RSPCK2" FunctionName="RSPCK2" PinInputOutput="IO"/>
+    <Function Id="SSISCK1" FunctionName="SSISCK1" PinInputOutput="IO"/>
+    <Function Id="DV0_DATA20" FunctionName="DV0_DATA20" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="3" PinNumber="3">
+    <Function Id="P5_5" FunctionName="P5_5" PinInputOutput="IO"/>
+    <Function Id="D5" FunctionName="D5" PinInputOutput="IO"/>
+    <Function Id="SSL20" FunctionName="SSL20" PinInputOutput="IO"/>
+    <Function Id="SSIWS1" FunctionName="SSIWS1" PinInputOutput="IO"/>
+    <Function Id="DV0_DATA21" FunctionName="DV0_DATA21" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="4" PinNumber="4">
+    <Function Id="P5_6" FunctionName="P5_6" PinInputOutput="IO"/>
+    <Function Id="D6" FunctionName="D6" PinInputOutput="IO"/>
+    <Function Id="MOSI2" FunctionName="MOSI2" PinInputOutput="IO"/>
+    <Function Id="SSITxD1" FunctionName="SSITxD1" PinInputOutput="O"/>
+    <Function Id="DV0_DATA22" FunctionName="DV0_DATA22" PinInputOutput="I"/>
+    <Function Id="SCK2" FunctionName="SCK2" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="5" PinNumber="5">
+    <Function Id="P5_7" FunctionName="P5_7" PinInputOutput="IO"/>
+    <Function Id="D7" FunctionName="D7" PinInputOutput="IO"/>
+    <Function Id="MISO2" FunctionName="MISO2" PinInputOutput="IO"/>
+    <Function Id="SSIRxD1" FunctionName="SSIRxD1" PinInputOutput="I"/>
+    <Function Id="DV0_DATA23" FunctionName="DV0_DATA23" PinInputOutput="I"/>
+    <Function Id="TxD2" FunctionName="TxD2" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="6" PinNumber="6">
+    <Function Id="P5_8" FunctionName="P5_8" PinInputOutput="IO"/>
+    <Function Id="D8" FunctionName="D8" PinInputOutput="IO"/>
+    <Function Id="CAN0RX" FunctionName="CAN0RX" PinInputOutput="I"/>
+    <Function Id="TIOC4A" FunctionName="TIOC4A" PinInputOutput="IO"/>
+    <Function Id="IRQ3" FunctionName="IRQ3" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="7" PinNumber="7">
+    <Function Id="Vcc" FunctionName="Vcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="8" PinNumber="8">
+    <Function Id="P5_9" FunctionName="P5_9" PinInputOutput="IO"/>
+    <Function Id="D9" FunctionName="D9" PinInputOutput="IO"/>
+    <Function Id="CAN0TX" FunctionName="CAN0TX" PinInputOutput="O"/>
+    <Function Id="TIOC4B" FunctionName="TIOC4B" PinInputOutput="IO"/>
+    <Function Id="IRQ4" FunctionName="IRQ4" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="9" PinNumber="9">
+    <Function Id="Vss" FunctionName="Vss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="10" PinNumber="10">
+    <Function Id="P5_10" FunctionName="P5_10" PinInputOutput="IO"/>
+    <Function Id="D10" FunctionName="D10" PinInputOutput="IO"/>
+    <Function Id="TIOC4C" FunctionName="TIOC4C" PinInputOutput="IO"/>
+    <Function Id="IRQ5" FunctionName="IRQ5" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="11" PinNumber="11">
+    <Function Id="PVcc" FunctionName="PVcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="12" PinNumber="12">
+    <Function Id="P5_11" FunctionName="P5_11" PinInputOutput="IO"/>
+    <Function Id="D11" FunctionName="D11" PinInputOutput="IO"/>
+    <Function Id="TIOC4D" FunctionName="TIOC4D" PinInputOutput="IO"/>
+    <Function Id="IRQ6" FunctionName="IRQ6" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="13" PinNumber="13">
+    <Function Id="P5_12" FunctionName="P5_12" PinInputOutput="IO"/>
+    <Function Id="D12" FunctionName="D12" PinInputOutput="IO"/>
+    <Function Id="SSISCK2" FunctionName="SSISCK2" PinInputOutput="IO"/>
+    <Function Id="SCK4" FunctionName="SCK4" PinInputOutput="IO"/>
+    <Function Id="AUDIO_XOUT2" FunctionName="AUDIO_XOUT2" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="14" PinNumber="14">
+    <Function Id="P5_13" FunctionName="P5_13" PinInputOutput="IO"/>
+    <Function Id="D13" FunctionName="D13" PinInputOutput="IO"/>
+    <Function Id="SSIWS2" FunctionName="SSIWS2" PinInputOutput="IO"/>
+    <Function Id="AUDIO_XOUT" FunctionName="AUDIO_XOUT" PinInputOutput="O"/>
+    <Function Id="AUDIO_XOUT3" FunctionName="AUDIO_XOUT3" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="15" PinNumber="15">
+    <Function Id="P5_14" FunctionName="P5_14" PinInputOutput="IO"/>
+    <Function Id="D14" FunctionName="D14" PinInputOutput="IO"/>
+    <Function Id="SSIDATA2" FunctionName="SSIDATA2" PinInputOutput="IO"/>
+    <Function Id="RxD4" FunctionName="RxD4" PinInputOutput="I"/>
+    <Function Id="TIOC2A" FunctionName="TIOC2A" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="16" PinNumber="16">
+    <Function Id="P5_15" FunctionName="P5_15" PinInputOutput="IO"/>
+    <Function Id="D15" FunctionName="D15" PinInputOutput="IO"/>
+    <Function Id="SD_WP_1" FunctionName="SD_WP_1" PinInputOutput="I"/>
+    <Function Id="TxD4" FunctionName="TxD4" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="17" PinNumber="17">
+    <Function Id="P6_0" FunctionName="P6_0" PinInputOutput="IO"/>
+    <Function Id="D16" FunctionName="D16" PinInputOutput="IO"/>
+    <Function Id="LCD0_DATA8" FunctionName="LCD0_DATA8" PinInputOutput="O"/>
+    <Function Id="RSPCK0" FunctionName="RSPCK0" PinInputOutput="IO"/>
+    <Function Id="TCLKA" FunctionName="TCLKA" PinInputOutput="I"/>
+    <Function Id="WDTOVF#" FunctionName="WDTOVF#" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="18" PinNumber="18">
+    <Function Id="Vss" FunctionName="Vss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="19" PinNumber="19">
+    <Function Id="P6_1" FunctionName="P6_1" PinInputOutput="IO"/>
+    <Function Id="D17" FunctionName="D17" PinInputOutput="IO"/>
+    <Function Id="LCD0_DATA9" FunctionName="LCD0_DATA9" PinInputOutput="O"/>
+    <Function Id="SSL00" FunctionName="SSL00" PinInputOutput="IO"/>
+    <Function Id="TCLKB" FunctionName="TCLKB" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="20" PinNumber="20">
+    <Function Id="P6_2" FunctionName="P6_2" PinInputOutput="IO"/>
+    <Function Id="D18" FunctionName="D18" PinInputOutput="IO"/>
+    <Function Id="LCD0_DATA10" FunctionName="LCD0_DATA10" PinInputOutput="O"/>
+    <Function Id="MOSI0" FunctionName="MOSI0" PinInputOutput="IO"/>
+    <Function Id="TCLKC" FunctionName="TCLKC" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="21" PinNumber="21">
+    <Function Id="Vcc" FunctionName="Vcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="22" PinNumber="22">
+    <Function Id="P6_3" FunctionName="P6_3" PinInputOutput="IO"/>
+    <Function Id="D19" FunctionName="D19" PinInputOutput="IO"/>
+    <Function Id="LCD0_DATA11" FunctionName="LCD0_DATA11" PinInputOutput="O"/>
+    <Function Id="MISO0" FunctionName="MISO0" PinInputOutput="IO"/>
+    <Function Id="TCLKD" FunctionName="TCLKD" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="23" PinNumber="23">
+    <Function Id="Vss" FunctionName="Vss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="24" PinNumber="24">
+    <Function Id="P6_4" FunctionName="P6_4" PinInputOutput="IO"/>
+    <Function Id="D20" FunctionName="D20" PinInputOutput="IO"/>
+    <Function Id="LCD0_DATA12" FunctionName="LCD0_DATA12" PinInputOutput="O"/>
+    <Function Id="SSISCK3" FunctionName="SSISCK3" PinInputOutput="IO"/>
+    <Function Id="AVB_CAPTURE" FunctionName="AVB_CAPTURE" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="25" PinNumber="25">
+    <Function Id="PVcc" FunctionName="PVcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="26" PinNumber="26">
+    <Function Id="P6_5" FunctionName="P6_5" PinInputOutput="IO"/>
+    <Function Id="D21" FunctionName="D21" PinInputOutput="IO"/>
+    <Function Id="LCD0_DATA13" FunctionName="LCD0_DATA13" PinInputOutput="O"/>
+    <Function Id="SSIWS3" FunctionName="SSIWS3" PinInputOutput="IO"/>
+    <Function Id="AVB_GPTP_EXTERN" FunctionName="AVB_GPTP_EXTERN" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="27" PinNumber="27">
+    <Function Id="P8_6" FunctionName="P8_6" PinInputOutput="IO"/>
+    <Function Id="LCD0_DATA6" FunctionName="LCD0_DATA6" PinInputOutput="O"/>
+    <Function Id="ET_TXEN" FunctionName="ET_TXEN" PinInputOutput="O"/>
+    <Function Id="IRQ6" FunctionName="IRQ6" PinInputOutput="I"/>
+    <Function Id="CTS1#" FunctionName="CTS1#" PinInputOutput="IO"/>
+    <Function Id="TIOC0C" FunctionName="TIOC0C" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="28" PinNumber="28">
+    <Function Id="P8_7" FunctionName="P8_7" PinInputOutput="IO"/>
+    <Function Id="LCD0_DATA7" FunctionName="LCD0_DATA7" PinInputOutput="O"/>
+    <Function Id="ET_RXD0" FunctionName="ET_RXD0" PinInputOutput="I"/>
+    <Function Id="IRQ7" FunctionName="IRQ7" PinInputOutput="I"/>
+    <Function Id="RTS1#" FunctionName="RTS1#" PinInputOutput="IO"/>
+    <Function Id="TIOC0D" FunctionName="TIOC0D" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="29" PinNumber="29">
+    <Function Id="P8_8" FunctionName="P8_8" PinInputOutput="IO"/>
+    <Function Id="LCD0_TCON0" FunctionName="LCD0_TCON0" PinInputOutput="O"/>
+    <Function Id="ET_RXD1" FunctionName="ET_RXD1" PinInputOutput="I"/>
+    <Function Id="AUDIO_XOUT" FunctionName="AUDIO_XOUT" PinInputOutput="O"/>
+    <Function Id="SCK2" FunctionName="SCK2" PinInputOutput="IO"/>
+    <Function Id="AUDIO_XOUT3" FunctionName="AUDIO_XOUT3" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="30" PinNumber="30">
+    <Function Id="P8_9" FunctionName="P8_9" PinInputOutput="IO"/>
+    <Function Id="LCD0_TCON1" FunctionName="LCD0_TCON1" PinInputOutput="O"/>
+    <Function Id="ET_RXD2" FunctionName="ET_RXD2" PinInputOutput="I"/>
+    <Function Id="CAN1TX" FunctionName="CAN1TX" PinInputOutput="O"/>
+    <Function Id="RxD2" FunctionName="RxD2" PinInputOutput="I"/>
+    <Function Id="AUDIO_XOUT2" FunctionName="AUDIO_XOUT2" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="31" PinNumber="31">
+    <Function Id="P6_6" FunctionName="P6_6" PinInputOutput="IO"/>
+    <Function Id="D22" FunctionName="D22" PinInputOutput="IO"/>
+    <Function Id="LCD0_DATA14" FunctionName="LCD0_DATA14" PinInputOutput="O"/>
+    <Function Id="SSITxD3" FunctionName="SSITxD3" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="32" PinNumber="32">
+    <Function Id="P6_7" FunctionName="P6_7" PinInputOutput="IO"/>
+    <Function Id="D23" FunctionName="D23" PinInputOutput="IO"/>
+    <Function Id="LCD0_DATA15" FunctionName="LCD0_DATA15" PinInputOutput="O"/>
+    <Function Id="SSIRxD3" FunctionName="SSIRxD3" PinInputOutput="I"/>
+    <Function Id="IRQ0" FunctionName="IRQ0" PinInputOutput="I"/>
+    <Function Id="TIOC3A" FunctionName="TIOC3A" PinInputOutput="IO"/>
+    <Function Id="TRACEDATA0" FunctionName="TRACEDATA0" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="33" PinNumber="33">
+    <Function Id="P6_8" FunctionName="P6_8" PinInputOutput="IO"/>
+    <Function Id="D24" FunctionName="D24" PinInputOutput="IO"/>
+    <Function Id="LCD0_DATA16" FunctionName="LCD0_DATA16" PinInputOutput="O"/>
+    <Function Id="SSISCK0" FunctionName="SSISCK0" PinInputOutput="IO"/>
+    <Function Id="IRQ1" FunctionName="IRQ1" PinInputOutput="I"/>
+    <Function Id="TIOC3B" FunctionName="TIOC3B" PinInputOutput="IO"/>
+    <Function Id="TRACEDATA1" FunctionName="TRACEDATA1" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="34" PinNumber="34">
+    <Function Id="Vss" FunctionName="Vss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="35" PinNumber="35">
+    <Function Id="P8_10" FunctionName="P8_10" PinInputOutput="IO"/>
+    <Function Id="LCD0_TCON2" FunctionName="LCD0_TCON2" PinInputOutput="O"/>
+    <Function Id="ET_RXD3" FunctionName="ET_RXD3" PinInputOutput="I"/>
+    <Function Id="CAN1RX" FunctionName="CAN1RX" PinInputOutput="I"/>
+    <Function Id="TxD2" FunctionName="TxD2" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="36" PinNumber="36">
+    <Function Id="PVcc" FunctionName="PVcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="37" PinNumber="37">
+    <Function Id="P8_11" FunctionName="P8_11" PinInputOutput="IO"/>
+    <Function Id="LCD0_TCON3" FunctionName="LCD0_TCON3" PinInputOutput="O"/>
+    <Function Id="SSISCK2" FunctionName="SSISCK2" PinInputOutput="IO"/>
+    <Function Id="SCK4" FunctionName="SCK4" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="38" PinNumber="38">
+    <Function Id="P6_9" FunctionName="P6_9" PinInputOutput="IO"/>
+    <Function Id="D25" FunctionName="D25" PinInputOutput="IO"/>
+    <Function Id="LCD0_DATA17" FunctionName="LCD0_DATA17" PinInputOutput="O"/>
+    <Function Id="SSIWS0" FunctionName="SSIWS0" PinInputOutput="IO"/>
+    <Function Id="IRQ2" FunctionName="IRQ2" PinInputOutput="I"/>
+    <Function Id="TIOC3C" FunctionName="TIOC3C" PinInputOutput="IO"/>
+    <Function Id="TRACEDATA2" FunctionName="TRACEDATA2" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="39" PinNumber="39">
+    <Function Id="Vss" FunctionName="Vss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="40" PinNumber="40">
+    <Function Id="P6_10" FunctionName="P6_10" PinInputOutput="IO"/>
+    <Function Id="D26" FunctionName="D26" PinInputOutput="IO"/>
+    <Function Id="LCD0_DATA18" FunctionName="LCD0_DATA18" PinInputOutput="O"/>
+    <Function Id="SSITxD0" FunctionName="SSITxD0" PinInputOutput="O"/>
+    <Function Id="IRQ3" FunctionName="IRQ3" PinInputOutput="I"/>
+    <Function Id="TIOC3D" FunctionName="TIOC3D" PinInputOutput="IO"/>
+    <Function Id="CAN1TX" FunctionName="CAN1TX" PinInputOutput="O"/>
+    <Function Id="TRACEDATA3" FunctionName="TRACEDATA3" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="41" PinNumber="41">
+    <Function Id="P6_11" FunctionName="P6_11" PinInputOutput="IO"/>
+    <Function Id="D27" FunctionName="D27" PinInputOutput="IO"/>
+    <Function Id="LCD0_DATA19" FunctionName="LCD0_DATA19" PinInputOutput="O"/>
+    <Function Id="SSIRxD0" FunctionName="SSIRxD0" PinInputOutput="I"/>
+    <Function Id="SSIDATA2" FunctionName="SSIDATA2" PinInputOutput="IO"/>
+    <Function Id="SCK0" FunctionName="SCK0" PinInputOutput="IO"/>
+    <Function Id="CAN1RX" FunctionName="CAN1RX" PinInputOutput="I"/>
+    <Function Id="TRACECTL" FunctionName="TRACECTL" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="42" PinNumber="42">
+    <Function Id="Vcc" FunctionName="Vcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="43" PinNumber="43">
+    <Function Id="P6_12" FunctionName="P6_12" PinInputOutput="IO"/>
+    <Function Id="D28" FunctionName="D28" PinInputOutput="IO"/>
+    <Function Id="LCD0_DATA20" FunctionName="LCD0_DATA20" PinInputOutput="O"/>
+    <Function Id="RSPCK1" FunctionName="RSPCK1" PinInputOutput="IO"/>
+    <Function Id="SSISCK2" FunctionName="SSISCK2" PinInputOutput="IO"/>
+    <Function Id="RTS0#" FunctionName="RTS0#" PinInputOutput="IO"/>
+    <Function Id="DV0_DATA0" FunctionName="DV0_DATA0" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="44" PinNumber="44">
+    <Function Id="Vss" FunctionName="Vss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="45" PinNumber="45">
+    <Function Id="CKIO" FunctionName="CKIO" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="46" PinNumber="46">
+    <Function Id="P6_13" FunctionName="P6_13" PinInputOutput="IO"/>
+    <Function Id="D29" FunctionName="D29" PinInputOutput="IO"/>
+    <Function Id="LCD0_DATA21" FunctionName="LCD0_DATA21" PinInputOutput="O"/>
+    <Function Id="SSL10" FunctionName="SSL10" PinInputOutput="IO"/>
+    <Function Id="SSIWS2" FunctionName="SSIWS2" PinInputOutput="IO"/>
+    <Function Id="CTS0#" FunctionName="CTS0#" PinInputOutput="IO"/>
+    <Function Id="DV0_DATA1" FunctionName="DV0_DATA1" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="47" PinNumber="47">
+    <Function Id="PVcc" FunctionName="PVcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="48" PinNumber="48">
+    <Function Id="P6_14" FunctionName="P6_14" PinInputOutput="IO"/>
+    <Function Id="D30" FunctionName="D30" PinInputOutput="IO"/>
+    <Function Id="LCD0_DATA22" FunctionName="LCD0_DATA22" PinInputOutput="O"/>
+    <Function Id="MOSI1" FunctionName="MOSI1" PinInputOutput="IO"/>
+    <Function Id="SSIDATA2" FunctionName="SSIDATA2" PinInputOutput="IO"/>
+    <Function Id="RxD0" FunctionName="RxD0" PinInputOutput="I"/>
+    <Function Id="DV0_DATA2" FunctionName="DV0_DATA2" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="49" PinNumber="49">
+    <Function Id="P6_15" FunctionName="P6_15" PinInputOutput="IO"/>
+    <Function Id="D31" FunctionName="D31" PinInputOutput="IO"/>
+    <Function Id="LCD0_DATA23" FunctionName="LCD0_DATA23" PinInputOutput="O"/>
+    <Function Id="MISO1" FunctionName="MISO1" PinInputOutput="IO"/>
+    <Function Id="TxD0" FunctionName="TxD0" PinInputOutput="O"/>
+    <Function Id="DV0_DATA3" FunctionName="DV0_DATA3" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="50" PinNumber="50">
+    <Function Id="P7_0" FunctionName="P7_0" PinInputOutput="IO"/>
+    <Function Id="LCD0_EXTCLK" FunctionName="LCD0_EXTCLK" PinInputOutput="I"/>
+    <Function Id="MMC_CD" FunctionName="MMC_CD" PinInputOutput="I"/>
+    <Function Id="SD_CD_1" FunctionName="SD_CD_1" PinInputOutput="I"/>
+    <Function Id="SPDIF_OUT" FunctionName="SPDIF_OUT" PinInputOutput="O"/>
+    <Function Id="TIOC2A" FunctionName="TIOC2A" PinInputOutput="IO"/>
+    <Function Id="DV0_DATA4" FunctionName="DV0_DATA4" PinInputOutput="I"/>
+    <Function Id="SCI_SCK0" FunctionName="SCI_SCK0" PinInputOutput="IO"/>
+    <Function Id="TRACECLK" FunctionName="TRACECLK" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="51" PinNumber="51">
+    <Function Id="P7_1" FunctionName="P7_1" PinInputOutput="IO"/>
+    <Function Id="CS1#" FunctionName="CS1#" PinInputOutput="O"/>
+    <Function Id="AUDIO_XOUT" FunctionName="AUDIO_XOUT" PinInputOutput="O"/>
+    <Function Id="SD_WP_1" FunctionName="SD_WP_1" PinInputOutput="I"/>
+    <Function Id="TxD2" FunctionName="TxD2" PinInputOutput="O"/>
+    <Function Id="DV0_DATA5" FunctionName="DV0_DATA5" PinInputOutput="I"/>
+    <Function Id="SCI_RXD0/IrRXD" FunctionName="SCI_RXD0/IrRXD" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="52" PinNumber="52">
+    <Function Id="P7_2" FunctionName="P7_2" PinInputOutput="IO"/>
+    <Function Id="CS4#" FunctionName="CS4#" PinInputOutput="O"/>
+    <Function Id="MMC_D1" FunctionName="MMC_D1" PinInputOutput="IO"/>
+    <Function Id="SD_D1_1" FunctionName="SD_D1_1" PinInputOutput="IO"/>
+    <Function Id="IRQ4" FunctionName="IRQ4" PinInputOutput="I"/>
+    <Function Id="CAN0RX" FunctionName="CAN0RX" PinInputOutput="I"/>
+    <Function Id="DV0_DATA6" FunctionName="DV0_DATA6" PinInputOutput="I"/>
+    <Function Id="SCI_TXD0/IrTXD" FunctionName="SCI_TXD0/IrTXD" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="53" PinNumber="53">
+    <Function Id="P7_3" FunctionName="P7_3" PinInputOutput="IO"/>
+    <Function Id="CS5#" FunctionName="CS5#" PinInputOutput="O"/>
+    <Function Id="MMC_D0" FunctionName="MMC_D0" PinInputOutput="IO"/>
+    <Function Id="SD_D0_1" FunctionName="SD_D0_1" PinInputOutput="IO"/>
+    <Function Id="IRQ3" FunctionName="IRQ3" PinInputOutput="I"/>
+    <Function Id="CAN0TX" FunctionName="CAN0TX" PinInputOutput="O"/>
+    <Function Id="DV0_DATA7" FunctionName="DV0_DATA7" PinInputOutput="I"/>
+    <Function Id="SCI_CTS0#/RTS0#" FunctionName="SCI_CTS0#/RTS0#" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="54" PinNumber="54">
+    <Function Id="Vss" FunctionName="Vss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="55" PinNumber="55">
+    <Function Id="P7_4" FunctionName="P7_4" PinInputOutput="IO"/>
+    <Function Id="WAIT#" FunctionName="WAIT#" PinInputOutput="I"/>
+    <Function Id="MMC_CLK" FunctionName="MMC_CLK" PinInputOutput="O"/>
+    <Function Id="SD_CLK_1" FunctionName="SD_CLK_1" PinInputOutput="O"/>
+    <Function Id="LCD0_CLK" FunctionName="LCD0_CLK" PinInputOutput="O"/>
+    <Function Id="SCI_SCK1" FunctionName="SCI_SCK1" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="56" PinNumber="56">
+    <Function Id="P7_5" FunctionName="P7_5" PinInputOutput="IO"/>
+    <Function Id="BS#" FunctionName="BS#" PinInputOutput="O"/>
+    <Function Id="MMC_CMD" FunctionName="MMC_CMD" PinInputOutput="IO"/>
+    <Function Id="SD_CMD_1" FunctionName="SD_CMD_1" PinInputOutput="IO"/>
+    <Function Id="TxD0" FunctionName="TxD0" PinInputOutput="O"/>
+    <Function Id="LCD0_TCON4" FunctionName="LCD0_TCON4" PinInputOutput="O"/>
+    <Function Id="SCI_RXD1" FunctionName="SCI_RXD1" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="57" PinNumber="57">
+    <Function Id="P7_6" FunctionName="P7_6" PinInputOutput="IO"/>
+    <Function Id="WE2#/DQMUL" FunctionName="WE2#/DQMUL" PinInputOutput="O"/>
+    <Function Id="MMC_D3" FunctionName="MMC_D3" PinInputOutput="IO"/>
+    <Function Id="SD_D3_1" FunctionName="SD_D3_1" PinInputOutput="IO"/>
+    <Function Id="IRQ6" FunctionName="IRQ6" PinInputOutput="I"/>
+    <Function Id="CTS2#" FunctionName="CTS2#" PinInputOutput="IO"/>
+    <Function Id="LCD0_TCON5" FunctionName="LCD0_TCON5" PinInputOutput="O"/>
+    <Function Id="SCI_TXD1" FunctionName="SCI_TXD1" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="58" PinNumber="58">
+    <Function Id="PVcc" FunctionName="PVcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="59" PinNumber="59">
+    <Function Id="P7_7" FunctionName="P7_7" PinInputOutput="IO"/>
+    <Function Id="WE3#/DQMUU/AH#" FunctionName="WE3#/DQMUU/AH#" PinInputOutput="O"/>
+    <Function Id="MMC_D2" FunctionName="MMC_D2" PinInputOutput="IO"/>
+    <Function Id="SD_D2_1" FunctionName="SD_D2_1" PinInputOutput="IO"/>
+    <Function Id="IRQ5" FunctionName="IRQ5" PinInputOutput="I"/>
+    <Function Id="RTS2#" FunctionName="RTS2#" PinInputOutput="IO"/>
+    <Function Id="LCD0_TCON6" FunctionName="LCD0_TCON6" PinInputOutput="O"/>
+    <Function Id="SCI_CTS1#/RTS1#" FunctionName="SCI_CTS1#/RTS1#" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="60" PinNumber="60">
+    <Function Id="P7_8" FunctionName="P7_8" PinInputOutput="IO"/>
+    <Function Id="CS2#" FunctionName="CS2#" PinInputOutput="O"/>
+    <Function Id="SSISCK1" FunctionName="SSISCK1" PinInputOutput="IO"/>
+    <Function Id="DV0_CLK" FunctionName="DV0_CLK" PinInputOutput="I"/>
+    <Function Id="IRQ3" FunctionName="IRQ3" PinInputOutput="I"/>
+    <Function Id="TxD0" FunctionName="TxD0" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="61" PinNumber="61">
+    <Function Id="P7_9" FunctionName="P7_9" PinInputOutput="IO"/>
+    <Function Id="A25" FunctionName="A25" PinInputOutput="O"/>
+    <Function Id="SSIWS1" FunctionName="SSIWS1" PinInputOutput="IO"/>
+    <Function Id="DV0_VSYNC" FunctionName="DV0_VSYNC" PinInputOutput="I"/>
+    <Function Id="IRQ5" FunctionName="IRQ5" PinInputOutput="I"/>
+    <Function Id="SCK3" FunctionName="SCK3" PinInputOutput="IO"/>
+    <Function Id="TIOC1A" FunctionName="TIOC1A" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="62" PinNumber="62">
+    <Function Id="P7_10" FunctionName="P7_10" PinInputOutput="IO"/>
+    <Function Id="TEND0" FunctionName="TEND0" PinInputOutput="O"/>
+    <Function Id="SSITxD1" FunctionName="SSITxD1" PinInputOutput="O"/>
+    <Function Id="DV0_HSYNC" FunctionName="DV0_HSYNC" PinInputOutput="I"/>
+    <Function Id="RxD3" FunctionName="RxD3" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="63" PinNumber="63">
+    <Function Id="P7_11" FunctionName="P7_11" PinInputOutput="IO"/>
+    <Function Id="DACK0" FunctionName="DACK0" PinInputOutput="O"/>
+    <Function Id="SSIRxD1" FunctionName="SSIRxD1" PinInputOutput="I"/>
+    <Function Id="CAN_CLK" FunctionName="CAN_CLK" PinInputOutput="I"/>
+    <Function Id="SCK2" FunctionName="SCK2" PinInputOutput="IO"/>
+    <Function Id="TxD3" FunctionName="TxD3" PinInputOutput="O"/>
+    <Function Id="AUDIO_XOUT" FunctionName="AUDIO_XOUT" PinInputOutput="O"/>
+    <Function Id="AUDIO_XOUT3" FunctionName="AUDIO_XOUT3" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="64" PinNumber="64">
+    <Function Id="P8_12" FunctionName="P8_12" PinInputOutput="IO"/>
+    <Function Id="LCD0_TCON4" FunctionName="LCD0_TCON4" PinInputOutput="O"/>
+    <Function Id="SPDIF_IN" FunctionName="SPDIF_IN" PinInputOutput="I"/>
+    <Function Id="SSIWS2" FunctionName="SSIWS2" PinInputOutput="IO"/>
+    <Function Id="RxD4" FunctionName="RxD4" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="65" PinNumber="65">
+    <Function Id="Vss" FunctionName="Vss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="66" PinNumber="66">
+    <Function Id="P8_13" FunctionName="P8_13" PinInputOutput="IO"/>
+    <Function Id="LCD0_TCON5" FunctionName="LCD0_TCON5" PinInputOutput="O"/>
+    <Function Id="SPDIF_OUT" FunctionName="SPDIF_OUT" PinInputOutput="O"/>
+    <Function Id="SSIDATA2" FunctionName="SSIDATA2" PinInputOutput="IO"/>
+    <Function Id="TxD4" FunctionName="TxD4" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="67" PinNumber="67">
+    <Function Id="PVcc" FunctionName="PVcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="68" PinNumber="68">
+    <Function Id="P2_0" FunctionName="P2_0" PinInputOutput="IO"/>
+    <Function Id="CS3#" FunctionName="CS3#" PinInputOutput="O"/>
+    <Function Id="SPDIF_IN" FunctionName="SPDIF_IN" PinInputOutput="I"/>
+    <Function Id="IRQ7" FunctionName="IRQ7" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="69" PinNumber="69">
+    <Function Id="P2_1" FunctionName="P2_1" PinInputOutput="IO"/>
+    <Function Id="RAS#" FunctionName="RAS#" PinInputOutput="O"/>
+    <Function Id="SPDIF_OUT" FunctionName="SPDIF_OUT" PinInputOutput="O"/>
+    <Function Id="IRQ6" FunctionName="IRQ6" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="70" PinNumber="70">
+    <Function Id="P8_14" FunctionName="P8_14" PinInputOutput="IO"/>
+    <Function Id="LCD0_TCON6" FunctionName="LCD0_TCON6" PinInputOutput="O"/>
+    <Function Id="ET_COL" FunctionName="ET_COL" PinInputOutput="I"/>
+    <Function Id="SD_CD_0" FunctionName="SD_CD_0" PinInputOutput="I"/>
+    <Function Id="SCK1" FunctionName="SCK1" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="71" PinNumber="71">
+    <Function Id="P8_15" FunctionName="P8_15" PinInputOutput="IO"/>
+    <Function Id="ET_CRS" FunctionName="ET_CRS" PinInputOutput="I"/>
+    <Function Id="SD_WP_0" FunctionName="SD_WP_0" PinInputOutput="I"/>
+    <Function Id="RxD1" FunctionName="RxD1" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="72" PinNumber="72">
+    <Function Id="P9_0" FunctionName="P9_0" PinInputOutput="IO"/>
+    <Function Id="ET_MDC" FunctionName="ET_MDC" PinInputOutput="O"/>
+    <Function Id="SD_D1_0" FunctionName="SD_D1_0" PinInputOutput="IO"/>
+    <Function Id="TxD1" FunctionName="TxD1" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="73" PinNumber="73">
+    <Function Id="P9_1" FunctionName="P9_1" PinInputOutput="IO"/>
+    <Function Id="ET_MDIO" FunctionName="ET_MDIO" PinInputOutput="IO"/>
+    <Function Id="SD_D0_0" FunctionName="SD_D0_0" PinInputOutput="IO"/>
+    <Function Id="CTS0#" FunctionName="CTS0#" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="74" PinNumber="74">
+    <Function Id="Vcc" FunctionName="Vcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="75" PinNumber="75">
+    <Function Id="P2_2" FunctionName="P2_2" PinInputOutput="IO"/>
+    <Function Id="CAS#" FunctionName="CAS#" PinInputOutput="O"/>
+    <Function Id="CAN1RX" FunctionName="CAN1RX" PinInputOutput="I"/>
+    <Function Id="TIOC0C" FunctionName="TIOC0C" PinInputOutput="IO"/>
+    <Function Id="IRQ5" FunctionName="IRQ5" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="76" PinNumber="76">
+    <Function Id="P2_3" FunctionName="P2_3" PinInputOutput="IO"/>
+    <Function Id="CKE" FunctionName="CKE" PinInputOutput="O"/>
+    <Function Id="CAN1TX" FunctionName="CAN1TX" PinInputOutput="O"/>
+    <Function Id="TIOC0D" FunctionName="TIOC0D" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="77" PinNumber="77">
+    <Function Id="Vss" FunctionName="Vss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="78" PinNumber="78">
+    <Function Id="PVcc" FunctionName="PVcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="79" PinNumber="79">
+    <Function Id="P0_0" FunctionName="P0_0" PinInputOutput="I"/>
+    <Function Id="MD_BOOT0" FunctionName="MD_BOOT0" PinInputOutput="I"/>
+    <Function Id="RxD0" FunctionName="RxD0" PinInputOutput="I"/>
+    <Function Id="IRQ4" FunctionName="IRQ4" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="80" PinNumber="80">
+    <Function Id="P0_1" FunctionName="P0_1" PinInputOutput="I"/>
+    <Function Id="MD_BOOT1" FunctionName="MD_BOOT1" PinInputOutput="I"/>
+    <Function Id="RxD2" FunctionName="RxD2" PinInputOutput="I"/>
+    <Function Id="SSIRxD3" FunctionName="SSIRxD3" PinInputOutput="I"/>
+    <Function Id="ADTRG#" FunctionName="ADTRG#" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="81" PinNumber="81">
+    <Function Id="P0_2" FunctionName="P0_2" PinInputOutput="I"/>
+    <Function Id="MD_CLK" FunctionName="MD_CLK" PinInputOutput="I"/>
+    <Function Id="RxD1" FunctionName="RxD1" PinInputOutput="I"/>
+    <Function Id="IRQ7" FunctionName="IRQ7" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="82" PinNumber="82">
+    <Function Id="P0_3" FunctionName="P0_3" PinInputOutput="I"/>
+    <Function Id="MD_CLKS" FunctionName="MD_CLKS" PinInputOutput="I"/>
+    <Function Id="RxD3" FunctionName="RxD3" PinInputOutput="I"/>
+    <Function Id="SPDIF_IN" FunctionName="SPDIF_IN" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="83" PinNumber="83">
+    <Function Id="RTC_X1" FunctionName="RTC_X1" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="84" PinNumber="84">
+    <Function Id="RTC_X2" FunctionName="RTC_X2" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="85" PinNumber="85">
+    <Function Id="PLLVcc" FunctionName="PLLVcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="86" PinNumber="86">
+    <Function Id="EXTAL" FunctionName="EXTAL" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="87" PinNumber="87">
+    <Function Id="XTAL" FunctionName="XTAL" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="88" PinNumber="88">
+    <Function Id="Vss" FunctionName="Vss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="89" PinNumber="89">
+    <Function Id="Vss" FunctionName="Vss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="90" PinNumber="90">
+    <Function Id="NMI" FunctionName="NMI" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="91" PinNumber="91">
+    <Function Id="Vss" FunctionName="Vss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="92" PinNumber="92">
+    <Function Id="RES#" FunctionName="RES#" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="93" PinNumber="93">
+    <Function Id="PVcc" FunctionName="PVcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="94" PinNumber="94">
+    <Function Id="P1_8" FunctionName="P1_8" PinInputOutput="I"/>
+    <Function Id="AN0" FunctionName="AN0" PinInputOutput="I"/>
+    <Function Id="IRQ0" FunctionName="IRQ0" PinInputOutput="I"/>
+    <Function Id="RxD0" FunctionName="RxD0" PinInputOutput="I"/>
+    <Function Id="DV0_DATA4" FunctionName="DV0_DATA4" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="95" PinNumber="95">
+    <Function Id="P1_9" FunctionName="P1_9" PinInputOutput="I"/>
+    <Function Id="AN1" FunctionName="AN1" PinInputOutput="I"/>
+    <Function Id="IRQ1" FunctionName="IRQ1" PinInputOutput="I"/>
+    <Function Id="RxD1" FunctionName="RxD1" PinInputOutput="I"/>
+    <Function Id="DV0_DATA5" FunctionName="DV0_DATA5" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="96" PinNumber="96">
+    <Function Id="P1_10" FunctionName="P1_10" PinInputOutput="I"/>
+    <Function Id="AN2" FunctionName="AN2" PinInputOutput="I"/>
+    <Function Id="IRQ2" FunctionName="IRQ2" PinInputOutput="I"/>
+    <Function Id="RxD2" FunctionName="RxD2" PinInputOutput="I"/>
+    <Function Id="DV0_DATA6" FunctionName="DV0_DATA6" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="97" PinNumber="97">
+    <Function Id="P1_11" FunctionName="P1_11" PinInputOutput="I"/>
+    <Function Id="AN3" FunctionName="AN3" PinInputOutput="I"/>
+    <Function Id="IRQ3" FunctionName="IRQ3" PinInputOutput="I"/>
+    <Function Id="RxD3" FunctionName="RxD3" PinInputOutput="I"/>
+    <Function Id="DV0_DATA7" FunctionName="DV0_DATA7" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="98" PinNumber="98">
+    <Function Id="P1_12" FunctionName="P1_12" PinInputOutput="I"/>
+    <Function Id="AN4" FunctionName="AN4" PinInputOutput="I"/>
+    <Function Id="IRQ4" FunctionName="IRQ4" PinInputOutput="I"/>
+    <Function Id="ET_RXD0" FunctionName="ET_RXD0" PinInputOutput="I"/>
+    <Function Id="VIO_D4" FunctionName="VIO_D4" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="99" PinNumber="99">
+    <Function Id="P1_13" FunctionName="P1_13" PinInputOutput="I"/>
+    <Function Id="AN5" FunctionName="AN5" PinInputOutput="I"/>
+    <Function Id="IRQ5" FunctionName="IRQ5" PinInputOutput="I"/>
+    <Function Id="ET_RXD1" FunctionName="ET_RXD1" PinInputOutput="I"/>
+    <Function Id="VIO_D5" FunctionName="VIO_D5" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="100" PinNumber="100">
+    <Function Id="P1_14" FunctionName="P1_14" PinInputOutput="I"/>
+    <Function Id="AN6" FunctionName="AN6" PinInputOutput="I"/>
+    <Function Id="IRQ6" FunctionName="IRQ6" PinInputOutput="I"/>
+    <Function Id="ET_RXD2" FunctionName="ET_RXD2" PinInputOutput="I"/>
+    <Function Id="VIO_D6" FunctionName="VIO_D6" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="101" PinNumber="101">
+    <Function Id="P1_15" FunctionName="P1_15" PinInputOutput="I"/>
+    <Function Id="AN7" FunctionName="AN7" PinInputOutput="I"/>
+    <Function Id="IRQ7" FunctionName="IRQ7" PinInputOutput="I"/>
+    <Function Id="ET_RXD3" FunctionName="ET_RXD3" PinInputOutput="I"/>
+    <Function Id="VIO_D7" FunctionName="VIO_D7" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="102" PinNumber="102">
+    <Function Id="AVcc" FunctionName="AVcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="103" PinNumber="103">
+    <Function Id="AVss" FunctionName="AVss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="104" PinNumber="104">
+    <Function Id="AVref" FunctionName="AVref" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="105" PinNumber="105">
+    <Function Id="BSCANP" FunctionName="BSCANP" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="106" PinNumber="106">
+    <Function Id="PVcc" FunctionName="PVcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="107" PinNumber="107">
+    <Function Id="AUDIO_X1" FunctionName="AUDIO_X1" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="108" PinNumber="108">
+    <Function Id="AUDIO_X2" FunctionName="AUDIO_X2" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="109" PinNumber="109">
+    <Function Id="Vss" FunctionName="Vss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="110" PinNumber="110">
+    <Function Id="P2_4" FunctionName="P2_4" PinInputOutput="IO"/>
+    <Function Id="WE0#/DQMLL" FunctionName="WE0#/DQMLL" PinInputOutput="O"/>
+    <Function Id="TIOC4A" FunctionName="TIOC4A" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="111" PinNumber="111">
+    <Function Id="Vcc" FunctionName="Vcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="112" PinNumber="112">
+    <Function Id="P2_5" FunctionName="P2_5" PinInputOutput="IO"/>
+    <Function Id="WE1#/WE#/DQMLU" FunctionName="WE1#/WE#/DQMLU" PinInputOutput="O"/>
+    <Function Id="TIOC3A" FunctionName="TIOC3A" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="113" PinNumber="113">
+    <Function Id="TRST#" FunctionName="TRST#" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="114" PinNumber="114">
+    <Function Id="JP0_1" FunctionName="JP0_1" PinInputOutput="I"/>
+    <Function Id="TDO" FunctionName="TDO" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="115" PinNumber="115">
+    <Function Id="JP0_0" FunctionName="JP0_0" PinInputOutput="I"/>
+    <Function Id="TDI" FunctionName="TDI" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="116" PinNumber="116">
+    <Function Id="TMS" FunctionName="TMS" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="117" PinNumber="117">
+    <Function Id="TCK" FunctionName="TCK" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="118" PinNumber="118">
+    <Function Id="Vss" FunctionName="Vss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="119" PinNumber="119">
+    <Function Id="P3_0" FunctionName="P3_0" PinInputOutput="IO"/>
+    <Function Id="A1" FunctionName="A1" PinInputOutput="O"/>
+    <Function Id="SD_D2_0" FunctionName="SD_D2_0" PinInputOutput="IO"/>
+    <Function Id="LCD0_DATA0" FunctionName="LCD0_DATA0" PinInputOutput="O"/>
+    <Function Id="ET_TXCLK" FunctionName="ET_TXCLK" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="120" PinNumber="120">
+    <Function Id="P3_1" FunctionName="P3_1" PinInputOutput="IO"/>
+    <Function Id="A2" FunctionName="A2" PinInputOutput="O"/>
+    <Function Id="SD_D3_0" FunctionName="SD_D3_0" PinInputOutput="IO"/>
+    <Function Id="LCD0_DATA1" FunctionName="LCD0_DATA1" PinInputOutput="O"/>
+    <Function Id="ET_TXER" FunctionName="ET_TXER" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="121" PinNumber="121">
+    <Function Id="Vcc" FunctionName="Vcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="122" PinNumber="122">
+    <Function Id="P3_2" FunctionName="P3_2" PinInputOutput="IO"/>
+    <Function Id="A3" FunctionName="A3" PinInputOutput="O"/>
+    <Function Id="SD_CMD_0" FunctionName="SD_CMD_0" PinInputOutput="IO"/>
+    <Function Id="LCD0_DATA2" FunctionName="LCD0_DATA2" PinInputOutput="O"/>
+    <Function Id="ET_TXEN" FunctionName="ET_TXEN" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="123" PinNumber="123">
+    <Function Id="Vss" FunctionName="Vss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="124" PinNumber="124">
+    <Function Id="P3_3" FunctionName="P3_3" PinInputOutput="IO"/>
+    <Function Id="A4" FunctionName="A4" PinInputOutput="O"/>
+    <Function Id="SD_CLK_0" FunctionName="SD_CLK_0" PinInputOutput="O"/>
+    <Function Id="LCD0_DATA3" FunctionName="LCD0_DATA3" PinInputOutput="O"/>
+    <Function Id="ET_RXCLK" FunctionName="ET_RXCLK" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="125" PinNumber="125">
+    <Function Id="PVcc" FunctionName="PVcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="126" PinNumber="126">
+    <Function Id="P3_4" FunctionName="P3_4" PinInputOutput="IO"/>
+    <Function Id="A5" FunctionName="A5" PinInputOutput="O"/>
+    <Function Id="SD_D0_0" FunctionName="SD_D0_0" PinInputOutput="IO"/>
+    <Function Id="LCD0_DATA4" FunctionName="LCD0_DATA4" PinInputOutput="O"/>
+    <Function Id="ET_RXER" FunctionName="ET_RXER" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="127" PinNumber="127">
+    <Function Id="P9_2" FunctionName="P9_2" PinInputOutput="IO"/>
+    <Function Id="RSPCK2" FunctionName="RSPCK2" PinInputOutput="IO"/>
+    <Function Id="ET_RXCLK" FunctionName="ET_RXCLK" PinInputOutput="I"/>
+    <Function Id="SD_CLK_0" FunctionName="SD_CLK_0" PinInputOutput="O"/>
+    <Function Id="RTS0#" FunctionName="RTS0#" PinInputOutput="IO"/>
+    <Function Id="TIOC1A" FunctionName="TIOC1A" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="128" PinNumber="128">
+    <Function Id="Vss" FunctionName="Vss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="129" PinNumber="129">
+    <Function Id="P9_3" FunctionName="P9_3" PinInputOutput="IO"/>
+    <Function Id="SSL20" FunctionName="SSL20" PinInputOutput="IO"/>
+    <Function Id="ET_RXER" FunctionName="ET_RXER" PinInputOutput="I"/>
+    <Function Id="SD_CMD_0" FunctionName="SD_CMD_0" PinInputOutput="IO"/>
+    <Function Id="SCK0" FunctionName="SCK0" PinInputOutput="IO"/>
+    <Function Id="TIOC1B" FunctionName="TIOC1B" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="130" PinNumber="130">
+    <Function Id="PVcc" FunctionName="PVcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="131" PinNumber="131">
+    <Function Id="P3_5" FunctionName="P3_5" PinInputOutput="IO"/>
+    <Function Id="A6" FunctionName="A6" PinInputOutput="O"/>
+    <Function Id="SD_D1_0" FunctionName="SD_D1_0" PinInputOutput="IO"/>
+    <Function Id="LCD0_DATA5" FunctionName="LCD0_DATA5" PinInputOutput="O"/>
+    <Function Id="ET_RXDV" FunctionName="ET_RXDV" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="132" PinNumber="132">
+    <Function Id="P3_6" FunctionName="P3_6" PinInputOutput="IO"/>
+    <Function Id="A7" FunctionName="A7" PinInputOutput="O"/>
+    <Function Id="SD_WP_0" FunctionName="SD_WP_0" PinInputOutput="I"/>
+    <Function Id="LCD0_DATA6" FunctionName="LCD0_DATA6" PinInputOutput="O"/>
+    <Function Id="ET_COL" FunctionName="ET_COL" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="133" PinNumber="133">
+    <Function Id="P3_7" FunctionName="P3_7" PinInputOutput="IO"/>
+    <Function Id="A8" FunctionName="A8" PinInputOutput="O"/>
+    <Function Id="SD_CD_0" FunctionName="SD_CD_0" PinInputOutput="I"/>
+    <Function Id="LCD0_DATA7" FunctionName="LCD0_DATA7" PinInputOutput="O"/>
+    <Function Id="ET_CRS" FunctionName="ET_CRS" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="134" PinNumber="134">
+    <Function Id="Vss" FunctionName="Vss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="135" PinNumber="135">
+    <Function Id="P9_4" FunctionName="P9_4" PinInputOutput="IO"/>
+    <Function Id="MOSI2" FunctionName="MOSI2" PinInputOutput="IO"/>
+    <Function Id="ET_RXDV" FunctionName="ET_RXDV" PinInputOutput="I"/>
+    <Function Id="SD_D3_0" FunctionName="SD_D3_0" PinInputOutput="IO"/>
+    <Function Id="RxD0" FunctionName="RxD0" PinInputOutput="I"/>
+    <Function Id="TIOC2A" FunctionName="TIOC2A" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="136" PinNumber="136">
+    <Function Id="PVcc" FunctionName="PVcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="137" PinNumber="137">
+    <Function Id="P9_5" FunctionName="P9_5" PinInputOutput="IO"/>
+    <Function Id="MISO2" FunctionName="MISO2" PinInputOutput="IO"/>
+    <Function Id="SD_D2_0" FunctionName="SD_D2_0" PinInputOutput="IO"/>
+    <Function Id="TxD0" FunctionName="TxD0" PinInputOutput="O"/>
+    <Function Id="TIOC2B" FunctionName="TIOC2B" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="138" PinNumber="138">
+    <Function Id="P3_8" FunctionName="P3_8" PinInputOutput="IO"/>
+    <Function Id="A9" FunctionName="A9" PinInputOutput="O"/>
+    <Function Id="AUDIO_CLK" FunctionName="AUDIO_CLK" PinInputOutput="I"/>
+    <Function Id="DV0_DATA8" FunctionName="DV0_DATA8" PinInputOutput="I"/>
+    <Function Id="SCK3" FunctionName="SCK3" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="139" PinNumber="139">
+    <Function Id="P3_9" FunctionName="P3_9" PinInputOutput="IO"/>
+    <Function Id="A10" FunctionName="A10" PinInputOutput="O"/>
+    <Function Id="SPDIF_OUT" FunctionName="SPDIF_OUT" PinInputOutput="O"/>
+    <Function Id="DV0_DATA9" FunctionName="DV0_DATA9" PinInputOutput="I"/>
+    <Function Id="TxD3" FunctionName="TxD3" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="140" PinNumber="140">
+    <Function Id="Vss" FunctionName="Vss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="141" PinNumber="141">
+    <Function Id="P3_10" FunctionName="P3_10" PinInputOutput="IO"/>
+    <Function Id="A11" FunctionName="A11" PinInputOutput="O"/>
+    <Function Id="SPBIO01_0" FunctionName="SPBIO01_0" PinInputOutput="IO"/>
+    <Function Id="TIOC3B" FunctionName="TIOC3B" PinInputOutput="IO"/>
+    <Function Id="DV0_DATA10" FunctionName="DV0_DATA10" PinInputOutput="I"/>
+    <Function Id="RxD3" FunctionName="RxD3" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="142" PinNumber="142">
+    <Function Id="P3_11" FunctionName="P3_11" PinInputOutput="IO"/>
+    <Function Id="A12" FunctionName="A12" PinInputOutput="O"/>
+    <Function Id="SPBIO11_0" FunctionName="SPBIO11_0" PinInputOutput="IO"/>
+    <Function Id="TIOC3A" FunctionName="TIOC3A" PinInputOutput="IO"/>
+    <Function Id="DV0_DATA11" FunctionName="DV0_DATA11" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="143" PinNumber="143">
+    <Function Id="Vcc" FunctionName="Vcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="144" PinNumber="144">
+    <Function Id="P3_12" FunctionName="P3_12" PinInputOutput="IO"/>
+    <Function Id="A13" FunctionName="A13" PinInputOutput="O"/>
+    <Function Id="SPBIO21_0" FunctionName="SPBIO21_0" PinInputOutput="IO"/>
+    <Function Id="TIOC3C" FunctionName="TIOC3C" PinInputOutput="IO"/>
+    <Function Id="DV0_DATA12" FunctionName="DV0_DATA12" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="145" PinNumber="145">
+    <Function Id="Vss" FunctionName="Vss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="146" PinNumber="146">
+    <Function Id="P3_13" FunctionName="P3_13" PinInputOutput="IO"/>
+    <Function Id="A14" FunctionName="A14" PinInputOutput="O"/>
+    <Function Id="SPBIO31_0" FunctionName="SPBIO31_0" PinInputOutput="IO"/>
+    <Function Id="TIOC3D" FunctionName="TIOC3D" PinInputOutput="IO"/>
+    <Function Id="DV0_DATA13" FunctionName="DV0_DATA13" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="147" PinNumber="147">
+    <Function Id="PVcc" FunctionName="PVcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="148" PinNumber="148">
+    <Function Id="P3_14" FunctionName="P3_14" PinInputOutput="IO"/>
+    <Function Id="A15" FunctionName="A15" PinInputOutput="O"/>
+    <Function Id="VIO_CLK" FunctionName="VIO_CLK" PinInputOutput="I"/>
+    <Function Id="SPDIF_IN" FunctionName="SPDIF_IN" PinInputOutput="I"/>
+    <Function Id="DV0_DATA14" FunctionName="DV0_DATA14" PinInputOutput="I"/>
+    <Function Id="SCK1" FunctionName="SCK1" PinInputOutput="IO"/>
+    <Function Id="AUDIO_XOUT2" FunctionName="AUDIO_XOUT2" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="149" PinNumber="149">
+    <Function Id="P1_0" FunctionName="P1_0" PinInputOutput="IO"/>
+    <Function Id="RIIC0SCL" FunctionName="RIIC0SCL" PinInputOutput="IO"/>
+    <Function Id="IRQ4" FunctionName="IRQ4" PinInputOutput="I"/>
+    <Function Id="ET_RXD0" FunctionName="ET_RXD0" PinInputOutput="I"/>
+    <Function Id="DV0_DATA0" FunctionName="DV0_DATA0" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="150" PinNumber="150">
+    <Function Id="P1_1" FunctionName="P1_1" PinInputOutput="IO"/>
+    <Function Id="RIIC0SDA" FunctionName="RIIC0SDA" PinInputOutput="IO"/>
+    <Function Id="IRQ5" FunctionName="IRQ5" PinInputOutput="I"/>
+    <Function Id="ET_RXD1" FunctionName="ET_RXD1" PinInputOutput="I"/>
+    <Function Id="DV0_DATA1" FunctionName="DV0_DATA1" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="151" PinNumber="151">
+    <Function Id="P1_2" FunctionName="P1_2" PinInputOutput="IO"/>
+    <Function Id="RIIC1SCL" FunctionName="RIIC1SCL" PinInputOutput="IO"/>
+    <Function Id="IRQ6" FunctionName="IRQ6" PinInputOutput="I"/>
+    <Function Id="ET_RXD2" FunctionName="ET_RXD2" PinInputOutput="I"/>
+    <Function Id="DV0_DATA2" FunctionName="DV0_DATA2" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="152" PinNumber="152">
+    <Function Id="P1_3" FunctionName="P1_3" PinInputOutput="IO"/>
+    <Function Id="RIIC1SDA" FunctionName="RIIC1SDA" PinInputOutput="IO"/>
+    <Function Id="IRQ7" FunctionName="IRQ7" PinInputOutput="I"/>
+    <Function Id="ET_RXD3" FunctionName="ET_RXD3" PinInputOutput="I"/>
+    <Function Id="DV0_DATA3" FunctionName="DV0_DATA3" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="153" PinNumber="153">
+    <Function Id="P1_4" FunctionName="P1_4" PinInputOutput="IO"/>
+    <Function Id="RIIC2SCL" FunctionName="RIIC2SCL" PinInputOutput="IO"/>
+    <Function Id="IRQ0" FunctionName="IRQ0" PinInputOutput="I"/>
+    <Function Id="DREQ0" FunctionName="DREQ0" PinInputOutput="I"/>
+    <Function Id="VIO_D0" FunctionName="VIO_D0" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="154" PinNumber="154">
+    <Function Id="P1_5" FunctionName="P1_5" PinInputOutput="IO"/>
+    <Function Id="RIIC2SDA" FunctionName="RIIC2SDA" PinInputOutput="IO"/>
+    <Function Id="IRQ1" FunctionName="IRQ1" PinInputOutput="I"/>
+    <Function Id="VIO_D1" FunctionName="VIO_D1" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="155" PinNumber="155">
+    <Function Id="P1_6" FunctionName="P1_6" PinInputOutput="IO"/>
+    <Function Id="RIIC3SCL" FunctionName="RIIC3SCL" PinInputOutput="IO"/>
+    <Function Id="IRQ2" FunctionName="IRQ2" PinInputOutput="I"/>
+    <Function Id="SSIRxD0" FunctionName="SSIRxD0" PinInputOutput="I"/>
+    <Function Id="VIO_D2" FunctionName="VIO_D2" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="156" PinNumber="156">
+    <Function Id="P1_7" FunctionName="P1_7" PinInputOutput="IO"/>
+    <Function Id="RIIC3SDA" FunctionName="RIIC3SDA" PinInputOutput="IO"/>
+    <Function Id="IRQ3" FunctionName="IRQ3" PinInputOutput="I"/>
+    <Function Id="RxD2" FunctionName="RxD2" PinInputOutput="I"/>
+    <Function Id="VIO_D3" FunctionName="VIO_D3" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="157" PinNumber="157">
+    <Function Id="P3_15" FunctionName="P3_15" PinInputOutput="IO"/>
+    <Function Id="A16" FunctionName="A16" PinInputOutput="O"/>
+    <Function Id="VIO_FLD" FunctionName="VIO_FLD" PinInputOutput="I"/>
+    <Function Id="DV0_DATA15" FunctionName="DV0_DATA15" PinInputOutput="I"/>
+    <Function Id="TxD1" FunctionName="TxD1" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="158" PinNumber="158">
+    <Function Id="P2_6" FunctionName="P2_6" PinInputOutput="IO"/>
+    <Function Id="RD/WR#" FunctionName="RD/WR#" PinInputOutput="O"/>
+    <Function Id="SSIRxD3" FunctionName="SSIRxD3" PinInputOutput="I"/>
+    <Function Id="TIOC2A" FunctionName="TIOC2A" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="159" PinNumber="159">
+    <Function Id="P2_7" FunctionName="P2_7" PinInputOutput="IO"/>
+    <Function Id="CS0#" FunctionName="CS0#" PinInputOutput="O"/>
+    <Function Id="SSISCK3" FunctionName="SSISCK3" PinInputOutput="IO"/>
+    <Function Id="TIOC1A" FunctionName="TIOC1A" PinInputOutput="IO"/>
+    <Function Id="IRQ2" FunctionName="IRQ2" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="160" PinNumber="160">
+    <Function Id="P2_8" FunctionName="P2_8" PinInputOutput="IO"/>
+    <Function Id="RD#" FunctionName="RD#" PinInputOutput="O"/>
+    <Function Id="SSITxD3" FunctionName="SSITxD3" PinInputOutput="O"/>
+    <Function Id="TIOC0A" FunctionName="TIOC0A" PinInputOutput="IO"/>
+    <Function Id="CAN0TX" FunctionName="CAN0TX" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="161" PinNumber="161">
+    <Function Id="P2_9" FunctionName="P2_9" PinInputOutput="IO"/>
+    <Function Id="A0" FunctionName="A0" PinInputOutput="O"/>
+    <Function Id="SSIWS3" FunctionName="SSIWS3" PinInputOutput="IO"/>
+    <Function Id="SCK0" FunctionName="SCK0" PinInputOutput="IO"/>
+    <Function Id="IRQ1" FunctionName="IRQ1" PinInputOutput="I"/>
+    <Function Id="CAN0RX" FunctionName="CAN0RX" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="162" PinNumber="162">
+    <Function Id="Vss" FunctionName="Vss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="163" PinNumber="163">
+    <Function Id="USB_X1" FunctionName="USB_X1" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="164" PinNumber="164">
+    <Function Id="USB_X2" FunctionName="USB_X2" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="165" PinNumber="165">
+    <Function Id="USBDPVcc" FunctionName="USBDPVcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="166" PinNumber="166">
+    <Function Id="USBDPVss" FunctionName="USBDPVss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="167" PinNumber="167">
+    <Function Id="DM1" FunctionName="DM1" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="168" PinNumber="168">
+    <Function Id="DP1" FunctionName="DP1" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="169" PinNumber="169">
+    <Function Id="VBUS1" FunctionName="VBUS1" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="170" PinNumber="170">
+    <Function Id="USBDVcc" FunctionName="USBDVcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="171" PinNumber="171">
+    <Function Id="USBDVss" FunctionName="USBDVss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="172" PinNumber="172">
+    <Function Id="USBDPVcc" FunctionName="USBDPVcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="173" PinNumber="173">
+    <Function Id="USBDPVss" FunctionName="USBDPVss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="174" PinNumber="174">
+    <Function Id="DM0" FunctionName="DM0" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="175" PinNumber="175">
+    <Function Id="DP0" FunctionName="DP0" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="176" PinNumber="176">
+    <Function Id="VBUS0" FunctionName="VBUS0" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="177" PinNumber="177">
+    <Function Id="USBDVcc" FunctionName="USBDVcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="178" PinNumber="178">
+    <Function Id="USBDVss" FunctionName="USBDVss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="179" PinNumber="179">
+    <Function Id="REFRIN" FunctionName="REFRIN" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="180" PinNumber="180">
+    <Function Id="USBAPVss" FunctionName="USBAPVss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="181" PinNumber="181">
+    <Function Id="USBAPVcc" FunctionName="USBAPVcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="182" PinNumber="182">
+    <Function Id="USBAVcc" FunctionName="USBAVcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="183" PinNumber="183">
+    <Function Id="USBAVss" FunctionName="USBAVss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="184" PinNumber="184">
+    <Function Id="USBUVcc" FunctionName="USBUVcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="185" PinNumber="185">
+    <Function Id="USBUVss" FunctionName="USBUVss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="186" PinNumber="186">
+    <Function Id="Vss" FunctionName="Vss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="187" PinNumber="187">
+    <Function Id="Vss" FunctionName="Vss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="188" PinNumber="188">
+    <Function Id="P4_0" FunctionName="P4_0" PinInputOutput="IO"/>
+    <Function Id="A17" FunctionName="A17" PinInputOutput="O"/>
+    <Function Id="VIO_VD" FunctionName="VIO_VD" PinInputOutput="I"/>
+    <Function Id="TIOC1B" FunctionName="TIOC1B" PinInputOutput="IO"/>
+    <Function Id="ET_MDC" FunctionName="ET_MDC" PinInputOutput="O"/>
+    <Function Id="CTS1#" FunctionName="CTS1#" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="189" PinNumber="189">
+    <Function Id="P4_1" FunctionName="P4_1" PinInputOutput="IO"/>
+    <Function Id="A18" FunctionName="A18" PinInputOutput="O"/>
+    <Function Id="VIO_HD" FunctionName="VIO_HD" PinInputOutput="I"/>
+    <Function Id="TIOC2B" FunctionName="TIOC2B" PinInputOutput="IO"/>
+    <Function Id="ET_MDIO" FunctionName="ET_MDIO" PinInputOutput="IO"/>
+    <Function Id="RTS1#" FunctionName="RTS1#" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="190" PinNumber="190">
+    <Function Id="P4_2" FunctionName="P4_2" PinInputOutput="IO"/>
+    <Function Id="A19" FunctionName="A19" PinInputOutput="O"/>
+    <Function Id="SPBIO20_0" FunctionName="SPBIO20_0" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="191" PinNumber="191">
+    <Function Id="P4_3" FunctionName="P4_3" PinInputOutput="IO"/>
+    <Function Id="A20" FunctionName="A20" PinInputOutput="O"/>
+    <Function Id="SPBIO30_0" FunctionName="SPBIO30_0" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="192" PinNumber="192">
+    <Function Id="P8_0" FunctionName="P8_0" PinInputOutput="IO"/>
+    <Function Id="LCD0_DATA0" FunctionName="LCD0_DATA0" PinInputOutput="O"/>
+    <Function Id="ET_TXD0" FunctionName="ET_TXD0" PinInputOutput="O"/>
+    <Function Id="SSISCK1" FunctionName="SSISCK1" PinInputOutput="IO"/>
+    <Function Id="SCK3" FunctionName="SCK3" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="193" PinNumber="193">
+    <Function Id="Vss" FunctionName="Vss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="194" PinNumber="194">
+    <Function Id="P8_1" FunctionName="P8_1" PinInputOutput="IO"/>
+    <Function Id="LCD0_DATA1" FunctionName="LCD0_DATA1" PinInputOutput="O"/>
+    <Function Id="ET_TXD1" FunctionName="ET_TXD1" PinInputOutput="O"/>
+    <Function Id="SSIWS1" FunctionName="SSIWS1" PinInputOutput="IO"/>
+    <Function Id="RxD3" FunctionName="RxD3" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="195" PinNumber="195">
+    <Function Id="PVcc" FunctionName="PVcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="196" PinNumber="196">
+    <Function Id="P4_4" FunctionName="P4_4" PinInputOutput="IO"/>
+    <Function Id="A21" FunctionName="A21" PinInputOutput="O"/>
+    <Function Id="SPBCLK_0" FunctionName="SPBCLK_0" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="197" PinNumber="197">
+    <Function Id="P4_5" FunctionName="P4_5" PinInputOutput="IO"/>
+    <Function Id="A22" FunctionName="A22" PinInputOutput="O"/>
+    <Function Id="SPBSSL_0" FunctionName="SPBSSL_0" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="198" PinNumber="198">
+    <Function Id="P8_2" FunctionName="P8_2" PinInputOutput="IO"/>
+    <Function Id="LCD0_DATA2" FunctionName="LCD0_DATA2" PinInputOutput="O"/>
+    <Function Id="ET_TXD2" FunctionName="ET_TXD2" PinInputOutput="O"/>
+    <Function Id="SSITxD1" FunctionName="SSITxD1" PinInputOutput="O"/>
+    <Function Id="TxD3" FunctionName="TxD3" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="199" PinNumber="199">
+    <Function Id="P8_3" FunctionName="P8_3" PinInputOutput="IO"/>
+    <Function Id="LCD0_DATA3" FunctionName="LCD0_DATA3" PinInputOutput="O"/>
+    <Function Id="ET_TXD3" FunctionName="ET_TXD3" PinInputOutput="O"/>
+    <Function Id="SSIRxD1" FunctionName="SSIRxD1" PinInputOutput="I"/>
+  </Pin>
+  <Pin Id="200" PinNumber="200">
+    <Function Id="P8_4" FunctionName="P8_4" PinInputOutput="IO"/>
+    <Function Id="LCD0_DATA4" FunctionName="LCD0_DATA4" PinInputOutput="O"/>
+    <Function Id="ET_TXCLK" FunctionName="ET_TXCLK" PinInputOutput="I"/>
+    <Function Id="CTS2#" FunctionName="CTS2#" PinInputOutput="IO"/>
+    <Function Id="TIOC0A" FunctionName="TIOC0A" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="201" PinNumber="201">
+    <Function Id="P8_5" FunctionName="P8_5" PinInputOutput="IO"/>
+    <Function Id="LCD0_DATA5" FunctionName="LCD0_DATA5" PinInputOutput="O"/>
+    <Function Id="ET_TXER" FunctionName="ET_TXER" PinInputOutput="O"/>
+    <Function Id="RTS2#" FunctionName="RTS2#" PinInputOutput="IO"/>
+    <Function Id="TIOC0B" FunctionName="TIOC0B" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="202" PinNumber="202">
+    <Function Id="P4_6" FunctionName="P4_6" PinInputOutput="IO"/>
+    <Function Id="A23" FunctionName="A23" PinInputOutput="O"/>
+    <Function Id="SPBIO00_0" FunctionName="SPBIO00_0" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="203" PinNumber="203">
+    <Function Id="Vss" FunctionName="Vss" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="204" PinNumber="204">
+    <Function Id="P4_7" FunctionName="P4_7" PinInputOutput="IO"/>
+    <Function Id="A24" FunctionName="A24" PinInputOutput="O"/>
+    <Function Id="SPBIO10_0" FunctionName="SPBIO10_0" PinInputOutput="IO"/>
+  </Pin>
+  <Pin Id="205" PinNumber="205">
+    <Function Id="P5_0" FunctionName="P5_0" PinInputOutput="IO"/>
+    <Function Id="D0" FunctionName="D0" PinInputOutput="IO"/>
+    <Function Id="MMC_D4" FunctionName="MMC_D4" PinInputOutput="IO"/>
+    <Function Id="ET_TXD0" FunctionName="ET_TXD0" PinInputOutput="O"/>
+    <Function Id="DV0_DATA16" FunctionName="DV0_DATA16" PinInputOutput="I"/>
+    <Function Id="LCD0_TCON0" FunctionName="LCD0_TCON0" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="206" PinNumber="206">
+    <Function Id="PVcc" FunctionName="PVcc" PinInputOutput="-"/>
+  </Pin>
+  <Pin Id="207" PinNumber="207">
+    <Function Id="P5_1" FunctionName="P5_1" PinInputOutput="IO"/>
+    <Function Id="D1" FunctionName="D1" PinInputOutput="IO"/>
+    <Function Id="MMC_D5" FunctionName="MMC_D5" PinInputOutput="IO"/>
+    <Function Id="ET_TXD1" FunctionName="ET_TXD1" PinInputOutput="O"/>
+    <Function Id="DV0_DATA17" FunctionName="DV0_DATA17" PinInputOutput="I"/>
+    <Function Id="LCD0_TCON1" FunctionName="LCD0_TCON1" PinInputOutput="O"/>
+  </Pin>
+  <Pin Id="208" PinNumber="208">
+    <Function Id="P5_2" FunctionName="P5_2" PinInputOutput="IO"/>
+    <Function Id="D2" FunctionName="D2" PinInputOutput="IO"/>
+    <Function Id="MMC_D6" FunctionName="MMC_D6" PinInputOutput="IO"/>
+    <Function Id="ET_TXD2" FunctionName="ET_TXD2" PinInputOutput="O"/>
+    <Function Id="DV0_DATA18" FunctionName="DV0_DATA18" PinInputOutput="I"/>
+    <Function Id="LCD0_TCON2" FunctionName="LCD0_TCON2" PinInputOutput="O"/>
+  </Pin>
+</PinInformation>

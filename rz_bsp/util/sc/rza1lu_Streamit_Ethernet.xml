@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Board>
+    <Device Family="RZA1LU" PartNumber="R7S721031VCFP" Package="QFP" PinCount="208"/>
+    <Pin>
+        <Function Id="ET_RXD2" Pin="30" Port="P8_9" Group=""/>
+        <Function Id="ET_RXD3" Pin="35" Port="P8_10" Group=""/>
+        <Function Id="ET_RXD0" Pin="28" Port="P8_7" Group=""/>
+        <Function Id="ET_RXD1" Pin="29" Port="P8_8" Group=""/>
+        <Function Id="SSIWS0" Pin="38" Port="P6_9" Group=""/>
+        <Function Id="ET_RXDV" Pin="131" Port="P3_5" Group=""/>
+        <Function Id="ET_MDIO" Pin="73" Port="P9_1" Group=""/>
+        <Function Id="VIO_CLK" Pin="148" Port="P3_14" Group=""/>
+        <Function Id="SSISCK0" Pin="33" Port="P6_8" Group=""/>
+        <Function Id="RSPCK1" Pin="43" Port="P6_12" Group=""/>
+        <Function Id="ET_CRS" Pin="71" Port="P8_15" Group=""/>
+        <Function Id="DM0" Pin="174" Port="DM0" Group=""/>
+        <Function Id="IRQ3" Pin="6" Port="P5_8" Group=""/>
+        <Function Id="ET_TXER" Pin="120" Port="P3_1" Group=""/>
+        <Function Id="SPBIO10_0" Pin="204" Port="P4_7" Group=""/>
+        <Function Id="DP0" Pin="175" Port="DP0" Group=""/>
+        <Function Id="ET_TXD3" Pin="1" Port="P5_3" Group=""/>
+        <Function Id="ET_TXD2" Pin="198" Port="P8_2" Group=""/>
+        <Function Id="ET_TXD1" Pin="194" Port="P8_1" Group=""/>
+        <Function Id="ET_TXD0" Pin="192" Port="P8_0" Group=""/>
+        <Function Id="SPBIO11_0" Pin="142" Port="P3_11" Group=""/>
+        <Function Id="VIO_D0" Pin="153" Port="P1_4" Group=""/>
+        <Function Id="RxD3" Pin="62" Port="P7_10" Group="" FunTabComments="STDIO"/>
+        <Function Id="SPBIO00_0" Pin="202" Port="P4_6" Group=""/>
+        <Function Id="VIO_D3" Pin="156" Port="P1_7" Group=""/>
+        <Function Id="VIO_D4" Pin="98" Port="P1_12" Group=""/>
+        <Function Id="ET_TXEN" Pin="27" Port="P8_6" Group=""/>
+        <Function Id="VIO_D1" Pin="154" Port="P1_5" Group=""/>
+        <Function Id="VIO_D2" Pin="155" Port="P1_6" Group=""/>
+        <Function Id="VIO_D7" Pin="101" Port="P1_15" Group=""/>
+        <Function Id="VIO_D5" Pin="99" Port="P1_13" Group=""/>
+        <Function Id="VIO_D6" Pin="100" Port="P1_14" Group=""/>
+        <Function Id="SSL10" Pin="46" Port="P6_13" Group=""/>
+        <Function Id="SPBIO01_0" Pin="141" Port="P3_10" Group=""/>
+        <Function Id="ET_RXER" Pin="126" Port="P3_4" Group=""/>
+        <Function Id="USB_X1" Pin="163" Port="USB_X1" Group=""/>
+        <Function Id="USB_X2" Pin="164" Port="USB_X2" Group=""/>
+        <Function Id="TxD3" Pin="63" Port="P7_11" Group="" FunTabComments="STDIO"/>
+        <Function Id="ET_TXCLK" Pin="119" Port="P3_0" Group=""/>
+        <Function Id="SPBIO30_0" Pin="191" Port="P4_3" Group=""/>
+        <Function Id="MISO1" Pin="49" Port="P6_15" Group=""/>
+        <Function Id="SPBIO31_0" Pin="146" Port="P3_13" Group=""/>
+        <Function Id="SPBIO20_0" Pin="190" Port="P4_2" Group=""/>
+        <Function Id="SSIRxD0" Pin="41" Port="P6_11" Group=""/>
+        <Function Id="RIIC0SDA" Pin="150" Port="P1_1" Group=""/>
+        <Function Id="SPBIO21_0" Pin="144" Port="P3_12" Group=""/>
+        <Function Id="VIO_HD" Pin="189" Port="P4_1" Group=""/>
+        <Function Id="RIIC0SCL" Pin="149" Port="P1_0" Group=""/>
+        <Function Id="SSITxD0" Pin="40" Port="P6_10" Group=""/>
+        <Function Id="RIIC1SCL" Pin="151" Port="P1_2" Group=""/>
+        <Function Id="VIO_VD" Pin="188" Port="P4_0" Group=""/>
+        <Function Id="ET_COL" Pin="70" Port="P8_14" Group=""/>
+        <Function Id="ET_RXCLK" Pin="124" Port="P3_3" Group=""/>
+        <Function Id="RIIC1SDA" Pin="152" Port="P1_3" Group=""/>
+        <Function Id="SPBSSL_0" Pin="197" Port="P4_5" Group=""/>
+        <Function Id="ET_MDC" Pin="72" Port="P9_0" Group=""/>
+        <Function Id="SPBCLK_0" Pin="196" Port="P4_4" Group=""/>
+        <Function Id="MOSI1" Pin="48" Port="P6_14" Group=""/>
+        <Function Id="VBUS0" Pin="176" Port="VBUS0" Group=""/>
+    </Pin>
+</Board>

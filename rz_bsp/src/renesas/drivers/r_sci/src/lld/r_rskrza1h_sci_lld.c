@@ -52,6 +52,8 @@ Includes   <System Includes> , "Project Includes"
 #include "r_intc.h"
 #include "r_rskrza1h_sci_lld.h"
 #include "mcu_board_select.h"
+#include "r_port_sc_cfg.h"
+#include "r_port_if.h"
 
 //#include "task.h"
 
@@ -200,40 +202,19 @@ int_t   R_SCI_InitialiseHwIf(e_sc_id_t id)
 
 #if (TARGET_BOARD == TARGET_BOARD_STREAM_IT2)
         /* Configure the port pins for use by SCIF3 NEED SMART CONFIGURATOR  */
-        /* TXD3 (P7_11) */
-        GPIO.PMC7 |= GPIO_PMC7_PMC711;
-        GPIO.PFC7 &= (uint16_t)(~GPIO_PFC7_PFC711);
-        GPIO.PFCE7 &= (uint16_t)(~GPIO_PFCE7_PFCE711);
-        GPIO.PFCAE7 |= GPIO_PFCAE7_PFCAE711;
-        GPIO.PIPC7 |= GPIO_PIPC7_PIPC711;
-
-        /* RXD3 (P7_10) */
-        GPIO.PMC7 |= GPIO_PMC7_PMC710;
-        GPIO.PFC7 &=(uint16_t) (~GPIO_PFC7_PFC710);
-        GPIO.PFCE7 &=(uint16_t) (~GPIO_PFCE7_PFCE710);
-        GPIO.PFCAE7 |= GPIO_PFCAE7_PFCAE710;
-        GPIO.PIPC7 |= GPIO_PIPC7_PIPC710;
+        set_pins_function( &GPIO_SC_INIT_scif3);
 
         /* Enable SCIF3 module */
         (*r_sci_device_config[res].cpg_reg) = (volatile uint8_t) (*r_sci_device_config[res].cpg_reg) & (uint8_t) ~(r_sci_device_config[res].cpg_stb_ctrl);
-#elif (TARGET_BOARD == TARGET_BOARD_RSK)
-        /* Configure the port pins for use by SCIF2 NEED SMART CONFIGURATOR  */
-        /* TXD2 (P3_0) */
-        GPIO.PMC3 |= GPIO_PMC3_PMC30;
-        GPIO.PFC3 |= GPIO_PFC3_PFC30;
-        GPIO.PFCE3 &= (uint16_t)(~GPIO_PFCE3_PFCE30);
-        GPIO.PFCAE3 |= GPIO_PFCAE3_PFCAE30;
-        GPIO.PIPC3 |= GPIO_PIPC3_PIPC30;
 
-        /* RXD2 (P3_2) */
-        GPIO.PMC3 |= GPIO_PMC3_PMC32;
-        GPIO.PFC3 |= GPIO_PFC3_PFC32;
-        GPIO.PFCE3 |= GPIO_PFCE3_PFCE32;
-        GPIO.PFCAE3 &= (uint16_t)(~GPIO_PFCAE3_PFCAE32);
-        GPIO.PIPC3 |= GPIO_PIPC3_PIPC32;
+
+#elif (TARGET_BOARD == TARGET_BOARD_RSK)
+        /* Configure the port pins for use by SCIF3 NEED SMART CONFIGURATOR  */
+        set_pins_function( &GPIO_SC_INIT_scif2);
 
         /* Enable SCIF2 module */
         (*r_sci_device_config[res].cpg_reg) &= ~(r_sci_device_config[res].cpg_stb_ctrl);
+
 #endif
         dummy = (volatile uint8_t) *r_sci_device_config[res].cpg_reg;
         (void) dummy;

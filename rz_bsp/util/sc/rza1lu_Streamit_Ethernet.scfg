@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<smc>
+<general version="2.0.0.0">
+<configuration active="true" id="com.renesas.smc.toolchain.gnuarm.configuration.release">
+<property id="com.renesas.smc.service.project.buildArtefactType" values="com.renesas.smc.service.project.buildArtefactType.exe"/>
+<toolchain id="com.renesas.smc.toolchain.gnuarm.noneeabi">
+<option id="com.renesas.smc.toolchain.option.rtos" key="com.renesas.smc.toolchain.option.rtos.none">
+<item id="com.renesas.smc.toolchain.option.rtos.freertos" value=""/>
+</option>
+</toolchain>
+</configuration>
+<platform id="R7S721031VCFP"/>
+<option id="board" value="Custom User Board"/>
+</general>
+<tool id="Pins" version="1.0.1.0">
+<pinItem allocation="30" comments="" direction="None" id="ET_RXD2" status="0"/>
+<pinItem allocation="35" comments="" direction="None" id="ET_RXD3" status="0"/>
+<pinItem allocation="28" comments="" direction="None" id="ET_RXD0" status="0"/>
+<pinItem allocation="29" comments="" direction="None" id="ET_RXD1" status="0"/>
+<pinItem allocation="38" comments="" direction="None" id="SSIWS0" status="0"/>
+<pinItem allocation="131" comments="" direction="None" id="ET_RXDV" status="0"/>
+<pinItem allocation="73" comments="" direction="None" id="ET_MDIO" status="0"/>
+<pinItem allocation="148" comments="" direction="None" id="VIO_CLK" status="0"/>
+<pinItem allocation="33" comments="" direction="None" id="SSISCK0" status="0"/>
+<pinItem allocation="43" comments="" direction="None" id="RSPCK1" status="0"/>
+<pinItem allocation="71" comments="" direction="None" id="ET_CRS" status="0"/>
+<pinItem allocation="174" comments="" direction="None" id="DM0" status="0"/>
+<pinItem allocation="6" comments="" direction="None" id="IRQ3" status="0"/>
+<pinItem allocation="" comments="" direction="None" id="DM1" status="0"/>
+<pinItem allocation="120" comments="" direction="None" id="ET_TXER" status="0"/>
+<pinItem allocation="204" comments="" direction="None" id="SPBIO10_0" status="0"/>
+<pinItem allocation="" comments="" direction="None" id="DP1" status="0"/>
+<pinItem allocation="175" comments="" direction="None" id="DP0" status="0"/>
+<pinItem allocation="1" comments="" direction="None" id="ET_TXD3" status="0"/>
+<pinItem allocation="198" comments="" direction="None" id="ET_TXD2" status="0"/>
+<pinItem allocation="194" comments="" direction="None" id="ET_TXD1" status="0"/>
+<pinItem allocation="192" comments="" direction="None" id="ET_TXD0" status="0"/>
+<pinItem allocation="142" comments="" direction="None" id="SPBIO11_0" status="0"/>
+<pinItem allocation="153" comments="" direction="None" id="VIO_D0" status="0"/>
+<pinItem allocation="202" comments="" direction="None" id="SPBIO00_0" status="0"/>
+<pinItem allocation="156" comments="" direction="None" id="VIO_D3" status="0"/>
+<pinItem allocation="98" comments="" direction="None" id="VIO_D4" status="0"/>
+<pinItem allocation="27" comments="" direction="None" id="ET_TXEN" status="0"/>
+<pinItem allocation="154" comments="" direction="None" id="VIO_D1" status="0"/>
+<pinItem allocation="155" comments="" direction="None" id="VIO_D2" status="0"/>
+<pinItem allocation="101" comments="" direction="None" id="VIO_D7" status="0"/>
+<pinItem allocation="99" comments="" direction="None" id="VIO_D5" status="0"/>
+<pinItem allocation="100" comments="" direction="None" id="VIO_D6" status="0"/>
+<pinItem allocation="46" comments="" direction="None" id="SSL10" status="0"/>
+<pinItem allocation="141" comments="" direction="None" id="SPBIO01_0" status="0"/>
+<pinItem allocation="126" comments="" direction="None" id="ET_RXER" status="0"/>
+<pinItem allocation="163" comments="" direction="None" id="USB_X1" status="0"/>
+<pinItem allocation="164" comments="" direction="None" id="USB_X2" status="0"/>
+<pinItem allocation="119" comments="" direction="None" id="ET_TXCLK" status="0"/>
+<pinItem allocation="191" comments="" direction="None" id="SPBIO30_0" status="0"/>
+<pinItem allocation="49" comments="" direction="None" id="MISO1" status="0"/>
+<pinItem allocation="146" comments="" direction="None" id="SPBIO31_0" status="0"/>
+<pinItem allocation="190" comments="" direction="None" id="SPBIO20_0" status="0"/>
+<pinItem allocation="41" comments="" direction="None" id="SSIRxD0" status="0"/>
+<pinItem allocation="150" comments="" direction="None" id="RIIC0SDA" status="0"/>
+<pinItem allocation="144" comments="" direction="None" id="SPBIO21_0" status="0"/>
+<pinItem allocation="189" comments="" direction="None" id="VIO_HD" status="0"/>
+<pinItem allocation="149" comments="" direction="None" id="RIIC0SCL" status="0"/>
+<pinItem allocation="40" comments="" direction="None" id="SSITxD0" status="0"/>
+<pinItem allocation="151" comments="" direction="None" id="RIIC1SCL" status="0"/>
+<pinItem allocation="188" comments="" direction="None" id="VIO_VD" status="0"/>
+<pinItem allocation="70" comments="" direction="None" id="ET_COL" status="0"/>
+<pinItem allocation="124" comments="" direction="None" id="ET_RXCLK" status="0"/>
+<pinItem allocation="152" comments="" direction="None" id="RIIC1SDA" status="0"/>
+<pinItem allocation="197" comments="" direction="None" id="SPBSSL_0" status="0"/>
+<pinItem allocation="72" comments="" direction="None" id="ET_MDC" status="0"/>
+<pinItem allocation="196" comments="" direction="None" id="SPBCLK_0" status="0"/>
+<pinItem allocation="48" comments="" direction="None" id="MOSI1" status="0"/>
+<pinItem allocation="" comments="" direction="None" id="VBUS1" status="0"/>
+<pinItem allocation="176" comments="" direction="None" id="VBUS0" status="0"/>
+<pinItem allocation="" comments="" direction="None" id="TMS" status="0"/>
+<pinItem allocation="" comments="" direction="None" id="TRST#" status="0"/>
+<pinItem allocation="" comments="" direction="None" id="TCK" status="0"/>
+<pinItem allocation="" comments="" direction="None" id="TDI" status="0"/>
+<pinItem allocation="" comments="" direction="None" id="TDO" status="0"/>
+<pinItem allocation="62" comments="STDIO" direction="None" id="RxD3" status="0"/>
+<pinItem allocation="63" comments="STDIO" direction="None" id="TxD3" status="0"/>
+</tool>
+</smc>

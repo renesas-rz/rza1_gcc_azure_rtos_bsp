@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Board>
+    <Device Family="RZA1H" PartNumber="R7S721001VCBG" Package="BGA" PinCount="324"/>
+    <Pin>
+        <Function Id="ET_RXD2" Pin="B22" Port="P2_10" Group=""/>
+        <Function Id="ET_RXD3" Pin="E19" Port="P2_11" Group=""/>
+        <Function Id="ET_RXD0" Pin="D20" Port="P2_8" Group=""/>
+        <Function Id="ET_RXD1" Pin="C21" Port="P2_9" Group=""/>
+        <Function Id="A1" Pin="K1" Port="P7_9" Group=""/>
+        <Function Id="A2" Pin="L3" Port="P7_10" Group=""/>
+        <Function Id="A3" Pin="L2" Port="P7_11" Group=""/>
+        <Function Id="A4" Pin="M1" Port="P7_12" Group=""/>
+        <Function Id="A5" Pin="N1" Port="P7_13" Group=""/>
+        <Function Id="A6" Pin="N2" Port="P7_14" Group=""/>
+        <Function Id="A7" Pin="N3" Port="P7_15" Group=""/>
+        <Function Id="A8" Pin="P1" Port="P8_0" Group=""/>
+        <Function Id="A9" Pin="P2" Port="P8_1" Group=""/>
+        <Function Id="SSIWS0" Pin="M20" Port="P4_5" Group=""/>
+        <Function Id="ET_RXDV" Pin="AB3" Port="P3_6" Group=""/>
+        <Function Id="RIIC3SDA" Pin="B16" Port="P1_7" Group="" FunTabComments="Ether MAC EEPROM and Audio Codec"/>
+        <Function Id="RD#" Pin="K4" Port="P7_8" Group=""/>
+        <Function Id="ET_MDIO" Pin="AA6" Port="P3_3" Group=""/>
+        <Function Id="WE1#/DQMLU" Pin="K2" Port="P7_7" Group=""/>
+        <Function Id="D0" Pin="B3" Port="P6_0" Group=""/>
+        <Function Id="D1" Pin="D6" Port="P6_1" Group=""/>
+        <Function Id="D2" Pin="C4" Port="P6_2" Group=""/>
+        <Function Id="D3" Pin="D5" Port="P6_3" Group=""/>
+        <Function Id="D4" Pin="A2" Port="P6_4" Group=""/>
+        <Function Id="D5" Pin="C1" Port="P6_5" Group=""/>
+        <Function Id="D6" Pin="D2" Port="P6_6" Group=""/>
+        <Function Id="D7" Pin="D1" Port="P6_7" Group=""/>
+        <Function Id="D8" Pin="E3" Port="P6_8" Group=""/>
+        <Function Id="D9" Pin="E2" Port="P6_9" Group=""/>
+        <Function Id="RD/WR#" Pin="J1" Port="P7_5" Group=""/>
+        <Function Id="SSISCK0" Pin="M21" Port="P4_4" Group=""/>
+        <Function Id="RAS#" Pin="H1" Port="P7_2" Group=""/>
+        <Function Id="ET_CRS" Pin="G20" Port="P2_3" Group=""/>
+        <Function Id="DM0" Pin="AB12" Port="DM0" Group=""/>
+        <Function Id="IRQ2" Pin="AA17" Port="P1_8" Group="" FunTabComments="Switch 2"/>
+        <Function Id="DM1" Pin="AA11" Port="DM1" Group=""/>
+        <Function Id="IRQ1" Pin="K21" Port="P4_9" Group="" FunTabComments="Touch IRQ"/>
+        <Function Id="IRQ6" Pin="G19" Port="P4_14" Group="" FunTabComments="Ethernet IRQ"/>
+        <Function Id="CKE" Pin="J2" Port="P7_4" Group=""/>
+        <Function Id="TRACECTL" Pin="R20" Port="P3_15" Group=""/>
+        <Function Id="TMS" Pin="V22" Port="TMS" Group=""/>
+        <Function Id="ET_TXER" Pin="K22" Port="P2_1" Group=""/>
+        <Function Id="SPBIO10_0" Pin="C7" Port="P9_5" Group=""/>
+        <Function Id="DP1" Pin="AB11" Port="DP1" Group=""/>
+        <Function Id="DP0" Pin="AA12" Port="DP0" Group=""/>
+        <Function Id="ET_TXD3" Pin="C22" Port="P2_7" Group=""/>
+        <Function Id="ET_TXD2" Pin="E20" Port="P2_6" Group=""/>
+        <Function Id="ET_TXD1" Pin="E22" Port="P2_5" Group=""/>
+        <Function Id="ET_TXD0" Pin="F19" Port="P2_4" Group=""/>
+        <Function Id="SPBIO11_0" Pin="A20" Port="P2_13" Group=""/>
+        <Function Id="D10" Pin="E1" Port="P6_10" Group=""/>
+        <Function Id="D12" Pin="G4" Port="P6_12" Group=""/>
+        <Function Id="D11" Pin="F3" Port="P6_11" Group=""/>
+        <Function Id="D14" Pin="F1" Port="P6_14" Group=""/>
+        <Function Id="D13" Pin="F2" Port="P6_13" Group=""/>
+        <Function Id="D15" Pin="G3" Port="P6_15" Group=""/>
+        <Function Id="RxD2" Pin="Y7" Port="P3_2" Group="" FunTabComments="SDIO Comunication Rx"/>
+        <Function Id="SPBIO00_0" Pin="B6" Port="P9_4" Group=""/>
+        <Function Id="ET_TXEN" Pin="F21" Port="P2_2" Group=""/>
+        <Function Id="WE0#/DQMLL" Pin="K3" Port="P7_6" Group=""/>
+        <Function Id="SPBIO01_0" Pin="A21" Port="P2_12" Group=""/>
+        <Function Id="ET_RXER" Pin="AA4" Port="P3_5" Group=""/>
+        <Function Id="LCD0_DATA1" Pin="M2" Port="P11_6" Group=""/>
+        <Function Id="LCD0_DATA0" Pin="M3" Port="P11_7" Group=""/>
+        <Function Id="LCD0_DATA5" Pin="B4" Port="P11_2" Group=""/>
+        <Function Id="LCD0_DATA4" Pin="C5" Port="P11_3" Group=""/>
+        <Function Id="LCD0_DATA3" Pin="L4" Port="P11_4" Group=""/>
+        <Function Id="LCD0_DATA2" Pin="L1" Port="P11_5" Group=""/>
+        <Function Id="LCD0_DATA9" Pin="D22" Port="P10_14" Group=""/>
+        <Function Id="LCD0_DATA8" Pin="D21" Port="P10_15" Group=""/>
+        <Function Id="LCD0_DATA7" Pin="A4" Port="P11_0" Group=""/>
+        <Function Id="LCD0_DATA6" Pin="C6" Port="P11_1" Group=""/>
+        <Function Id="A10" Pin="P3" Port="P8_2" Group=""/>
+        <Function Id="A11" Pin="R1" Port="P8_3" Group=""/>
+        <Function Id="A12" Pin="R2" Port="P8_4" Group=""/>
+        <Function Id="A13" Pin="R3" Port="P8_5" Group=""/>
+        <Function Id="A14" Pin="U2" Port="P8_6" Group=""/>
+        <Function Id="A15" Pin="U4" Port="P8_7" Group=""/>
+        <Function Id="USB_X1" Pin="AB15" Port="USB_X1" Group=""/>
+        <Function Id="USB_X2" Pin="AA15" Port="USB_X2" Group=""/>
+        <Function Id="TxD2" Pin="AB6" Port="P3_0" Group="" FunTabComments="SDIO Comunication Tx"/>
+        <Function Id="ET_TXCLK" Pin="L21" Port="P2_0" Group=""/>
+        <Function Id="LCD0_DATA13" Pin="H21" Port="P10_10" Group=""/>
+        <Function Id="LCD0_DATA14" Pin="J20" Port="P10_9" Group=""/>
+        <Function Id="LCD0_DATA15" Pin="J21" Port="P10_8" Group=""/>
+        <Function Id="LCD0_DATA16" Pin="M22" Port="P10_7" Group=""/>
+        <Function Id="LCD0_DATA17" Pin="N21" Port="P10_6" Group=""/>
+        <Function Id="LCD0_DATA18" Pin="N20" Port="P10_5" Group=""/>
+        <Function Id="SPBIO30_0" Pin="B5" Port="P9_7" Group=""/>
+        <Function Id="LCD0_DATA19" Pin="N19" Port="P10_4" Group=""/>
+        <Function Id="LCD0_DATA10" Pin="F20" Port="P10_13" Group=""/>
+        <Function Id="LCD0_DATA11" Pin="E21" Port="P10_12" Group=""/>
+        <Function Id="LCD0_DATA12" Pin="H20" Port="P10_11" Group=""/>
+        <Function Id="TRST#" Pin="V20" Port="TRST#" Group=""/>
+        <Function Id="NMI" Pin="Y9" Port="NMI" Group="" FunTabComments="NMI Switch"/>
+        <Function Id="SPBIO31_0" Pin="B19" Port="P2_15" Group=""/>
+        <Function Id="SPBIO20_0" Pin="A5" Port="P9_6" Group=""/>
+        <Function Id="CS2#" Pin="B8" Port="P5_8" Group=""/>
+        <Function Id="SSIRxD0" Pin="L22" Port="P4_6" Group=""/>
+        <Function Id="RIIC0SDA" Pin="C17" Port="P1_1" Group=""/>
+        <Function Id="SPBIO21_0" Pin="C18" Port="P2_14" Group=""/>
+        <Function Id="RIIC0SCL" Pin="A19" Port="P1_0" Group=""/>
+        <Function Id="SSITxD0" Pin="L20" Port="P4_7" Group=""/>
+        <Function Id="LCD0_CLK" Pin="J4" Port="P11_15" Group=""/>
+        <Function Id="ET_RXCLK" Pin="Y5" Port="P3_4" Group=""/>
+        <Function Id="SPBSSL_0" Pin="A6" Port="P9_3" Group=""/>
+        <Function Id="SPBCLK_0" Pin="C8" Port="P9_2" Group=""/>
+        <Function Id="LCD0_DATA20" Pin="AB5" Port="P10_3" Group=""/>
+        <Function Id="LCD0_DATA21" Pin="Y6" Port="P10_2" Group=""/>
+        <Function Id="TCK" Pin="U21" Port="TCK" Group=""/>
+        <Function Id="LCD0_DATA22" Pin="AA5" Port="P10_1" Group=""/>
+        <Function Id="LCD0_DATA23" Pin="AB4" Port="P10_0" Group=""/>
+        <Function Id="LCD0_TCON6" Pin="T1" Port="P11_8" Group=""/>
+        <Function Id="LCD0_TCON3" Pin="U3" Port="P11_11" Group=""/>
+        <Function Id="LCD0_TCON2" Pin="G2" Port="P11_12" Group=""/>
+        <Function Id="LCD0_TCON5" Pin="T2" Port="P11_9" Group=""/>
+        <Function Id="LCD0_TCON4" Pin="T3" Port="P11_10" Group=""/>
+        <Function Id="LCD0_TCON1" Pin="G1" Port="P11_13" Group=""/>
+        <Function Id="TRACEDATA3" Pin="T21" Port="P3_11" Group=""/>
+        <Function Id="LCD0_TCON0" Pin="H3" Port="P11_14" Group=""/>
+        <Function Id="TRACEDATA1" Pin="W20" Port="P3_9" Group=""/>
+        <Function Id="TRACEDATA2" Pin="T20" Port="P3_10" Group=""/>
+        <Function Id="TRACEDATA0" Pin="V19" Port="P3_8" Group=""/>
+        <Function Id="TDI" Pin="V21" Port="JP0_0" Group=""/>
+        <Function Id="RIIC3SCL" Pin="A17" Port="P1_6" Group="" FunTabComments="Ether MAC EEPROM and Audio Codec"/>
+        <Function Id="TDO" Pin="U20" Port="JP0_1" Group=""/>
+        <Function Id="TRACECLK" Pin="R21" Port="P3_14" Group=""/>
+        <Function Id="VBUS1" Pin="Y11" Port="VBUS1" Group=""/>
+        <Function Id="P7_1" Pin="H2" Port="P7_1" Group="" FunTabComments="LED0"/>
+        <Function Id="VBUS0" Pin="Y12" Port="VBUS0" Group=""/>
+    </Pin>
+</Board>
