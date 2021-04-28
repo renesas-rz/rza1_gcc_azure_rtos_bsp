@@ -65,7 +65,7 @@ void set_pin_function ( const st_port_config_t *map) {
 	}
 }
 
-void set_pins_function( const st_port_init_config_t *maps) {
+int set_pins_function( const st_port_init_config_t *maps) {
 	uint8_t count = 0;
 	st_port_config_t* pFunc;
 	if ( maps != NULL ){
@@ -76,6 +76,7 @@ void set_pins_function( const st_port_init_config_t *maps) {
 			pFunc++;
 		}
 	}
+	return maps->count;
 }
 
 static void pin_function(PinName pin, int function, PinDirection dir) {
