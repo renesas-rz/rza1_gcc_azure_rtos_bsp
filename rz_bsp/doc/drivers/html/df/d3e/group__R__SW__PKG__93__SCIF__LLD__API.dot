@@ -1,0 +1,9 @@
+digraph "SCIF RZA1LU Low Level Driver"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node2 [label="RZA1LU Stream-IT SCIF\l driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/de8/group__R__SW__PKG__93__SCIF__API.html",tooltip="This interface provides access to the Serial SCIF peripheral on the RZA1LU Stream-IT board...."];
+  Node1 [label="SCIF RZA1LU Low Level\l Driver",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="The API for the low level SCIF driver."];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+}

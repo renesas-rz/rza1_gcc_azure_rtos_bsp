@@ -1,0 +1,10 @@
+<map id="USBDESC" name="USBDESC">
+<area shape="rect" id="node2" href="$da/d0e/structUSBDD.html" title="USBDD" alt="" coords="5,5,72,32"/>
+<area shape="rect" id="node3" href="$df/d89/structUSBST.html" title="USBST" alt="" coords="97,5,162,32"/>
+<area shape="rect" id="node4" href="$d6/d14/structUSBCG.html" title="USBCG" alt="" coords="186,5,254,32"/>
+<area shape="rect" id="node5" href="$dd/dff/structUSBPW.html" title="USBPW" alt="" coords="278,5,349,32"/>
+<area shape="rect" id="node6" href="$d3/d37/structUSBEP.html" title="USBEP" alt="" coords="373,5,440,32"/>
+<area shape="rect" id="node7" href="$d6/da0/structUSBCO.html" title="USBCO" alt="" coords="465,5,533,32"/>
+<area shape="rect" id="node8" href="$d1/d9b/structUSBHD.html" title="USBHD" alt="" coords="557,5,624,32"/>
+<area shape="rect" id="node9" href="$df/d85/structUSBIF.html" title="USBIF" alt="" coords="649,5,709,32"/>
+</map>

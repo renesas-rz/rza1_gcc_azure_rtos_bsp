@@ -1,0 +1,11 @@
+digraph "inc" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_5a96e3748929512ea5f4113fea9256ff {
+    graph [ bgcolor="#ddddee", pencolor="black", label="app_cdc_serial_port" fontname="Helvetica", fontsize="10", URL="dir_5a96e3748929512ea5f4113fea9256ff.html"]
+  dir_6298d194d62df7a8fc51197a527913a9 [shape=box, label="inc", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_6298d194d62df7a8fc51197a527913a9.html"];
+  }
+  dir_180fb5dbcfe56f00ba097c6057eb79b8 [shape=box label="middleware" fillcolor="white" style="filled" color="red" URL="dir_180fb5dbcfe56f00ba097c6057eb79b8.html"];
+  dir_6298d194d62df7a8fc51197a527913a9->dir_180fb5dbcfe56f00ba097c6057eb79b8 [headlabel="1", labeldistance=1.5 headhref="dir_000092_000010.html"];
+}

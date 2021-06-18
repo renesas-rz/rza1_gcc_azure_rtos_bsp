@@ -1,0 +1,21 @@
+<map id="r_vdc.h" name="r_vdc.h">
+<area shape="rect" id="node2" href="$d5/d8c/stream2__tft__clk_8h.html" title="Defines for VDC5 clock. " alt="" coords="5,80,128,107"/>
+<area shape="rect" id="node3" href="$de/de7/r__image__config_8h.html" title="r_image_config.h" alt="" coords="228,304,348,331"/>
+<area shape="rect" id="node4" href="$d1/d1c/r__vdc5_8h.html" title="VDC driver API definitions. " alt="" coords="374,80,445,107"/>
+<area shape="rect" id="node11" href="$d3/d8b/r__vdc__pl_8h.html" title="r_vdc_pl.h" alt="" coords="469,80,549,107"/>
+<area shape="rect" id="node12" href="$d1/da2/r__rvapi__vdc_8h.html" title="r_rvapi_vdc.h" alt="" coords="752,155,848,181"/>
+<area shape="rect" id="node15" href="$d3/d2e/r__vdc__check__parameter_8h.html" title="VDC driver parameter check definitions. " alt="" coords="624,80,795,107"/>
+<area shape="rect" id="node16" href="$df/dcb/r__vdc__register_8h.html" title="VDC driver register setup definitions. " alt="" coords="819,80,933,107"/>
+<area shape="rect" id="node17" href="$dd/d00/r__vdc__shared__param_8h.html" title="VDC driver shared parameter definitions. " alt="" coords="957,80,1109,107"/>
+<area shape="rect" id="node18" href="$de/d5e/r__vdc__l__check__parameter_8h.html" title="RZ/A1L VDC driver parameter check definitions. " alt="" coords="1134,80,1314,107"/>
+<area shape="rect" id="node19" href="$d7/d5a/r__vdc__l__register_8h.html" title="RZ/A1L VDC driver register setup definitions. " alt="" coords="1339,80,1461,107"/>
+<area shape="rect" id="node20" href="$d2/d3f/r__vdc__l__shared__param_8h.html" title="RZ/A1L VDC driver shared parameter definitions. " alt="" coords="1485,80,1648,107"/>
+<area shape="rect" id="node5" href="$d2/d5a/ntsc_8h.html" title="Camera for vdc5 definition header. " alt="" coords="203,155,261,181"/>
+<area shape="rect" id="node6" href="$d9/d16/pal_8h.html" title="Camera for vdc5 definition header. " alt="" coords="285,155,336,181"/>
+<area shape="rect" id="node7" href="$d7/d70/rsk__tft__ch0_8h.html" title="LCD panel for vdc5 channel 0 definition header. " alt="" coords="361,155,458,181"/>
+<area shape="rect" id="node9" href="$db/d94/rsk__tft__clk_8h.html" title="Defines for VDC5 clock. " alt="" coords="483,155,576,181"/>
+<area shape="rect" id="node10" href="$db/ddf/stream2__tft__ch0_8h.html" title="stream2_tft_ch0.h" alt="" coords="601,155,727,181"/>
+<area shape="rect" id="node8" href="$dc/df4/lcd__panel_8h.html" title="lcd_panel.h" alt="" coords="365,229,453,256"/>
+<area shape="rect" id="node13" href="$d6/d26/r__rvapi__header_8h.html" title="r_rvapi_header.h" alt="" coords="742,229,858,256"/>
+<area shape="rect" id="node14" href="$dc/d3e/r__display__init_8h.html" title="r_display_init.h" alt="" coords="745,304,855,331"/>
+</map>

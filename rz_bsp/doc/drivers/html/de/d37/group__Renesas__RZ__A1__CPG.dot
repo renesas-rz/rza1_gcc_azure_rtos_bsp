@@ -1,0 +1,11 @@
+digraph "Renesas_RZ_A1 CPG Bit definitions"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node3 [label="Renesas_RZ_A1 GPIO\l Bit definitions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d03/group__Renesas__RZ__A1__LU__GPIO.html",tooltip=" "];
+  Node2 [label="Renesas_RZ_A1 Clock\l definitions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d9b/group__Renesas__RZ__A1__Clocks.html",tooltip=" "];
+  Node1 [label="Renesas_RZ_A1 CPG Bit\l definitions",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+}

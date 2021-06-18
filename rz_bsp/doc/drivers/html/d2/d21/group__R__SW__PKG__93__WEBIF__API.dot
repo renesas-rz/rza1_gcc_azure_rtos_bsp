@@ -1,0 +1,17 @@
+digraph "Webif"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node1 [label="Webif",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Web interface API."];
+  Node6 [label="Server Side Interface",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/de2/group__R__SW__PKG__93__WEBIF__SSI.html",tooltip="Server Side Handler Functions."];
+  Node4 [label="Live File API",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d50/group__R__SW__PKG__93__LIVE__FILE__API.html",tooltip="Functions to create \"live\" files which return measurement data."];
+  Node3 [label="Embedded File System",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/d4d/group__R__SW__PKG__93__EFS__FILE.html",tooltip="Functions to get the file data from EmbedFS."];
+  Node5 [label="Common Gateway Interface",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d88/group__R__SW__PKG__93__WEBIF__CGI.html",tooltip="Common Gateway Interface file handler functions."];
+  Node2 [label="Middleware (Not POSIX)",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/dbc/group__R__SW__PKG__93__NONOS__MIDDLEWARE.html",tooltip="Middleware."];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node4 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node5 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node6 [shape=plaintext, dir="back", style="solid"];
+}

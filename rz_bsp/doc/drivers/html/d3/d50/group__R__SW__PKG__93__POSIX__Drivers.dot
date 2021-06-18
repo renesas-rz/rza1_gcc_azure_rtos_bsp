@@ -1,0 +1,23 @@
+digraph "Drivers (POSIX)"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node6 [label="RTC Driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d2b/group__R__SW__PKG__93__RTC__API.html",tooltip="This interface provides access to an Real-Time Clock RTC device."];
+  Node3 [label="EEPROM Driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/def/group__R__SW__PKG__93__EEPROM__API.html",tooltip="This interface provides access to an EEPROM memory device."];
+  Node2 [label="RZA1LU Stream-IT OSTM\l driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d3/dcb/group__SSGSTARC__37__OSTM__DRIVER.html",tooltip="This interface provides access to the OSTM peripheral See OSTM High Level Driver API for details."];
+  Node4 [label="RZA1LU Stream-IT RIIC\l driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/dbd/group__SSGSTARC__56__RIIC__API.html",tooltip="This interface provides access to the RIIC peripheral on the RZA1LU Stream-IT board...."];
+  Node9 [label="WDT Driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/da0/group__R__SW__PKG__93__WDT__API.html",tooltip="This interface provides access to an Watchdog Timer device."];
+  Node7 [label="RZA1LU Stream-IT SCIF\l driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/de8/group__R__SW__PKG__93__SCIF__API.html",tooltip="This interface provides access to the Serial SCIF peripheral on the RZA1LU Stream-IT board...."];
+  Node8 [label="SSIF Driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dc/df3/group__R__SW__PKG__93__SSIF__API.html",tooltip="This interface provides access to the Serial Sound Interface SSIF peripheral."];
+  Node5 [label="RZA1LU Stream-IT LED\l driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d85/group__R__SW__PKG__93__LED__API.html",tooltip="This interface provides access to the LED on the RZA1LU Stream-IT board See LED High Level Driver for..."];
+  Node1 [label="Drivers (POSIX)",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="POSIX interface drivers."];
+  Node1->Node2 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node4 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node5 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node6 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node7 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node8 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node9 [shape=plaintext, dir="back", style="solid"];
+}

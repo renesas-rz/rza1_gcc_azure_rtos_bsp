@@ -1,0 +1,11 @@
+<map id="cdc_data_interfaces_t" name="cdc_data_interfaces_t">
+<area shape="rect" id="node2" href="$d2/d02/struct__USBEI.html" title="_USBEI" alt="" coords="234,5,302,32"/>
+<area shape="rect" id="node3" href="$d0/db5/struct__USBDI.html" title="_USBDI" alt="" coords="347,139,415,165"/>
+<area shape="rect" id="node6" href="$d8/dfa/struct__USBHC_1_1__EPASSIGN.html" title="_EPASSIGN" alt="" coords="307,555,403,581"/>
+<area shape="rect" id="node7" href="$d8/ddb/struct__USBTR.html" title="_USBTR" alt="" coords="481,465,553,492"/>
+<area shape="rect" id="node4" href="$d7/d90/struct__USBPI.html" title="_USBPI" alt="" coords="418,228,486,255"/>
+<area shape="rect" id="node5" href="$d3/dcc/struct__USBHC.html" title="_USBHC" alt="" coords="461,317,536,344"/>
+<area shape="rect" id="node9" href="$d5/dd1/struct__USBHI.html" title="_USBHI" alt="" coords="351,317,419,344"/>
+<area shape="rect" id="node8" href="$d1/d95/struct__USBIV.html" title="_USBIV" alt="" coords="586,317,654,344"/>
+<area shape="rect" id="node10" href="$dc/dfb/struct__USBPC.html" title="_USBPC" alt="" coords="495,139,569,165"/>
+</map>

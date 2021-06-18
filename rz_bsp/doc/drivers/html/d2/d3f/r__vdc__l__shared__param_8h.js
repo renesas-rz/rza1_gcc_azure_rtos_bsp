@@ -1,0 +1,56 @@
+var r__vdc__l__shared__param_8h =
+[
+    [ "vdc_color_space_t", "d2/d3f/r__vdc__l__shared__param_8h.html#a95f6ec9fd2f3df7e9e231c96dfc4bfdf", [
+      [ "VDC_COLOR_SPACE_GBR", "dd/d00/r__vdc__shared__param_8h.html#a95f6ec9fd2f3df7e9e231c96dfc4bfdfada0121c1e0f5a7420124b28ffc0ac6d1", null ],
+      [ "VDC_COLOR_SPACE_YCBCR", "dd/d00/r__vdc__shared__param_8h.html#a95f6ec9fd2f3df7e9e231c96dfc4bfdfa88f954040dd2678ff6d12c50f4f6d95e", null ],
+      [ "VDC_COLOR_SPACE_GBR", "d2/d3f/r__vdc__l__shared__param_8h.html#a95f6ec9fd2f3df7e9e231c96dfc4bfdfada0121c1e0f5a7420124b28ffc0ac6d1", null ],
+      [ "VDC_COLOR_SPACE_YCBCR", "d2/d3f/r__vdc__l__shared__param_8h.html#a95f6ec9fd2f3df7e9e231c96dfc4bfdfa88f954040dd2678ff6d12c50f4f6d95e", null ]
+    ] ],
+    [ "vdc_resource_state_t", "d2/d3f/r__vdc__l__shared__param_8h.html#a79bd2099ce578811822756e584226f9f", [
+      [ "VDC_RESOURCE_ST_INVALID", "dd/d00/r__vdc__shared__param_8h.html#a79bd2099ce578811822756e584226f9fad51097dcf6e42992d2e66a1d944f5f31", null ],
+      [ "VDC_RESOURCE_ST_VALID", "dd/d00/r__vdc__shared__param_8h.html#a79bd2099ce578811822756e584226f9fabbef55978341ca26834eac8b0ab0e4a9", null ],
+      [ "VDC_RESOURCE_ST_INVALID", "d2/d3f/r__vdc__l__shared__param_8h.html#a79bd2099ce578811822756e584226f9fad51097dcf6e42992d2e66a1d944f5f31", null ],
+      [ "VDC_RESOURCE_ST_VALID", "d2/d3f/r__vdc__l__shared__param_8h.html#a79bd2099ce578811822756e584226f9fabbef55978341ca26834eac8b0ab0e4a9", null ]
+    ] ],
+    [ "vdc_resource_type_t", "d2/d3f/r__vdc__l__shared__param_8h.html#ae29b42c4ce34002ce44c0e92d00c88fd", [
+      [ "VDC_RESOURCE_PANEL_CLK", "dd/d00/r__vdc__shared__param_8h.html#ae29b42c4ce34002ce44c0e92d00c88fda5b468c26e497fc17831d5c004ed6759b", null ],
+      [ "VDC_RESOURCE_VIDEO_IN", "dd/d00/r__vdc__shared__param_8h.html#ae29b42c4ce34002ce44c0e92d00c88fda00f4ce9de8be5b3d1cd5629c405e1f04", null ],
+      [ "VDC_RESOURCE_VSYNC", "dd/d00/r__vdc__shared__param_8h.html#ae29b42c4ce34002ce44c0e92d00c88fdab9b7757848c8121452887e64370e4e73", null ],
+      [ "VDC_RESOURCE_LCD_PANEL", "dd/d00/r__vdc__shared__param_8h.html#ae29b42c4ce34002ce44c0e92d00c88fda18800d944938a743d68bbbf487534f76", null ],
+      [ "VDC_RESOURCE_LVDS_CLK", "dd/d00/r__vdc__shared__param_8h.html#ae29b42c4ce34002ce44c0e92d00c88fdad7ff2f87479da78d7b107642018e948b", null ],
+      [ "VDC_RESOURCE_NUM", "dd/d00/r__vdc__shared__param_8h.html#ae29b42c4ce34002ce44c0e92d00c88fdabf14619a740a2031b47b7fbd6929c6be", null ],
+      [ "VDC_RESOURCE_PANEL_CLK", "d2/d3f/r__vdc__l__shared__param_8h.html#ae29b42c4ce34002ce44c0e92d00c88fda5b468c26e497fc17831d5c004ed6759b", null ],
+      [ "VDC_RESOURCE_VIDEO_IN", "d2/d3f/r__vdc__l__shared__param_8h.html#ae29b42c4ce34002ce44c0e92d00c88fda00f4ce9de8be5b3d1cd5629c405e1f04", null ],
+      [ "VDC_RESOURCE_VSYNC", "d2/d3f/r__vdc__l__shared__param_8h.html#ae29b42c4ce34002ce44c0e92d00c88fdab9b7757848c8121452887e64370e4e73", null ],
+      [ "VDC_RESOURCE_LCD_PANEL", "d2/d3f/r__vdc__l__shared__param_8h.html#ae29b42c4ce34002ce44c0e92d00c88fda18800d944938a743d68bbbf487534f76", null ],
+      [ "VDC_RESOURCE_NUM", "d2/d3f/r__vdc__l__shared__param_8h.html#ae29b42c4ce34002ce44c0e92d00c88fdabf14619a740a2031b47b7fbd6929c6be", null ]
+    ] ],
+    [ "VDC_ShrdPrmGetBgColor", "d2/d3f/r__vdc__l__shared__param_8h.html#a22d65760b3618b8c2c3894e9fe79cafc", null ],
+    [ "VDC_ShrdPrmGetColorSpace", "d2/d3f/r__vdc__l__shared__param_8h.html#afce432153a822d712e87cb1dcb6f26ec", null ],
+    [ "VDC_ShrdPrmGetColorSpaceFbRd", "d2/d3f/r__vdc__l__shared__param_8h.html#a12f789be16456f1ff38cb8181acc8ee3", null ],
+    [ "VDC_ShrdPrmGetColorSpaceFbWr", "d2/d3f/r__vdc__l__shared__param_8h.html#a5d8c65ad75d19ee2072bbcad890a6fa4", null ],
+    [ "VDC_ShrdPrmGetDisplayArea", "d2/d3f/r__vdc__l__shared__param_8h.html#ab7ce39a8bafc677d556b921cde2b7568", null ],
+    [ "VDC_ShrdPrmGetFrBuffBtm", "d2/d3f/r__vdc__l__shared__param_8h.html#a4358e9206da5150b3f20e124fb5567c4", null ],
+    [ "VDC_ShrdPrmGetFrBuffWidth_Rd", "d2/d3f/r__vdc__l__shared__param_8h.html#a6ece6ae7f70dc150fd2646282f040adf", null ],
+    [ "VDC_ShrdPrmGetGraphicsFormat", "d2/d3f/r__vdc__l__shared__param_8h.html#aa1918aacdd4554577e39bc1956ffbdf0", null ],
+    [ "VDC_ShrdPrmGetInterlace", "d2/d3f/r__vdc__l__shared__param_8h.html#a3851e37296bc1ea0795db3971d89758c", null ],
+    [ "VDC_ShrdPrmGetLayerResource", "d2/d3f/r__vdc__l__shared__param_8h.html#a234771e4b7506edb0ca1bbed07405a9a", null ],
+    [ "VDC_ShrdPrmGetLineOfsAddrDir", "d2/d3f/r__vdc__l__shared__param_8h.html#ad4ee1f30dccb340d08e3fb514d9be8f3", null ],
+    [ "VDC_ShrdPrmGetMeasureFolding", "d2/d3f/r__vdc__l__shared__param_8h.html#a040a03edf126581032aa61c5d29764f4", null ],
+    [ "VDC_ShrdPrmGetResource", "d2/d3f/r__vdc__l__shared__param_8h.html#a6f3e1bf47514f515990a1e3c09714ff3", null ],
+    [ "VDC_ShrdPrmGetRwProcEnabled", "d2/d3f/r__vdc__l__shared__param_8h.html#a8ae5d19f54438862df9ad0432d9f8220", null ],
+    [ "VDC_ShrdPrmGetRwProcReady", "d2/d3f/r__vdc__l__shared__param_8h.html#acb85d874359fb3bcfcf521c9935bb990", null ],
+    [ "VDC_ShrdPrmGetSelFbAddrSig", "d2/d3f/r__vdc__l__shared__param_8h.html#af20d30306d2913f99e81319301f7f915", null ],
+    [ "VDC_ShrdPrmGetWritingMode", "d2/d3f/r__vdc__l__shared__param_8h.html#ac95745d257461a8ae751a4cb117cd285", null ],
+    [ "VDC_ShrdPrmInit", "d2/d3f/r__vdc__l__shared__param_8h.html#af5c6a0970373bb49d26d829364f410e6", null ],
+    [ "VDC_ShrdPrmSetChgReadParam", "d2/d3f/r__vdc__l__shared__param_8h.html#a6632139e2506b1cf6fcefd3b6b1623cf", null ],
+    [ "VDC_ShrdPrmSetChgWriteParam", "d2/d3f/r__vdc__l__shared__param_8h.html#acca65f5e6443bd57466e1acbee723b86", null ],
+    [ "VDC_ShrdPrmSetInputParam", "d2/d3f/r__vdc__l__shared__param_8h.html#a8d4e771f523004aa8416ab5d9dff912f", null ],
+    [ "VDC_ShrdPrmSetLayerResource", "d2/d3f/r__vdc__l__shared__param_8h.html#a13149bd5e616f88b4d88e935608fb452", null ],
+    [ "VDC_ShrdPrmSetOutputParam", "d2/d3f/r__vdc__l__shared__param_8h.html#a1c924762a3de1c829da85f15761a012d", null ],
+    [ "VDC_ShrdPrmSetReadParam", "d2/d3f/r__vdc__l__shared__param_8h.html#aaca2761a054108694b7680764bf2fb6e", null ],
+    [ "VDC_ShrdPrmSetResource", "d2/d3f/r__vdc__l__shared__param_8h.html#a79d056264672b19338a7262b8f233473", null ],
+    [ "VDC_ShrdPrmSetRwProcDisable", "d2/d3f/r__vdc__l__shared__param_8h.html#a8f76463c98a776a742fbae04bf4a1c7d", null ],
+    [ "VDC_ShrdPrmSetRwProcEnable", "d2/d3f/r__vdc__l__shared__param_8h.html#af2aeffd08615c05fc1397e5be96cf3bb", null ],
+    [ "VDC_ShrdPrmSetWriteParam", "d2/d3f/r__vdc__l__shared__param_8h.html#a44e581a8f115a33cb4f1672bd8eb5259", null ]
+];

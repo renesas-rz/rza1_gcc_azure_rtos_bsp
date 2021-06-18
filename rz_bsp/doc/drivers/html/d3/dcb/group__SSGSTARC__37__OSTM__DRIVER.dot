@@ -1,0 +1,17 @@
+digraph "RZA1LU Stream-IT OSTM driver"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node1 [label="RZA1LU Stream-IT OSTM\l driver",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="This interface provides access to the OSTM peripheral See OSTM High Level Driver API for details."];
+  Node3 [label="OSTM High Level Driver API",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d33/group__OSTM__HLD__DRIVER.html",tooltip="This interface allows high level control of the OSTM module."];
+  Node5 [label="RZA1LU OSTM private\l interface to SC",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d22/group__OSTM__DRIVER__SC__PRIVATE.html",tooltip="Manages the private interface between the driver and SC."];
+  Node4 [label="OSTM SC Interface",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d77/group__OSTM__DRIVER__SC__CFG.html",tooltip="Interface between Smart Configurator and the OSTM module."];
+  Node6 [label="OSTM low layer driver\l configuration",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d0c/group__RZA1LU__STREAM__IT__OSTM__LLD.html",tooltip="This interface allows control of the OSTM interface on the RZA1LU Stream-IT board."];
+  Node2 [label="Drivers (POSIX)",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d3/d50/group__R__SW__PKG__93__POSIX__Drivers.html",tooltip="POSIX interface drivers."];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node4 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node5 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node6 [shape=plaintext, dir="back", style="solid"];
+}

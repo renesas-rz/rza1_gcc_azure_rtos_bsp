@@ -1,0 +1,9 @@
+digraph "SC RIIC API Interface"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node1 [label="SC RIIC API Interface",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Interface between Smart Configurator and the RIIC module."];
+  Node2 [label="RZA1LU Stream-IT RIIC\l driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/dbd/group__SSGSTARC__56__RIIC__API.html",tooltip="This interface provides access to the RIIC peripheral on the RZA1LU Stream-IT board...."];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+}

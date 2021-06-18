@@ -1,0 +1,19 @@
+digraph "r_dmac_device_cfg.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="r_dmac_device_cfg.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="r_dmac_drv_api.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/d75/r__dmac__drv__api_8h.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="r_devlink_wrapper_cfg.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/dbe/r__devlink__wrapper__cfg_8h.html",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="r_dmac_drv_sc_cfg.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d50/r__dmac__drv__sc__cfg_8h.html",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="r_dmac_lld_rza1l.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/d4a/r__dmac__lld__rza1l_8h.html",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="r_dmac_drv_link.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/d06/r__dmac__drv__link_8h.html",tooltip=" "];
+  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

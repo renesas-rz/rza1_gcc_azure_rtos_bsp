@@ -1,0 +1,15 @@
+digraph "pmod_lcd" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_180fb5dbcfe56f00ba097c6057eb79b8 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="middleware" fontname="Helvetica", fontsize="10", URL="dir_180fb5dbcfe56f00ba097c6057eb79b8.html"]
+  subgraph clusterdir_72e3daa9a439d0587d8e7bd0706e34f5 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_72e3daa9a439d0587d8e7bd0706e34f5.html"];
+    dir_72e3daa9a439d0587d8e7bd0706e34f5 [shape=plaintext label="pmod_lcd"];
+    dir_cd25e65445e3e12b9558b99a38b4cfba [shape=box label="inc" color="black" fillcolor="white" style="filled" URL="dir_cd25e65445e3e12b9558b99a38b4cfba.html"];
+  }
+  }
+  dir_eda2a6d705da8f3400ffe9a7dcb90b30 [shape=box label="application" fillcolor="white" style="filled" color="red" URL="dir_eda2a6d705da8f3400ffe9a7dcb90b30.html"];
+  dir_cd25e65445e3e12b9558b99a38b4cfba->dir_eda2a6d705da8f3400ffe9a7dcb90b30 [headlabel="2", labeldistance=1.5 headhref="dir_000012_000002.html"];
+}

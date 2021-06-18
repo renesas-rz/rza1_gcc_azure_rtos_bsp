@@ -1,0 +1,13 @@
+digraph "vdec_degital_clamp_t"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="vdec_degital_clamp_t",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" center_clamp" ,fontname="Helvetica"];
+  Node2 [label="vdec_center_clamp_t",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/db6/structvdec__center__clamp__t.html",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" pedestal_clamp" ,fontname="Helvetica"];
+  Node3 [label="vdec_pedestal_clamp_t",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/d26/structvdec__pedestal__clamp__t.html",tooltip=" "];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" noise_det" ,fontname="Helvetica"];
+  Node4 [label="vdec_noise_det_t",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d72/structvdec__noise__det__t.html",tooltip=" "];
+}

@@ -1,0 +1,8 @@
+<map id="r_vdc_l_register.h" name="r_vdc_l_register.h">
+<area shape="rect" id="node2" href="$d4/d2b/mcu__board__select_8h.html" title="mcu_board_select.h" alt="" coords="115,155,253,181"/>
+<area shape="rect" id="node3" href="$da/db2/r__vdc_8h.html" title="VDC driver API definitions. " alt="" coords="83,80,146,107"/>
+<area shape="rect" id="node9" href="$dd/d3d/r__vdc__user_8h.html" title="VDC driver user&#45;defined header. " alt="" coords="222,80,317,107"/>
+<area shape="rect" id="node4" href="$d8/df7/r__vdc__h_8h.html" title="VDC driver API definitions. " alt="" coords="5,155,91,181"/>
+<area shape="rect" id="node5" href="$d9/d00/r__vdc__h__user_8h.html" title="VDC driver user&#45;defined header. " alt="" coords="115,229,224,256"/>
+<area shape="rect" id="node6" href="$d9/de3/r__typedefs_8h.html" title="r_typedefs.h" alt="" coords="68,304,161,331"/>
+</map>

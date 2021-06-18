@@ -1,0 +1,26 @@
+var r__usb__default__descriptors_8h =
+[
+    [ "CONTROL_IN_PACKET_SIZE", "df/dca/r__usb__default__descriptors_8h.html#a4004a9bac75882a7d41f9bce736257aa", null ],
+    [ "ENDPOINT_1_2_PACKET_SIZE", "df/dca/r__usb__default__descriptors_8h.html#a913b35b0887fecba5e0ae9a78d725ffb", null ],
+    [ "ENDPOINT_3_4_PACKET_SIZE", "df/dca/r__usb__default__descriptors_8h.html#a916cc38b978ac725ba63ae7ad1b09fe9", null ],
+    [ "ENDPOINT_5_PACKET_SIZE", "df/dca/r__usb__default__descriptors_8h.html#a6fc6510d16dd833e4059e4dbde57d1a7", null ],
+    [ "ENDPOINT_6_7_PACKET_SIZE", "df/dca/r__usb__default__descriptors_8h.html#a4ac5d53b04ec9b4f2dcf6fc148145494", null ],
+    [ "ENDPOINT_8_9_PACKET_SIZE", "df/dca/r__usb__default__descriptors_8h.html#a52c5fb7a2ec17f954ccae8323b3ac075", null ],
+    [ "HID_DESCRIPTOR_SIZE", "df/dca/r__usb__default__descriptors_8h.html#a951df24b66fc578e35f3e95a8d248f64", null ],
+    [ "HID_REPORT_DESCRIPTOR_SIZE", "df/dca/r__usb__default__descriptors_8h.html#acd3f338d7352a92e6618bf0ed54aa4c0", null ],
+    [ "INPUT_REPORT_SIZE", "df/dca/r__usb__default__descriptors_8h.html#ae7ab631cc7ab5847aa162c8a61840f1f", null ],
+    [ "OUTPUT_REPORT_SIZE", "df/dca/r__usb__default__descriptors_8h.html#a41aa0a12a1d62056c0174522e856b02c", null ],
+    [ "START_INDEX_OF_HID_WITHIN_CONFIG_DESC", "df/dca/r__usb__default__descriptors_8h.html#acbfba1336f6e17a9d584feccf2b56d48", null ],
+    [ "STRING_iMANUFACTURER", "df/dca/r__usb__default__descriptors_8h.html#ae98cfc1f4080d9d336f3dceb6e51b771", null ],
+    [ "STRING_iPRODUCT", "df/dca/r__usb__default__descriptors_8h.html#aebc70fe91a2e7a9084e7ee83d7095b08", null ],
+    [ "STRING_iSERIAL", "df/dca/r__usb__default__descriptors_8h.html#a45fea0179acd3b45b1572ea078c15bcd", null ],
+    [ "g_usbf_ConfigurationDescriptor", "df/dca/r__usb__default__descriptors_8h.html#a42ec4385a5023169762fb896058e16ce", null ],
+    [ "g_usbf_device_qualifier_desc", "df/dca/r__usb__default__descriptors_8h.html#af5c7201168cd2cd9bfd8d6ed072dc9d5", null ],
+    [ "g_usbf_DeviceDescriptor", "df/dca/r__usb__default__descriptors_8h.html#aebeed689bcfa48c7fe198b89382798bb", null ],
+    [ "g_usbf_hid_report_descriptor", "df/dca/r__usb__default__descriptors_8h.html#affebd9491e8d595af7f867a9b381b19d", null ],
+    [ "g_usbf_other_speed_config_desc", "df/dca/r__usb__default__descriptors_8h.html#a82721cc8bdac0e03de0a9e9001201605", null ],
+    [ "g_usbf_str_desc_language_ids", "df/dca/r__usb__default__descriptors_8h.html#ad9e4dea64e52ccddc580eb4c8df3cb84", null ],
+    [ "g_usbf_str_desc_manufacturer", "df/dca/r__usb__default__descriptors_8h.html#aef96bc72d0f3e845a1c18d0ae3c0b575", null ],
+    [ "g_usbf_str_desc_product", "df/dca/r__usb__default__descriptors_8h.html#af53bd745ca34fd6c6740d45855eeb8c5", null ],
+    [ "g_usbf_str_desc_serial_num", "df/dca/r__usb__default__descriptors_8h.html#a609c83cd23dd43bd99a027be6bc981e0", null ]
+];

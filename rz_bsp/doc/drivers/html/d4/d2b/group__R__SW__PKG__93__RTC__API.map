@@ -1,0 +1,4 @@
+<map id="RTC Driver" name="RTC Driver">
+<area shape="rect" id="node2" href="$d2/dc0/group__R__SW__PKG__93__RTC__LLD.html" title="This interface provides low level device specific access to a Real&#45;Time Clock RTC device on the RZA1L..." alt="" coords="295,5,437,32"/>
+<area shape="rect" id="node3" href="$d3/d50/group__R__SW__PKG__93__POSIX__Drivers.html" title="POSIX interface drivers. " alt="" coords="5,5,116,32"/>
+</map>

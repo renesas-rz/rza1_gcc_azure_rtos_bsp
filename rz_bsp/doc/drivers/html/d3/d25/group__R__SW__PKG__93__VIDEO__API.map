@@ -1,0 +1,6 @@
+<map id="Video" name="Video">
+<area shape="rect" id="node1" href="$d2/dbc/group__R__SW__PKG__93__NONOS__MIDDLEWARE.html" title="Middleware. " alt="" coords="5,56,167,83"/>
+<area shape="rect" id="node2" href="$d2/da5/group__R__SW__PKG__93__VIDEO__VDC.html" title="VDC Unit Module. " alt="" coords="321,5,408,32"/>
+<area shape="rect" id="node3" href="$d6/dcf/group__R__SW__PKG__93__VIDEO__CEU.html" title="CEU Unit Module. " alt="" coords="321,56,408,83"/>
+<area shape="rect" id="node5" href="$d5/d96/group__R__SW__PKG__93__VIDEO__VDEC.html" title="VDEC Unit Module. " alt="" coords="317,107,412,133"/>
+</map>

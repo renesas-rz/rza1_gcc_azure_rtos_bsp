@@ -1,0 +1,4 @@
+<map id="vdc_sync_ctrl_t" name="vdc_sync_ctrl_t">
+<area shape="rect" id="node2" href="$da/d49/structvdc__period__rect__t.html" title="vdc_period_rect_t" alt="" coords="5,5,128,32"/>
+<area shape="rect" id="node3" href="$d6/dc1/structvdc__vsync__cpmpe__t.html" title="vdc_vsync_cpmpe_t" alt="" coords="152,5,291,32"/>
+</map>

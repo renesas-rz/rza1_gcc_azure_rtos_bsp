@@ -1,0 +1,9 @@
+digraph "OSTM High Level Driver API"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node2 [label="RZA1LU Stream-IT OSTM\l driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d3/dcb/group__SSGSTARC__37__OSTM__DRIVER.html",tooltip="This interface provides access to the OSTM peripheral See OSTM High Level Driver API for details."];
+  Node1 [label="OSTM High Level Driver API",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="This interface allows high level control of the OSTM module."];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+}

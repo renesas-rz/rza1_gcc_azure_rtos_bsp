@@ -1,0 +1,9 @@
+<map id="Middleware (Not POSIX)" name="Middleware (Not POSIX)">
+<area shape="rect" id="node1" href="$d2/d47/group__R__SW__PKG__93__TIMER.html" title="Timer module which allows user to start and stop a timer, returning the time elapsed in seconds betwe..." alt="" coords="247,5,302,32"/>
+<area shape="rect" id="node2" href="$d2/d21/group__R__SW__PKG__93__WEBIF__API.html" title="Web interface API. " alt="" coords="247,56,302,83"/>
+<area shape="rect" id="node4" href="$dd/dc4/group__R__SW__PKG__93__CMOS__API.html" title="CMOS Camera API. " alt="" coords="244,107,305,133"/>
+<area shape="rect" id="node5" href="$df/d80/group__R__SW__PKG__93__FATFS.html" title="The Renesas FAT FS Abstraction Layer. " alt="" coords="215,157,335,184"/>
+<area shape="rect" id="node6" href="$d3/d25/group__R__SW__PKG__93__VIDEO__API.html" title="Video module, allows the user to set up and control video output configuration and processing..." alt="" coords="247,208,302,235"/>
+<area shape="rect" id="node7" href="$d5/d7b/group__R__SW__PKG__93__TOUCH__API.html" title="Touch Panel Interface. " alt="" coords="246,259,303,285"/>
+<area shape="rect" id="node8" href="$de/d5f/group__R__SW__PKG__93__SOUND__API.html" title="Sound module responsible for setting up the Audio Codec. " alt="" coords="245,309,304,336"/>
+</map>

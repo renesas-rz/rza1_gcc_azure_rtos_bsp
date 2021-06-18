@@ -1,0 +1,22 @@
+digraph "lcd_controller" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_e5d818fbce5dc2fafe687888bd09364b {
+    graph [ bgcolor="#ddddee", pencolor="black", label="src" fontname="Helvetica", fontsize="10", URL="dir_e5d818fbce5dc2fafe687888bd09364b.html"]
+  subgraph clusterdir_a1cfb288622aad5c54f77d38e4ab92db {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_a1cfb288622aad5c54f77d38e4ab92db.html"];
+    dir_a1cfb288622aad5c54f77d38e4ab92db [shape=plaintext label="lcd_controller"];
+    dir_b2ffcaee829fa68eda831c961943a282 [shape=box label="FT5x06" color="black" fillcolor="white" style="filled" URL="dir_b2ffcaee829fa68eda831c961943a282.html"];
+  }
+  }
+  dir_eda2a6d705da8f3400ffe9a7dcb90b30 [shape=box label="application" fillcolor="white" style="filled" color="red" URL="dir_eda2a6d705da8f3400ffe9a7dcb90b30.html"];
+  dir_95f7b9d4854ca187ae337d299db232bb [shape=box label="configuration" fillcolor="white" style="filled" color="red" URL="dir_95f7b9d4854ca187ae337d299db232bb.html"];
+  dir_d558b02c2f9429dbce7ed4cfff1da93b [shape=box label="inc" URL="dir_d558b02c2f9429dbce7ed4cfff1da93b.html"];
+  dir_eda2a6d705da8f3400ffe9a7dcb90b30->dir_95f7b9d4854ca187ae337d299db232bb [headlabel="2", labeldistance=1.5 headhref="dir_000002_000009.html"];
+  dir_b2ffcaee829fa68eda831c961943a282->dir_eda2a6d705da8f3400ffe9a7dcb90b30 [headlabel="3", labeldistance=1.5 headhref="dir_000039_000002.html"];
+  dir_b2ffcaee829fa68eda831c961943a282->dir_95f7b9d4854ca187ae337d299db232bb [headlabel="1", labeldistance=1.5 headhref="dir_000039_000009.html"];
+  dir_b2ffcaee829fa68eda831c961943a282->dir_d558b02c2f9429dbce7ed4cfff1da93b [headlabel="1", labeldistance=1.5 headhref="dir_000039_000036.html"];
+  dir_95f7b9d4854ca187ae337d299db232bb->dir_eda2a6d705da8f3400ffe9a7dcb90b30 [headlabel="1", labeldistance=1.5 headhref="dir_000009_000002.html"];
+  dir_d558b02c2f9429dbce7ed4cfff1da93b->dir_eda2a6d705da8f3400ffe9a7dcb90b30 [headlabel="1", labeldistance=1.5 headhref="dir_000036_000002.html"];
+}

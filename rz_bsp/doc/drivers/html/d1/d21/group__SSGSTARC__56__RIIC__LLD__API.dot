@@ -1,0 +1,9 @@
+digraph "RIIC Low Level Driver API"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node1 [label="RIIC Low Level Driver API",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="The API for the low level RIIC driver."];
+  Node2 [label="RZA1LU Stream-IT RIIC\l driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/dbd/group__SSGSTARC__56__RIIC__API.html",tooltip="This interface provides access to the RIIC peripheral on the RZA1LU Stream-IT board...."];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+}

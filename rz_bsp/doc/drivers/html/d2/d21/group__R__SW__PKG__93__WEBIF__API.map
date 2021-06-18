@@ -1,0 +1,7 @@
+<map id="Webif" name="Webif">
+<area shape="rect" id="node2" href="$da/de2/group__R__SW__PKG__93__WEBIF__SSI.html" title="Server Side Handler Functions. " alt="" coords="338,5,479,32"/>
+<area shape="rect" id="node3" href="$d2/d50/group__R__SW__PKG__93__LIVE__FILE__API.html" title="Functions to create &quot;live&quot; files which return measurement data. " alt="" coords="361,56,456,83"/>
+<area shape="rect" id="node4" href="$da/d4d/group__R__SW__PKG__93__EFS__FILE.html" title="Functions to get the file data from EmbedFS. " alt="" coords="329,107,488,133"/>
+<area shape="rect" id="node5" href="$d7/d88/group__R__SW__PKG__93__WEBIF__CGI.html" title="Common Gateway Interface file handler functions. " alt="" coords="317,157,500,184"/>
+<area shape="rect" id="node6" href="$d2/dbc/group__R__SW__PKG__93__NONOS__MIDDLEWARE.html" title="Middleware. " alt="" coords="5,81,167,108"/>
+</map>

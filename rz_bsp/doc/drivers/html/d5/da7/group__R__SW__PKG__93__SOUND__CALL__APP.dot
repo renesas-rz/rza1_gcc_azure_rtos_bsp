@@ -1,0 +1,9 @@
+digraph "Sound Application"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node1 [label="Sound Application",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Functions that uses the audio codec to record and playback."];
+  Node2 [label="Sound Application",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/de6/group__R__SW__PKG__93__SOUND__APP.html",tooltip="Application that uses the audio codec to record and playback."];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+}

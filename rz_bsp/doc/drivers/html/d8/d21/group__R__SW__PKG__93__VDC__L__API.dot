@@ -1,0 +1,11 @@
+digraph "VDC_L RZA1L Driver"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node2 [label="Drivers (Not POSIX)",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/def/group__R__SW__PKG__93__NONOS__DRIVERS.html",tooltip="Drivers."];
+  Node3 [label="VDC_H RZA1LU Driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/d48/group__R__SW__PKG__93__VDC__H__API.html",tooltip=" "];
+  Node1 [label="VDC_L RZA1L Driver",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, label="vdc_period_rect_t\nvdc_pd_disp_rect_t\nvdc_lvds_t\nvdc_init_t\nvdc_sync_delay_t\nvdc_ext_in_sig_t\nvdc_input_t\nvdc_vsync_cpmpe_t\nvdc_sync_ctrl_t\nvdc_lcd_tcon_timing_t\n...", color="orange", dir="none", style="dashed"];
+}

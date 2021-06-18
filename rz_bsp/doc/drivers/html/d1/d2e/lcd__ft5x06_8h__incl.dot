@@ -1,0 +1,18 @@
+digraph "lcd_ft5x06.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="lcd_ft5x06.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="LCD Driver internal hedder."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="mcu_board_select.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d2b/mcu__board__select_8h.html",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="r_os_abstraction_api.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/d66/r__os__abstraction__api_8h.html",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="r_typedefs.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/de3/r__typedefs_8h.html",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="stddef.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="lcd_controller_if.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/d9b/lcd__controller__if_8h.html",tooltip=" "];
+  Node6 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

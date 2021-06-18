@@ -1,0 +1,35 @@
+<map id="ov7740_omnivision.h" name="ov7740_omnivision.h">
+<area shape="rect" id="node2" href="$d8/d62/r__ceu_8h.html" title="r_ceu.h" alt="" coords="946,80,1011,107"/>
+<area shape="rect" id="node3" href="$d9/de3/r__typedefs_8h.html" title="r_typedefs.h" alt="" coords="5,304,99,331"/>
+<area shape="rect" id="node5" href="$d9/d39/iodefine__cfg_8h.html" title="iodefine_cfg.h" alt="" coords="1905,155,2007,181"/>
+<area shape="rect" id="node6" href="$d9/d0e/iodefine__typedef_8h.html" title="iodefine_typedef.h" alt="" coords="39,229,166,256"/>
+<area shape="rect" id="node7" href="$d6/d62/adc__iodefine_8h.html" title="adc_iodefine.h" alt="" coords="190,229,295,256"/>
+<area shape="rect" id="node8" href="$d5/df7/bsc__iodefine_8h.html" title="bsc_iodefine.h" alt="" coords="319,229,425,256"/>
+<area shape="rect" id="node9" href="$d0/d81/ceu__iodefine_8h.html" title="ceu_iodefine.h" alt="" coords="449,229,554,256"/>
+<area shape="rect" id="node10" href="$d0/d7f/cpg__iodefine_8h.html" title="cpg_iodefine.h" alt="" coords="578,229,683,256"/>
+<area shape="rect" id="node11" href="$d0/d60/dmac__iodefine_8h.html" title="dmac_iodefine.h" alt="" coords="707,229,823,256"/>
+<area shape="rect" id="node12" href="$d7/d76/ethavb__iodefine_8h.html" title="ethavb_iodefine.h" alt="" coords="847,229,969,256"/>
+<area shape="rect" id="node13" href="$d4/dba/ether__iodefine_8h.html" title="ether_iodefine.h" alt="" coords="993,229,1106,256"/>
+<area shape="rect" id="node14" href="$d5/db4/gpio__iodefine_8h.html" title="gpio_iodefine.h" alt="" coords="1130,229,1238,256"/>
+<area shape="rect" id="node15" href="$dc/dc5/inb__iodefine_8h.html" title="inb_iodefine.h" alt="" coords="1263,229,1364,256"/>
+<area shape="rect" id="node16" href="$d4/da7/intc__iodefine_8h.html" title="intc_iodefine.h" alt="" coords="1389,229,1494,256"/>
+<area shape="rect" id="node17" href="$d3/d0a/irda__iodefine_8h.html" title="irda_iodefine.h" alt="" coords="1518,229,1623,256"/>
+<area shape="rect" id="node18" href="$d1/d37/jcu__iodefine_8h.html" title="jcu_iodefine.h" alt="" coords="1648,229,1749,256"/>
+<area shape="rect" id="node19" href="$d3/da4/l2c__iodefine_8h.html" title="l2c_iodefine.h" alt="" coords="1773,229,1875,256"/>
+<area shape="rect" id="node20" href="$d1/d66/mmc__iodefine_8h.html" title="mmc_iodefine.h" alt="" coords="1899,229,2013,256"/>
+<area shape="rect" id="node21" href="$d5/d3a/mtu2__iodefine_8h.html" title="mtu2_iodefine.h" alt="" coords="2037,229,2150,256"/>
+<area shape="rect" id="node22" href="$d7/d89/ostm__iodefine_8h.html" title="ostm_iodefine.h" alt="" coords="2174,229,2287,256"/>
+<area shape="rect" id="node23" href="$da/dd7/riic__iodefine_8h.html" title="riic_iodefine.h" alt="" coords="2312,229,2413,256"/>
+<area shape="rect" id="node24" href="$d7/df8/rscan0__iodefine_8h.html" title="rscan0_iodefine.h" alt="" coords="2437,229,2560,256"/>
+<area shape="rect" id="node25" href="$d2/db1/rspi__iodefine_8h.html" title="rspi_iodefine.h" alt="" coords="2585,229,2690,256"/>
+<area shape="rect" id="node26" href="$da/d83/rtc__iodefine_8h.html" title="rtc_iodefine.h" alt="" coords="2715,229,2813,256"/>
+<area shape="rect" id="node27" href="$dd/dc2/scif__iodefine_8h.html" title="scif_iodefine.h" alt="" coords="2837,229,2941,256"/>
+<area shape="rect" id="node28" href="$de/d45/scim__iodefine_8h.html" title="scim_iodefine.h" alt="" coords="2965,229,3077,256"/>
+<area shape="rect" id="node29" href="$dc/d9b/scux__iodefine_8h.html" title="scux_iodefine.h" alt="" coords="3101,229,3213,256"/>
+<area shape="rect" id="node30" href="$df/dc3/spdif__iodefine_8h.html" title="spdif_iodefine.h" alt="" coords="3238,229,3349,256"/>
+<area shape="rect" id="node31" href="$d2/d07/spibsc__iodefine_8h.html" title="spibsc_iodefine.h" alt="" coords="3373,229,3496,256"/>
+<area shape="rect" id="node32" href="$da/d7d/ssif__iodefine_8h.html" title="ssif_iodefine.h" alt="" coords="3520,229,3624,256"/>
+<area shape="rect" id="node33" href="$df/d31/usb20__iodefine_8h.html" title="usb20_iodefine.h" alt="" coords="3649,229,3767,256"/>
+<area shape="rect" id="node34" href="$d1/d20/vdc5__iodefine_8h.html" title="vdc5_iodefine.h" alt="" coords="3791,229,3902,256"/>
+<area shape="rect" id="node35" href="$d2/d7f/wdt__iodefine_8h.html" title="wdt_iodefine.h" alt="" coords="3927,229,4031,256"/>
+</map>

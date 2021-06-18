@@ -334,7 +334,7 @@ int_t R_LCD_StartInt( const LcdEvt_EntryType eType )
 int_t R_LCD_Restart( void )
 {
 #if (TARGET_BOARD == TARGET_BOARD_STREAM_IT2)
-    n_ret = LCD_Ft5x06_Int_Start( );
+    LCD_Ft5x06_Int_Start( );
 #elif (TARGET_BOARD == TARGET_BOARD_RSK)
     LCD_Ft5216_Reset();
     LCD_Ft5216_Int_Start();

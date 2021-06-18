@@ -1,0 +1,19 @@
+digraph "RZA1LU Stream-IT RIIC driver"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node6 [label="RIIC High Level Driver\l Private Functions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dc/d32/group__SSGSTARC__56__RIIC__HLD__PRV.html",tooltip="Private header for the RIIC High Level Driver. See RIIC High Level Driver for details."];
+  Node3 [label="RIIC Driver High to\l Low level Interface",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d5b/group__RIIC__HLD__LLD__IF.html",tooltip="This is the interface of callback functions for use low level ISRs for the RIIC driver."];
+  Node7 [label="RIIC Low Level Driver API",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d21/group__SSGSTARC__56__RIIC__LLD__API.html",tooltip="The API for the low level RIIC driver."];
+  Node5 [label="SC RIIC API Interface",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d46/group__RIIC__SC__IF.html",tooltip="Interface between Smart Configurator and the RIIC module."];
+  Node4 [label="RIIC High Level Driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d63/group__SSGSTARC__56__RIIC__HLD__API.html",tooltip="This interface provides access to RIIC Peripheral."];
+  Node1 [label="RZA1LU Stream-IT RIIC\l driver",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="This interface provides access to the RIIC peripheral on the RZA1LU Stream-IT board...."];
+  Node2 [label="Drivers (POSIX)",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d3/d50/group__R__SW__PKG__93__POSIX__Drivers.html",tooltip="POSIX interface drivers."];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node4 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node5 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node6 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node7 [shape=plaintext, dir="back", style="solid"];
+}

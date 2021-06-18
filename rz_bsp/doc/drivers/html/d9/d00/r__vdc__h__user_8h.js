@@ -1,0 +1,48 @@
+var r__vdc__h__user_8h =
+[
+    [ "R_VDC_CHECK_PARAMETERS", "d9/d00/r__vdc__h__user_8h.html#a63279afc5d7e2e1667f7105e534866e5", null ],
+    [ "VDC_COLORCONV_1TIMES_GAIN", "d9/d00/r__vdc__h__user_8h.html#a93ebc3967ab9cfee5980b45451011b97", null ],
+    [ "VDC_COLORCONV_DC_OFFSET", "d9/d00/r__vdc__h__user_8h.html#a47e71346a0ff12b43fb6184e9a3d48d0", null ],
+    [ "VDC_LVDS_PLL_WAIT_200USEC", "d9/d00/r__vdc__h__user_8h.html#a6a0e881d5b182b9ef011d6c1902ba1ae", null ],
+    [ "VDC_LVDS_PLL_WAIT_CYCLE", "d9/d00/r__vdc__h__user_8h.html#a2bc707b023b92025594af678c551a579", null ],
+    [ "vdc_colcnv_rgb_ycbcr_t", "d9/d00/r__vdc__h__user_8h.html#a98f374583b66a470866734abc4941e68", [
+      [ "VDC_COLORCONV_Y_R", "d9/d00/r__vdc__h__user_8h.html#a98f374583b66a470866734abc4941e68a04a5854d4d729cc19c2c32b853397e19", null ],
+      [ "VDC_COLORCONV_Y_G", "d9/d00/r__vdc__h__user_8h.html#a98f374583b66a470866734abc4941e68ad732238dcd1155ad17856132a6fe97d4", null ],
+      [ "VDC_COLORCONV_Y_B", "d9/d00/r__vdc__h__user_8h.html#a98f374583b66a470866734abc4941e68afd13ae3e7ab40999b86424a2ca54df0e", null ],
+      [ "VDC_COLORCONV_CB_R", "d9/d00/r__vdc__h__user_8h.html#a98f374583b66a470866734abc4941e68a10573fb35ee036da507a9a98beff8842", null ],
+      [ "VDC_COLORCONV_CB_G", "d9/d00/r__vdc__h__user_8h.html#a98f374583b66a470866734abc4941e68a0acbac4297401cbf6d44db4792ba5ee1", null ],
+      [ "VDC_COLORCONV_CB_B", "d9/d00/r__vdc__h__user_8h.html#a98f374583b66a470866734abc4941e68adacf54e9c260a6bd872f2abc996177f0", null ],
+      [ "VDC_COLORCONV_CR_R", "d9/d00/r__vdc__h__user_8h.html#a98f374583b66a470866734abc4941e68aa7f97a7a9c769f8e042db0c37b6a3b4a", null ],
+      [ "VDC_COLORCONV_CR_G", "d9/d00/r__vdc__h__user_8h.html#a98f374583b66a470866734abc4941e68a9353763107dbec44e06d142619c7a2ea", null ],
+      [ "VDC_COLORCONV_CR_B", "d9/d00/r__vdc__h__user_8h.html#a98f374583b66a470866734abc4941e68a3c3dfa65f62b5b2c03903e3c4a6f1be2", null ],
+      [ "VDC_COLORCONV_Y_R", "dd/d32/r__vdc__l__user_8h.html#a98f374583b66a470866734abc4941e68a04a5854d4d729cc19c2c32b853397e19", null ],
+      [ "VDC_COLORCONV_Y_G", "dd/d32/r__vdc__l__user_8h.html#a98f374583b66a470866734abc4941e68ad732238dcd1155ad17856132a6fe97d4", null ],
+      [ "VDC_COLORCONV_Y_B", "dd/d32/r__vdc__l__user_8h.html#a98f374583b66a470866734abc4941e68afd13ae3e7ab40999b86424a2ca54df0e", null ],
+      [ "VDC_COLORCONV_CB_R", "dd/d32/r__vdc__l__user_8h.html#a98f374583b66a470866734abc4941e68a10573fb35ee036da507a9a98beff8842", null ],
+      [ "VDC_COLORCONV_CB_G", "dd/d32/r__vdc__l__user_8h.html#a98f374583b66a470866734abc4941e68a0acbac4297401cbf6d44db4792ba5ee1", null ],
+      [ "VDC_COLORCONV_CB_B", "dd/d32/r__vdc__l__user_8h.html#a98f374583b66a470866734abc4941e68adacf54e9c260a6bd872f2abc996177f0", null ],
+      [ "VDC_COLORCONV_CR_R", "dd/d32/r__vdc__l__user_8h.html#a98f374583b66a470866734abc4941e68aa7f97a7a9c769f8e042db0c37b6a3b4a", null ],
+      [ "VDC_COLORCONV_CR_G", "dd/d32/r__vdc__l__user_8h.html#a98f374583b66a470866734abc4941e68a9353763107dbec44e06d142619c7a2ea", null ],
+      [ "VDC_COLORCONV_CR_B", "dd/d32/r__vdc__l__user_8h.html#a98f374583b66a470866734abc4941e68a3c3dfa65f62b5b2c03903e3c4a6f1be2", null ]
+    ] ],
+    [ "vdc_colcnv_ycbcr_rgb_t", "d9/d00/r__vdc__h__user_8h.html#a7d6e7bd2f8683f952361dbb561847395", [
+      [ "VDC_COLORCONV_G_Y", "d9/d00/r__vdc__h__user_8h.html#a7d6e7bd2f8683f952361dbb561847395af6ac7cc97623c799c567e746869da010", null ],
+      [ "VDC_COLORCONV_G_CB", "d9/d00/r__vdc__h__user_8h.html#a7d6e7bd2f8683f952361dbb561847395ac6e15bb8e8097fb5e0f6bddc475a480c", null ],
+      [ "VDC_COLORCONV_G_CR", "d9/d00/r__vdc__h__user_8h.html#a7d6e7bd2f8683f952361dbb561847395a7ec5e73795391ac04717bec688658320", null ],
+      [ "VDC_COLORCONV_B_Y", "d9/d00/r__vdc__h__user_8h.html#a7d6e7bd2f8683f952361dbb561847395a1203726d5e3a6d1d381269f2dd8185be", null ],
+      [ "VDC_COLORCONV_B_CB", "d9/d00/r__vdc__h__user_8h.html#a7d6e7bd2f8683f952361dbb561847395a0baf4fc22ae60d406e6af528b6e0586b", null ],
+      [ "VDC_COLORCONV_B_CR", "d9/d00/r__vdc__h__user_8h.html#a7d6e7bd2f8683f952361dbb561847395a4502b5412403f7c55975610021c33045", null ],
+      [ "VDC_COLORCONV_R_Y", "d9/d00/r__vdc__h__user_8h.html#a7d6e7bd2f8683f952361dbb561847395a472bc3b448026a476c88d2a7e8a06689", null ],
+      [ "VDC_COLORCONV_R_CB", "d9/d00/r__vdc__h__user_8h.html#a7d6e7bd2f8683f952361dbb561847395ac921f9787d265838b8c64a2d02649774", null ],
+      [ "VDC_COLORCONV_R_CR", "d9/d00/r__vdc__h__user_8h.html#a7d6e7bd2f8683f952361dbb561847395adc57e24e96191cf12097b15f9efb5422", null ],
+      [ "VDC_COLORCONV_G_Y", "dd/d32/r__vdc__l__user_8h.html#a7d6e7bd2f8683f952361dbb561847395af6ac7cc97623c799c567e746869da010", null ],
+      [ "VDC_COLORCONV_G_CB", "dd/d32/r__vdc__l__user_8h.html#a7d6e7bd2f8683f952361dbb561847395ac6e15bb8e8097fb5e0f6bddc475a480c", null ],
+      [ "VDC_COLORCONV_G_CR", "dd/d32/r__vdc__l__user_8h.html#a7d6e7bd2f8683f952361dbb561847395a7ec5e73795391ac04717bec688658320", null ],
+      [ "VDC_COLORCONV_B_Y", "dd/d32/r__vdc__l__user_8h.html#a7d6e7bd2f8683f952361dbb561847395a1203726d5e3a6d1d381269f2dd8185be", null ],
+      [ "VDC_COLORCONV_B_CB", "dd/d32/r__vdc__l__user_8h.html#a7d6e7bd2f8683f952361dbb561847395a0baf4fc22ae60d406e6af528b6e0586b", null ],
+      [ "VDC_COLORCONV_B_CR", "dd/d32/r__vdc__l__user_8h.html#a7d6e7bd2f8683f952361dbb561847395a4502b5412403f7c55975610021c33045", null ],
+      [ "VDC_COLORCONV_R_Y", "dd/d32/r__vdc__l__user_8h.html#a7d6e7bd2f8683f952361dbb561847395a472bc3b448026a476c88d2a7e8a06689", null ],
+      [ "VDC_COLORCONV_R_CB", "dd/d32/r__vdc__l__user_8h.html#a7d6e7bd2f8683f952361dbb561847395ac921f9787d265838b8c64a2d02649774", null ],
+      [ "VDC_COLORCONV_R_CR", "dd/d32/r__vdc__l__user_8h.html#a7d6e7bd2f8683f952361dbb561847395adc57e24e96191cf12097b15f9efb5422", null ]
+    ] ]
+];

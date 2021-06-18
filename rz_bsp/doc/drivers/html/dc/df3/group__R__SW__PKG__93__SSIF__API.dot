@@ -1,0 +1,17 @@
+digraph "SSIF Driver"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node3 [label="SSIF Low Level Driver API",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/dba/group__R__SW__PKG__93__SSIF__LLD__AIOIF.html",tooltip="Internal low level SSIF driver component."];
+  Node6 [label="SSIF Low Level Driver API",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d44/group__R__SW__PKG__93__SSIF__LLD__INT.html",tooltip="Internal low level SSIF driver component."];
+  Node4 [label="SSIF Low Level Driver API",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d3/de3/group__R__SW__PKG__93__SSIF__LLD.html",tooltip="Internal low level SSIF driver component."];
+  Node5 [label="SSIF Low Level Driver API",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/d21/group__R__SW__PKG__93__SSIF__LLD__IF.html",tooltip="Internal low level SSIF driver component."];
+  Node1 [label="SSIF Driver",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="This interface provides access to the Serial Sound Interface SSIF peripheral."];
+  Node2 [label="Drivers (POSIX)",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d3/d50/group__R__SW__PKG__93__POSIX__Drivers.html",tooltip="POSIX interface drivers."];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node4 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node5 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node6 [shape=plaintext, dir="back", style="solid"];
+}

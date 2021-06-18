@@ -1,0 +1,27 @@
+var structvdc__regaddr__output__ctrl__t =
+[
+    [ "out_bright1", "da/dd1/structvdc__regaddr__output__ctrl__t.html#a9f5f854c24b088fc015139a02efee1db", null ],
+    [ "out_bright2", "da/dd1/structvdc__regaddr__output__ctrl__t.html#a80318dc9c659527128bff4892baf98b7", null ],
+    [ "out_clk_phase", "da/dd1/structvdc__regaddr__output__ctrl__t.html#a285bd71630a81d81bba62d947825183a", null ],
+    [ "out_contrast", "da/dd1/structvdc__regaddr__output__ctrl__t.html#ae682bbce8aab13ceb51434a4e4d423cc", null ],
+    [ "out_pdtha", "da/dd1/structvdc__regaddr__output__ctrl__t.html#ac685e1561481e95f68b46b35e1788f36", null ],
+    [ "out_set", "da/dd1/structvdc__regaddr__output__ctrl__t.html#aea5c94c274783ca0b5fb9afe261b5c41", null ],
+    [ "out_update", "da/dd1/structvdc__regaddr__output__ctrl__t.html#a70742ecfe769fec3f8b5d09561ec4320", null ],
+    [ "tcon_tim", "da/dd1/structvdc__regaddr__output__ctrl__t.html#a4d7b06b8faa73ae5803b489dd70c1800", null ],
+    [ "tcon_tim_cpv1", "da/dd1/structvdc__regaddr__output__ctrl__t.html#a3952b88b2856a9406142f119afab6894", null ],
+    [ "tcon_tim_cpv2", "da/dd1/structvdc__regaddr__output__ctrl__t.html#aea9a6f76545fa2f35be5bea2ccfb8e9f", null ],
+    [ "tcon_tim_de", "da/dd1/structvdc__regaddr__output__ctrl__t.html#aa59b740efd015821c393960c3a892f91", null ],
+    [ "tcon_tim_pola1", "da/dd1/structvdc__regaddr__output__ctrl__t.html#ad1581d6c42a049d2c2cc4e6eaff74738", null ],
+    [ "tcon_tim_pola2", "da/dd1/structvdc__regaddr__output__ctrl__t.html#ac86362cc49f88e4b660b8a03036cef57", null ],
+    [ "tcon_tim_polb1", "da/dd1/structvdc__regaddr__output__ctrl__t.html#abea172a48eaa1abba38101d159d2d4de", null ],
+    [ "tcon_tim_polb2", "da/dd1/structvdc__regaddr__output__ctrl__t.html#a466bb789cd76fc1bc61dff9eae76ce2d", null ],
+    [ "tcon_tim_stb1", "da/dd1/structvdc__regaddr__output__ctrl__t.html#ae38e1c338291bf432894c39e520c6ec6", null ],
+    [ "tcon_tim_stb2", "da/dd1/structvdc__regaddr__output__ctrl__t.html#a2fd7c88d5ee6522e84b6b63bc32955a5", null ],
+    [ "tcon_tim_sth1", "da/dd1/structvdc__regaddr__output__ctrl__t.html#abd3e9b28f82aff4acd8413a30847bb28", null ],
+    [ "tcon_tim_sth2", "da/dd1/structvdc__regaddr__output__ctrl__t.html#a1fdc279b37c43d1dff77a23ab689b42f", null ],
+    [ "tcon_tim_stva1", "da/dd1/structvdc__regaddr__output__ctrl__t.html#a20a50bfac7e86cd9b2c0baee6ef50d6b", null ],
+    [ "tcon_tim_stva2", "da/dd1/structvdc__regaddr__output__ctrl__t.html#aecd1ef59e6f3186021368d12a157bab4", null ],
+    [ "tcon_tim_stvb1", "da/dd1/structvdc__regaddr__output__ctrl__t.html#ab8d99fc6dfd82a4d43048ea0be5c6a2f", null ],
+    [ "tcon_tim_stvb2", "da/dd1/structvdc__regaddr__output__ctrl__t.html#a14bcce1cb0a6129d06e67971b7d2b8a3", null ],
+    [ "tcon_update", "da/dd1/structvdc__regaddr__output__ctrl__t.html#a1a30fe85cf3dc67379bac23f20ec6a59", null ]
+];

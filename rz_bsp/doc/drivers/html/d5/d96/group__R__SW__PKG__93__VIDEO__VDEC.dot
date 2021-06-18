@@ -1,0 +1,9 @@
+digraph "Video VDEC"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node2 [label="Video",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d3/d25/group__R__SW__PKG__93__VIDEO__API.html",tooltip="Video module, allows the user to set up and control video output configuration and processing."];
+  Node1 [label="Video VDEC",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="VDEC Unit Module."];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+}

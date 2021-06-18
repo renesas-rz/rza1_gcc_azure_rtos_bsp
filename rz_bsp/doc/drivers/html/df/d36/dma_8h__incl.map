@@ -1,0 +1,16 @@
+<map id="dma.h" name="dma.h">
+<area shape="rect" id="node2" href="$d1/d3a/dma__if_8h.html" title="dma_if.h" alt="" coords="412,80,482,107"/>
+<area shape="rect" id="node11" href="$d4/d2b/mcu__board__select_8h.html" title="mcu_board_select.h" alt="" coords="634,155,772,181"/>
+<area shape="rect" id="node21" href="$da/dbb/Renesas__RZ__A1_8h.html" title="CMSIS Cortex&#45;A9 Core Peripheral Access Layer Header File for the Renesas_RZ_A1. " alt="" coords="638,80,768,107"/>
+<area shape="rect" id="node4" href="$d7/d19/r__errno_8h.html" title="r_errno.h" alt="" coords="148,319,221,345"/>
+<area shape="rect" id="node10" href="$d9/de3/r__typedefs_8h.html" title="r_typedefs.h" alt="" coords="470,393,563,420"/>
+<area shape="rect" id="node12" href="$d7/d32/compiler__settings_8h.html" title="compiler_settings.h" alt="" coords="474,155,609,181"/>
+<area shape="rect" id="node13" href="$d0/d93/application__cfg_8h.html" title="application_cfg.h" alt="" coords="657,319,776,345"/>
+<area shape="rect" id="node14" href="$d6/dab/r__compiler__abstraction__api_8h.html" title="r_compiler_abstraction\l_api.h" alt="" coords="932,229,1085,271"/>
+<area shape="rect" id="node15" href="$df/d66/r__os__abstraction__api_8h.html" title="r_os_abstraction_api.h" alt="" coords="754,237,908,263"/>
+<area shape="rect" id="node16" href="$db/d34/r__devlink__wrapper_8h.html" title="r_devlink_wrapper.h" alt="" coords="544,237,678,263"/>
+<area shape="rect" id="node20" href="$db/de8/r__task__priority_8h.html" title="r_task_priority.h" alt="" coords="404,237,519,263"/>
+<area shape="rect" id="node17" href="$d9/d02/control_8h.html" title="control.h" alt="" coords="286,319,358,345"/>
+<area shape="rect" id="node19" href="$d0/de3/console_8h.html" title="console.h" alt="" coords="554,319,633,345"/>
+<area shape="rect" id="node22" href="$d6/d26/pl310_8h.html" title="Implementation of pl310 functions. " alt="" coords="796,155,860,181"/>
+</map>

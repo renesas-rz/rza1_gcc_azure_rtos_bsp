@@ -1,0 +1,21 @@
+digraph "Console"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node6 [label="Console USB Commands",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d2f/group__R__SW__PKG__93__CONSOLE__USB.html",tooltip="Console USB commands."];
+  Node8 [label="Console wildcard support",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d1e/group__R__SW__PKG__93__CONSOLE__WILDCARD.html",tooltip="Console wildcard support."];
+  Node2 [label="Console Comms",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/d82/group__R__SW__PKG__93__CONSOLE__CMD__COMMS.html",tooltip="Comms setup for the console."];
+  Node7 [label="Console Internal header",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/d6f/group__R__SW__PKG__93__CONSOLE__HDR.html",tooltip="Console Implementation header."];
+  Node5 [label="Console USB Mass Storage\l Commands",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/dcd/group__R__SW__PKG__93__CONSOLE__MS__USB.html",tooltip="Console USB Mass Storage commands."];
+  Node3 [label="Console TCP Shell",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/d66/group__R__SW__PKG__93__CONSOLE__TCP.html",tooltip="TCP shell for for the console."];
+  Node1 [label="Console",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Console implementation for the RZA1LU Camera-SDK Application."];
+  Node4 [label="Console Mouse Commands",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d31/group__R__SW__PKG__93__CONSOLE__MOUSE.html",tooltip="Console mouse commands."];
+  Node1->Node2 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node4 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node5 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node6 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node7 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node8 [shape=plaintext, dir="back", style="solid"];
+}

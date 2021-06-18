@@ -1,0 +1,15 @@
+digraph "riic_max9856" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_180fb5dbcfe56f00ba097c6057eb79b8 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="middleware" fontname="Helvetica", fontsize="10", URL="dir_180fb5dbcfe56f00ba097c6057eb79b8.html"]
+  subgraph clusterdir_f4aca2ba6a3822ae8b0f36ded894f16d {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_f4aca2ba6a3822ae8b0f36ded894f16d.html"];
+    dir_f4aca2ba6a3822ae8b0f36ded894f16d [shape=plaintext label="riic_max9856"];
+    dir_95a010cce8ee98d407046d6297eceff1 [shape=box label="inc" color="black" fillcolor="white" style="filled" URL="dir_95a010cce8ee98d407046d6297eceff1.html"];
+  }
+  }
+  dir_eda2a6d705da8f3400ffe9a7dcb90b30 [shape=box label="application" fillcolor="white" style="filled" color="red" URL="dir_eda2a6d705da8f3400ffe9a7dcb90b30.html"];
+  dir_95a010cce8ee98d407046d6297eceff1->dir_eda2a6d705da8f3400ffe9a7dcb90b30 [headlabel="5", labeldistance=1.5 headhref="dir_000104_000002.html"];
+}

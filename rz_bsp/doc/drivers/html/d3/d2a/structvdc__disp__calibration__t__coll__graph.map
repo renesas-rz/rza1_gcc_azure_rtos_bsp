@@ -1,0 +1,5 @@
+<map id="vdc_disp_calibration_t" name="vdc_disp_calibration_t">
+<area shape="rect" id="node2" href="$d1/d1a/structvdc__calibr__dither__t.html" title="vdc_calibr_dither_t" alt="" coords="5,5,135,32"/>
+<area shape="rect" id="node3" href="$da/dc5/structvdc__calibr__contrast__t.html" title="vdc_calibr_contrast_t" alt="" coords="159,5,303,32"/>
+<area shape="rect" id="node4" href="$d3/d63/structvdc__calibr__bright__t.html" title="vdc_calibr_bright_t" alt="" coords="328,5,457,32"/>
+</map>

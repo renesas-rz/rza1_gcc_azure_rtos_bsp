@@ -1,0 +1,35 @@
+<map id="r_task_priority.h" name="r_task_priority.h">
+<area shape="rect" id="node2" href="$df/d2c/r__cbuffer_8h.html" title="r_cbuffer.h" alt="" coords="233,80,316,107"/>
+<area shape="rect" id="node5" href="$d7/d32/compiler__settings_8h.html" title="compiler_settings.h" alt="" coords="471,80,606,107"/>
+<area shape="rect" id="node3" href="$d5/dc8/r__rskrza1lu__sci__lld_8h.html" title="r_rskrza1lu_sci_lld.h" alt="" coords="5,155,147,181"/>
+<area shape="rect" id="node4" href="$db/d62/r__sci__drv__link_8h.html" title="r_sci_drv_link.h" alt="" coords="21,229,131,256"/>
+<area shape="rect" id="node6" href="$de/d6f/r__sound__app_8h.html" title="r_sound_app.h" alt="" coords="677,155,784,181"/>
+<area shape="rect" id="node7" href="$d7/d00/r__event_8h.html" title="r_event.h" alt="" coords="435,155,509,181"/>
+<area shape="rect" id="node24" href="$da/dbb/Renesas__RZ__A1_8h.html" title="CMSIS Cortex&#45;A9 Core Peripheral Access Layer Header File for the Renesas_RZ_A1. " alt="" coords="904,155,1035,181"/>
+<area shape="rect" id="node30" href="$de/dbe/r__devlink__wrapper__cfg_8h.html" title="r_devlink_wrapper_cfg.h" alt="" coords="171,155,330,181"/>
+<area shape="rect" id="node31" href="$d1/d3a/dma__if_8h.html" title="dma_if.h" alt="" coords="809,155,879,181"/>
+<area shape="rect" id="node32" href="$d8/dcb/aioif_8h.html" title="aioif.h" alt="" coords="355,155,411,181"/>
+<area shape="rect" id="node34" href="$d3/dd2/usbhEnum_8h.html" title="usbhEnum.h" alt="" coords="558,155,653,181"/>
+<area shape="rect" id="node8" href="$da/d50/r__pmod__samplemain_8h.html" title="r_pmod_samplemain.h" alt="" coords="238,229,391,256"/>
+<area shape="rect" id="node9" href="$d3/d1f/lwIP__Interface_8h.html" title="lwIP_Interface.h" alt="" coords="415,229,529,256"/>
+<area shape="rect" id="node11" href="$dd/d15/usb__common_8h.html" title="usb_common.h" alt="" coords="553,229,663,256"/>
+<area shape="rect" id="node10" href="$d6/da9/lwipStart_8h.html" title="lwipStart.h" alt="" coords="172,304,255,331"/>
+<area shape="rect" id="node12" href="$dc/db2/r__usb__cdc__app_8h.html" title="r_usb_cdc_app.h" alt="" coords="381,304,502,331"/>
+<area shape="rect" id="node13" href="$d0/d55/r__usb__hid__mouse__app_8h.html" title="r_usb_hid_mouse_app.h" alt="" coords="527,304,689,331"/>
+<area shape="rect" id="node14" href="$df/d9f/r__lib__int_8h.html" title="r_lib_int.h" alt="" coords="741,379,819,405"/>
+<area shape="rect" id="node15" href="$d6/d2e/usb__firm_8h.html" title="usb_firm.h" alt="" coords="713,304,796,331"/>
+<area shape="rect" id="node16" href="$dc/de4/usb_8h.html" title="usb.h" alt="" coords="613,379,667,405"/>
+<area shape="rect" id="node18" href="$d8/dc1/r__usb__cdc_8h.html" title="r_usb_cdc.h" alt="" coords="804,528,897,555"/>
+<area shape="rect" id="node21" href="$d9/d40/r__usb__hid_8h.html" title="r_usb_hid.h" alt="" coords="345,528,434,555"/>
+<area shape="rect" id="node17" href="$db/d63/r__usbf__core_8h.html" title="r_usbf_core.h" alt="" coords="590,453,690,480"/>
+<area shape="rect" id="node20" href="$de/df6/r__usb__hal_8h.html" title="r_usb_hal.h" alt="" coords="507,528,597,555"/>
+<area shape="rect" id="node23" href="$d8/d02/usb__descriptors_8h.html" title="usb_descriptors.h" alt="" coords="621,528,747,555"/>
+<area shape="rect" id="node19" href="$d2/d74/usbf__cdc__rskrza1__if_8h.html" title="usbf_cdc_rskrza1_if.h" alt="" coords="777,603,925,629"/>
+<area shape="rect" id="node22" href="$df/d19/usbf__hid__rskrza1__if_8h.html" title="usbf_hid_rskrza1_if.h" alt="" coords="317,603,461,629"/>
+<area shape="rect" id="node25" href="$d3/d42/r__cui_8h.html" title="r_cui.h" alt="" coords="924,229,985,256"/>
+<area shape="rect" id="node27" href="$d9/d95/dma_8h.html" title="DMA Driver internal headers. " alt="" coords="832,229,891,256"/>
+<area shape="rect" id="node28" href="$d9/d88/sound_8h.html" title="sound driver functions header " alt="" coords="1010,229,1078,256"/>
+<area shape="rect" id="node29" href="$d9/da6/lcd__ft5x06__int_8h.html" title="LCD Driver internal hedder for interrupt. " alt="" coords="1102,229,1215,256"/>
+<area shape="rect" id="node26" href="$d5/d99/r__cui__api_8h.html" title="r_cui_api.h" alt="" coords="921,304,1007,331"/>
+<area shape="rect" id="node33" href="$d8/d3a/ssif_8h.html" title="ssif.h" alt="" coords="160,229,213,256"/>
+</map>

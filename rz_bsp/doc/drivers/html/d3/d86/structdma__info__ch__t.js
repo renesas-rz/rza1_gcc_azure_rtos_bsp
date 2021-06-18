@@ -1,0 +1,26 @@
+var structdma__info__ch__t =
+[
+    [ "ch", "d3/d86/structdma__info__ch__t.html#a6a1d4346566caba20eb464c6e00a93ab", null ],
+    [ "ch_stat", "d3/d86/structdma__info__ch__t.html#ac01886dc81bbae77a291c90e0aed52a5", null ],
+    [ "count0", "d3/d86/structdma__info__ch__t.html#a925756f20896862d8c40b6d21e6c8121", null ],
+    [ "count1", "d3/d86/structdma__info__ch__t.html#ad53c2ce3411fd9012443e3a403ca5096", null ],
+    [ "direction", "d3/d86/structdma__info__ch__t.html#a6a8a097ac5efe56b39ae416a4046fd8d", null ],
+    [ "dst_addr0", "d3/d86/structdma__info__ch__t.html#ac96a0208c5c7a03eb8f5a23fb96702c2", null ],
+    [ "dst_addr1", "d3/d86/structdma__info__ch__t.html#aa41c5152ab1c1e058425dd2613308d50", null ],
+    [ "dst_cnt", "d3/d86/structdma__info__ch__t.html#ae24bd5017504a42c16c03be37a00b390", null ],
+    [ "dst_width", "d3/d86/structdma__info__ch__t.html#aada85a70508c3849a470ea5562388276", null ],
+    [ "end_irq_num", "d3/d86/structdma__info__ch__t.html#a93905974e6af0426bffb9f6fcf1615eb", null ],
+    [ "mask_dmars", "d3/d86/structdma__info__ch__t.html#ac403fe92e3fa1ff704836b6930fbf508", null ],
+    [ "next_dma_flag", "d3/d86/structdma__info__ch__t.html#aef654c7a5e6a7cb747e6a4ce41ce52c8", null ],
+    [ "p_dma_ch_reg", "d3/d86/structdma__info__ch__t.html#a648e89f4f289ce171cb6fad1b39d1eb6", null ],
+    [ "p_dma_common_reg", "d3/d86/structdma__info__ch__t.html#a5b19d6a67ac3ec9101dda63bb23d0271", null ],
+    [ "p_dma_dmars_reg", "d3/d86/structdma__info__ch__t.html#a076a4f7c5ec85cb9bcfb14d5b23dd9ef", null ],
+    [ "p_end_aio", "d3/d86/structdma__info__ch__t.html#a9d16a351d77a98aec2d5abce861046d2", null ],
+    [ "resource", "d3/d86/structdma__info__ch__t.html#a1f359103a690b66dac644baf7124b197", null ],
+    [ "setup_flag", "d3/d86/structdma__info__ch__t.html#ad0d85e031306aa8cec00f35a79814b8b", null ],
+    [ "shift_dmars", "d3/d86/structdma__info__ch__t.html#ad3cbc4666219732f3110ca4682f54501", null ],
+    [ "src_addr0", "d3/d86/structdma__info__ch__t.html#affe5193c1ff3ece87c3204e2c55a519d", null ],
+    [ "src_addr1", "d3/d86/structdma__info__ch__t.html#a210ac0340de41a07ed25ebfdb328acdd", null ],
+    [ "src_cnt", "d3/d86/structdma__info__ch__t.html#a230722f70af871add44fe3288be3cbab", null ],
+    [ "src_width", "d3/d86/structdma__info__ch__t.html#a90e15908babd13a069bb52a1b9c8a550", null ]
+];

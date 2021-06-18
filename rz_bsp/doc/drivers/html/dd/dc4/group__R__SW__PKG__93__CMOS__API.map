@@ -1,0 +1,5 @@
+<map id="CMOS" name="CMOS">
+<area shape="rect" id="node1" href="$dc/ddc/group__R__SW__PKG__93__CMOS__OV7670.html" title="API for the OV7670 Camera. " alt="" coords="324,5,443,32"/>
+<area shape="rect" id="node2" href="$d2/dbc/group__R__SW__PKG__93__NONOS__MIDDLEWARE.html" title="Middleware. " alt="" coords="5,31,167,57"/>
+<area shape="rect" id="node4" href="$d8/d24/group__R__SW__PKG__93__CMOS__OV7740.html" title="API for the OV7740 Camera. " alt="" coords="324,56,443,83"/>
+</map>

@@ -1,0 +1,21 @@
+digraph "Middleware (Not POSIX)"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node5 [label="Timer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d47/group__R__SW__PKG__93__TIMER.html",tooltip="Timer module which allows user to start and stop a timer, returning the time elapsed in seconds betwe..."];
+  Node8 [label="Webif",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d21/group__R__SW__PKG__93__WEBIF__API.html",tooltip="Web interface API."];
+  Node1 [label="Middleware (Not POSIX)",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Middleware."];
+  Node2 [label="CMOS",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/dc4/group__R__SW__PKG__93__CMOS__API.html",tooltip="CMOS Camera API."];
+  Node3 [label="FAT File System",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/d80/group__R__SW__PKG__93__FATFS.html",tooltip="The Renesas FAT FS Abstraction Layer."];
+  Node7 [label="Video",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d3/d25/group__R__SW__PKG__93__VIDEO__API.html",tooltip="Video module, allows the user to set up and control video output configuration and processing."];
+  Node6 [label="Touch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/d7b/group__R__SW__PKG__93__TOUCH__API.html",tooltip="Touch Panel Interface."];
+  Node4 [label="Sound",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d5f/group__R__SW__PKG__93__SOUND__API.html",tooltip="Sound module responsible for setting up the Audio Codec."];
+  Node1->Node2 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node4 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node5 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node6 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node7 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node8 [shape=plaintext, dir="back", style="solid"];
+}

@@ -1,0 +1,8 @@
+<map id="vdec_sync_separation_t" name="vdec_sync_separation_t">
+<area shape="rect" id="node2" href="$d8/d64/structvdec__sync__slicer__t.html" title="vdec_sync_slicer_t" alt="" coords="13,5,145,32"/>
+<area shape="rect" id="node3" href="$dd/d22/structvdec__noise__rd__lpf__t.html" title="vdec_noise_rd_lpf_t" alt="" coords="11,56,146,83"/>
+<area shape="rect" id="node4" href="$dd/dcd/structvdec__vcount__down__t.html" title="vdec_vcount_down_t" alt="" coords="9,107,149,133"/>
+<area shape="rect" id="node5" href="$d3/d03/structvdec__peak__limiter__t.html" title="vdec_peak_limiter_t" alt="" coords="11,157,147,184"/>
+<area shape="rect" id="node6" href="$db/d86/structvdec__horizontal__afc__t.html" title="vdec_horizontal_afc_t" alt="" coords="5,208,152,235"/>
+<area shape="rect" id="node7" href="$de/de9/structvdec__agc__t.html" title="vdec_agc_t" alt="" coords="35,259,122,285"/>
+</map>

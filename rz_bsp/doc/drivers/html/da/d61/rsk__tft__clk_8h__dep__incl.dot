@@ -1,0 +1,11 @@
+digraph "rsk_tft_clk.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="rsk_tft_clk.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Defines for VDC5 clock."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="lcd_panel.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dc/df4/lcd__panel_8h.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="r_image_config.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/de7/r__image__config_8h.html",tooltip=" "];
+}

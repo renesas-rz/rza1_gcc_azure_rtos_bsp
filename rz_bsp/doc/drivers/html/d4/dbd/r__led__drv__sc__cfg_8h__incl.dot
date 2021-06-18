@@ -1,0 +1,29 @@
+digraph "r_led_drv_sc_cfg.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="r_led_drv_sc_cfg.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="r_led_drv_link.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d47/r__led__drv__link_8h.html",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="r_sitrza1lu_led_lld.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/ddf/r__sitrza1lu__led__lld_8h.html",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="r_devlink_wrapper.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/d34/r__devlink__wrapper_8h.html",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="r_typedefs.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/de3/r__typedefs_8h.html",tooltip=" "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="stddef.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node4 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="application_cfg.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/d93/application__cfg_8h.html",tooltip=" "];
+  Node4 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="control.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d02/control_8h.html",tooltip=" "];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="stdio.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node8 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="unistd.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node8 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="console.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/de3/console_8h.html",tooltip=" "];
+  Node11 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

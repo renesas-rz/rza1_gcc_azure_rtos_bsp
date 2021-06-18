@@ -1,0 +1,9 @@
+<map id="Console" name="Console">
+<area shape="rect" id="node1" href="$de/d2f/group__R__SW__PKG__93__CONSOLE__USB.html" title="Console USB commands. " alt="" coords="130,5,301,32"/>
+<area shape="rect" id="node2" href="$d8/d1e/group__R__SW__PKG__93__CONSOLE__WILDCARD.html" title="Console wildcard support. " alt="" coords="132,56,299,83"/>
+<area shape="rect" id="node3" href="$df/d82/group__R__SW__PKG__93__CONSOLE__CMD__COMMS.html" title="Comms setup for the console. " alt="" coords="156,107,275,133"/>
+<area shape="rect" id="node4" href="$d5/d6f/group__R__SW__PKG__93__CONSOLE__HDR.html" title="Console Implementation header. " alt="" coords="136,157,295,184"/>
+<area shape="rect" id="node5" href="$db/dcd/group__R__SW__PKG__93__CONSOLE__MS__USB.html" title="Console USB Mass Storage commands. " alt="" coords="123,209,308,250"/>
+<area shape="rect" id="node6" href="$df/d66/group__R__SW__PKG__93__CONSOLE__TCP.html" title="TCP shell for for the console. " alt="" coords="150,275,281,301"/>
+<area shape="rect" id="node8" href="$d2/d31/group__R__SW__PKG__93__CONSOLE__MOUSE.html" title="Console mouse commands. " alt="" coords="124,325,307,352"/>
+</map>

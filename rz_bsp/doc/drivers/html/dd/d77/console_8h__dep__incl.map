@@ -1,0 +1,51 @@
+<map id="console.h" name="console.h">
+<area shape="rect" id="node2" href="$d3/d42/r__cui_8h.html" title="r_cui.h" alt="" coords="931,304,992,331"/>
+<area shape="rect" id="node4" href="$d0/d09/command_8h.html" title="command.h" alt="" coords="2847,80,2938,107"/>
+<area shape="rect" id="node6" href="$d9/d96/cmdMassStorage_8h.html" title="cmdMassStorage.h" alt="" coords="2986,155,3121,181"/>
+<area shape="rect" id="node7" href="$db/d34/r__devlink__wrapper_8h.html" title="r_devlink_wrapper.h" alt="" coords="1668,80,1802,107"/>
+<area shape="rect" id="node3" href="$d5/d99/r__cui__api_8h.html" title="r_cui_api.h" alt="" coords="931,379,1016,405"/>
+<area shape="rect" id="node5" href="$da/d30/r__touch__capacitive_8h.html" title="r_touch_capacitive.h" alt="" coords="2822,155,2962,181"/>
+<area shape="rect" id="node8" href="$d7/d32/compiler__settings_8h.html" title="compiler_settings.h" alt="" coords="1737,155,1872,181"/>
+<area shape="rect" id="node24" href="$d3/dd2/usbhEnum_8h.html" title="usbhEnum.h" alt="" coords="750,229,845,256"/>
+<area shape="rect" id="node25" href="$df/d5a/r__ostm__drv__api_8h.html" title="r_ostm_drv_api.h" alt="" coords="1715,379,1835,405"/>
+<area shape="rect" id="node26" href="$da/d75/r__eeprom__drv__api_8h.html" title="r_eeprom_drv_api.h" alt="" coords="1860,379,1994,405"/>
+<area shape="rect" id="node27" href="$d2/d66/r__riic__drv__api_8h.html" title="r_riic_drv_api.h" alt="" coords="2018,379,2126,405"/>
+<area shape="rect" id="node28" href="$d7/d94/r__led__drv__api_8h.html" title="r_led_drv_api.h" alt="" coords="2150,379,2258,405"/>
+<area shape="rect" id="node29" href="$d0/ddf/r__sitrza1lu__led__lld_8h.html" title="r_sitrza1lu_led_lld.h" alt="" coords="2150,155,2288,181"/>
+<area shape="rect" id="node32" href="$d7/d12/r__rskrza1lu__rtc__lld_8h.html" title="r_rskrza1lu_rtc_lld.h" alt="" coords="2659,155,2798,181"/>
+<area shape="rect" id="node33" href="$d3/dee/r__rtc__drv__api_8h.html" title="r_rtc_drv_api.h" alt="" coords="2283,379,2390,405"/>
+<area shape="rect" id="node34" href="$d6/da3/r__sci__drv__api_8h.html" title="r_sci_drv_api.h" alt="" coords="2356,229,2464,256"/>
+<area shape="rect" id="node35" href="$d2/dd6/r__ssif__drv__api_8h.html" title="r_ssif_drv_api.h" alt="" coords="32,155,142,181"/>
+<area shape="rect" id="node36" href="$d5/d78/ssif__if_8h.html" title="ssif_if.h" alt="" coords="1907,229,1974,256"/>
+<area shape="rect" id="node37" href="$d2/da0/r__wdt__drv__api_8h.html" title="r_wdt_drv_api.h" alt="" coords="2522,379,2633,405"/>
+<area shape="rect" id="node38" href="$dc/d11/drvEthernet_8h.html" title="drvEthernet.h" alt="" coords="167,155,266,181"/>
+<area shape="rect" id="node39" href="$d9/d8c/lwip__ethernet_2inc_2drvFileSocket_8h.html" title="drvFileSocket.h" alt="" coords="290,155,401,181"/>
+<area shape="rect" id="node40" href="$df/dc1/drvSocket_8h.html" title="drvSocket.h" alt="" coords="426,155,516,181"/>
+<area shape="rect" id="node41" href="$d8/de8/drvUdpSocket_8h.html" title="drvUdpSocket.h" alt="" coords="541,155,654,181"/>
+<area shape="rect" id="node42" href="$da/ddd/socket_8h.html" title="socket.h" alt="" coords="679,155,751,181"/>
+<area shape="rect" id="node43" href="$da/d38/r__pmod__lcd__drv__api_8h.html" title="r_pmod_lcd_drv_api.h" alt="" coords="2434,155,2580,181"/>
+<area shape="rect" id="node45" href="$df/d27/hwusbf__cdc__rskrza1__0_8h.html" title="hwusbf_cdc_rskrza1_0.h" alt="" coords="826,155,991,181"/>
+<area shape="rect" id="node46" href="$d2/d93/hwusbf__hid__rskrza1__0_8h.html" title="hwusbf_hid_rskrza1_0.h" alt="" coords="1016,155,1177,181"/>
+<area shape="rect" id="node47" href="$df/d19/usbf__hid__rskrza1__if_8h.html" title="usbf_hid_rskrza1_if.h" alt="" coords="1202,155,1346,181"/>
+<area shape="rect" id="node48" href="$de/db3/fileDriver_8h.html" title="fileDriver.h" alt="" coords="1370,155,1452,181"/>
+<area shape="rect" id="node49" href="$d3/d63/r__usb0__drv__api_8h.html" title="r_usb0_drv_api.h" alt="" coords="1476,155,1594,181"/>
+<area shape="rect" id="node50" href="$de/d78/usbhClass_8h.html" title="usbhClass.h" alt="" coords="1618,155,1713,181"/>
+<area shape="rect" id="node9" href="$de/d6f/r__sound__app_8h.html" title="r_sound_app.h" alt="" coords="1726,229,1832,256"/>
+<area shape="rect" id="node10" href="$d7/d00/r__event_8h.html" title="r_event.h" alt="" coords="1512,229,1587,256"/>
+<area shape="rect" id="node16" href="$da/dbb/Renesas__RZ__A1_8h.html" title="CMSIS Cortex&#45;A9 Core Peripheral Access Layer Header File for the Renesas_RZ_A1. " alt="" coords="1106,229,1236,256"/>
+<area shape="rect" id="node20" href="$de/dbe/r__devlink__wrapper__cfg_8h.html" title="r_devlink_wrapper_cfg.h" alt="" coords="2058,453,2217,480"/>
+<area shape="rect" id="node21" href="$d1/d3a/dma__if_8h.html" title="dma_if.h" alt="" coords="1010,229,1081,256"/>
+<area shape="rect" id="node22" href="$d8/dcb/aioif_8h.html" title="aioif.h" alt="" coords="1646,229,1702,256"/>
+<area shape="rect" id="node11" href="$da/d50/r__pmod__samplemain_8h.html" title="r_pmod_samplemain.h" alt="" coords="1464,304,1617,331"/>
+<area shape="rect" id="node12" href="$d3/d1f/lwIP__Interface_8h.html" title="lwIP_Interface.h" alt="" coords="1641,304,1754,331"/>
+<area shape="rect" id="node14" href="$dd/d15/usb__common_8h.html" title="usb_common.h" alt="" coords="1329,304,1440,331"/>
+<area shape="rect" id="node13" href="$d6/da9/lwipStart_8h.html" title="lwipStart.h" alt="" coords="1608,379,1691,405"/>
+<area shape="rect" id="node15" href="$dc/db2/r__usb__cdc__app_8h.html" title="r_usb_cdc_app.h" alt="" coords="1324,379,1445,405"/>
+<area shape="rect" id="node17" href="$d9/d95/dma_8h.html" title="DMA Driver internal headers. " alt="" coords="1016,304,1075,331"/>
+<area shape="rect" id="node18" href="$d9/d88/sound_8h.html" title="sound driver functions header " alt="" coords="1237,304,1305,331"/>
+<area shape="rect" id="node19" href="$d9/da6/lcd__ft5x06__int_8h.html" title="LCD Driver internal hedder for interrupt. " alt="" coords="1100,304,1213,331"/>
+<area shape="rect" id="node23" href="$d8/d3a/ssif_8h.html" title="ssif.h" alt="" coords="1779,304,1832,331"/>
+<area shape="rect" id="node30" href="$de/d47/r__led__drv__link_8h.html" title="r_led_drv_link.h" alt="" coords="2161,229,2272,256"/>
+<area shape="rect" id="node31" href="$dc/dca/r__led__drv__sc__cfg_8h.html" title="r_led_drv_sc_cfg.h" alt="" coords="2150,304,2280,331"/>
+<area shape="rect" id="node44" href="$d1/dee/r__lcd__pmod_8h.html" title="r_lcd_pmod.h" alt="" coords="2488,229,2588,256"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="txrx_descriptor_set_t" name="txrx_descriptor_set_t">
+<area shape="rect" id="node2" href="$d4/d5a/structtag__edmac__recv__desc.html" title="tag_edmac_recv_desc" alt="" coords="30,95,181,121"/>
+<area shape="rect" id="node3" href="$dd/d5d/structrd2__t.html" title="rd2_t" alt="" coords="5,5,56,32"/>
+<area shape="rect" id="node4" href="$d5/de4/unionrd0__t.html" title="rd0_t" alt="" coords="80,5,131,32"/>
+<area shape="rect" id="node5" href="$dc/de3/structrd1__t.html" title="rd1_t" alt="" coords="155,5,205,32"/>
+<area shape="rect" id="node6" href="$da/d22/structtag__edmac__send__desc.html" title="tag_edmac_send_desc" alt="" coords="267,95,423,121"/>
+<area shape="rect" id="node7" href="$d3/d14/uniontd0__t.html" title="td0_t" alt="" coords="245,5,296,32"/>
+<area shape="rect" id="node8" href="$db/d4b/structtd1__t.html" title="td1_t" alt="" coords="320,5,371,32"/>
+<area shape="rect" id="node9" href="$de/d6e/structtd2__t.html" title="td2_t" alt="" coords="395,5,445,32"/>
+</map>

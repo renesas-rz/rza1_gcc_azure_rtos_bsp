@@ -1,0 +1,11 @@
+digraph "inc" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_82b9ac9ac74968ff0d288e75ea187811 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="lwip_ethernet" fontname="Helvetica", fontsize="10", URL="dir_82b9ac9ac74968ff0d288e75ea187811.html"]
+  dir_33999cbe77be87096e2216d5c2fe4194 [shape=box, label="inc", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_33999cbe77be87096e2216d5c2fe4194.html"];
+  }
+  dir_eda2a6d705da8f3400ffe9a7dcb90b30 [shape=box label="application" fillcolor="white" style="filled" color="red" URL="dir_eda2a6d705da8f3400ffe9a7dcb90b30.html"];
+  dir_33999cbe77be87096e2216d5c2fe4194->dir_eda2a6d705da8f3400ffe9a7dcb90b30 [headlabel="10", labeldistance=1.5 headhref="dir_000026_000002.html"];
+}

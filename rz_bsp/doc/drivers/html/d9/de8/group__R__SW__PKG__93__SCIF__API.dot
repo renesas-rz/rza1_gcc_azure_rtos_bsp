@@ -1,0 +1,13 @@
+digraph "RZA1LU Stream-IT SCIF driver"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node1 [label="RZA1LU Stream-IT SCIF\l driver",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="This interface provides access to the Serial SCIF peripheral on the RZA1LU Stream-IT board...."];
+  Node3 [label="SCIF RZA1LU Low Level\l Driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/d3e/group__R__SW__PKG__93__SCIF__LLD__API.html",tooltip="The API for the low level SCIF driver."];
+  Node2 [label="Drivers (POSIX)",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d3/d50/group__R__SW__PKG__93__POSIX__Drivers.html",tooltip="POSIX interface drivers."];
+  Node4 [label="SCIF High Level Driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/de9/group__R__SW__PKG__93__SCIF__HLD__API.html",tooltip="This interface provides access to SCIF Peripheral."];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node4 [shape=plaintext, dir="back", style="solid"];
+}

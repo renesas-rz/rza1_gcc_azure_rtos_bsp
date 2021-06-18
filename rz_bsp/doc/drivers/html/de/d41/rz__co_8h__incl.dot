@@ -1,0 +1,45 @@
+digraph "rz_co.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="rz_co.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="r_typedefs.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/de3/r__typedefs_8h.html",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="stddef.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="rz_co_typedef.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d1e/rz__co__typedef_8h.html",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="stdint.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="dev_drv.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/d44/dev__drv_8h.html",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="r_intc.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/d6b/r__intc_8h.html",tooltip=" "];
+  Node7 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="rza_io_regrw.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dc/d25/rza__io__regrw_8h.html",tooltip=" "];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="cpg_iobitmask.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d3e/cpg__iobitmask_8h.html",tooltip=" "];
+  Node8 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="intc_iobitmask.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/dd9/intc__iobitmask_8h.html",tooltip=" "];
+  Node8 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="bsc_iobitmask.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/daa/bsc__iobitmask_8h.html",tooltip=" "];
+  Node8 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="dmac_iobitmask.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/dd9/dmac__iobitmask_8h.html",tooltip=" "];
+  Node8 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="mtu2_iobitmask.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d0e/mtu2__iobitmask_8h.html",tooltip=" "];
+  Node8 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="ostm_iobitmask.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d4e/ostm__iobitmask_8h.html",tooltip=" "];
+  Node8 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="scif_iobitmask.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/dae/scif__iobitmask_8h.html",tooltip=" "];
+  Node8 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="rspi_iobitmask.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/df8/rspi__iobitmask_8h.html",tooltip=" "];
+  Node8 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="riic_iobitmask.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/d1d/riic__iobitmask_8h.html",tooltip=" "];
+  Node8 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="adc_iobitmask.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dc/dad/adc__iobitmask_8h.html",tooltip=" "];
+  Node8 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="gpio_iobitmask.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d6f/gpio__iobitmask_8h.html",tooltip=" "];
+}

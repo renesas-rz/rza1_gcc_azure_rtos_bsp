@@ -1,0 +1,9 @@
+digraph "RTC Low Level Driver"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node2 [label="RTC Driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d2b/group__R__SW__PKG__93__RTC__API.html",tooltip="This interface provides access to an Real-Time Clock RTC device."];
+  Node1 [label="RTC Low Level Driver",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="This interface provides low level device specific access to a Real-Time Clock RTC device on the RZA1L..."];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+}

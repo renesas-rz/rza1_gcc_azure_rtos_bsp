@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['ssif_5fch_5fstat_5ft_46110',['ssif_ch_stat_t',['../d3/de3/group__R__SW__PKG__93__SSIF__LLD.html#ga4551b35d02e44602e080e3da331280a2',1,'ssif.h']]],
+  ['ssif_5fchcfg_5fckdv_5ft_46111',['ssif_chcfg_ckdv_t',['../d0/d21/group__R__SW__PKG__93__SSIF__LLD__IF.html#ga058fa12e6434fde2bcbe006d3c190695',1,'ssif_if.h']]],
+  ['ssif_5fchcfg_5fcks_5ft_46112',['ssif_chcfg_cks_t',['../d0/d21/group__R__SW__PKG__93__SSIF__LLD__IF.html#ga874a5d2c008d8ad4c3822ccfd9904363',1,'ssif_if.h']]],
+  ['ssif_5fchcfg_5fclock_5fdir_5ft_46113',['ssif_chcfg_clock_dir_t',['../d3/de3/group__R__SW__PKG__93__SSIF__LLD.html#ga907c670072afc87a278b8d3a46d342e7',1,'ssif.h']]],
+  ['ssif_5fchcfg_5fclock_5fpol_5ft_46114',['ssif_chcfg_clock_pol_t',['../d0/d21/group__R__SW__PKG__93__SSIF__LLD__IF.html#ga1a7df6c017f55b957925f7ea80090d7a',1,'ssif_if.h']]],
+  ['ssif_5fchcfg_5fdata_5fword_5ft_46115',['ssif_chcfg_data_word_t',['../d0/d21/group__R__SW__PKG__93__SSIF__LLD__IF.html#ga9e9731af02d338ac8c40e2f92da33604',1,'ssif_if.h']]],
+  ['ssif_5fchcfg_5fmulti_5fch_5ft_46116',['ssif_chcfg_multi_ch_t',['../d0/d21/group__R__SW__PKG__93__SSIF__LLD__IF.html#ga0de3a4e6b0bbd91cb13d1225a1f939f4',1,'ssif_if.h']]],
+  ['ssif_5fchcfg_5fnoise_5fcancel_5ft_46117',['ssif_chcfg_noise_cancel_t',['../d0/d21/group__R__SW__PKG__93__SSIF__LLD__IF.html#gaef6f0b8c36db941d1c22701997c4b621',1,'ssif_if.h']]],
+  ['ssif_5fchcfg_5fpadding_5fpol_5ft_46118',['ssif_chcfg_padding_pol_t',['../d0/d21/group__R__SW__PKG__93__SSIF__LLD__IF.html#gacc4d3bacf1a39d82bb3a5b4ddfcbb317',1,'ssif_if.h']]],
+  ['ssif_5fchcfg_5fparallel_5falignment_5ft_46119',['ssif_chcfg_parallel_alignment_t',['../d0/d21/group__R__SW__PKG__93__SSIF__LLD__IF.html#ga92321715810c5063a9f3e0f104d2baaf',1,'ssif_if.h']]],
+  ['ssif_5fchcfg_5fserial_5falignment_5ft_46120',['ssif_chcfg_serial_alignment_t',['../d0/d21/group__R__SW__PKG__93__SSIF__LLD__IF.html#gaa01b525f1887046c25f7b04f54148b06',1,'ssif_if.h']]],
+  ['ssif_5fchcfg_5fsystem_5fword_5ft_46121',['ssif_chcfg_system_word_t',['../d0/d21/group__R__SW__PKG__93__SSIF__LLD__IF.html#ga35d8ab1ddde5f1608bfb758a56205bb6',1,'ssif_if.h']]],
+  ['ssif_5fchcfg_5ftdm_5ft_46122',['ssif_chcfg_tdm_t',['../d0/d21/group__R__SW__PKG__93__SSIF__LLD__IF.html#ga9fc3e5d48014c1c8d76738ad2f1cee7a',1,'ssif_if.h']]],
+  ['ssif_5fchcfg_5fws_5fdelay_5ft_46123',['ssif_chcfg_ws_delay_t',['../d0/d21/group__R__SW__PKG__93__SSIF__LLD__IF.html#ga5ba4919c15fd05b19509ccbc4b5f9ec1',1,'ssif_if.h']]],
+  ['ssif_5fchcfg_5fws_5fdir_5ft_46124',['ssif_chcfg_ws_dir_t',['../d3/de3/group__R__SW__PKG__93__SSIF__LLD.html#ga248591e6f37986e857ed1eab9948c9d3',1,'ssif.h']]],
+  ['ssif_5fchcfg_5fws_5fpol_5ft_46125',['ssif_chcfg_ws_pol_t',['../d0/d21/group__R__SW__PKG__93__SSIF__LLD__IF.html#ga2f61e1e6126dffd6b4aadc6688fcfbdf',1,'ssif_if.h']]],
+  ['ssif_5fdrv_5fstat_5ft_46126',['ssif_drv_stat_t',['../d3/de3/group__R__SW__PKG__93__SSIF__LLD.html#ga0592ad81006044f4e4c9f3686fe704de',1,'ssif.h']]],
+  ['ssif_5frw_5fmode_5ft_46127',['ssif_rw_mode_t',['../d3/de3/group__R__SW__PKG__93__SSIF__LLD.html#gaeb8ae707c97013b61f76b67445b4d1ed',1,'ssif.h']]]
+];

@@ -1,0 +1,28 @@
+var group__Renesas__RZ__A1__MemoryMap =
+[
+    [ "Renesas_RZ_A1 Clock definitions", "de/d9b/group__Renesas__RZ__A1__Clocks.html", "de/d9b/group__Renesas__RZ__A1__Clocks" ],
+    [ "page4k_device_rw", "de/de7/group__Renesas__RZ__A1__MemoryMap.html#gafe66b1515bf7d251a9a3218162637a22", null ],
+    [ "page64k_device_rw", "de/de7/group__Renesas__RZ__A1__MemoryMap.html#ga6c8c84bdeebf350d97eb3a99bd11845f", null ],
+    [ "Renesas_RZ_A1_BSC_BASE", "de/de7/group__Renesas__RZ__A1__MemoryMap.html#gaf9a43da717c8836531ddb5b656d2fa74", null ],
+    [ "Renesas_RZ_A1_GIC_DISTRIBUTOR_BASE", "de/de7/group__Renesas__RZ__A1__MemoryMap.html#gaad5406f67b0505e14a5a05161f5184a0", null ],
+    [ "Renesas_RZ_A1_GIC_INTERFACE_BASE", "de/de7/group__Renesas__RZ__A1__MemoryMap.html#ga538980d7b00a15dd25cd2296c2f2fcd6", null ],
+    [ "Renesas_RZ_A1_ONCHIP_SRAM_BASE", "de/de7/group__Renesas__RZ__A1__MemoryMap.html#ga09ded771236ec83c366dd284ec364073", null ],
+    [ "Renesas_RZ_A1_ONCHIP_SRAM_MIRROR_BASE", "de/de7/group__Renesas__RZ__A1__MemoryMap.html#gacbf4c8efac7d2f1f4735c8566815ca72", null ],
+    [ "Renesas_RZ_A1_PERIPH_BASE0", "de/de7/group__Renesas__RZ__A1__MemoryMap.html#gaf66ed9646c28734185ee494874879e81", null ],
+    [ "Renesas_RZ_A1_PERIPH_BASE1", "de/de7/group__Renesas__RZ__A1__MemoryMap.html#gaeb6675d8fd17d23d2b63345b98bddebe", null ],
+    [ "Renesas_RZ_A1_PL310_BASE", "de/de7/group__Renesas__RZ__A1__MemoryMap.html#gac2be24f68917ba0f8e7f50d5d472e42a", null ],
+    [ "Renesas_RZ_A1_SDRAM_BASE0", "de/de7/group__Renesas__RZ__A1__MemoryMap.html#ga9d4657a8e071c7116e30f1cf16264360", null ],
+    [ "Renesas_RZ_A1_SPI_IO0", "de/de7/group__Renesas__RZ__A1__MemoryMap.html#ga06a5de4a9ed249911342009fd6ebaaa5", null ],
+    [ "Renesas_RZ_A1_SPI_IO1", "de/de7/group__Renesas__RZ__A1__MemoryMap.html#ga3c79cef427b1d7e055acbfab8787afc2", null ],
+    [ "Renesas_RZ_A1_SPI_MIO_BASE", "de/de7/group__Renesas__RZ__A1__MemoryMap.html#gaac9068956d94c75d6662e64e0ab34f3a", null ],
+    [ "Renesas_RZ_A1_USER_AREA0", "de/de7/group__Renesas__RZ__A1__MemoryMap.html#ga2fe72c3ac5fffed3358da4559fe3852e", null ],
+    [ "Renesas_RZ_A1_USER_AREA1", "de/de7/group__Renesas__RZ__A1__MemoryMap.html#ga19e596e0fac9f87fafde94bc33ecc02a", null ],
+    [ "section_device_ro", "de/de7/group__Renesas__RZ__A1__MemoryMap.html#ga1f66b52e152895af070514528763c272", null ],
+    [ "section_device_rw", "de/de7/group__Renesas__RZ__A1__MemoryMap.html#ga33c6ad1fc06648fe50f8b21554c9bccb", null ],
+    [ "section_normal", "de/de7/group__Renesas__RZ__A1__MemoryMap.html#ga220aab449cf3716723979d06666c2ebf", null ],
+    [ "section_normal_cod", "de/de7/group__Renesas__RZ__A1__MemoryMap.html#gad598239f9bb9b6ae2bec8278305640b4", null ],
+    [ "section_normal_ro", "de/de7/group__Renesas__RZ__A1__MemoryMap.html#gaf95fa76d8f0f7ccfd2ebc00860af4f1d", null ],
+    [ "section_normal_rw", "de/de7/group__Renesas__RZ__A1__MemoryMap.html#ga1f2ce84e6ec5c150a2ffc05092ea6d0e", null ],
+    [ "section_normal_rw_nc", "de/de7/group__Renesas__RZ__A1__MemoryMap.html#gab77a4f2f9e462728c11eedd4738c4974", null ],
+    [ "section_so", "de/de7/group__Renesas__RZ__A1__MemoryMap.html#gaf77ecb86097e6e8cf5f6c7bb9d2740c9", null ]
+];

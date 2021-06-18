@@ -1,0 +1,36 @@
+var r__usb__hal_8h =
+[
+    [ "BULK_IN_PACKET_SIZE", "de/df6/r__usb__hal_8h.html#a169fc933c40467ae7012a6ac465f0212", null ],
+    [ "BULK_OUT_PACKET_SIZE", "de/df6/r__usb__hal_8h.html#a39ca60ebbb935b0861f5b9dc4af77c15", null ],
+    [ "CONTROL_IN_PACKET_SIZE", "de/df6/r__usb__hal_8h.html#a4004a9bac75882a7d41f9bce736257aa", null ],
+    [ "CONTROL_OUT_PACKET_SIZE", "de/df6/r__usb__hal_8h.html#ae898215f2fa2dd3556193b1f1dabe53b", null ],
+    [ "INTERRUPT_IN_PACKET_SIZE", "de/df6/r__usb__hal_8h.html#a44951193d538f69d20ec1ae9a38de1d9", null ],
+    [ "USB_HID_INTERRUPT_PROIRITY", "de/df6/r__usb__hal_8h.html#acad8d8e74da8481a98027a235afc3d03", null ],
+    [ "e_usbf_state_device_t", "de/df6/r__usb__hal_8h.html#a2a05309dbc443d4015fd4b0c278486a4", [
+      [ "STATE_POWERED", "de/df6/r__usb__hal_8h.html#a2a05309dbc443d4015fd4b0c278486a4a92be7b99e45543f8fde86f2c26df072f", null ],
+      [ "STATE_DEFAULT", "de/df6/r__usb__hal_8h.html#a2a05309dbc443d4015fd4b0c278486a4ab714541b876099adb4d6f06b27fc3017", null ],
+      [ "STATE_ADDRESSED", "de/df6/r__usb__hal_8h.html#a2a05309dbc443d4015fd4b0c278486a4a7fede6842fc1a91782c299ac8ed247bb", null ],
+      [ "STATE_CONFIGURED", "de/df6/r__usb__hal_8h.html#a2a05309dbc443d4015fd4b0c278486a4a7778418122e0b2892a54e42fc8a1c7ef", null ],
+      [ "STATE_SUSPENDED", "de/df6/r__usb__hal_8h.html#a2a05309dbc443d4015fd4b0c278486a4a9acde879501201b19fcb37cdd08eff6d", null ]
+    ] ],
+    [ "P_usb_detach", "de/df6/r__usb__hal_8h.html#adae60db3d76043d3dbf913e68496bbe6", null ],
+    [ "R_USB_HalBulkIn", "de/df6/r__usb__hal_8h.html#a3f4ea06c49c49d26e59ed2ec6a466449", null ],
+    [ "R_USB_HalBulkInStall", "de/df6/r__usb__hal_8h.html#a90a7a9626f4226ef3a50f3108ec6c824", null ],
+    [ "R_USB_HalBulkOut", "de/df6/r__usb__hal_8h.html#af57b28c7e193d593ea7d4688351c57d1", null ],
+    [ "R_USB_HalBulkOutStall", "de/df6/r__usb__hal_8h.html#a07dce5385f67e5acc8babc0e6f4ad3d5", null ],
+    [ "R_USB_HalCancel", "de/df6/r__usb__hal_8h.html#aac6da5e6c1d32f4a388c919063f94b3b", null ],
+    [ "R_USB_HalClose", "de/df6/r__usb__hal_8h.html#aaa5e1b1075fe18f8392197ccd95ab2c5", null ],
+    [ "R_USB_HalConfigGet", "de/df6/r__usb__hal_8h.html#a66ec472a1dcedd46fbaa4b0e7044cb76", null ],
+    [ "R_USB_HalConfigSet", "de/df6/r__usb__hal_8h.html#a7f43157a463d2f2163f92498fe03e37d", null ],
+    [ "R_USB_HalControlAck", "de/df6/r__usb__hal_8h.html#a6bd60806e5cfe0b948963e37f3774e47", null ],
+    [ "R_USB_HalControlIn", "de/df6/r__usb__hal_8h.html#ab39f3288abd4c02f69b5f302d69dfff8", null ],
+    [ "R_USB_HalControlOut", "de/df6/r__usb__hal_8h.html#a50f1bbcde7041eea4449a1bbeb3b7133", null ],
+    [ "R_USB_HalControlStall", "de/df6/r__usb__hal_8h.html#afb29329d6ba17963882bf056d4b094ee", null ],
+    [ "R_USB_HalGetDeviceState", "de/df6/r__usb__hal_8h.html#a24526c6f9fa1d82738768ca96b992749", null ],
+    [ "R_USB_HalInit", "de/df6/r__usb__hal_8h.html#a44a4329fd6e44b57215c91ef98c60987", null ],
+    [ "R_USB_HalInterruptIn", "de/df6/r__usb__hal_8h.html#a6521550041fdbc572f07a4e9b06ad9ca", null ],
+    [ "R_USB_HalInterruptInStall", "de/df6/r__usb__hal_8h.html#ad543421f9ecd1ce1e88b0184d6da001c", null ],
+    [ "R_USB_HalIsEndpointStalled", "de/df6/r__usb__hal_8h.html#ac56e53f8bc12b1db8ba0a01a0eaf774a", null ],
+    [ "R_USB_HalIsr", "de/df6/r__usb__hal_8h.html#a9b1a0430fdf0a4f419021b8743a3a703", null ],
+    [ "R_USB_HalReset", "de/df6/r__usb__hal_8h.html#a6fe25f0fe01c6571a81389106eef1746", null ]
+];

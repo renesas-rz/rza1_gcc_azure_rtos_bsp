@@ -1,0 +1,11 @@
+digraph "r_usb_default_descriptors.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="r_usb_default_descriptors.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="r_usb_hid.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d40/r__usb__hid_8h.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="usbf_hid_rskrza1_if.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/d19/usbf__hid__rskrza1__if_8h.html",tooltip=" "];
+}

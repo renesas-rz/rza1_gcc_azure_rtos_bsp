@@ -1,0 +1,9 @@
+digraph "SSIF Low Level Driver API"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node1 [label="SSIF Low Level Driver API",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Internal low level SSIF driver component."];
+  Node2 [label="SSIF Driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dc/df3/group__R__SW__PKG__93__SSIF__API.html",tooltip="This interface provides access to the Serial Sound Interface SSIF peripheral."];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+}

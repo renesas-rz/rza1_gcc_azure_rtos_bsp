@@ -1,0 +1,9 @@
+<map id="r_vdc5.h" name="r_vdc5.h">
+<area shape="rect" id="node2" href="$d2/d5a/ntsc_8h.html" title="Camera for vdc5 definition header. " alt="" coords="5,80,64,107"/>
+<area shape="rect" id="node3" href="$d9/d16/pal_8h.html" title="Camera for vdc5 definition header. " alt="" coords="88,80,139,107"/>
+<area shape="rect" id="node4" href="$d7/d70/rsk__tft__ch0_8h.html" title="LCD panel for vdc5 channel 0 definition header. " alt="" coords="163,80,261,107"/>
+<area shape="rect" id="node7" href="$db/d94/rsk__tft__clk_8h.html" title="Defines for VDC5 clock. " alt="" coords="285,80,379,107"/>
+<area shape="rect" id="node8" href="$db/ddf/stream2__tft__ch0_8h.html" title="stream2_tft_ch0.h" alt="" coords="403,80,530,107"/>
+<area shape="rect" id="node5" href="$dc/df4/lcd__panel_8h.html" title="lcd_panel.h" alt="" coords="228,155,316,181"/>
+<area shape="rect" id="node6" href="$de/de7/r__image__config_8h.html" title="r_image_config.h" alt="" coords="212,229,332,256"/>
+</map>

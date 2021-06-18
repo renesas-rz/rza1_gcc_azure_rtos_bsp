@@ -1,0 +1,9 @@
+digraph "LED High Level Driver"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node1 [label="LED High Level Driver",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="This interface allows control of an LED interface of up to 16 LEDs."];
+  Node2 [label="RZA1LU Stream-IT LED\l driver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d85/group__R__SW__PKG__93__LED__API.html",tooltip="This interface provides access to the LED on the RZA1LU Stream-IT board See LED High Level Driver for..."];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+}

@@ -1,0 +1,28 @@
+var struct__USBDI =
+[
+    [ "bfAllocated", "d0/db5/struct__USBDI.html#a15b109339aafe3992bbb29d7b3ba601c", null ],
+    [ "bfConfigured", "d0/db5/struct__USBDI.html#a07587fe101b1fe5d0d7837b0056b59c9", null ],
+    [ "byAddress", "d0/db5/struct__USBDI.html#ada48fda031fb4d7a253d1bc83ce3fed1", null ],
+    [ "byAlternateSetting", "d0/db5/struct__USBDI.html#aef979be22476567d23314bb647f67151", null ],
+    [ "byConfigurationValue", "d0/db5/struct__USBDI.html#a37592331cbc252b5631fc98a82b3687a", null ],
+    [ "byInterfaceClass", "d0/db5/struct__USBDI.html#a1330211be60fbe16a135306f5319dbdf", null ],
+    [ "byInterfaceNumber", "d0/db5/struct__USBDI.html#a1ed092a9c2170b1ca3358a0caf431d0d", null ],
+    [ "byInterfaceProtocol", "d0/db5/struct__USBDI.html#a7b998bc15a1f909af0521db89bd26400", null ],
+    [ "byInterfaceSubClass", "d0/db5/struct__USBDI.html#a89ec05b495836228eed6cd2309529131", null ],
+    [ "byNumberOfEndpoints", "d0/db5/struct__USBDI.html#a644688acacdc11eaf3b4ef748d7583b4", null ],
+    [ "pControlIn", "d0/db5/struct__USBDI.html#aa58143061ca7678ee9d797a81ca8eb7d", null ],
+    [ "pControlOut", "d0/db5/struct__USBDI.html#a36c3df029c1c06c85ff14548dc8c27bc", null ],
+    [ "pControlSetup", "d0/db5/struct__USBDI.html#a8d218b8979658bd29ab16c22f4efb1bf", null ],
+    [ "pEndpoint", "d0/db5/struct__USBDI.html#ac97ca8afefd02d71f1b354033a2e23b4", null ],
+    [ "pHub", "d0/db5/struct__USBDI.html#a381ca45e6fdbf5607986d824ae510f39", null ],
+    [ "pPort", "d0/db5/struct__USBDI.html#a44bb9cd20a2609574b71e5211d921896", null ],
+    [ "pszManufacturer", "d0/db5/struct__USBDI.html#a1efd6577ae48619c91e0b722f2009301", null ],
+    [ "pszProduct", "d0/db5/struct__USBDI.html#ad48b0653a6fb098d405dc9a3a483a5cf", null ],
+    [ "pszSerialNumber", "d0/db5/struct__USBDI.html#ac5d217871e92fb0656d44a85b7be8440", null ],
+    [ "pszSymbolicLinkName", "d0/db5/struct__USBDI.html#ac6b067b919947937804a8c2c0b43cb8e", null ],
+    [ "transferSpeed", "d0/db5/struct__USBDI.html#a784e978f39079f01d57f09c8effc7441", null ],
+    [ "wDeviceVersion", "d0/db5/struct__USBDI.html#ab734455046d3003d6c3fb6eb521f77ef", null ],
+    [ "wMaxPower_mA", "d0/db5/struct__USBDI.html#a81fa70149c2d6d1eafdd2e7c7aace41c", null ],
+    [ "wPID", "d0/db5/struct__USBDI.html#aac9547a5552e7ab3e670ca2074694ba3", null ],
+    [ "wVID", "d0/db5/struct__USBDI.html#a495f834213216e55fc55aa09e6000343", null ]
+];

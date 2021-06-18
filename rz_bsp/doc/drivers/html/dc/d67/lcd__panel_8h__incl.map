@@ -1,0 +1,10 @@
+<map id="lcd_panel.h" name="lcd_panel.h">
+<area shape="rect" id="node2" href="$d4/d2b/mcu__board__select_8h.html" title="mcu_board_select.h" alt="" coords="5,304,144,331"/>
+<area shape="rect" id="node3" href="$db/d94/rsk__tft__clk_8h.html" title="Defines for VDC5 clock. " alt="" coords="256,80,371,107"/>
+<area shape="rect" id="node12" href="$d7/d70/rsk__tft__ch0_8h.html" title="LCD panel for vdc5 channel 0 definition header. " alt="" coords="113,80,231,107"/>
+<area shape="rect" id="node5" href="$d9/de3/r__typedefs_8h.html" title="r_typedefs.h" alt="" coords="261,453,355,480"/>
+<area shape="rect" id="node7" href="$d1/d1c/r__vdc5_8h.html" title="VDC driver API definitions. " alt="" coords="157,155,227,181"/>
+<area shape="rect" id="node8" href="$da/db2/r__vdc_8h.html" title="VDC driver API definitions. " alt="" coords="161,229,223,256"/>
+<area shape="rect" id="node9" href="$d8/df7/r__vdc__h_8h.html" title="VDC driver API definitions. " alt="" coords="168,304,253,331"/>
+<area shape="rect" id="node10" href="$d9/d00/r__vdc__h__user_8h.html" title="VDC driver user&#45;defined header. " alt="" coords="156,379,265,405"/>
+</map>

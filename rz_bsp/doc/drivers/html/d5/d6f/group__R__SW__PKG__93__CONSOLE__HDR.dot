@@ -1,0 +1,9 @@
+digraph "Console Internal header"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node1 [label="Console Internal header",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Console Implementation header."];
+  Node2 [label="Console",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d9b/group__R__SW__PKG__93__CONSOLE.html",tooltip="Console implementation for the RZA1LU Camera-SDK Application."];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+}

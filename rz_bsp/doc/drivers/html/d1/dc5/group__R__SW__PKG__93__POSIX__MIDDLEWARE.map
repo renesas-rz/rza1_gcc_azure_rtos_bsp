@@ -1,0 +1,17 @@
+<map id="Middleware (POSIX)" name="Middleware (POSIX)">
+<area shape="rect" id="node1" href="$de/d47/group__R__SW__PKG__93__SOCKET.html" title="A driver to integrate lwIP into the POSIX style API. " alt="" coords="225,5,315,32"/>
+<area shape="rect" id="node2" href="$db/de2/group__R__SW__PKG__93__USB__HOST__ENUM.html" title="USB Host driver hardware interface functions. " alt="" coords="225,56,315,83"/>
+<area shape="rect" id="node3" href="$df/d23/group__R__SW__PKG__93__BSD__SOCKET.html" title="Wrapper for the lwIP BSD socket interface. " alt="" coords="209,107,331,133"/>
+<area shape="rect" id="node4" href="$dd/d56/group__R__SW__PKG__93__USB__DSK__MNG.html" title="Emulation disk management functions. " alt="" coords="191,157,349,184"/>
+<area shape="rect" id="node5" href="$d0/d7f/group__R__SW__PKG__93__USB__HOST__API.html" title="USB Host driver hardware interface functions. " alt="" coords="213,208,327,235"/>
+<area shape="rect" id="node6" href="$d5/dff/group__R__SW__PKG__93__UDP__SOCKET.html" title="A driver to make a lwip UDP socket look like a file stream. " alt="" coords="209,259,331,285"/>
+<area shape="rect" id="node7" href="$dc/de4/group__R__SW__PKG__93__ETHER__API.html" title="Ethernet device driver Interface using the Ethernet Peripheral. " alt="" coords="221,309,319,336"/>
+<area shape="rect" id="node8" href="$d3/d00/group__R__SW__PKG__93__PMOD__API.html" title="PMOD Driver. " alt="" coords="227,360,313,387"/>
+<area shape="rect" id="node9" href="$d1/ddd/group__R__SW__PKG__93__USB__HOST__AUDIO.html" title="Very basic USB Audio Class descriptor parser. " alt="" coords="209,411,331,437"/>
+<area shape="rect" id="node10" href="$df/d22/group__R__SW__PKG__93__USB__HID.html" title="USB function HID hardware interface functions. " alt="" coords="233,461,307,488"/>
+<area shape="rect" id="node12" href="$da/d23/group__R__SW__PKG__93__USB__CDC.html" title="USB function CDC hardware interface functions. " alt="" coords="230,512,310,539"/>
+<area shape="rect" id="node13" href="$d9/dd4/group__R__SW__PKG__93__LWIP__IF.html" title="lwIP Module Interface " alt="" coords="221,563,319,589"/>
+<area shape="rect" id="node14" href="$d6/da3/group__R__SW__PKG__93__USB__COMMS.html" title="USB Comms Class API and configuration. " alt="" coords="200,613,340,640"/>
+<area shape="rect" id="node15" href="$da/da9/group__R__SW__PKG__93__FileSocket.html" title="A driver to make a lwip socket look like a file stream. " alt="" coords="212,664,328,691"/>
+<area shape="rect" id="node16" href="$df/def/group__R__SW__PKG__93__USB__FILE.html" title="USB function CDC hardware interface functions. " alt="" coords="233,715,307,741"/>
+</map>

@@ -1,0 +1,57 @@
+digraph "r_dmac_drv_link.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="r_dmac_drv_link.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="r_dmac_lld_rza1l.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/d4a/r__dmac__lld__rza1l_8h.html",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="r_dmac_drv_sc_cfg.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d50/r__dmac__drv__sc__cfg_8h.html",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="compiler_settings.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d32/compiler__settings_8h.html",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="application_cfg.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/d93/application__cfg_8h.html",tooltip=" "];
+  Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="r_compiler_abstraction\l_api.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/dab/r__compiler__abstraction__api_8h.html",tooltip=" "];
+  Node4 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="r_os_abstraction_api.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/d66/r__os__abstraction__api_8h.html",tooltip=" "];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="r_typedefs.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/de3/r__typedefs_8h.html",tooltip=" "];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="stddef.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node4 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="r_devlink_wrapper.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/d34/r__devlink__wrapper_8h.html",tooltip=" "];
+  Node10 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="control.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d02/control_8h.html",tooltip=" "];
+  Node11 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="stdio.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node11 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="unistd.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node11 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="console.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/de3/console_8h.html",tooltip=" "];
+  Node14 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="r_task_priority.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/de8/r__task__priority_8h.html",tooltip=" "];
+  Node3 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="r_dmac_device_cfg.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d10/r__dmac__device__cfg_8h.html",tooltip=" "];
+  Node16 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="r_dmac_lld_cfg_rza1l.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d0f/r__dmac__lld__cfg__rza1l_8h.html",tooltip=" "];
+  Node17 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="limits.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node3 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="r_dmac_drv_api.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/d75/r__dmac__drv__api_8h.html",tooltip=" "];
+  Node19 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node20 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="r_intc.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/d6b/r__intc_8h.html",tooltip=" "];
+  Node20 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 -> Node21 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="dev_drv.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/d44/dev__drv_8h.html",tooltip=" "];
+}

@@ -1,0 +1,4 @@
+<map id="ceu_config_t" name="ceu_config_t">
+<area shape="rect" id="node2" href="$db/de3/structceu__clp__t.html" title="Capture Filter Size (Set this param if Image capture mode.) " alt="" coords="5,5,84,32"/>
+<area shape="rect" id="node3" href="$d1/d0b/structceu__cap__rect__t.html" title="The horizontal/vertical timing of the Capture signals. " alt="" coords="108,5,219,32"/>
+</map>

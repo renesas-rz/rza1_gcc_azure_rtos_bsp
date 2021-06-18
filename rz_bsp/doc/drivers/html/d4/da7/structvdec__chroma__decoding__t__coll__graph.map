@@ -1,0 +1,6 @@
+<map id="vdec_chroma_decoding_t" name="vdec_chroma_decoding_t">
+<area shape="rect" id="node2" href="$d8/d4c/structvdec__tint__ry__t.html" title="vdec_tint_ry_t" alt="" coords="5,5,108,32"/>
+<area shape="rect" id="node3" href="$d9/daf/structvdec__chrmdec__ctrl__t.html" title="vdec_chrmdec_ctrl_t" alt="" coords="133,5,274,32"/>
+<area shape="rect" id="node4" href="$db/d1b/structvdec__acc__t.html" title="vdec_acc_t" alt="" coords="299,5,385,32"/>
+<area shape="rect" id="node5" href="$d8/dbd/structvdec__burst__lock__t.html" title="vdec_burst_lock_t" alt="" coords="409,5,536,32"/>
+</map>

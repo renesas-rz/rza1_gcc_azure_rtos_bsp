@@ -1,0 +1,16 @@
+digraph "usb_func_controller" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_180fb5dbcfe56f00ba097c6057eb79b8 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="middleware" fontname="Helvetica", fontsize="10", URL="dir_180fb5dbcfe56f00ba097c6057eb79b8.html"]
+  subgraph clusterdir_fcde513ad14c34dc286bbf7634bc4db1 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_fcde513ad14c34dc286bbf7634bc4db1.html"];
+    dir_fcde513ad14c34dc286bbf7634bc4db1 [shape=plaintext label="usb_func_controller"];
+    dir_18bbb557051b66f3e9d2888c8c325f70 [shape=box label="inc" color="black" fillcolor="white" style="filled" URL="dir_18bbb557051b66f3e9d2888c8c325f70.html"];
+  }
+  }
+  dir_eda2a6d705da8f3400ffe9a7dcb90b30 [shape=box label="application" fillcolor="white" style="filled" color="red" URL="dir_eda2a6d705da8f3400ffe9a7dcb90b30.html"];
+  dir_eda2a6d705da8f3400ffe9a7dcb90b30->dir_18bbb557051b66f3e9d2888c8c325f70 [headlabel="2", labeldistance=1.5 headhref="dir_000002_000031.html"];
+  dir_18bbb557051b66f3e9d2888c8c325f70->dir_eda2a6d705da8f3400ffe9a7dcb90b30 [headlabel="5", labeldistance=1.5 headhref="dir_000031_000002.html"];
+}

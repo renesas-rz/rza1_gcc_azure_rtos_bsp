@@ -1,0 +1,4 @@
+<map id="WDT Driver" name="WDT Driver">
+<area shape="rect" id="node1" href="$d9/de1/group__R__SW__PKG__93__WDT__LLD.html" title="This interface provides low level device specific access to a Watchdog timer WDT device on the RZA1LU..." alt="" coords="299,5,445,32"/>
+<area shape="rect" id="node3" href="$d3/d50/group__R__SW__PKG__93__POSIX__Drivers.html" title="POSIX interface drivers. " alt="" coords="5,5,116,32"/>
+</map>

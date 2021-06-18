@@ -1,0 +1,9 @@
+digraph "Timer"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node1 [label="Timer",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Timer module which allows user to start and stop a timer, returning the time elapsed in seconds betwe..."];
+  Node2 [label="Middleware (Not POSIX)",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/dbc/group__R__SW__PKG__93__NONOS__MIDDLEWARE.html",tooltip="Middleware."];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+}

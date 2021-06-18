@@ -1,0 +1,13 @@
+digraph "vdc_alpha_blending_rect_t"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="vdc_alpha_blending\l_rect_t",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" gr_arc" ,fontname="Helvetica"];
+  Node2 [label="vdc_pd_disp_rect_t",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/de8/structvdc__pd__disp__rect__t.html",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" scl_und_sel" ,fontname="Helvetica"];
+  Node3 [label="vdc_scl_und_sel_t",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d58/structvdc__scl__und__sel__t.html",tooltip=" "];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" alpha_rect" ,fontname="Helvetica"];
+  Node4 [label="vdc_alpha_rect_t",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d68/structvdc__alpha__rect__t.html",tooltip=" "];
+}

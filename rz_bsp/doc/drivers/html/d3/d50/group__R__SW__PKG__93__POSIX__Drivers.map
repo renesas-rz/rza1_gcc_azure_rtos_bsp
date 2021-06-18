@@ -1,0 +1,10 @@
+<map id="Drivers (POSIX)" name="Drivers (POSIX)">
+<area shape="rect" id="node1" href="$d4/d2b/group__R__SW__PKG__93__RTC__API.html" title="This interface provides access to an Real&#45;Time Clock RTC device. " alt="" coords="208,5,291,32"/>
+<area shape="rect" id="node2" href="$da/def/group__R__SW__PKG__93__EEPROM__API.html" title="This interface provides access to an EEPROM memory device. " alt="" coords="192,56,307,83"/>
+<area shape="rect" id="node3" href="$d3/dcb/group__SSGSTARC__37__OSTM__DRIVER.html" title="This interface provides access to the OSTM peripheral See OSTM High Level Driver API for details..." alt="" coords="164,107,335,149"/>
+<area shape="rect" id="node4" href="$d4/dbd/group__SSGSTARC__56__RIIC__API.html" title="This interface provides access to the RIIC peripheral on the RZA1LU Stream&#45;IT board. See RIIC High Level Driver for details. " alt="" coords="170,173,329,214"/>
+<area shape="rect" id="node5" href="$d8/da0/group__R__SW__PKG__93__WDT__API.html" title="This interface provides access to an Watchdog Timer device. " alt="" coords="206,239,293,265"/>
+<area shape="rect" id="node6" href="$d9/de8/group__R__SW__PKG__93__SCIF__API.html" title="This interface provides access to the Serial SCIF peripheral on the RZA1LU Stream&#45;IT board..." alt="" coords="168,290,331,331"/>
+<area shape="rect" id="node7" href="$dc/df3/group__R__SW__PKG__93__SSIF__API.html" title="This interface provides access to the Serial Sound Interface SSIF peripheral. " alt="" coords="206,356,293,383"/>
+<area shape="rect" id="node8" href="$dd/d85/group__R__SW__PKG__93__LED__API.html" title="This interface provides access to the LED on the RZA1LU Stream&#45;IT board See LED High Level Driver for..." alt="" coords="170,407,329,449"/>
+</map>

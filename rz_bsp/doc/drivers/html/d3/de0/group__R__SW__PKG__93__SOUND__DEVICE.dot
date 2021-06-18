@@ -1,0 +1,9 @@
+digraph "Sound Device"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node1 [label="Sound Device",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="MAX9856 Audio Codec Control."];
+  Node2 [label="Sound",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d5f/group__R__SW__PKG__93__SOUND__API.html",tooltip="Sound module responsible for setting up the Audio Codec."];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+}

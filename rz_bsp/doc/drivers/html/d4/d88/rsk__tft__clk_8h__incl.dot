@@ -1,0 +1,26 @@
+digraph "rsk_tft_clk.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="rsk_tft_clk.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Defines for VDC5 clock."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="stdlib.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="r_typedefs.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/de3/r__typedefs_8h.html",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="stddef.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="r_vdc5.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d1c/r__vdc5_8h.html",tooltip="VDC driver API definitions."];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="r_vdc.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/db2/r__vdc_8h.html",tooltip="VDC driver API definitions."];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="mcu_board_select.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d2b/mcu__board__select_8h.html",tooltip=" "];
+  Node6 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="./r_vdc_h.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/df7/r__vdc__h_8h.html",tooltip="VDC driver API definitions."];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="r_vdc_h_user.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d00/r__vdc__h__user_8h.html",tooltip="VDC driver user-defined header."];
+  Node9 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="iodefine.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+}

@@ -1,0 +1,22 @@
+digraph "touch" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_180fb5dbcfe56f00ba097c6057eb79b8 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="middleware" fontname="Helvetica", fontsize="10", URL="dir_180fb5dbcfe56f00ba097c6057eb79b8.html"]
+  subgraph clusterdir_29efcadf7421f856f81a59b8fd1555fa {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_29efcadf7421f856f81a59b8fd1555fa.html"];
+    dir_29efcadf7421f856f81a59b8fd1555fa [shape=plaintext label="touch"];
+    dir_d558b02c2f9429dbce7ed4cfff1da93b [shape=box label="inc" color="black" fillcolor="white" style="filled" URL="dir_d558b02c2f9429dbce7ed4cfff1da93b.html"];
+    dir_e5d818fbce5dc2fafe687888bd09364b [shape=box label="src" color="red" fillcolor="white" style="filled" URL="dir_e5d818fbce5dc2fafe687888bd09364b.html"];
+  }
+  }
+  dir_eda2a6d705da8f3400ffe9a7dcb90b30 [shape=box label="application" fillcolor="white" style="filled" color="red" URL="dir_eda2a6d705da8f3400ffe9a7dcb90b30.html"];
+  dir_95f7b9d4854ca187ae337d299db232bb [shape=box label="configuration" fillcolor="white" style="filled" color="red" URL="dir_95f7b9d4854ca187ae337d299db232bb.html"];
+  dir_eda2a6d705da8f3400ffe9a7dcb90b30->dir_95f7b9d4854ca187ae337d299db232bb [headlabel="2", labeldistance=1.5 headhref="dir_000002_000009.html"];
+  dir_e5d818fbce5dc2fafe687888bd09364b->dir_eda2a6d705da8f3400ffe9a7dcb90b30 [headlabel="3", labeldistance=1.5 headhref="dir_000037_000002.html"];
+  dir_e5d818fbce5dc2fafe687888bd09364b->dir_95f7b9d4854ca187ae337d299db232bb [headlabel="2", labeldistance=1.5 headhref="dir_000037_000009.html"];
+  dir_e5d818fbce5dc2fafe687888bd09364b->dir_d558b02c2f9429dbce7ed4cfff1da93b [headlabel="2", labeldistance=1.5 headhref="dir_000037_000036.html"];
+  dir_95f7b9d4854ca187ae337d299db232bb->dir_eda2a6d705da8f3400ffe9a7dcb90b30 [headlabel="1", labeldistance=1.5 headhref="dir_000009_000002.html"];
+  dir_d558b02c2f9429dbce7ed4cfff1da93b->dir_eda2a6d705da8f3400ffe9a7dcb90b30 [headlabel="1", labeldistance=1.5 headhref="dir_000036_000002.html"];
+}

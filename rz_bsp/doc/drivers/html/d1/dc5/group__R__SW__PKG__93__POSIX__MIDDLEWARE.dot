@@ -1,0 +1,37 @@
+digraph "Middleware (POSIX)"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node4 [label="lwIP Socket",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d47/group__R__SW__PKG__93__SOCKET.html",tooltip="A driver to integrate lwIP into the POSIX style API."];
+  Node16 [label="USB ENUM",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/de2/group__R__SW__PKG__93__USB__HOST__ENUM.html",tooltip="USB Host driver hardware interface functions."];
+  Node7 [label="lwIP BSD Socket",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/d23/group__R__SW__PKG__93__BSD__SOCKET.html",tooltip="Wrapper for the lwIP BSD socket interface."];
+  Node11 [label="USB Disk Management",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d56/group__R__SW__PKG__93__USB__DSK__MNG.html",tooltip="Emulation disk management functions."];
+  Node13 [label="USB HOST API",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/d7f/group__R__SW__PKG__93__USB__HOST__API.html",tooltip="USB Host driver hardware interface functions."];
+  Node5 [label="lwIP UDP Socket",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/dff/group__R__SW__PKG__93__UDP__SOCKET.html",tooltip="A driver to make a lwip UDP socket look like a file stream."];
+  Node2 [label="lwIP Ethernet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dc/de4/group__R__SW__PKG__93__ETHER__API.html",tooltip="Ethernet device driver Interface using the Ethernet Peripheral."];
+  Node8 [label="PMOD API",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d3/d00/group__R__SW__PKG__93__PMOD__API.html",tooltip="PMOD Driver."];
+  Node15 [label="USB Audio Class",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/ddd/group__R__SW__PKG__93__USB__HOST__AUDIO.html",tooltip="Very basic USB Audio Class descriptor parser."];
+  Node10 [label="USB HID",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/d22/group__R__SW__PKG__93__USB__HID.html",tooltip="USB function HID hardware interface functions."];
+  Node1 [label="Middleware (POSIX)",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="POSIX interface middleware."];
+  Node9 [label="USB CDC",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/d23/group__R__SW__PKG__93__USB__CDC.html",tooltip="USB function CDC hardware interface functions."];
+  Node6 [label="lwIP Interface",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/dd4/group__R__SW__PKG__93__LWIP__IF.html",tooltip="lwIP Module Interface"];
+  Node14 [label="USB COMMS Class",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/da3/group__R__SW__PKG__93__USB__COMMS.html",tooltip="USB Comms Class API and configuration."];
+  Node3 [label="lwIP File Socket",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/da9/group__R__SW__PKG__93__FileSocket.html",tooltip="A driver to make a lwip socket look like a file stream."];
+  Node12 [label="USB File",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/def/group__R__SW__PKG__93__USB__FILE.html",tooltip="USB function CDC hardware interface functions."];
+  Node1->Node2 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node4 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node5 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node6 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node7 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node8 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node9 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node10 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node11 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node12 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node13 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node14 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node15 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node16 [shape=plaintext, dir="back", style="solid"];
+}

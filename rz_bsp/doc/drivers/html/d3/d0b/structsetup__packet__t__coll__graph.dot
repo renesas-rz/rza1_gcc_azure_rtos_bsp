@@ -1,0 +1,11 @@
+digraph "setup_packet_t"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="setup_packet_t",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" bm_request" ,fontname="Helvetica"];
+  Node2 [label="request_type_t",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/d1b/unionrequest__type__t.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" bit_val" ,fontname="Helvetica"];
+  Node3 [label="_bit_val",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/d14/struct__bit__val.html",tooltip=" "];
+}
