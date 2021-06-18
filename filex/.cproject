@@ -43,7 +43,7 @@
                 				
                 <option id="toolchain.version" value="6.3.1.20170620"/>
                 				
-                <option id="toolchain.enable" value="true"/>
+                <option id="toolchain.enable" value="false"/>
                 			
             </storageModule>
             			
@@ -55,7 +55,7 @@
                         						
                         <toolChain id="com.renesas.cdt.managedbuild.gcc.rz.toolChain.debug.lib.1422560277" name="GCC for Renesas RZ" superClass="com.renesas.cdt.managedbuild.gcc.rz.toolChain.debug.lib">
                             							
-                            <option id="com.renesas.cdt.managedbuild.gcc.rz.option.optimizationLevel.958126198" name="Optimization Level" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.optimizationLevel" useByScannerDiscovery="true" value="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.level.most" valueType="enumerated"/>
+                            <option id="com.renesas.cdt.managedbuild.gcc.rz.option.optimizationLevel.958126198" name="Optimization Level" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.optimizationLevel" useByScannerDiscovery="true" value="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.level.debug" valueType="enumerated"/>
                             							
                             <option id="com.renesas.cdt.managedbuild.gcc.rz.option.messagelenght.599395599" name="Message length (-fmessage-length=0)" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.messagelenght" useByScannerDiscovery="true" value="true" valueType="boolean"/>
                             							

@@ -32,7 +32,8 @@
 #include "rza_io_regrw.h"           /* Low level register read/write header */
 
 
-
+#define USB_PRI_USBI0 (28)
+#define USB_PRI_USBI1 (27)
 
 /**************************************************************************/ 
 /*                                                                        */ 
@@ -77,6 +78,7 @@ void  _ux_hcd_rz_low_level_setup(void)
 {
 
 ULONG   iprreg;
+volatile unsigned char dummy;
 
 #if UX_RZ_USB_BASE == UX_RZ_USB0_BASE
     /* turn on USB0 clock */
@@ -107,11 +109,19 @@ ULONG   iprreg;
    // CPG.STBCR7.BIT.MSTP70 = 0;
 
     /* turn on USB1 clock */
-	CPG.STBCR7 &= 0xFE;
-   
+	//CPG.STBCR7 &= 0xFE;
+	CPG.STBCR7 &= (uint8_t)~(CPG_STBCR7_MSTP70|CPG_STBCR7_MSTP71);
+	dummy = CPG.STBCR7;
+
     /* Register ETHER interrupt handler function */
     R_INTC_RegistIntFunc(INTC_ID_USBI1, (void (*)(uint32_t))_ux_hcd_rz_interrupt_handler);
-    
+#if 1
+    /* Set interrupt priority */
+	R_INTC_SetPriority(INTC_ID_USBI1, USB_PRI_USBI1);
+
+	/* A/D end interrupt enable */
+	R_INTC_Enable(INTC_ID_USBI1);
+#else
     /* enable USB1 interrupt */
     INTC.ICDISER2 |= (1UL << 10) ;
     
@@ -120,6 +130,7 @@ ULONG   iprreg;
     iprreg &= ~(0xFFUL << 16);
     iprreg |=  (0xA0UL << 16);
     INTC.ICDIPR18 = iprreg;
+#endif
 #endif
 
 #ifdef UX_RZ_HCD_USE_DMA
