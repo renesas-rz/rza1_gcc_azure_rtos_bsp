@@ -9,7 +9,7 @@ TX_BYTE_POOL       memory_pool;
 
 #define SCRATCHPAD_PIXELS (DISPLAY_1_X_RESOLUTION * DISPLAY_1_Y_RESOLUTION * 2)
 #define DEFAULT_CANVAS_PIXELS (DISPLAY_1_X_RESOLUTION * DISPLAY_1_Y_RESOLUTION * 2)
-
+#define TX_DEMO_STACKSIZE (1024)
 /* Define memory for memory pool. */
 USHORT scratchpad[SCRATCHPAD_PIXELS] __attribute__ ((section(".RAM_regionCache")));
 USHORT default_canvas_memory[DEFAULT_CANVAS_PIXELS] __attribute__ ((section(".RAM_regionCache")));
@@ -25,8 +25,10 @@ VOID fade_out_home_window();
 VOID toggle_screen(GX_WIDGET *new_screen);
 
 static TX_THREAD touch_thread;
+CHAR touch_thread_stack[TX_DEMO_STACKSIZE];
 
-ULONG touch_thread_stack[1024];
+static TX_THREAD demo_thread;
+static ULONG demo_thread_stack[1024];
 
 extern VOID touch_thread_entry(ULONG thread_input);
 
@@ -38,6 +40,8 @@ GX_PIXELMAP main_screen_bg;
 
 /* Define application varaible to record current screen. */
 APP_INFO app_info = { (GX_WIDGET *)&main_screen.main_screen_home_window };
+
+VOID  demo_thread_entry(ULONG thread_input);
 
 const GX_CHAR *day_names[7] = {
     "Sunday",
@@ -63,7 +67,7 @@ const GX_CHAR *month_names[12] = {
     "Nov",
     "Dec"
 };
-VOID  blinky_thread_entry(ULONG thread_input)
+void  blinky_thread_entry(ULONG thread_input)
 {
 	uint8_t led_on = 0;
 
@@ -118,20 +122,30 @@ VOID tx_application_define(void *first_unused_memory)
     tx_byte_pool_create(&memory_pool, "scratchpad", scratchpad,
         SCRATCHPAD_PIXELS * sizeof(GX_COLOR));
 
-    guix_setup();
-#if 0
+    tx_thread_create(&demo_thread, "Demo Thread", demo_thread_entry, 0,
+                     demo_thread_stack, sizeof(demo_thread_stack),
+                     GX_SYSTEM_THREAD_PRIORITY + 1,
+                     GX_SYSTEM_THREAD_PRIORITY + 1, TX_NO_TIME_SLICE, TX_AUTO_START);
+
+
+
+#if 1
     tx_thread_create(&touch_thread, "GUIX Touch Thread", touch_thread_entry, 0,
 		 touch_thread_stack, sizeof(touch_thread_stack),
 		 GX_SYSTEM_THREAD_PRIORITY + 1,
 		 GX_SYSTEM_THREAD_PRIORITY + 1, TX_NO_TIME_SLICE, TX_AUTO_START);
 #else
-    tx_thread_create(&touch_thread, "GUIX Blinky Thread", blinky_thread_entry, 0,
-		 touch_thread_stack, sizeof(touch_thread_stack),
-		 GX_SYSTEM_THREAD_PRIORITY + 1,
-		 GX_SYSTEM_THREAD_PRIORITY + 1, TX_NO_TIME_SLICE, TX_AUTO_START);
+    tx_thread_create(&touch_thread, "Blinky Thread", blinky_thread_entry, 1,
+		 touch_thread_stack, TX_DEMO_STACKSIZE,
+		 GX_SYSTEM_THREAD_PRIORITY + 5,
+		 GX_SYSTEM_THREAD_PRIORITY + 5, TX_NO_TIME_SLICE, TX_AUTO_START);
 #endif
-}
 
+}
+VOID  demo_thread_entry(ULONG thread_input)
+{
+	guix_setup();
+}
 /******************************************************************************************/
 /* Initiate and run GUIX.                                                                 */
 /******************************************************************************************/
