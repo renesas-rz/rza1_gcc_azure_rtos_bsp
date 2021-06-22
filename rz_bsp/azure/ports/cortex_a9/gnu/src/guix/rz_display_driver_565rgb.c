@@ -33,12 +33,12 @@
 #define RZ_SCREEN_HANDLE                0x525A0000
 #define FRAME_BUFFER_SIZE (DISPLAY_XRES * DISPLAY_YRES * 2)
 
-#define DISPLAY_BACKGROUND_COLOR        0x32b7
+#define DISPLAY_BACKGROUND_COLOR        0x0000/*0x32b7*/
 
-// static USHORT frame_buffer1[FRAMEBUFFER_HEIGHT * FRAMEBUFFER_STRIDE] __attribute__ ((section(".VRAM_SECTION0")));
-static USHORT frame_buffer[2][FRAMEBUFFER_HEIGHT * FRAMEBUFFER_WIDTH] __attribute__ ((aligned(4)));
+USHORT frame_buffer[2][FRAMEBUFFER_HEIGHT * FRAMEBUFFER_WIDTH] __attribute__ ((aligned(4))) __attribute__ ((section(".RAM_regionCache")));
 static USHORT *frame_buffer_ptr[2];
 static UCHAR draw_buffer_index = 0;
+static UCHAR visible_buffer_index = 1;
 static UCHAR buffer_refresh_request = 1;
 
 
@@ -47,7 +47,7 @@ static void vdc_vsync_callback(vdc_int_type_t int_type) {
 	if (buffer_refresh_request) {
 
 		buffer_refresh_request = 0;
-		R_RVAPI_GraphChangeSurfaceVDC(VDC_CHANNEL_0, VDC_LAYER_ID_2_RD, (void*)frame_buffer_ptr[draw_buffer_index]);
+		R_RVAPI_GraphChangeSurfaceVDC(VDC_CHANNEL_0, VDC_LAYER_ID_2_RD, (void*)frame_buffer[visible_buffer_index]);
 	}
 }
 
@@ -80,11 +80,9 @@ void CopyCanvasToBackBuffer565rgb(GX_CANVAS *canvas, GX_RECTANGLE *copy)
         return;
     }
     
-    pGetRow =  (USHORT*)canvas -> gx_canvas_memory;
+    pGetRow =  frame_buffer[visible_buffer_index]; //(USHORT*)canvas -> gx_canvas_memory;
     pGetRow += copy->gx_rectangle_top * canvas->gx_canvas_x_resolution;
     pGetRow += copy->gx_rectangle_left;
-
-    draw_buffer_index ^= 1;
 
     pPutRow = frame_buffer[draw_buffer_index];
     pPutRow += (canvas ->gx_canvas_display_offset_y + copy->gx_rectangle_top) * DISPLAY_XRES;
@@ -103,8 +101,8 @@ void CopyCanvasToBackBuffer565rgb(GX_CANVAS *canvas, GX_RECTANGLE *copy)
         pGetRow += canvas->gx_canvas_x_resolution;
         pPutRow += DISPLAY_XRES;
     }
-    l2x0_flush_range((uint32_t)flushaddress, (uint32_t)(flushaddress + (copy_height * DISPLAY_XRES * DATA_SIZE_PER_PIC)));
-    buffer_refresh_request = 1;
+    //l2x0_flush_range((uint32_t)flushaddress, (uint32_t)(flushaddress + (copy_height * DISPLAY_XRES * DATA_SIZE_PER_PIC)));
+
 
 }
 
@@ -118,6 +116,12 @@ void rz_565rgb_buffer_toggle(GX_CANVAS *canvas, GX_RECTANGLE *dirty)
         canvas->gx_canvas_x_resolution -1,
         canvas->gx_canvas_y_resolution -1);
     
+    // Swap Buffers
+    draw_buffer_index ^= 1;
+    visible_buffer_index ^= 1;
+    canvas -> gx_canvas_memory = frame_buffer[draw_buffer_index];
+    buffer_refresh_request = 1;
+
     if (gx_utility_rectangle_overlap_detect(&Limit, &canvas->gx_canvas_dirty_area, &Copy))
     {
         /* copy our canvas to the back buffer */
@@ -154,20 +158,9 @@ void ConfigureGUIXDisplayHardware565rgb(GX_DISPLAY *display)
 
 		/* buffer clear */
 		// Set frame buffer to black
-#if 1
-        put = (USHORT *) frame_buffer[0];
-		for (loop = 0; loop < DISPLAY_XRES * DISPLAY_YRES; loop++)
-		{
-			*put++ = DISPLAY_BACKGROUND_COLOR;
-		}
-		l2x0_flush_range((uint32_t)frame_buffer[0], (uint32_t)(frame_buffer[0] + (DISPLAY_YRES * DISPLAY_XRES)));
+		memset(frame_buffer[0], 0x00, FRAMEBUFFER_STRIDE * FRAMEBUFFER_HEIGHT);
+		memset(frame_buffer[1], 0x00, FRAMEBUFFER_STRIDE * FRAMEBUFFER_HEIGHT);
 
-		// Set frame buffer pointer to uncached memory addressed area
-		frame_buffer_ptr[0] = ((uint8_t*)frame_buffer[0] + 0x40000000);
-		frame_buffer_ptr[1] = ((uint8_t*)frame_buffer[1] + 0x40000000);
-#else
-		memset(frame_buffer1, 0x8F, FRAMEBUFFER_STRIDE * FRAMEBUFFER_HEIGHT);
-#endif
 
 /* not use camera captured layer */
 #if ((TARGET_RZA1 == TARGET_RZA1H) || (TARGET_RZA1 == TARGET_RZA1M))
@@ -179,7 +172,7 @@ void ConfigureGUIXDisplayHardware565rgb(GX_DISPLAY *display)
 		gr_disp_cnf.disp_area.hw_rel = FRAMEBUFFER_WIDTH;
 		gr_disp_cnf.disp_area.vs_rel = 0;
 		gr_disp_cnf.disp_area.vw_rel = FRAMEBUFFER_HEIGHT;
-		gr_disp_cnf.fb_buff          = frame_buffer_ptr[0];
+		gr_disp_cnf.fb_buff          = frame_buffer[visible_buffer_index];
 		gr_disp_cnf.fb_stride        = FRAMEBUFFER_STRIDE;
 		gr_disp_cnf.read_format      = VDC_GR_FORMAT_RGB565;
 

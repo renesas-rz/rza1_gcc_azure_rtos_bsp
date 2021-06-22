@@ -8,11 +8,12 @@ TX_BYTE_POOL       memory_pool;
 #define CLOCK_TIMER         20
 
 #define SCRATCHPAD_PIXELS (DISPLAY_1_X_RESOLUTION * DISPLAY_1_Y_RESOLUTION * 2)
-#define DEFAULT_CANVAS_PIXELS (DISPLAY_1_X_RESOLUTION * DISPLAY_1_Y_RESOLUTION * 2)
+//#define DEFAULT_CANVAS_PIXELS (DISPLAY_1_X_RESOLUTION * DISPLAY_1_Y_RESOLUTION * 2)
 #define TX_DEMO_STACKSIZE (1024)
 /* Define memory for memory pool. */
 USHORT scratchpad[SCRATCHPAD_PIXELS] __attribute__ ((section(".RAM_regionCache")));
-USHORT default_canvas_memory[DEFAULT_CANVAS_PIXELS] __attribute__ ((section(".RAM_regionCache")));
+extern USHORT frame_buffer[2][DISPLAY_1_X_RESOLUTION * DISPLAY_1_Y_RESOLUTION];
+USHORT *default_canvas_memory = frame_buffer[0];
 
 GX_WINDOW_ROOT    *root;
 
@@ -67,20 +68,7 @@ const GX_CHAR *month_names[12] = {
     "Nov",
     "Dec"
 };
-void  blinky_thread_entry(ULONG thread_input)
-{
-	uint8_t led_on = 0;
 
-	gpio_init(P7_8);
-	gpio_dir(P7_8, PIN_OUTPUT);
-
-	while(1) {
-
-		gpio_write(P7_8, led_on);
-		led_on ^= 1;
-		tx_thread_sleep(10);
-	}
-}
 /******************************************************************************************/
 /* Application entry.                                                                     */
 /******************************************************************************************/
@@ -127,19 +115,10 @@ VOID tx_application_define(void *first_unused_memory)
                      GX_SYSTEM_THREAD_PRIORITY + 1,
                      GX_SYSTEM_THREAD_PRIORITY + 1, TX_NO_TIME_SLICE, TX_AUTO_START);
 
-
-
-#if 1
     tx_thread_create(&touch_thread, "GUIX Touch Thread", touch_thread_entry, 0,
 		 touch_thread_stack, sizeof(touch_thread_stack),
 		 GX_SYSTEM_THREAD_PRIORITY + 1,
 		 GX_SYSTEM_THREAD_PRIORITY + 1, TX_NO_TIME_SLICE, TX_AUTO_START);
-#else
-    tx_thread_create(&touch_thread, "Blinky Thread", blinky_thread_entry, 1,
-		 touch_thread_stack, TX_DEMO_STACKSIZE,
-		 GX_SYSTEM_THREAD_PRIORITY + 5,
-		 GX_SYSTEM_THREAD_PRIORITY + 5, TX_NO_TIME_SLICE, TX_AUTO_START);
-#endif
 
 }
 VOID  demo_thread_entry(ULONG thread_input)
