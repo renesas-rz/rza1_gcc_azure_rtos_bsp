@@ -49,7 +49,7 @@
 #ifndef UX_HCD_RZ_H
 #define UX_HCD_RZ_H
 
-#define UX_RZ_HCD_USE_DMA
+//#define UX_RZ_HCD_USE_DMA
 
 /* Define RZ generic definitions.  */
 

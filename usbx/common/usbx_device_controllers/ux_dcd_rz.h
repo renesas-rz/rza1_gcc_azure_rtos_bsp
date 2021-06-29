@@ -48,7 +48,7 @@
 #ifndef UX_DCD_RZ_H
 #define UX_DCD_RZ_H
 
-#define UX_RZ_DCD_USE_DMA
+//#define UX_RZ_DCD_USE_DMA
 /* Define RZ generic equivalences.  */
 
 #define UX_DCD_RZ_SLAVE_CONTROLLER                          0x80
