@@ -1,5 +1,5 @@
 #include "mcu_board_select.h"
-#if ((TARGET_RZA1 == TARGET_RZA1H) || (TARGET_RZA1 == TARGET_RZA1M))
+#if (TARGET_BOARD == TARGET_BOARD_RSK)
 #include    <stdio.h>
 #include    <string.h>
 
@@ -7,6 +7,7 @@
 #include	"cache-l2x0.h"
 
 #include 	"lcd_panel.h"
+#include	"r_vdc.h"
 #include 	"r_vdc_portsetting.h"
 #include 	"r_rvapi_header.h"
 #include 	"r_display_init.h"
@@ -41,17 +42,29 @@
 void  BSP_DCache_FlushRange       (void *, unsigned long);
 
 // static GX_COLOR frame_buffer1[DISPLAY_XRES * DISPLAY_YRES] __attribute__ ((section(".VRAM_SECTION0")));
-static GX_COLOR frame_buffer1[DISPLAY_XRES * DISPLAY_YRES] __attribute__ ((aligned(4)));
+GX_COLOR frame_buffer[2][FRAMEBUFFER_HEIGHT * FRAMEBUFFER_STRIDE] __attribute__ ((aligned(4)))  __attribute__ ((section(".RAM_regionCache")));;
+static UCHAR draw_buffer_index = 0;
+static UCHAR visible_buffer_index = 1;
+static UCHAR buffer_refresh_request = 1;
+
+static void vdc_vsync_callback(vdc_int_type_t int_type) {
+
+	if (buffer_refresh_request) {
+
+		buffer_refresh_request = 0;
+		R_RVAPI_GraphChangeSurfaceVDC(VDC_CHANNEL_0, VDC_LAYER_ID_1_RD, (void*)frame_buffer[visible_buffer_index]);
+	}
+}
 
 void CopyCanvasToBackBuffer24xrgb(GX_CANVAS *canvas, GX_RECTANGLE *copy)
 {
     GX_RECTANGLE display_size;
     GX_RECTANGLE copy_clip;
-    void   *flushaddress;
-    ULONG *pPutRow;
-    ULONG *pGetRow;
-    ULONG *pGet;
-    ULONG *pPut;
+    uint8_t   *flushaddress;
+    USHORT *pPutRow;
+    USHORT *pGetRow;
+    USHORT *pGet;
+    USHORT *pPut;
     int row;
     int col;
     int copy_width;
@@ -71,11 +84,11 @@ void CopyCanvasToBackBuffer24xrgb(GX_CANVAS *canvas, GX_RECTANGLE *copy)
         return;
     }
     
-    pGetRow = (ULONG *) canvas -> gx_canvas_memory;
+    pGetRow =  frame_buffer[visible_buffer_index]; //(USHORT*)canvas -> gx_canvas_memory;
     pGetRow += copy->gx_rectangle_top * canvas->gx_canvas_x_resolution;
     pGetRow += copy->gx_rectangle_left;
 
-    pPutRow = frame_buffer1;
+    pPutRow = frame_buffer[draw_buffer_index];
     pPutRow += (canvas ->gx_canvas_display_offset_y + copy->gx_rectangle_top) * DISPLAY_XRES;
     pPutRow += (canvas ->gx_canvas_display_offset_x + copy->gx_rectangle_left);
     flushaddress = pPutRow;
@@ -92,8 +105,8 @@ void CopyCanvasToBackBuffer24xrgb(GX_CANVAS *canvas, GX_RECTANGLE *copy)
         pGetRow += canvas->gx_canvas_x_resolution;
         pPutRow += DISPLAY_XRES;
     }
-    // BSP_DCache_FlushRange(flushaddress, copy_height * DISPLAY_XRES * 4);
-    //l2x0_flush_range((uint32_t)flushaddress, (uint32_t)(flushaddress + (copy_height * DISPLAY_XRES * 4)));
+    //l2x0_flush_range((uint32_t)flushaddress, (uint32_t)(flushaddress + (copy_height * DISPLAY_XRES * DATA_SIZE_PER_PIC)));
+
 
 }
 
@@ -105,6 +118,12 @@ void rz_24xrgb_buffer_toggle(GX_CANVAS *canvas, GX_RECTANGLE *dirty)
     gx_utility_rectangle_define(&Limit, 0, 0,
         canvas->gx_canvas_x_resolution -1,
         canvas->gx_canvas_y_resolution -1);
+
+    // Swap Buffers
+    draw_buffer_index ^= 1;
+    visible_buffer_index ^= 1;
+    canvas -> gx_canvas_memory = frame_buffer[draw_buffer_index];
+    buffer_refresh_request = 1;
     
     if (gx_utility_rectangle_overlap_detect(&Limit, &canvas->gx_canvas_dirty_area, &Copy))
     {
@@ -117,7 +136,6 @@ void ConfigureGUIXDisplayHardware24xrgb(GX_DISPLAY *display)
 {
     vdc_error_t error;
     vdc_channel_t vdc_ch = VDC_CHANNEL_0;
-    GX_COLOR                *put;
 
     /***********************************************************************/
     /* display init (VDC output setting) */
@@ -141,14 +159,15 @@ void ConfigureGUIXDisplayHardware24xrgb(GX_DISPLAY *display)
 
         /* buffer clear */
         // Set frame buffer to black
-        memset((void*)frame_buffer1, 0x00, FRAMEBUFFER_STRIDE * FRAMEBUFFER_HEIGHT);
+        memset((void*)frame_buffer[0], 0x00, FRAMEBUFFER_STRIDE * FRAMEBUFFER_HEIGHT);
+        memset((void*)frame_buffer[1], 0x00, FRAMEBUFFER_STRIDE * FRAMEBUFFER_HEIGHT);
 
         gr_disp_cnf.layer_id         = VDC_LAYER_ID_1_RD;
         gr_disp_cnf.disp_area.hs_rel = 0;
         gr_disp_cnf.disp_area.hw_rel = FRAMEBUFFER_WIDTH;
         gr_disp_cnf.disp_area.vs_rel = 0;
         gr_disp_cnf.disp_area.vw_rel = FRAMEBUFFER_HEIGHT;
-        gr_disp_cnf.fb_buff          = &frame_buffer1[0];
+        gr_disp_cnf.fb_buff          = frame_buffer[0];
         gr_disp_cnf.fb_stride        = FRAMEBUFFER_STRIDE;
         gr_disp_cnf.read_format      = VDC_GR_FORMAT_RGB888;
         gr_disp_cnf.clut_table       = clut_table;
@@ -173,11 +192,7 @@ void ConfigureGUIXDisplayHardware24xrgb(GX_DISPLAY *display)
 
         R_RVAPI_DispPortSettingVDC(vdc_ch, &VDC_LcdPortSetting);
     }
-    put = (GX_COLOR *) frame_buffer1;
-    for (int loop = 0; loop < DISPLAY_XRES * DISPLAY_YRES; loop++)
-    {
-        *put++ = DISPLAY_BACKGROUND_COLOR;
-    }
+
 }
 
 UINT rz_graphics_driver_setup_24xrgb(GX_DISPLAY *display)
