@@ -72,7 +72,7 @@
 #define UX_RZ_USB0_BASE                             0xE8010000
 #define UX_RZ_USB1_BASE                             0xE8207000
 
-#define UX_RZ_USB_BASE                              UX_RZ_USB1_BASE
+#define UX_RZ_USB_BASE                              UX_RZ_USB0_BASE
                                                     
 
 #ifdef UX_RZ

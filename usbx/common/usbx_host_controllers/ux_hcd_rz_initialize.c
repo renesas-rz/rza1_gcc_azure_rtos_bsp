@@ -183,7 +183,7 @@ ULONG               buf1, buf2, buf3;
     /* xFIFOSEL initialization.  */
     _ux_hcd_rz_register_set(hcd_rz, UX_RZ_HC_CFIFOSEL, UX_RZ_HC_CFIFOSEL_RCNT | UX_RZ_HC_CFIFOSEL_MBW_8);
     _ux_hcd_rz_register_set(hcd_rz, UX_RZ_HC_D0FIFOSEL,UX_RZ_HC_DFIFOSEL_MBW_8);
-   _ux_hcd_rz_register_set(hcd_rz, UX_RZ_HC_D1FIFOSEL,UX_RZ_HC_DFIFOSEL_MBW_8);
+    _ux_hcd_rz_register_set(hcd_rz, UX_RZ_HC_D1FIFOSEL,UX_RZ_HC_DFIFOSEL_MBW_8);
    
     /* Set the controller to operational mode.  */
     hcd -> ux_hcd_status =  UX_HCD_STATUS_OPERATIONAL;

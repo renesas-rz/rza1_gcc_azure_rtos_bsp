@@ -203,6 +203,8 @@
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/rz_bsp/src/renesas/drivers/r_led/inc}&quot;"/>
                                     									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/rz_bsp/src/renesas/drivers/r_gpio/inc}&quot;"/>
+                                    									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/rz_bsp/src/renesas/drivers/r_rspi/inc}&quot;"/>
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/rz_bsp/src/renesas/drivers/r_rtc/inc}&quot;"/>

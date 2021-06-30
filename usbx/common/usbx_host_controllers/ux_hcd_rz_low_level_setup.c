@@ -30,6 +30,7 @@
 #include "iodefine.h"
 #include "r_intc.h"            /* INTC Driver Header */
 #include "rza_io_regrw.h"           /* Low level register read/write header */
+#include "r_gpio_if.h"
 
 
 #define USB_PRI_USBI0 (28)
@@ -82,20 +83,19 @@ volatile unsigned char dummy;
 
 #if UX_RZ_USB_BASE == UX_RZ_USB0_BASE
     /* turn on USB0 clock */
-    CPG.STBCR7.BIT.MSTP71 = 0;
+    //CPG.STBCR7.BIT.MSTP71 = 0;
+	CPG.STBCR7 &= (uint8_t)~(CPG_STBCR7_MSTP71);
    
     /* Register USB interrupt handler function */
-    R_INTC_RegistIntFunc(INTC_ID_USBI0, _ux_hcd_rz_interrupt_handler);
+    R_INTC_RegistIntFunc(INTC_ID_USBI0,  (void (*)(uint32_t))_ux_hcd_rz_interrupt_handler);
     
-    /* enable USB0 interrupt */
-    INTC.ICDISER2 |= (1UL << 9) ;
-    
-    /* Set Priorities of USBI0 (GROUP:4,SUB:0)*/
-    iprreg = INTC.ICDIPR18;
-    iprreg &= ~(0xFFUL << 8);
-    iprreg |=  (0xA0UL << 8);
-    INTC.ICDIPR18 = iprreg;
+    /* Set interrupt priority */
+	R_INTC_SetPriority(INTC_ID_USBI0, USB_PRI_USBI0);
 
+	/* A/D end interrupt enable */
+	R_INTC_Enable(INTC_ID_USBI0);
+
+#if 0
     /* Set P1_6 to output high to switch on USB power. */
     RZA_IO_RegWrite_16(&GPIO.PIBC1,  0, GPIO_PIBC1_PIBC16_SHIFT,   GPIO_PIBC1_PIBC16);
     RZA_IO_RegWrite_16(&GPIO.PBDC1,  0, GPIO_PBDC1_PBDC16_SHIFT,   GPIO_PBDC1_PBDC16);
@@ -103,6 +103,11 @@ volatile unsigned char dummy;
     RZA_IO_RegWrite_16(&GPIO.PMC1,   0, GPIO_PMC1_PMC16_SHIFT,     GPIO_PMC1_PMC16);
     RZA_IO_RegWrite_16(&GPIO.PIPC1,  0, GPIO_PIPC1_PIPC16_SHIFT,   GPIO_PIPC1_PIPC16);
     RZA_IO_RegWrite_16(&GPIO.P1,     1, GPIO_P1_P16_SHIFT,        GPIO_P1_P16);  
+#else
+    gpio_init(P7_1);
+    gpio_dir(P7_1, PIN_OUTPUT);
+    gpio_write(P7_1, 1);
+#endif
 
 #else 
     /* turn on USB1 clock */
@@ -115,22 +120,13 @@ volatile unsigned char dummy;
 
     /* Register ETHER interrupt handler function */
     R_INTC_RegistIntFunc(INTC_ID_USBI1, (void (*)(uint32_t))_ux_hcd_rz_interrupt_handler);
-#if 1
+
     /* Set interrupt priority */
 	R_INTC_SetPriority(INTC_ID_USBI1, USB_PRI_USBI1);
 
 	/* A/D end interrupt enable */
 	R_INTC_Enable(INTC_ID_USBI1);
-#else
-    /* enable USB1 interrupt */
-    INTC.ICDISER2 |= (1UL << 10) ;
-    
-    /* Set Priorities of USBI1 (GROUP:4,SUB:0)*/
-    iprreg = INTC.ICDIPR18;
-    iprreg &= ~(0xFFUL << 16);
-    iprreg |=  (0xA0UL << 16);
-    INTC.ICDIPR18 = iprreg;
-#endif
+
 #endif
 
 #ifdef UX_RZ_HCD_USE_DMA

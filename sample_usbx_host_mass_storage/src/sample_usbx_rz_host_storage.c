@@ -187,7 +187,7 @@ void  demo_thread_entry(ULONG arg)
         /* We get here if there is at least a file in the directory.  */
         do
         {
-        	printf("File/Directory Found Named %s", file_name);
+        	printf("File/Directory Found Named %s\n", file_name);
             /* Loop through the files in the root directory.  */
 
             /* Increment file count.  */
