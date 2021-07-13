@@ -29,6 +29,7 @@
 #include "ux_hcd_rz.h"
 #include "ux_system.h"
 
+
 #ifdef UX_RZ_HCD_USE_DMA
 /**************************************************************************/
 /*                                                                        */
@@ -83,7 +84,6 @@ VOID  _ux_hcd_rz_dma_rx_interrupt_handler(UINT int_sense)
 UINT                hcd_index;
 UX_HCD              *hcd;
 UX_HCD_RZ           *hcd_rz;
-
 
     /* We need to parse the controller driver table to find all controllers that 
       are registered as RZ.  */

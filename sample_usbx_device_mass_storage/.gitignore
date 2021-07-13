@@ -1,1 +1,7 @@
 /.settings/
+/HardwareDebug/
+/RZA1H Debug/
+/.cproject
+/.gitignore
+/sample_usbx_host_mass_storage.elf.launch
+/RZA1LU Debug/

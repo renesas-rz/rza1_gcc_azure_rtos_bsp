@@ -29,8 +29,14 @@
 #include "tx_api.h"
 #include "iodefine.h"
 #include "r_intc.h"            /* INTC Driver Header */
+#include "rza_io_regrw.h"      /* Low level register read/write header */
+#include "r_gpio_if.h"
+#include "mcu_board_select.h"
 
-
+#define USB_PRI_DMA_TX (23)
+#define USB_PRI_DMA_RX (24)
+#define USB_PRI_USBI0 (28)
+#define USB_PRI_USBI1 (27)
 
 /**************************************************************************/ 
 /*                                                                        */ 
@@ -77,36 +83,42 @@ void  _ux_dcd_rz_low_level_setup(void)
 ULONG   iprreg;
 
 #if UX_RZ_USB_BASE == UX_RZ_USB0_BASE
-    /* turn on USB0 clock */
-    //CPG.STBCR7.BIT.MSTP71 = 0;
-    CPG.STBCR7 &= 0xFD;
-   
-    /* Register USB interrupt handler function */
-    R_INTC_RegistIntFunc(INTC_ID_USBI0, (void (*)(uint32_t))_ux_dcd_rz_interrupt_handler);
-    
-    /* enable USB0 interrupt */
-    INTC.ICDISER2 |= (1UL << 9) ;
-    
-    /* Set Priorities of USBIO (GROUP:4,SUB:0)*/
-    iprreg = INTC.ICDIPR18;
-    iprreg &= ~(0xFFUL << 8);
-    iprreg |=  (0xA0UL << 8);
-    INTC.ICDIPR18 = iprreg;
+/* turn on USB0 clock */
+//CPG.STBCR7.BIT.MSTP71 = 0;
+CPG.STBCR7 &= (uint8_t)~(CPG_STBCR7_MSTP71);
+
+/* Register USB interrupt handler function */
+R_INTC_RegistIntFunc(INTC_ID_USBI0,  (void (*)(uint32_t))_ux_dcd_rz_interrupt_handler);
+
+/* Set interrupt priority */
+R_INTC_SetPriority(INTC_ID_USBI0, USB_PRI_USBI0);
+
+/* A/D end interrupt enable */
+R_INTC_Enable(INTC_ID_USBI0);
+
+#if (TARGET_BOARD == TARGET_BOARD_STREAM_IT2)
+	gpio_init(P7_1);
+	gpio_dir(P7_1, PIN_OUTPUT);
+	gpio_write(P7_1, 1);
+#endif
+
 #else
     /* turn on USB1 clock */
-    CPG.STBCR7.BIT.MSTP70 = 0;
-   
-    /* Register USB interrupt handler function */
-    R_INTC_RegistIntFunc(INTC_ID_USBI1, _ux_dcd_rz_interrupt_handler);
-    
-    /* enable USB1 interrupt */
-    INTC.ICDISER2 |= (1UL << 10) ;
-    
-    /* Set Priorities of USBI1 (GROUP:4,SUB:0)*/
-    iprreg = INTC.ICDIPR18;
-    iprreg &= ~(0xFFUL << 16);
-    iprreg |=  (0xA0UL << 16);
-    INTC.ICDIPR18 = iprreg;
+   // CPG.STBCR7.BIT.MSTP70 = 0;
+
+    /* turn on USB1 clock */
+	//CPG.STBCR7 &= 0xFE;
+	CPG.STBCR7 &= (uint8_t)~(CPG_STBCR7_MSTP70|CPG_STBCR7_MSTP71);
+	dummy = CPG.STBCR7;
+
+    /* Register ETHER interrupt handler function */
+    R_INTC_RegistIntFunc(INTC_ID_USBI1, (void (*)(uint32_t))_ux_dcd_rz_interrupt_handler);
+
+    /* Set interrupt priority */
+	R_INTC_SetPriority(INTC_ID_USBI1, USB_PRI_USBI1);
+
+	/* A/D end interrupt enable */
+	R_INTC_Enable(INTC_ID_USBI1);
 #endif
 
 #ifdef UX_RZ_DCD_USE_DMA
@@ -114,26 +126,21 @@ ULONG   iprreg;
     /* Register DMA TX interrupt handler function */
     R_INTC_RegistIntFunc(UX_RZ_DMA_TX_INT_ID, (void (*)(uint32_t))_ux_dcd_rz_dma_tx_interrupt_handler);
     
-    /* Enable DMA interrupt.  */
-    INTC.ICDISER1 |= (1UL << 19) ;
-    
-    /* Set Priorities of DMA interrupt (GROUP:4,SUB:0)*/
-    iprreg = INTC.ICDIPR12;
-    iprreg &= ~(0xFFUL << 24);
-    iprreg |=  (0x80UL << 24);
-    INTC.ICDIPR12 = iprreg;
+    /* Set interrupt priority */
+	R_INTC_SetPriority(UX_RZ_DMA_TX_INT_ID, USB_PRI_DMA_TX);
+
+	/* A/D end interrupt enable */
+	R_INTC_Enable(UX_RZ_DMA_TX_INT_ID);
+
 
     /* Register DMA RX interrupt handler function */
     R_INTC_RegistIntFunc(UX_RZ_DMA_RX_INT_ID, (void (*)(uint32_t))_ux_dcd_rz_dma_rx_interrupt_handler);
     
-    /* Enable DMA interrupt.  */
-    INTC.ICDISER1 |= (1UL << 20) ;
-    
-    /* Set Priorities of DMA interrupt (GROUP:4,SUB:0)*/
-    iprreg = INTC.ICDIPR13;
-    iprreg &= ~(0xFFUL << 0);
-    iprreg |=  (0x80UL << 0);
-    INTC.ICDIPR13 = iprreg;
+    /* Set interrupt priority */
+	R_INTC_SetPriority(UX_RZ_DMA_RX_INT_ID, USB_PRI_DMA_RX);
+
+	 /* Enable DMA interrupt.  */
+	R_INTC_Enable(UX_RZ_DMA_RX_INT_ID);
 #endif
 
 }

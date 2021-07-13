@@ -116,8 +116,8 @@ UCHAR language_id_framework[] = {
 
 /* Define the memory area needed for USBX Device Mass Storage demo.  */
 
-UCHAR  _ux_rz_dcd_memory_area[64 * 1024] __attribute__ ((section(".RAM_regionCache")));     /* FIXME: This should be tuned based on memory used during testing.  */
-
+//UCHAR  _ux_rz_dcd_memory_area[64 * 1024] __attribute__ ((section(".RAM_regionCache")));     /* FIXME: This should be tuned based on memory used during testing.  */
+UCHAR  _ux_rz_dcd_memory_area[64 * 1024];
 
 /* Define the basic USBX Device Mass Storage initialization.  Must be called from a thread context.  */
 

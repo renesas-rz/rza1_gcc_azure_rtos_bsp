@@ -31,8 +31,10 @@
 #include "r_intc.h"            /* INTC Driver Header */
 #include "rza_io_regrw.h"           /* Low level register read/write header */
 #include "r_gpio_if.h"
+#include "mcu_board_select.h"
 
-
+#define USB_PRI_DMA_TX (23)
+#define USB_PRI_DMA_RX (24)
 #define USB_PRI_USBI0 (28)
 #define USB_PRI_USBI1 (27)
 
@@ -95,15 +97,7 @@ volatile unsigned char dummy;
 	/* A/D end interrupt enable */
 	R_INTC_Enable(INTC_ID_USBI0);
 
-#if 0
-    /* Set P1_6 to output high to switch on USB power. */
-    RZA_IO_RegWrite_16(&GPIO.PIBC1,  0, GPIO_PIBC1_PIBC16_SHIFT,   GPIO_PIBC1_PIBC16);
-    RZA_IO_RegWrite_16(&GPIO.PBDC1,  0, GPIO_PBDC1_PBDC16_SHIFT,   GPIO_PBDC1_PBDC16);
-    RZA_IO_RegWrite_16(&GPIO.PM1,    0, GPIO_PM1_PM16_SHIFT,       GPIO_PM1_PM16);
-    RZA_IO_RegWrite_16(&GPIO.PMC1,   0, GPIO_PMC1_PMC16_SHIFT,     GPIO_PMC1_PMC16);
-    RZA_IO_RegWrite_16(&GPIO.PIPC1,  0, GPIO_PIPC1_PIPC16_SHIFT,   GPIO_PIPC1_PIPC16);
-    RZA_IO_RegWrite_16(&GPIO.P1,     1, GPIO_P1_P16_SHIFT,        GPIO_P1_P16);  
-#else
+#if (TARGET_BOARD == TARGET_BOARD_STREAM_IT2)
     gpio_init(P7_1);
     gpio_dir(P7_1, PIN_OUTPUT);
     gpio_write(P7_1, 1);
@@ -134,26 +128,22 @@ volatile unsigned char dummy;
     /* Register DMA TX interrupt handler function */
     R_INTC_RegistIntFunc(UX_RZ_DMA_TX_INT_ID, (void (*)(uint32_t))_ux_hcd_rz_dma_tx_interrupt_handler);
     
-    /* Enable DMA interrupt.  */
-    INTC.ICDISER1 |= (1UL << 19) ;
-    
-    /* Set Priorities of DMA interrupt (GROUP:4,SUB:0)*/
-    iprreg = INTC.ICDIPR12;
-    iprreg &= ~(0xFFUL << 24);
-    iprreg |=  (0x80UL << 24);
-    INTC.ICDIPR12 = iprreg;
+    /* Set interrupt priority */
+	R_INTC_SetPriority(UX_RZ_DMA_TX_INT_ID, USB_PRI_DMA_TX);
+
+	/* A/D end interrupt enable */
+	R_INTC_Enable(UX_RZ_DMA_TX_INT_ID);
+
 
     /* Register DMA RX interrupt handler function */
     R_INTC_RegistIntFunc(UX_RZ_DMA_RX_INT_ID, (void (*)(uint32_t))_ux_hcd_rz_dma_rx_interrupt_handler);
     
-    /* Enable DMA interrupt.  */
-    INTC.ICDISER1 |= (1UL << 20) ;
-    
-    /* Set Priorities of DMA interrupt (GROUP:4,SUB:0)*/
-    iprreg = INTC.ICDIPR13;
-    iprreg &= ~(0xFFUL << 0);
-    iprreg |=  (0x80UL << 0);
-    INTC.ICDIPR13 = iprreg;
+    /* Set interrupt priority */
+	R_INTC_SetPriority(UX_RZ_DMA_RX_INT_ID, USB_PRI_DMA_RX);
+
+	 /* Enable DMA interrupt.  */
+	R_INTC_Enable(UX_RZ_DMA_RX_INT_ID);
+
 #endif
 
     

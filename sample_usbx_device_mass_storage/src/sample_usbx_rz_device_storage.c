@@ -13,12 +13,17 @@
 #include "ux_api.h"
 #include "fx_api.h"
 #include "ux_dcd_rz.h"
-
+#include "mcu_board_select.h"
 
 /* Define constants.  */
 
 #define UX_DEMO_STACK_SIZE          4096
+#if ( TARGET_RZA1 == TARGET_RZA1H )
 #define UX_RAM_DISK_SIZE            (6 * 1024 * 1024 - 512)
+#else
+#define UX_RAM_DISK_SIZE            (1 * 1024 * 1024 - 512)
+#endif
+
 #define UX_RAM_DISK_LAST_LBA        ((UX_RAM_DISK_SIZE / 512) -1)
 
 
@@ -37,7 +42,8 @@ ULONG                               demo_media_write_counter;
 FX_MEDIA                            *media;
 unsigned char                       buffer[512];
 FX_MEDIA                            ram_disk;
-CHAR                                ram_disk_memory[UX_RAM_DISK_SIZE] __attribute__ ((section(".RAM_regionCache")));
+// CHAR                                ram_disk_memory[UX_RAM_DISK_SIZE] __attribute__ ((section(".RAM_regionCache")));
+CHAR                                ram_disk_memory[UX_RAM_DISK_SIZE];
 
 
 /* Define local function prototypes.  */
