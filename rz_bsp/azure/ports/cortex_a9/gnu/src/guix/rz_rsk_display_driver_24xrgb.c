@@ -1,5 +1,5 @@
 #include "mcu_board_select.h"
-#if (TARGET_BOARD == TARGET_BOARD_RSK)
+#if (TARGET_GUI_BPP == TARGET_GUI_24BPP)
 #include    <stdio.h>
 #include    <string.h>
 
@@ -42,7 +42,7 @@
 void  BSP_DCache_FlushRange       (void *, unsigned long);
 
 // static GX_COLOR frame_buffer1[DISPLAY_XRES * DISPLAY_YRES] __attribute__ ((section(".VRAM_SECTION0")));
-GX_COLOR frame_buffer[2][FRAMEBUFFER_HEIGHT * FRAMEBUFFER_STRIDE] __attribute__ ((aligned(4)))  __attribute__ ((section(".RAM_regionCache")));;
+GX_COLOR frame_buffer[2][FRAMEBUFFER_HEIGHT * FRAMEBUFFER_WIDTH] __attribute__ ((aligned(4)));
 static UCHAR draw_buffer_index = 0;
 static UCHAR visible_buffer_index = 1;
 static UCHAR buffer_refresh_request = 1;
@@ -84,14 +84,14 @@ void CopyCanvasToBackBuffer24xrgb(GX_CANVAS *canvas, GX_RECTANGLE *copy)
         return;
     }
     
-    pGetRow =  frame_buffer[visible_buffer_index]; //(USHORT*)canvas -> gx_canvas_memory;
+    pGetRow =  (USHORT*)frame_buffer[visible_buffer_index]; // (USHORT*)canvas -> gx_canvas_memory;
     pGetRow += copy->gx_rectangle_top * canvas->gx_canvas_x_resolution;
     pGetRow += copy->gx_rectangle_left;
 
-    pPutRow = frame_buffer[draw_buffer_index];
+    pPutRow = (USHORT*)frame_buffer[draw_buffer_index];
     pPutRow += (canvas ->gx_canvas_display_offset_y + copy->gx_rectangle_top) * DISPLAY_XRES;
     pPutRow += (canvas ->gx_canvas_display_offset_x + copy->gx_rectangle_left);
-    flushaddress = pPutRow;
+    flushaddress = (uint8_t*)pPutRow;
 
     for (row = 0; row < copy_height; row++)
     {
@@ -105,7 +105,7 @@ void CopyCanvasToBackBuffer24xrgb(GX_CANVAS *canvas, GX_RECTANGLE *copy)
         pGetRow += canvas->gx_canvas_x_resolution;
         pPutRow += DISPLAY_XRES;
     }
-    //l2x0_flush_range((uint32_t)flushaddress, (uint32_t)(flushaddress + (copy_height * DISPLAY_XRES * DATA_SIZE_PER_PIC)));
+    l2x0_flush_range((uint32_t)flushaddress, (uint32_t)(flushaddress + (copy_height * DISPLAY_XRES * DATA_SIZE_PER_PIC)));
 
 
 }
