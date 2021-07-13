@@ -41,7 +41,13 @@
 #define TARGET_BOARD_RSK        (0x000A0002)
 #define TARGET_BOARD_STREAM_IT2 (0x00030002)
 
+/* GUI Color Depth */
+#define TARGET_GUI_16BPP		(1)
+#define TARGET_GUI_24BPP		(2)
+#define TARGET_GUI_32BPP		(3)
+
 /* User Select macro */
 #define TARGET_RZA1             (TARGET_RZA1LU)
 #define TARGET_BOARD            (TARGET_BOARD_STREAM_IT2)
+#define TARGET_GUI_BPP			(TARGET_GUI_16BPP)
 #endif /* MCU_SEL_H */
