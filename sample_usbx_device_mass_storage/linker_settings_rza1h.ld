@@ -54,10 +54,10 @@ VRAM_END    = 0x60A00000;
 /* 128 * 2 is added to the length of VRAM_LENGHT because both frame buffers need to be aligned on either 128-byte
    or 32-byte boundary. Sections .VRAM1 and .VRAM2 are aligned on 128-byte boundaries. The addition of 128 * 2
    ensures that VRAM_LENGHT is large enough if the linker performs the automatic alignment at the 128-byte
-   boundary for each frame buffer section.
+   boundary for each frame buffer section. 
 VRAM_LENGTH = (480 * 272 * 2 * 2) + (128 * 2);
 /* better use 0x80000 for alignment */
-VRAM_LENGTH = 0x0;
+VRAM_LENGTH = 0x00000;
 VRAM_START  = VRAM_END - VRAM_LENGTH;
 
 PROGRAM_STACK_SIZE = 0x8000;     /* Application stack                  */
@@ -73,44 +73,39 @@ STACK_LENGTH = PROGRAM_STACK_SIZE + IRQ_STACK_SIZE + FIQ_STACK_SIZE + SVC_STACK_
 STACK_START  = STACK_END - STACK_LENGTH;
 
 /* RTOS Heap size */
-OS_RAM_HEAP_SIZE	= 1024 * 256;	/* OS Abstraction Layer Renesas Drivers Minimum size*/
-TX_RAM_HEAP_SIZE = 1024 * 1600;	/* Microsoft Azure RTOS Threadx Heap Size */
+OS_RAM_SECTION_SIZE	= 1024 * 60;	/* OS Abstraction Layer Renesas Drivers Minimum size*/
+TX_OS_RAM_SECTION_SIZE	= 1024 * 4;
 
-OS_HEAP_END = STACK_START;
-OS_HEAP_LENGTH = OS_RAM_HEAP_SIZE + TX_RAM_HEAP_SIZE;
-OS_HEAP_START = OS_HEAP_END - OS_HEAP_LENGTH;
+HEAP_END = STACK_START;
+HEAP_LENGTH = OS_RAM_SECTION_SIZE + TX_OS_RAM_SECTION_SIZE;
+HEAP_START = HEAP_END - HEAP_LENGTH;
 
-CACHED_DATA_END = OS_HEAP_START;
-CACHED_DATA_LENGTH = 0x600000 + 0x10000;
-CACHED_DATA_START = CACHED_DATA_END - CACHED_DATA_LENGTH;
-
-/* The internal boot program of RZ/A1 uses the area at H'2002_0000 to H'2002_3FFF as work memory.
+/* The internal boot program of RZ/A1 uses the area at H'2002_0000 to H'2002_3FFF as work memory. 
    After e2studio has downloaded the application to internal RAM, a reset is issued and the internal boot program
    start to boot from QSPI. The QSPI loader initializes the QSPI memory system and branches to RAM_START.
    During this process, the internal boot program overwrites the area H'2002_0000 to H'2002_3FFF.
    This area shall not be used by the application. */
-RAM_END      = CACHED_DATA_START;
-RAM_LENGTH   = 0x00200000;
+RAM_END      = HEAP_START;  
+
 /* RAM_START may *NOT* be lower than 0x20000000!!!!! */
-RAM_START    = RAM_END - RAM_LENGTH;
+RAM_START    = 0x20020000;
+RAM_LENGTH   = RAM_END - RAM_START;
 
-MEMORY
+
+MEMORY 
 {
-    QSPI    (rx)             : ORIGIN = 0x18080000,  LENGTH = 0x00F80000
-    QSPI_FLASH_RES (r)       : ORIGIN = 0x19000000,  LENGTH = 0x03000000
-    OS_HEAP (rwx)            : ORIGIN = OS_HEAP_START,		LENGTH = OS_HEAP_LENGTH
-    CACHED_DATA (rwx)        : ORIGIN = CACHED_DATA_START,  LENGTH = CACHED_DATA_LENGTH
-    USER_RAM (rwx)           : ORIGIN = RAM_START,   LENGTH = RAM_LENGTH
-    STACK_RAM (rwx)          : ORIGIN = STACK_START, LENGTH = STACK_LENGTH
-    VRAM_RESERVED (r)        : ORIGIN = VRAM_START,  LENGTH = VRAM_LENGTH
-
+    QSPI    (rx)        : ORIGIN = 0x18080000,  LENGTH = 0x00F80000  
+    QSPI_FLASH_RES (r)  : ORIGIN = 0x19000000,  LENGTH = 0x03000000
+    USER_RAM (rwx)      : ORIGIN = RAM_START,   LENGTH = RAM_LENGTH
+    HEAP_RAM (rwx)		: ORIGIN = HEAP_START,  LENGTH = HEAP_LENGTH
+    STACK_RAM (rwx)     : ORIGIN = STACK_START, LENGTH = STACK_LENGTH
     /* Mirror area for cache off operation */
     VRAM_MIRROR (rw)         : ORIGIN = VRAM_START,  LENGTH = VRAM_LENGTH
 }
 
 /* SPI ROM attached to H'18000000 to H'1807FFFF Reserved for boot loader */
 /* SPI ROM attached to H'18000000 to H'19FFFFFF User Code and data*/
-EXEC_BASE = 0x18080000;
+EXEC_BASE = 0x18080000; 
 
 
 /*
@@ -265,25 +260,18 @@ SECTIONS
          . = ALIGN(0x4);
         . = ALIGN(0x4);
         PROVIDE(g_ld_bss_end = .);
-        PROVIDE(end = .);
-    } > USER_RAM
-    
-	.UNCACHED_SECTION (NOLOAD) : ALIGN(0x4000)
-    {
-    	*(.RAM_regionCache)
-    } > CACHED_DATA
-    
+        PROVIDE(end = .);         
+    } > USER_RAM 
+
     .OS_RAM_SECTION (NOLOAD) : ALIGN(0x4000)
-    {
-    	PROVIDE(_ld_mirrored_heap_start = .);
-    	. += OS_RAM_HEAP_SIZE;
+	{		
+		PROVIDE(_ld_mirrored_heap_start = .);
+        . += OS_RAM_SECTION_SIZE;
 		PROVIDE(_ld_mirrored_heap_end = .);
 		PROVIDE(tx_free_memory_start = .);
-		. += TX_RAM_HEAP_SIZE;
-		PROVIDE(tx_free_memory_end = .);
-
-    } > OS_HEAP
-
+    	. += TX_OS_RAM_SECTION_SIZE;
+    } > HEAP_RAM 
+    
     .irq_stack (NOLOAD) : ALIGN(0x4000)
     {
         irq_stack_start = .;
@@ -324,8 +312,7 @@ SECTIONS
     {
         vram_start = .;
         *(.VRAM_SECTION0)
-        *(.ETHER_DESCRIPTOR)
-       
+ 
         vram_end = .;
     } > VRAM_MIRROR
 
