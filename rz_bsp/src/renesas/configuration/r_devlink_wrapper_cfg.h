@@ -163,9 +163,6 @@ static st_mount_table_t gs_mount_table[] =
    {"dma_ssif_wr", (st_r_driver_t *)&g_dmac_driver, R_SC0},
    {"dma_ssif_rd", (st_r_driver_t *)&g_dmac_driver, R_SC1},
 
-   /** USB DMA driver added by USER */
-   {"dma_usb_in", (st_r_driver_t *) &g_dmac_driver, R_SC2},
-   {"dma_usb_out", (st_r_driver_t *) &g_dmac_driver, R_SC3},
 
 #if R_SELF_INSERT_APP_PMOD
    /** PMOD driver added by USER */
