@@ -48,6 +48,8 @@
 #ifndef UX_HCD_RZ_H
 #define UX_HCD_RZ_H
 
+#include "mcu_board_select.h"
+
 //#define UX_RZ_HCD_USE_DMA
 
 /* Define RZ generic definitions.  */
@@ -71,7 +73,11 @@
 #define UX_RZ_USB0_BASE                             0xE8010000
 #define UX_RZ_USB1_BASE                             0xE8207000
 
+#if ( TARGET_BOARD == TARGET_BOARD_RSK)
+#define UX_RZ_USB_BASE                              UX_RZ_USB1_BASE
+#else
 #define UX_RZ_USB_BASE                              UX_RZ_USB0_BASE
+#endif
                                                     
 
 #ifdef UX_RZ

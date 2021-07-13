@@ -32,6 +32,7 @@
 #include "rza_io_regrw.h"      /* Low level register read/write header */
 #include "r_gpio_if.h"
 #include "mcu_board_select.h"
+#include "riic_cat9554_if.h"
 
 #define USB_PRI_DMA_TX (23)
 #define USB_PRI_DMA_RX (24)
@@ -81,6 +82,38 @@ void  _ux_dcd_rz_low_level_setup(void)
 {
 
 ULONG   iprreg;
+#if (TARGET_BOARD == TARGET_BOARD_RSK)
+	uint8_t px_addr, px_data, px_config;
+#endif /* TARGET_BOARD */
+
+#if (TARGET_BOARD == TARGET_BOARD_STREAM_IT2)
+
+    gpio_init(P7_1);
+    gpio_dir(P7_1, PIN_OUTPUT);
+    gpio_write(P7_1, 1);
+
+#elif (TARGET_BOARD == TARGET_BOARD_RSK)
+
+	/* USB VBUS VOLTAGE ACTIVATION  : PX2_USB_PWR_ENB Low Output */
+	/* Defines for Port Expander 2 pins
+	 PX2_PX1_EN0 = HIGH (DV output from VIO)
+	 PX2_PX1_EN1 = HIGH (Ethernet)
+	 PX2_TFT_CS = LOW (TFT Chip Select)
+	 PX2_PX1_EN3 = HIGH
+	 PX2_USB_OVR_CUR - Input
+	 PX2_USB_PWR_ENA = LOW (USB Power enabled)
+	 PX2_USB_PWR_ENB = LOW (USB Power enabled)
+	 PX2_PX1_EN7 = LOW (A18..A21 address lines to NOR)
+	 */
+	R_RIIC_CAT9554_Open();
+	px_addr = CAT9554_I2C_PX2;
+	px_data = PX2_PX1_EN0 | PX2_PX1_EN1 | PX2_PX1_EN3;
+	px_config = PX2_PX1_EN0 | PX2_PX1_EN1 | PX2_TFT_CS | PX2_PX1_EN3 |
+				PX2_USB_PWR_ENA | PX2_USB_PWR_ENB | PX2_PX1_EN7;
+	R_RIIC_CAT9554_Write(px_addr, px_data, px_config);
+	R_RIIC_CAT9554_Close();
+
+#endif
 
 #if UX_RZ_USB_BASE == UX_RZ_USB0_BASE
 /* turn on USB0 clock */
@@ -95,12 +128,6 @@ R_INTC_SetPriority(INTC_ID_USBI0, USB_PRI_USBI0);
 
 /* A/D end interrupt enable */
 R_INTC_Enable(INTC_ID_USBI0);
-
-#if (TARGET_BOARD == TARGET_BOARD_STREAM_IT2)
-	gpio_init(P7_1);
-	gpio_dir(P7_1, PIN_OUTPUT);
-	gpio_write(P7_1, 1);
-#endif
 
 #else
     /* turn on USB1 clock */
