@@ -159,13 +159,14 @@ UINT  status;
 
 static  VOID thread_entry(ULONG thread_input)
 {
-ULONG ip_address;
-ULONG network_mask;
+	ULONG ip_address;
+	ULONG network_mask;
     
 #ifdef NX_ENABLE_DHCP
-UINT  status;
-ULONG actual_status;
+	UINT  status;
+	ULONG actual_status;
 
+	printf("RZA1 NetxDuo iPerf Demo\n");
 
     /* Create the DHCP instance.  */
     printf("DHCP In Progress...\n");
