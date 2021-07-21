@@ -1,5 +1,5 @@
 #include "mcu_board_select.h"
-#if (TARGET_GUI_BPP == TARGET_GUI_16BPP)
+#if (TARGET_GUI_BPP == TARGET_GUI_RGB565)
 #include    <stdio.h>
 #include    <string.h>
 

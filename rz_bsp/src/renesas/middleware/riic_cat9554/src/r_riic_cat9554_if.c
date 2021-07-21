@@ -54,7 +54,7 @@ Typedef definitions
 typedef struct riic_ch3_ctrl
 {
     bool_t           is_open;
-    psemaphore_t      semid;
+    semaphore_t      semid;
 } riic_ch3_ctrl_t;
 
 /******************************************************************************
@@ -121,7 +121,7 @@ int32_t R_RIIC_CAT9554_Open(void)
 
             if (0 != &s_riic3_ctrl.semid)
             {
-                R_OS_DeleteSemaphore(s_riic3_ctrl.semid);
+                R_OS_DeleteSemaphore(&s_riic3_ctrl.semid);
             }
         }
     }
@@ -153,7 +153,7 @@ int32_t R_RIIC_CAT9554_Close(void)
     }
     else
     {
-        sem_token = R_OS_WaitForSemaphore(s_riic3_ctrl.semid, RIIC_CH3_API_TMOUT);
+        sem_token = R_OS_WaitForSemaphore(&s_riic3_ctrl.semid, RIIC_CH3_API_TMOUT);
 
         if (!sem_token)
         {
@@ -166,7 +166,7 @@ int32_t R_RIIC_CAT9554_Close(void)
             if (DEVDRV_SUCCESS == ercd)
             {
                 s_riic3_ctrl.is_open = false;
-                R_OS_DeleteSemaphore(s_riic3_ctrl.semid);
+                R_OS_DeleteSemaphore(&s_riic3_ctrl.semid);
             }
         }
     }
@@ -200,7 +200,7 @@ int32_t R_RIIC_CAT9554_Write(const uint8_t addr, const uint8_t data, const uint8
     }
     else
     {
-        sem_token = R_OS_WaitForSemaphore(s_riic3_ctrl.semid, RIIC_CH3_API_TMOUT);
+        sem_token = R_OS_WaitForSemaphore(&s_riic3_ctrl.semid, RIIC_CH3_API_TMOUT);
         if (!sem_token)
         {
             ercd = DEVDRV_ERROR;
@@ -208,7 +208,7 @@ int32_t R_RIIC_CAT9554_Write(const uint8_t addr, const uint8_t data, const uint8
         else
         {
             ercd = RIIC_CAT9554_Write(addr, data, config);
-            R_OS_ReleaseSemaphore(s_riic3_ctrl.semid);
+            R_OS_ReleaseSemaphore(&s_riic3_ctrl.semid);
         }
     }
 
