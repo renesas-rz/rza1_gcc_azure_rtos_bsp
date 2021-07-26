@@ -91,6 +91,7 @@ RAM_START    = 0x20020000;
 RAM_LENGTH   = RAM_END - RAM_START;
 
 
+
 MEMORY 
 {
     QSPI    (rx)        : ORIGIN = 0x18080000,  LENGTH = 0x00F80000  
@@ -307,7 +308,7 @@ SECTIONS
       
     /* NOLOAD directs linker NOT to fill VRAMx_SECTION with 0.          */
     /* Usage of NOLOAD increases speed of linker and download to target */
-    .VRAM_SECTION0 (NOLOAD) :
+    .VRAM_SECTION0 (NOLOAD) : ALIGN(0x4)
     {
         vram_start = .;
         *(.VRAM_SECTION0)
