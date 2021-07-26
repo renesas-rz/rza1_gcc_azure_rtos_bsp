@@ -56,7 +56,7 @@ VRAM_END    = 0x60300000;
    boundary for each frame buffer section. 
 VRAM_LENGTH = (480 * 272 * 2 * 2) + (128 * 2);
 /* better use 0x80000 for alignment */
-VRAM_LENGTH = 272 * 480 * 2 * 2;
+VRAM_LENGTH = 272*480*2*2*2;
 VRAM_START  = VRAM_END - VRAM_LENGTH;
 
 PROGRAM_STACK_SIZE = 0x8000;     /* Application stack                  */
