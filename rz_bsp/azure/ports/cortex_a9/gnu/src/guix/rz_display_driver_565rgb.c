@@ -82,11 +82,11 @@ void CopyCanvasToBackBuffer565rgb(GX_CANVAS *canvas, GX_RECTANGLE *copy)
         return;
     }
     
-    pGetRow =  frame_buffer[visible_buffer_index]; //(USHORT*)canvas -> gx_canvas_memory;
+    pGetRow =  (USHORT*)frame_buffer[visible_buffer_index]; //(USHORT*)canvas -> gx_canvas_memory;
     pGetRow += copy->gx_rectangle_top * canvas->gx_canvas_x_resolution;
     pGetRow += copy->gx_rectangle_left;
 
-    pPutRow = frame_buffer[draw_buffer_index];
+    pPutRow = (USHORT*)frame_buffer[draw_buffer_index];
     pPutRow += (canvas ->gx_canvas_display_offset_y + copy->gx_rectangle_top) * DISPLAY_XRES;
     pPutRow += (canvas ->gx_canvas_display_offset_x + copy->gx_rectangle_left);
 
