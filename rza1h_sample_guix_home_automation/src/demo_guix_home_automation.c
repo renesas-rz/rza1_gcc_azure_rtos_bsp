@@ -1,26 +1,37 @@
 /* This is a small demo of the high-performance GUIX graphics framework. */
 
 #include "demo_guix_home_automation.h"
-#include "common_hardware_code.h"
-
+#include "r_gpio_if.h"
 /* Define the ThreadX demo thread control block and stack.  */
 TX_BYTE_POOL       memory_pool;
 
 #define CLOCK_TIMER         20
 
-#define SCRATCHPAD_PIXELS (PRIMARY_X_RESOLUTION * PRIMARY_Y_RESOLUTION * 2)
-
+#define SCRATCHPAD_SIZE (PRIMARY_X_RESOLUTION * PRIMARY_Y_RESOLUTION * 2)
+#define TX_DEMO_STACKSIZE (1024)
 /* Define memory for memory pool. */
-GX_COLOR           scratchpad[SCRATCHPAD_PIXELS] __attribute__ ((section(".RAM_regionCache")));
+GX_COLOR scratchpad[SCRATCHPAD_SIZE] __attribute__ ((section(".RAM_regionCache")));
+
+extern GX_COLOR frame_buffer[2][PRIMARY_X_RESOLUTION * PRIMARY_Y_RESOLUTION];
+GX_COLOR *default_canvas_memory = (GX_COLOR*)frame_buffer[0]; /* Cached area */
 
 GX_WINDOW_ROOT    *root;
 
 /* Define prototypes.   */
 extern UINT rz_graphics_driver_setup_24xrgb(GX_DISPLAY *display);
+
 VOID clock_update();
 VOID fade_in_home_window();
 VOID fade_out_home_window();
 VOID toggle_screen(GX_WIDGET *new_screen);
+
+static TX_THREAD touch_thread;
+CHAR touch_thread_stack[1024];
+
+static TX_THREAD demo_thread;
+static ULONG demo_thread_stack[1024];
+
+extern VOID touch_thread_entry(ULONG thread_input);
 
 /* Define animation variable for screen slide animation.  */
 GX_ANIMATION slide_animation;
@@ -30,6 +41,8 @@ GX_PIXELMAP main_screen_bg;
 
 /* Define application varaible to record current screen and overrall energy used today. */
 APP_INFO app_info = { (GX_WIDGET *)&main_screen.main_screen_home_window, 8746594 };
+
+VOID  demo_thread_entry(ULONG thread_input);
 
 const GX_CHAR *day_names[7] = {
     "Sunday",
@@ -63,7 +76,6 @@ int main(int argc, char ** argv)
 {
     /* Enter the ThreadX kernel.  */
     tx_kernel_enter();
-
     return(0);
 }
 
@@ -95,11 +107,20 @@ void memory_free(VOID *mem)
 VOID tx_application_define(void *first_unused_memory)
 {
 
-    /* Create the demo thread. */
-    CreateDemoThread();
+    /* create byte pool. */
+    tx_byte_pool_create(&memory_pool, "scratchpad", scratchpad,
+        SCRATCHPAD_SIZE  * sizeof(GX_COLOR));
 
-    /* Create the input thread. */
-    CreateInputThread();
+    tx_thread_create(&demo_thread, "Demo Thread", demo_thread_entry, 0,
+                     demo_thread_stack, sizeof(demo_thread_stack),
+                     GX_SYSTEM_THREAD_PRIORITY + 1,
+                     GX_SYSTEM_THREAD_PRIORITY + 1, TX_NO_TIME_SLICE, TX_AUTO_START);
+
+    tx_thread_create(&touch_thread, "GUIX Touch Thread", touch_thread_entry, 0,
+		 touch_thread_stack, sizeof(touch_thread_stack),
+		 GX_SYSTEM_THREAD_PRIORITY + 1,
+		 GX_SYSTEM_THREAD_PRIORITY + 1, TX_NO_TIME_SLICE, TX_AUTO_START);
+
 }
 
 /******************************************************************************************/
@@ -110,15 +131,14 @@ VOID  demo_thread_entry(ULONG thread_input)
     /* Initialize GUIX. */
     gx_system_initialize();
 
-    /* create byte pool. */
-    tx_byte_pool_create(&memory_pool, "scratchpad", scratchpad,
-        SCRATCHPAD_PIXELS * sizeof(GX_COLOR));
-
-   /* Setup graphics-related hardware and create the display. */
-    root = CreateDisplay(PRIMARY, rz_graphics_driver_setup_24xrgb, LANGUAGE_ENGLISH, PRIMARY_THEME_1);
-
     /* install our memory allocator and de-allocator */
     gx_system_memory_allocator_set(memory_allocate, memory_free);
+
+    /* Configure display. */
+    gx_studio_display_configure(PRIMARY, rz_graphics_driver_setup_24xrgb,
+        LANGUAGE_ENGLISH, PRIMARY_THEME_1, &root);
+
+    root->gx_window_root_canvas->gx_canvas_memory = (GX_COLOR*)default_canvas_memory;
 
      /* Create the main screen and attach it to root window. */
     gx_studio_named_widget_create("main_screen", (GX_WIDGET *)root, GX_NULL);

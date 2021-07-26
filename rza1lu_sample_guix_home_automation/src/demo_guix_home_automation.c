@@ -7,18 +7,17 @@ TX_BYTE_POOL       memory_pool;
 
 #define CLOCK_TIMER         20
 
-#define SCRATCHPAD_PIXELS (DISPLAY_1_X_RESOLUTION * DISPLAY_1_Y_RESOLUTION * 2)
-//#define DEFAULT_CANVAS_PIXELS (DISPLAY_1_X_RESOLUTION * DISPLAY_1_Y_RESOLUTION * 2)
+#define SCRATCHPAD_SIZE (DISPLAY_1_X_RESOLUTION * DISPLAY_1_Y_RESOLUTION * sizeof(GX_COLOR) * 2)
 #define TX_DEMO_STACKSIZE (1024)
 /* Define memory for memory pool. */
-USHORT scratchpad[SCRATCHPAD_PIXELS] __attribute__ ((section(".RAM_regionCache")));
+GX_UBYTE scratchpad[SCRATCHPAD_SIZE] __attribute__ ((section(".RAM_regionCache")));
+
 extern USHORT frame_buffer[2][DISPLAY_1_X_RESOLUTION * DISPLAY_1_Y_RESOLUTION];
-USHORT *default_canvas_memory = frame_buffer[0];
+USHORT *default_canvas_memory = frame_buffer[0]; /* Cached area */
 
 GX_WINDOW_ROOT    *root;
 
 /* Define prototypes.   */
-VOID  guix_setup(void);
 extern UINT rz_graphics_driver_setup_565rgb(GX_DISPLAY *display);
 VOID clock_update();
 VOID fade_in_home_window();
@@ -74,6 +73,7 @@ const GX_CHAR *month_names[12] = {
 /******************************************************************************************/
 int main(int argc, char ** argv)
 {
+    /* Enter the ThreadX kernel.  */
     tx_kernel_enter();
     return(0);
 }
@@ -108,7 +108,7 @@ VOID tx_application_define(void *first_unused_memory)
 
     /* create byte pool. */
     tx_byte_pool_create(&memory_pool, "scratchpad", scratchpad,
-        SCRATCHPAD_PIXELS * sizeof(GX_COLOR));
+        SCRATCHPAD_SIZE);
 
     tx_thread_create(&demo_thread, "Demo Thread", demo_thread_entry, 0,
                      demo_thread_stack, sizeof(demo_thread_stack),
@@ -121,14 +121,11 @@ VOID tx_application_define(void *first_unused_memory)
 		 GX_SYSTEM_THREAD_PRIORITY + 1, TX_NO_TIME_SLICE, TX_AUTO_START);
 
 }
-VOID  demo_thread_entry(ULONG thread_input)
-{
-	guix_setup();
-}
+
 /******************************************************************************************/
 /* Initiate and run GUIX.                                                                 */
 /******************************************************************************************/
-VOID  guix_setup()
+VOID  demo_thread_entry(ULONG thread_input)
 {
     /* Initialize GUIX. */
     gx_system_initialize();
@@ -254,7 +251,7 @@ static VOID decode_main_screen_jpeg()
     gx_context_pixelmap_get(GX_PIXELMAP_ID_HOME_BG, &map);
 
     /* create an image reader object */
-    gx_image_reader_create(&reader, map->gx_pixelmap_data, map->gx_pixelmap_data_size, GX_COLOR_FORMAT_32ARGB, 0);
+    gx_image_reader_create(&reader, map->gx_pixelmap_data, map->gx_pixelmap_data_size, GX_COLOR_FORMAT_565RGB, 0);
 
     /* decode and color space convert the jpeg to produce a GUIX compatible pixelmap image */
     gx_image_reader_start(&reader, &main_screen_bg);

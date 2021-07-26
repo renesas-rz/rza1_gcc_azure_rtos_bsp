@@ -56,7 +56,7 @@ VRAM_END    = 0x60300000;
    boundary for each frame buffer section. 
 VRAM_LENGTH = (480 * 272 * 2 * 2) + (128 * 2);
 /* better use 0x80000 for alignment */
-VRAM_LENGTH = 0x00000;
+VRAM_LENGTH = 272 * 480 * 2 * 2;
 VRAM_START  = VRAM_END - VRAM_LENGTH;
 
 PROGRAM_STACK_SIZE = 0x8000;     /* Application stack                  */
@@ -67,34 +67,41 @@ ABT_STACK_SIZE     = 0x2000;     /* ABT mode stack                     */
 TTB_SIZE           = 0x8000;     /* Level-1 Translation Table for MMU  */
 NL_HEAP_SIZE       = 0xC800;     /* Newlib heap size 50k Bytes         */
 
-STACK_END = VRAM_START - 0x40000000;
-STACK_LENGTH = PROGRAM_STACK_SIZE + IRQ_STACK_SIZE + FIQ_STACK_SIZE + SVC_STACK_SIZE + ABT_STACK_SIZE + TTB_SIZE;
+STACK_END = VRAM_START - 0x40000000;/* DO NOT CHANGE THIS */
+STACK_LENGTH = PROGRAM_STACK_SIZE + IRQ_STACK_SIZE + FIQ_STACK_SIZE + SVC_STACK_SIZE + ABT_STACK_SIZE + TTB_SIZE +0x4000;
 STACK_START  = STACK_END - STACK_LENGTH;
 
 /* RTOS Heap size */
 OS_RAM_SECTION_SIZE	= 1024 * 256;	/* OS Abstraction Layer Renesas Drivers Minimum size*/
+TX_OS_RAM_SECTION_SIZE	= 1024 * 4;
+
+HEAP_END = STACK_START;
+HEAP_LENGTH = OS_RAM_SECTION_SIZE + TX_OS_RAM_SECTION_SIZE;
+HEAP_START = HEAP_END - HEAP_LENGTH;
 
 /* The internal boot program of RZ/A1 uses the area at H'2002_0000 to H'2002_3FFF as work memory. 
    After e2studio has downloaded the application to internal RAM, a reset is issued and the internal boot program
    start to boot from QSPI. The QSPI loader initializes the QSPI memory system and branches to RAM_START.
    During this process, the internal boot program overwrites the area H'2002_0000 to H'2002_3FFF.
    This area shall not be used by the application. */
-RAM_END      = STACK_START;  
-RAM_LENGTH   = 0x00200000;
+
+RAM_END      = HEAP_START;  
+
 /* RAM_START may *NOT* be lower than 0x20000000!!!!! */
 RAM_START    = 0x20020000;
+RAM_LENGTH   = RAM_END - RAM_START;
+
+
 
 MEMORY 
 {
     QSPI    (rx)        : ORIGIN = 0x18080000,  LENGTH = 0x00F80000  
     QSPI_FLASH_RES (r)  : ORIGIN = 0x19000000,  LENGTH = 0x03000000
     USER_RAM (rwx)      : ORIGIN = RAM_START,   LENGTH = RAM_LENGTH
+    HEAP_RAM (rwx)		: ORIGIN = HEAP_START,  LENGTH = HEAP_LENGTH
     STACK_RAM (rwx)     : ORIGIN = STACK_START, LENGTH = STACK_LENGTH
-    TX_RTOS_RAM (rwx)   : ORIGIN = STACK_END, 	LENGTH = OS_RAM_SECTION_SIZE
-    VRAM_RESERVED (r)   : ORIGIN = VRAM_START,  LENGTH = VRAM_LENGTH
-
     /* Mirror area for cache off operation */
-    VRAM_MIRROR (rw)    : ORIGIN = 0x60240000,  LENGTH = VRAM_LENGTH
+    VRAM_MIRROR (rw)    : ORIGIN = VRAM_START,  LENGTH = VRAM_LENGTH
 }
 
 /* SPI ROM attached to H'18000000 to H'1807FFFF Reserved for boot loader */
@@ -257,14 +264,14 @@ SECTIONS
         PROVIDE(end = .);         
     } > USER_RAM 
 
-    .OS_RAM_SECTION (NOLOAD) : ALIGN(0x4000)
+    .OS_RAM_SECTION (NOLOAD) : ALIGN(0x4)
 	{		
 		PROVIDE(_ld_mirrored_heap_start = .);
         . += OS_RAM_SECTION_SIZE;
 		PROVIDE(_ld_mirrored_heap_end = .);
-		
-		
-    } > USER_RAM 
+		PROVIDE(tx_free_memory_start = .);
+    	. += TX_OS_RAM_SECTION_SIZE;
+    } > HEAP_RAM 
     
     .irq_stack (NOLOAD) : ALIGN(0x4000)
     {
@@ -299,22 +306,14 @@ SECTIONS
         .   = ALIGN(0x4);
         ttb_mmu1_end = .;
     } > STACK_RAM
-    .tx_memory (NOLOAD) : ALIGN(0x4000)
-    {
-    	PROVIDE(tx_free_memory_start = .);
-    	. += OS_RAM_SECTION_SIZE;
-    }  > TX_RTOS_RAM
       
     /* NOLOAD directs linker NOT to fill VRAMx_SECTION with 0.          */
     /* Usage of NOLOAD increases speed of linker and download to target */
-    .VRAM_SECTION0 (NOLOAD) :
+    .VRAM_SECTION0 (NOLOAD) : ALIGN(0x4)
     {
         vram_start = .;
         *(.VRAM_SECTION0)
-        *(.ETHER_DESCRIPTOR)
-		PROVIDE(_ld_uncached_heap_start = .);
-        .  += VRAM_LENGTH;
-		PROVIDE(_ld_uncached_heap_end = .);        
+ 
         vram_end = .;
     } > VRAM_MIRROR
 

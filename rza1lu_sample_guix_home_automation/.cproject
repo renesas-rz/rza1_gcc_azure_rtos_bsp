@@ -49,7 +49,7 @@
                             							
                             <option id="ilg.gnuarmeclipse.managedbuild.cross.option.addtools.printsize.666346271" name="Print size" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.addtools.printsize" useByScannerDiscovery="false" value="true" valueType="boolean"/>
                             							
-                            <option id="com.renesas.cdt.managedbuild.gcc.rz.option.optimizationLevel.1875021408" name="Optimization Level" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.optimizationLevel" useByScannerDiscovery="true" value="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.level.most" valueType="enumerated"/>
+                            <option id="com.renesas.cdt.managedbuild.gcc.rz.option.optimizationLevel.1875021408" name="Optimization Level" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.optimizationLevel" useByScannerDiscovery="true" value="ilg.gnuarmeclipse.managedbuild.cross.option.optimization.level.debug" valueType="enumerated"/>
                             							
                             <option id="com.renesas.cdt.managedbuild.gcc.rz.option.messagelenght.62344822" name="Message length (-fmessage-length=0)" superClass="com.renesas.cdt.managedbuild.gcc.rz.option.messagelenght" useByScannerDiscovery="true" value="true" valueType="boolean"/>
                             							
@@ -213,8 +213,6 @@
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/guix/Debug}&quot;"/>
                                     									
-                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/netxduo/Debug}&quot;"/>
-                                    									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/rz_bsp/Debug}&quot;"/>
                                     								
                                 </option>
@@ -311,7 +309,7 @@
         		
         <cconfiguration id="com.renesas.cdt.managedbuild.gcc.rz.configuration.debug.1816159010.1289578218">
             			
-            <storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.renesas.cdt.managedbuild.gcc.rz.configuration.debug.1816159010.1289578218" moduleId="org.eclipse.cdt.core.settings" name="RZA1H Release">
+            <storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.renesas.cdt.managedbuild.gcc.rz.configuration.debug.1816159010.1289578218" moduleId="org.eclipse.cdt.core.settings" name="RZA1LU Release">
                 				
                 <externalSettings/>
                 				
@@ -337,13 +335,13 @@
                 				
                 <option id="toolchain.version" value="6.3.1.20170620"/>
                 				
-                <option id="toolchain.enable" value="true"/>
+                <option id="toolchain.enable" value="false"/>
                 			
             </storageModule>
             			
             <storageModule moduleId="cdtBuildSystem" version="4.0.0">
                 				
-                <configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf *.lst *.lis *.lpp *.map" description="" id="com.renesas.cdt.managedbuild.gcc.rz.configuration.debug.1816159010.1289578218" name="RZA1H Release" parent="com.renesas.cdt.managedbuild.gcc.rz.configuration.debug">
+                <configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf *.lst *.lis *.lpp *.map" description="" id="com.renesas.cdt.managedbuild.gcc.rz.configuration.debug.1816159010.1289578218" name="RZA1LU Release" parent="com.renesas.cdt.managedbuild.gcc.rz.configuration.debug">
                     					
                     <folderInfo id="com.renesas.cdt.managedbuild.gcc.rz.configuration.debug.1816159010.1289578218." name="/" resourcePath="">
                         						
@@ -516,8 +514,6 @@
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/threadx/Release}&quot;"/>
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/guix/Release}&quot;"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/netxduo/Release}&quot;"/>
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/rz_bsp/Release}&quot;"/>
                                     								
