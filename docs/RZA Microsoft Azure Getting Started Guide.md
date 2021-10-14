@@ -44,6 +44,16 @@ No Hardware configuration needed
 
 TTY Support Connect to USB Connector CN10. Set the TTY Baudrate to 115200. This is the same USB connector that powers the board.
 
+## RZA1 Bootloader
+
+The Demos requre the RZA1 Serial flash bootloader. The BSP utils director already includes the Serial Flash bootloaders for the RZA1H Displayit Board and the RZA1LU Stream-it Board. To install these you will need to install [Segger JLink](https://www.segger.com/downloads/jlink) on you PC. The minimium supported verision is 6.00. 
+
+In the BSP util folder run the batch script. The script will prompt you for which Renesas Evaluation board you have. After selecting the correct board the Segger Jlink will download the appropriate bootloader to the board.
+
+This install only needs to be done once. 
+
+For Custom Boards please download the RZA1 Bootloader.
+
 ## Renesas IDE e2Studio 
 
 e2Studio IDE Version 7.8 or higher :
