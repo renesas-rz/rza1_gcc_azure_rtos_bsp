@@ -46,13 +46,13 @@ TTY Support Connect to USB Connector CN10. Set the TTY Baudrate to 115200. This 
 
 ## RZA1 Bootloader
 
-The Demos requre the RZA1 Serial flash bootloader. The BSP utils director already includes the Serial Flash bootloaders for the RZA1H Displayit Board and the RZA1LU Stream-it Board. To install these you will need to install [Segger JLink](https://www.segger.com/downloads/jlink) on you PC. The minimium supported verision is 6.00. 
+The Demos requre the RZA1 Serial flash bootloader. The BSP utils director already includes the pre compiled Serial Flash bootloader binaries for the RZA1H Displayit Board and the RZA1LU Stream-it Board. To install these you will need to install [Segger JLink](https://www.segger.com/downloads/jlink) on you PC. The minimium supported verision is 6.00. 
 
-In the BSP util folder run the batch script. The script will prompt you for which Renesas Evaluation board you have. After selecting the correct board the Segger Jlink will download the appropriate bootloader to the board.
+In the BSP util folder run the batch script. The script will prompt you for which Renesas Evaluation board you have. After selecting the correct board the Segger Jlink will download the appropriate bootloader binary file to the board.
 
 This install only needs to be done once. 
 
-For Custom Boards please download the RZA1 Bootloader.
+For Custom Boards please download the RZA1 Bootloader from the [Renesas RZ Website](https://www.renesas.com/us/en/products/microcontrollers-microprocessors/rz-arm-based-high-end-32-64-bit-mpus). Navigate to the correct RZ Processor (RZA1 L,LC, LU, M, H). The bootloader code is located in the software download.
 
 ## Renesas IDE e2Studio 
 
