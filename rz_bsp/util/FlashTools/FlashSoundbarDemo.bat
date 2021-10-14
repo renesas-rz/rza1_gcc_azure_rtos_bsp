@@ -32,6 +32,11 @@ exit
 rem <> extract the version number from the path
 set MINJVER=V600
 set JVER=%BASE:~-5%
+if %JVER:~0,1%==V (goto check_version)
+set JVER=%BASE:~-6%
+set JVER=%JVER:~0,4%
+
+:check_version
 REM set JVER=%JVER:~0,-1%
 rem Remove '_' if present
 set JVER=%JVER:_V=V%
