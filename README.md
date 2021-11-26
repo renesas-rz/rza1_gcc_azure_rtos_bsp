@@ -76,5 +76,4 @@ The RZA1 Smart Configurator is a separate PC application software, it is designe
 
 ## Getting Started
 
-[Demos Getting Started Guide](file:.\docs\RZA Microsoft Azure Getting Started Guide.md)
-
+[Demos Getting Started Guide](.\docs\RZA Microsoft Azure Getting Started Guide.md)
