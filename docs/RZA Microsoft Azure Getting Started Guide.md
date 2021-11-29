@@ -2,7 +2,7 @@
 
 ## Renesas RZA1 BSP Board Configuration
 
-The rz_bsp can be configured for different RZA MPUs, Renesas RZA evaluation boards, and GUI drivers. The file that contains these configurations is called "mcu_board_select.h". It can be found in the rz_bsp library under the directory "src/renesas/application/inc/" . The configuration allows selection for the board ( Stream-it or RSK (Display-it kit)), MPU ( RZA1H, M,L,LU,and LC) and GUIX Driver ( 16bit, 24bit, and 32bit ). Once these changes are made, a full rebuild of the rz_bsp is required. By default are below.
+The rz_bsp can be configured for different RZA MPUs, Renesas RZA evaluation boards, and GUI drivers.  The file that contains these configurations is called "mcu_board_select.h". It can be found in the rz_bsp library under the directory "src/renesas/application/inc/" . The configuration allows selection for the board ( Stream-it or RSK (Display-it kit)), MPU ( RZA1H, M,L,LU,and LC) and GUIX Driver ( 16bit, 24bit, and 32bit ). Once these changes are made, a full rebuild of the rz_bsp is required. By default are below. **By Default the BSP is configured for the RZA1LU Stream-it kit**.
 
 ```
 /* User Select macro */
