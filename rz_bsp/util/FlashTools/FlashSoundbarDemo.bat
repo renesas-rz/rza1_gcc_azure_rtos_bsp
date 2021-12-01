@@ -80,7 +80,7 @@ echo You are about to flash bootloader for StreamIt, do you want to proceed? (y/
 set /p INPUT=
 if %INPUT% NEQ y goto Bootloader_Selection
 cd JLink
-"%BASE%\JLink.exe" -if JTAG -speed 12000 -device R7S721031 -jtagconf -1,-1 -CommanderScript FlashBootloader_StreamIt.Command
+"%BASE%\JLink.exe" -if JTAG -speed 12000 -device R7S721031 -jtagconf -1,-1 -CommanderScript %~dp0\JLink\FlashBootloader_StreamIt.Command
 pause
 cd ..
 goto :loop
@@ -91,7 +91,7 @@ echo You are about to flash bootloader for StreamIt, do you want to proceed? (y/
 set /p INPUT=
 if %INPUT% NEQ y goto Bootloader_Selection
 cd JLink
-"%BASE%\JLink.exe" -if JTAG -speed 12000 -device R7S721031 -jtagconf -1,-1 -CommanderScript FlashBootloader_Displayit.Command
+"%BASE%\JLink.exe" -if JTAG -speed 12000 -device R7S721031 -jtagconf -1,-1 -CommanderScript %~dp0\JLink\FlashBootloader_Displayit.Command
 pause
 cd ..
 goto :loop

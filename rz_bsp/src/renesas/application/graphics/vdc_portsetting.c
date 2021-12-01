@@ -37,6 +37,9 @@
 #include "cpg_iobitmask.h"
 #include "r_vdc_portsetting.h"
 #include "rza_io_regrw.h"
+#include "r_vdc.h"
+#include "r_port_sc_cfg.h"
+#include "r_port_if.h"
 
 #if (TARGET_BOARD == TARGET_BOARD_STREAM_IT2)
 /* nothing */
@@ -57,6 +60,8 @@
 #define LCD_PORT7_6TH (0x0010u)
 #define LCD_PORT8_1TH (0x1CFFu)
 #endif
+
+#define SC_CNFG_ENABLE (1)
 
 /* CMOS CAMERA Port define */
 #if (TARGET_BOARD == TARGET_BOARD_RSK)
@@ -134,6 +139,14 @@ void VDC_LcdPortSetting(uint32_t param)
 	R_RIIC_CAT9554_Write(px_addr, px_data, px_config);
 	R_RIIC_CAT9554_Close();
 
+#if SC_CNFG_ENABLE
+	if ( GPIO_SC_INIT_lvds.count > 0 )
+		set_pins_function( &GPIO_SC_INIT_lvds );
+	else if ( param == VDC_CHANNEL_0 )
+		set_pins_function(&GPIO_SC_INIT_vdc50);
+	else
+		set_pins_function(&GPIO_SC_INIT_vdc51);
+#else
     /* PFCAE11, PFCE11, PFC11 ... 5th alternative function
      PIPC11, PMC11
      b15:b13  : P11_15 ~ P11_13
@@ -169,7 +182,7 @@ void VDC_LcdPortSetting(uint32_t param)
     reg_data = ((uint32_t) GPIO.PMC10 | (uint32_t)LCD_PORT10_5TH);
     GPIO.PMC10 = (uint16_t) reg_data;
     reg_data = GPIO.PMC10;
-
+#endif
 #elif (TARGET_BOARD == TARGET_BOARD_STREAM_IT2)
     /* Stream it! TFT 4.3 (RGB565)
      Panel clock : LCD0_CLK              ... P7_4,   6th alternative function

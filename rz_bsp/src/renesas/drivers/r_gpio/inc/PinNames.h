@@ -11,8 +11,8 @@
 
 
 typedef enum {
-    PIN_INPUT = 1,
-    PIN_OUTPUT,
+	PIN_INPUT = 1,
+	PIN_OUTPUT,
 	PIN_IO,
 	PIN_ALT,
 	PIN_BUF_INPUT,
