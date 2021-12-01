@@ -96,10 +96,10 @@ static void pin_function(PinName pin, int function, PinDirection dir) {
 	/* Set Port function setting 					  */
 	/* I/O control mode : Peripheral function         */
 	/* Set Bidirectional mode                         */
-	rza_io_reg_write_16( PBDC(n),  dir==3? 1:0, shift, bitmask);
+	rza_io_reg_write_16( PBDC(n),  dir>4? 1:0, shift, bitmask);
 	rza_io_reg_write_16( PFC(n),   SET_PIN(function, FUNC_PFC_MODE), shift, bitmask);
 	rza_io_reg_write_16( PFCE(n),  SET_PIN(function, FUNC_PFCE_MODE), shift, bitmask);
 	rza_io_reg_write_16( PFCAE(n), SET_PIN(function, FUNC_PFCAE_MODE), shift, bitmask);
-	rza_io_reg_write_16( PIPC(n),  dir==3? 1:0, shift, bitmask);
+	rza_io_reg_write_16( PIPC(n),  dir==4? 1:0, shift, bitmask);
 	rza_io_reg_write_16( PMC(n),   1, shift, bitmask);
 }
