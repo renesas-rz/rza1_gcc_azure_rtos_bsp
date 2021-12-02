@@ -169,8 +169,24 @@ The FileX demo does print any thing to the TTY. The demo shows how to use the Fi
 
    The demo demonstrates the RZA as a USB MS Device. For this demo depending on the board used a USB cable with two type A connectors is needed. Connect one end to a PC and the other to the RZA Board. When the demo runs Windows will open a emtpy File Explorer Window. 
 
+## Renesas Demos
+#### Play Sound Demo
+
+Included in the project is the Renesaas Sound Demo "rza1_app_sound". To use the demo the sound middleware needs to be enabled and the corresponding hardware pins need to be setup.
+- Sound Middleware
+	- Open file rz_bsp\src\renesas\configuration\application_cfg.h header file. Enable the application Sound.
+	```
+    #define R_SELF_INSERT_APP_SOUND (R_OPTION_ENABLE)
+    ```
+- Hardware
+- 	RZA1H Display-it Kit ( RSK )
+	- I2C Channel 3 
+	- SSI channel 0
+- 	RZA1LU Stream-it Kit
+	- TODO
+	-  	
    ## FAQ
 
    For FAQ and custom board support see.
-
+   
    [Renesas info RZA1 Microsoft Azure](https://renesas.info/wiki/RZ-A/RZA_AzureRTOS)
