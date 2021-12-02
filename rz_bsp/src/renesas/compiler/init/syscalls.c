@@ -294,7 +294,7 @@ get_errno (void)
 #ifdef ARM_RDI_MONITOR
   return do_AngelSWI (AngelSWI_Reason_Errno, NULL);
 #else
-  __asm ("swi %a0" :: "i" (SWI_GetErrno));
+  //__asm ("swi %a0" :: "i" (SWI_GetErrno));
   return 0;
 #endif
 }
