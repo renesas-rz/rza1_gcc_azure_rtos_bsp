@@ -75,11 +75,10 @@ static const e_r_drv_dmac_xfer_resource_t
 {
     DMA_RS_SSITXI0,
     DMA_RS_SSITXI1,
+    DMA_RS_SSIRTI2,
 #if (TARGET_RZA1 <= TARGET_RZA1LU)
-	DMA_RS_SSITXI2,
     DMA_RS_SSITXI3
 #else /* TARGET_RZA1H */
-	DMA_RS_SSIRTI2,
     DMA_RS_SSITXI3,
     DMA_RS_SSIRTI4,
     DMA_RS_SSITXI5
@@ -89,15 +88,12 @@ static const e_r_drv_dmac_xfer_resource_t
 static const e_r_drv_dmac_xfer_resource_t
         s_ssif_dma_rx_resource[SSIF_NUM_CHANS] =
 {
-#if (TARGET_RZA1 <= TARGET_RZA1LU)
     DMA_RS_SSIRXI0,
     DMA_RS_SSIRXI1,
-    DMA_RS_SSIRXI2,
+    DMA_RS_SSIRTI2,
+#if (TARGET_RZA1 <= TARGET_RZA1LU)
     DMA_RS_SSIRXI3
 #else /* TARGET_RZA1H */
-    DMA_RS_SSIRXI0,
-    DMA_RS_SSIRXI1,
-	DMA_RS_SSIRTI2,
     DMA_RS_SSIRXI3,
     DMA_RS_SSIRTI4,
     DMA_RS_SSIRXI5
