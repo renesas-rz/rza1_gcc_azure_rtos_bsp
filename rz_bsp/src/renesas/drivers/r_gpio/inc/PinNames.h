@@ -18,6 +18,7 @@ typedef enum {
 	PIN_BUF_INPUT,
 	PIN_BUF_OUTPUT,
 	PIN_BUF_IO,
+	PIN_BUF_ALT,
 } PinDirection;
 
 #define PORT_SHIFT  4

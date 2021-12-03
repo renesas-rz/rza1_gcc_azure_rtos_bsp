@@ -225,16 +225,16 @@ static st_port_config_t GPIO_SC_TABLE_riic2[] =
 static const st_port_init_config_t GPIO_SC_INIT_riic2 = { 0,	0,	&GPIO_SC_TABLE_riic2[0]	};
 static st_port_config_t GPIO_SC_TABLE_riic3[] =
 {
-	{P1_7,	FUNCTION_MODE1,	PIN_IO},	// Pin Function : RIIC3SDA
-	{P1_6,	FUNCTION_MODE1,	PIN_IO},	// Pin Function : RIIC3SCL
+	{P1_7,	FUNCTION_MODE1,	PIN_BUF_ALT},	// Pin Function : RIIC3SDA
+	{P1_6,	FUNCTION_MODE1,	PIN_BUF_ALT},	// Pin Function : RIIC3SCL
 };
 static const st_port_init_config_t GPIO_SC_INIT_riic3 = { 0,	2,	&GPIO_SC_TABLE_riic3[0]	};
 static st_port_config_t GPIO_SC_TABLE_ssi0[] =
 {
-	{P4_5,	FUNCTION_MODE5,	PIN_IO},	// Pin Function : SSIWS0
-	{P4_4,	FUNCTION_MODE5,	PIN_IO},	// Pin Function : SSISCK0
-	{P4_6,	FUNCTION_MODE5,	PIN_INPUT},	// Pin Function : SSIRxD0
-	{P4_7,	FUNCTION_MODE5,	PIN_OUTPUT},	// Pin Function : SSITxD0
+	{P4_5,	FUNCTION_MODE5,	PIN_ALT},	// Pin Function : SSIWS0
+	{P4_4,	FUNCTION_MODE5,	PIN_ALT},	// Pin Function : SSISCK0
+	{P4_6,	FUNCTION_MODE5,	PIN_ALT},	// Pin Function : SSIRxD0
+	{P4_7,	FUNCTION_MODE5,	PIN_ALT},	// Pin Function : SSITxD0
 };
 static const st_port_init_config_t GPIO_SC_INIT_ssi0 = { 0,	4,	&GPIO_SC_TABLE_ssi0[0]	};
 static st_port_config_t GPIO_SC_TABLE_ssi1[] =
