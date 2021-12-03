@@ -144,6 +144,9 @@ static volatile bool_t gs_tx_first_set_flag = 0u;
 /* handle for SSIF driver */
 static int_t gs_ssif_handle = -1;
 
+static FILE *p_gout;
+static FILE *p_gin;
+
 /******************************************************************************
  Exported global variables and functions (to be accessed by other files)
  ******************************************************************************/
@@ -187,13 +190,10 @@ static void initalise_control_if (void)
 static void task_play_sound_demo (ULONG parameters)
 {
     int32_t res = DEVDRV_SUCCESS;
-    void * parm = (void*) parameters;
-    /* Cast into FILE assuming FILE is passed int void R_OS_CreateTask() in R_SOUND_PlaySample() */
-    FILE *p_out = (FILE *) (parm);
 
-    R_OS_SetEvent( &gsp_sound_control_t->task_running);
+    R_OS_SetEvent( gsp_sound_control_t->task_running);
 
-    fprintf(p_out, "task_play_sound_demo playing\r\n");
+    fprintf(p_gout, "task_play_sound_demo playing\r\n");
 
     /* open SSIF driver for read and write */
     gs_ssif_handle = open(DEVICE_INDENTIFIER "ssif", O_WRONLY);
@@ -230,46 +230,41 @@ static void task_play_sound_demo (ULONG parameters)
 
         /* Create semaphore to control buffer access */
         R_OS_CreateSemaphore( &gsp_sound_control_t->playback_semaphore, 0);
+        while ( 1 ) {
 
-        /* Pass through the data, writing out to the SSIF */
-        for (loop = 0; (loop * WAVE_DMA_SIZE_PRV_) < ((uint32_t) SIZEOF_WAVEDATA_PRV_ - WAVE_DMA_SIZE_PRV_); loop++)
-        {
-            /* Get the current element in the aiocb message array */
-            int_t div = (int_t) (loop % NUM_AUDIO_BUFFER_BLOCKS_PRV_);
+			/* Pass through the data, writing out to the SSIF */
+			for (loop = 0; (loop * WAVE_DMA_SIZE_PRV_) < ((uint32_t) SIZEOF_WAVEDATA_PRV_ - WAVE_DMA_SIZE_PRV_); loop++)
+			{
+				/* Get the current element in the aiocb message array */
+				int_t div = (int_t) (loop % NUM_AUDIO_BUFFER_BLOCKS_PRV_);
 
-            /* register access semaphore */
-            aiocb[div].aio_sigevent.sigev_value.sival_ptr = (void *) &gsp_sound_control_t->playback_semaphore;
+				/* register access semaphore */
+				aiocb[div].aio_sigevent.sigev_value.sival_ptr = (void *) gsp_sound_control_t->playback_semaphore;
 
-            /* register user callback function after dma transfer to SSIF */
-            aiocb[div].aio_sigevent.sigev_notify_function = &userdef_aio_callback;
+				/* register user callback function after dma transfer to SSIF */
+				aiocb[div].aio_sigevent.sigev_notify_function = &userdef_aio_callback;
 
-            /* Queueing request #(NUM_AUDIO_BUFFER_BLOCKS_PRV_ -1) to #N */
-            control(gs_ssif_handle, R_SSIF_AIO_WRITE_CONTROL, &aiocb[div]);
-            write(gs_ssif_handle, &WAVEDATA_PRV_[loop * WAVE_DMA_SIZE_PRV_], WAVE_DMA_SIZE_PRV_);
+				/* Queueing request #(NUM_AUDIO_BUFFER_BLOCKS_PRV_ -1) to #N */
+				control(gs_ssif_handle, R_SSIF_AIO_WRITE_CONTROL, &aiocb[div]);
+				write(gs_ssif_handle, &WAVEDATA_PRV_[loop * WAVE_DMA_SIZE_PRV_], WAVE_DMA_SIZE_PRV_);
 
-            /* Waiting complete request #0to#(N-2) */
-            R_OS_WaitForSemaphore( gsp_sound_control_t->playback_semaphore, R_OS_ABSTRACTION_PRV_EV_WAIT_INFINITE);
+				/* Waiting complete request #0to#(N-2) */
+				R_OS_WaitForSemaphore( gsp_sound_control_t->playback_semaphore, R_OS_ABSTRACTION_PRV_EV_WAIT_INFINITE);
+			}
+			fprintf(p_gout, "task_play_sound_demo complete\r\n");
+
         }
-        R_OS_DeleteSemaphore( gsp_sound_control_t->playback_semaphore);
-        fprintf(p_out, "task_play_sound_demo complete\r\n");
     }
     else
     {
-        fprintf(p_out, "unable to run task_play_sound_demo\r\n");
+        fprintf(p_gout, "unable to run task_play_sound_demo\r\n");
     }
+    R_OS_DeleteSemaphore( gsp_sound_control_t->playback_semaphore);
 
     /* close down audio operations */
     close_audio();
     close(gs_ssif_handle);
 
-    /* key pressed. demo quitting */
-    R_OS_ResetEvent( &gsp_sound_control_t->task_running);
-
-    /* Should never reach this spot */
-    while (1)
-    {
-        R_OS_TaskSleep(10);
-    }
 }
 /***********************************************************************************************************************
  End of function task_play_sound_demo
@@ -429,35 +424,27 @@ static void play_file_data (FILE *p_in, FILE *p_out, void *p_data)
     /* unused argument */
     UNUSED_PARAM(p_data);
 
+    p_gout = p_out;
+	p_gin = p_in;
+
     int_t i_in = R_DEVLINK_FilePtrDescriptor(p_in);
 
     fprintf(p_out, "Play Sound sample program start\r\n");
     fprintf(p_out, "Press any key to terminate demo\r\n");
 
     /* Create play task (to normalise calling task) */
-    p_task = R_OS_CreateTask("play sound", task_play_sound_demo, p_out,
-    R_OS_ABSTRACTION_PRV_SMALL_STACK_SIZE,
+    p_task = R_OS_CreateTask("play sound", task_play_sound_demo, NULL,
+    		1000,
     TASK_PLAY_SOUND_APP_PRI);
 
     if (p_task)
     {
         while (true != user_abort)
         {
-            R_OS_TaskSleep(5);
 
-            /* If key press then abort sample */
-            if (control(i_in, CTL_GET_RX_BUFFER_COUNT, NULL) != 0)
-            {
-                user_abort = true;
-                fprintf(p_out, "play back user abort\r\n");
-                fgetc(p_in);
-            }
+        	// Wait 5 seconds before playing sound
+            R_OS_TaskSleep(5000);
 
-            /* If task has completed */
-            if (R_OS_EventState( &gsp_sound_control_t->task_running) == EV_RESET)
-            {
-                user_abort = true;
-            }
         }
         R_OS_DeleteTask(p_task);
         /* close down audio operations */
@@ -480,15 +467,6 @@ static void play_file_data (FILE *p_in, FILE *p_out, void *p_data)
 void R_SOUND_PlaySample (FILE *p_in, FILE *p_out)
 {
     int_t i_in = R_DEVLINK_FilePtrDescriptor(p_in);
-
-    /* May be required l8tr */
-    UNUSED_PARAM(p_in);
-
-    /* flush any remaining input */
-    while (control(i_in, CTL_GET_RX_BUFFER_COUNT, NULL) != 0)
-    {
-        fgetc(p_in);
-    }
 
     /* set control structure pointer to holding structure */
     gsp_sound_control_t = &gs_sound_t;
