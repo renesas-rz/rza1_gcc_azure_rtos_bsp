@@ -103,8 +103,13 @@ static st_port_config_t GPIO_SC_TABLE_scif2[] =
 static const st_port_init_config_t GPIO_SC_INIT_scif2 = { 0,	0,	&GPIO_SC_TABLE_scif2[0]	};
 static st_port_config_t GPIO_SC_TABLE_scif3[] =
 {
-	{P7_10,	FUNCTION_MODE4,	PIN_INPUT},	// Pin Function : RxD3
+#if 0 // 2022.04.27 modify
+	{P7_10,	FUNCTION_MODE4,	PIN_INPUT},	    // Pin Function : RxD3
 	{P7_11,	FUNCTION_MODE5,	PIN_OUTPUT},	// Pin Function : TxD3
+#else
+	{P7_10,	FUNCTION_MODE5,	PIN_INPUT},	    // Pin Function : RxD3
+	{P7_11,	FUNCTION_MODE5,	PIN_OUTPUT},	// Pin Function : TxD3
+#endif
 };
 static const st_port_init_config_t GPIO_SC_INIT_scif3 = { 0,	2,	&GPIO_SC_TABLE_scif3[0]	};
 static st_port_config_t GPIO_SC_TABLE_scif4[] =
@@ -157,8 +162,13 @@ static st_port_config_t GPIO_SC_TABLE_riic0[] =
 static const st_port_init_config_t GPIO_SC_INIT_riic0 = { 0,	2,	&GPIO_SC_TABLE_riic0[0]	};
 static st_port_config_t GPIO_SC_TABLE_riic1[] =
 {
+#if 0 // 2022.04.27 modify
 	{P1_2,	FUNCTION_MODE1,	PIN_IO},	// Pin Function : RIIC1SCL
 	{P1_3,	FUNCTION_MODE1,	PIN_IO},	// Pin Function : RIIC1SDA
+#else
+	{P1_2,	FUNCTION_MODE1,	PIN_BUF_ALT},	// Pin Function : RIIC1SCL
+	{P1_3,	FUNCTION_MODE1,	PIN_BUF_ALT},	// Pin Function : RIIC1SDA
+#endif
 };
 static const st_port_init_config_t GPIO_SC_INIT_riic1 = { 0,	2,	&GPIO_SC_TABLE_riic1[0]	};
 static st_port_config_t GPIO_SC_TABLE_riic2[] =
