@@ -57,6 +57,20 @@ IRQ_STACK_SIZE  =       1024                    @ IRQ stack size
 SYS_STACK_SIZE  =       1024                    @ System stack size
 @
 @
+@ Add definitions from here. ---------- 2022.04.27 modify
+
+#ifdef TX_ENABLE_FIQ_SUPPORT
+DISABLE_INTS    =       0xC0                    @ Disable IRQ/FIQ interrupts
+#else
+DISABLE_INTS    =       0x80                    @ Disable IRQ interrupts
+#endif
+
+MODE_MASK       =       0x1F                    @ Mode mask
+SYS_MODE_BITS   =       0x1F                    @ System mode bits
+IRQ_MODE_BITS   =       0x12                    @ IRQ mode bits
+
+@ Add definitions up to this point. ----------
+
     .global     _tx_thread_system_stack_ptr
     .global     _tx_initialize_unused_memory
     .global     _tx_thread_context_save
@@ -278,6 +292,20 @@ __tx_irq_processing_return:
     BL      _tx_thread_irq_nesting_start
 #endif
 @
+
+@ Add processing from here.  ---------- 2022.04.27 modify
+
+@   /* _tx_thread_irq_nesting_start (IRQ interrupt disable) */
+    MRS     r0, CPSR                            @ Pickup the CPSR
+    BIC     r0, r0, #MODE_MASK                  @ Clear the mode bits
+    ORR     r0, r0, #SYS_MODE_BITS              @ Build system mode CPSR
+    MSR     CPSR_c, r0                          @ Enter system mode
+    STMDB   sp!, {r1, lr}                       @ Push the system mode lr on the system mode stack
+                                                @   and push r1 just to keep 8-byte alignment
+
+@ Add the process up to this point.  ----------
+
+
 @   /* Call the Renesas RZ IRQ processing routine. */
 
 	//LDR		r2, =INTC_ICCIAR_ADDR
@@ -298,6 +326,21 @@ icciar_read_complete:
     POP     {r0}
     LDR     r2, =INTC_ICCEOIR_ADDR
     STR     r0, [r2]
+
+@ Add processing from here.  ---------- 2022.04.27 modify
+
+@   /* _tx_thread_irq_nesting_end */
+    MRS     r0, CPSR                            @ Pickup the CPSR
+    ORR     r0, r0, #DISABLE_INTS               @ Build disable interrupt value
+    MSR     CPSR_c, r0                          @ Disable interrupts
+    LDMIA   sp!, {r1, lr}                       @ Pickup saved lr (and r1 throw-away for 
+                                                @   8-byte alignment logic)
+    BIC     r0, r0, #MODE_MASK                  @ Clear mode bits
+    ORR     r0, r0, #IRQ_MODE_BITS              @ Build IRQ mode CPSR
+    MSR     CPSR_c, r0                          @ Reenter IRQ mode
+
+@ Add the process up to this point.  ----------
+
 @
 @
 @    /* If interrupt nesting was started earlier, the end of interrupt nesting
