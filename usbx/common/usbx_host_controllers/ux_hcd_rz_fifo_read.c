@@ -27,7 +27,7 @@
 #include "cache-l2x0.h"
 #include "ux_api.h"
 #include "ux_hcd_rz.h"
-
+#include "usb_dma.h" /* grape */
 
 /**************************************************************************/ 
 /*                                                                        */ 
@@ -116,7 +116,10 @@ ULONG           use_dma;
             use_dma = UX_TRUE;
 
             /* Select trigger for D0.  */
+#if 0	/* grape */
             _ux_hcd_rz_dma_register_clear(hcd_rz, UX_RZ_DMA_RS5, 1<<18);
+#endif
+
 #endif
             break; 
 
@@ -132,7 +135,10 @@ ULONG           use_dma;
             use_dma = UX_TRUE;
 
             /* Select trigger for D1.  */
+#if 0	/* grape */
             _ux_hcd_rz_dma_register_set(hcd_rz, UX_RZ_DMA_RS5, 1<<18);
+#endif
+
 #endif
             break;
     }
@@ -256,9 +262,19 @@ ULONG           use_dma;
             _ux_hcd_rz_dma_register_write(hcd_rz, UX_RZ_DMA_N0SA(UX_RZ_DMA_RX_CH), (ULONG)fifo_addr);
             _ux_hcd_rz_dma_register_write(hcd_rz, UX_RZ_DMA_N0TB(UX_RZ_DMA_RX_CH), (ULONG)payload_length);
             
+#if 1	/* grape */
+            /* save flag to wait dma completion */
+            usb_dma_single_requested();	/* grape */
+#endif
+
             /* Flush and invalidate cache.  */
+#if 1	/* grape */
+            BSP_DCache_FlushRange((void*)payload_buffer, payload_length);
+            BSP_DCache_InvalidateRange((void*)payload_buffer, payload_length);
+#else
             l2x0_flush_range((uint32_t)payload_buffer, (uint32_t)(payload_buffer + payload_length));
             l2x0_inv_range((uint32_t)payload_buffer, (uint32_t)(payload_buffer + payload_length));
+#endif
             
             /* Update status.  */
             hcd_rz->ux_hcd_rz_dma_status = UX_RZ_DMA_STATUS_READING;

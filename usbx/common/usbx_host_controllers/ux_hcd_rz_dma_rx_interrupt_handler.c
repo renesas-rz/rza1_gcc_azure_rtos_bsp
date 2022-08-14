@@ -29,6 +29,7 @@
 #include "ux_hcd_rz.h"
 #include "ux_system.h"
 
+#include "usb_dma.h"	/* grape */
 
 #ifdef UX_RZ_HCD_USE_DMA
 /**************************************************************************/
@@ -106,6 +107,9 @@ UX_HCD_RZ           *hcd_rz;
             /* Set status to idle.  */
             hcd_rz -> ux_hcd_rz_dma_status = UX_RZ_DMA_STATUS_IDLE;
 
+#if 1	/* grape */
+            usb_dma_single_put_sem();
+#endif
             /* Check if we need to put a semaphore.  */
             if (hcd_rz -> ux_hcd_rz_transfer_request != UX_NULL)
             {

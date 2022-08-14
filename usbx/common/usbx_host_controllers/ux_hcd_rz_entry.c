@@ -27,7 +27,7 @@
 
 #include "ux_api.h"
 #include "ux_hcd_rz.h"
-
+#include "usb_dma.h" /* grape */
 
 /**************************************************************************/ 
 /*                                                                        */ 
@@ -288,8 +288,12 @@ UX_HCD_RZ      *hcd_rz;
             _ux_hcd_rz_iso_schedule(hcd_rz);
             if (hcd_rz -> ux_hcd_rz_number_tds != 0)
             {
-            
                 _ux_hcd_rz_periodic_schedule(hcd_rz);
+
+#ifdef UX_RZ_HCD_USE_DMA
+                usb_dma_single_wait();	/* grape */
+#endif
+
                 _ux_hcd_rz_asynch_schedule(hcd_rz);
             }
         }

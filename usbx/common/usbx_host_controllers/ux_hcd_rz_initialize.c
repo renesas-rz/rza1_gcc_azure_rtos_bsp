@@ -219,10 +219,32 @@ st_r_drv_dmac_config_t dma_config;
     /* Select peripheral trigger for DMA TX channel.  */
     _ux_hcd_rz_dma_register_write(hcd_rz, UX_RZ_DMA_TX_RS, UX_RZ_DMA_USB0_TX_RS_VALUE);
 #else
-    _ux_hcd_rz_dma_register_write(hcd_rz, UX_RZ_DMA_TX_RS, UX_RZ_DMA_USB1_TX_RS_VALUE);
+    _ux_hcd_rz_dma_register_write(hcd_rz, UX_RZ_DMA_TX_RS, UX_RZ_DMA_USB1_TX_RS_VALUE);	/* UX_RZ_DMA_RS0 lower(ch0), 0x8B */
 #endif
 
     /* Configure DMA TX channel.  */
+#if 1	/* grape */
+    _ux_hcd_rz_dma_register_write(hcd_rz, UX_RZ_DMA_CHCFG(UX_RZ_DMA_TX_CH),
+                              (UX_RZ_DMA_TX_CH & 0x7) | 				/* SEL[2:0] */
+                              UX_RZ_DMA_CHCFG_REQD |	/* (1<<3) */	/* REQD[3] */	/* grape add */
+							  	  	  	  	  	  	  	  	  	  	  	/* LOEN[4] 0 default??? */
+							  UX_RZ_DMA_CHCFG_HIEN |	/* (1<<5) */	/* HIEN[5] */
+                              UX_RZ_DMA_CHCFG_LVL | 	/* (1<<6) */	/* LVL[6] */
+// grape del                                      (0x1<<8) |
+                                                  (0x2<<8) |	/* AM[8:10] bus cycle mode */ /* grape add */
+/* grape del */                                            (0x2<<12) |	/* SDS[15:12] 32bit */
+/* grape del */                                            (0x2<<16) |	/* DDS[19:16] 32bit */
+// grape del							UX_RZ_DMA_CHCFG_SAD	/* (1<<20) */	/* SAD[20] source address fix */
+					          UX_RZ_DMA_CHCFG_DAD		/* (1<<21) */	/* DAD[21] destination address fix */	/* grape add */
+																/* TM[22] single transfer mode (default) */
+																/* DEM[24] comp. interrupt NO mask (default ) */
+																/* SBE[27] quit transfer without flash (default) */
+																/* RSEL[28] Next0 (default) */
+																/* RSW[29] NO flip RSEL after comp. (default) */
+																/* REN[30] 0 default??? */
+																/* DMS[31] register mode (default) */
+	);
+#else
     _ux_hcd_rz_dma_register_write(hcd_rz, UX_RZ_DMA_CHCFG(UX_RZ_DMA_TX_CH),
                               (UX_RZ_DMA_TX_CH & 0x7) | 
                               UX_RZ_DMA_CHCFG_LVL | 
@@ -230,6 +252,8 @@ st_r_drv_dmac_config_t dma_config;
 							  (0x1<<8) |
                               (0x2<<12) | (0x2<<16) |
                               UX_RZ_DMA_CHCFG_SAD);
+#endif
+
 #else
     dma_usb_out_handle = open(DEVICE_INDENTIFIER "dma_usb_out", O_WRONLY);
 
@@ -257,10 +281,36 @@ st_r_drv_dmac_config_t dma_config;
     /* Select peripheral trigger for DMA RX channel.  */
     _ux_hcd_rz_dma_register_set(hcd_rz, UX_RZ_DMA_RX_RS, UX_RZ_DMA_USB0_RX_RS_VALUE);
 #else
+#if 1	/* grape */
+    _ux_hcd_rz_dma_register_set(hcd_rz, UX_RZ_DMA_RX_RS, 0x8B<<16);	/* UX_RZ_DMA_RS0 high(ch1), 0x8F<<16 */
+#else
     _ux_hcd_rz_dma_register_set(hcd_rz, UX_RZ_DMA_RX_RS, UX_RZ_DMA_USB1_RX_RS_VALUE);
+#endif
 #endif
 
     /* Configure DMA RX channel.  */
+#if 1	/* grape */
+    _ux_hcd_rz_dma_register_write(hcd_rz, UX_RZ_DMA_CHCFG(UX_RZ_DMA_RX_CH),
+                              (UX_RZ_DMA_RX_CH & 0x7) | 				/* SEL[2:0] */
+// grape del                  UX_RZ_DMA_CHCFG_REQD |	/* (1<<3) */	/* REQD[3] */
+							  	  	  	  	  	  	  	  	  	  	  	/* LOEN[4] 0 default??? */
+                              UX_RZ_DMA_CHCFG_HIEN |	/* (1<<5) */	/* HIEN[5] */
+							  UX_RZ_DMA_CHCFG_LVL | /* (1<<6) */		/* LVL[6] */ /* grape add */
+                                                           (0x2<<8) |	/* AM[8:10] */
+/* grape del */                                             (0x2<<12) |	/* SDS[15:12] 32bit */
+/* grape del */                                             (0x2<<16) |	/* DDS[19:16] 32 bit */
+// grape del														   	   	   	    /* SAD[20] source address increment (default) */
+							  UX_RZ_DMA_CHCFG_SAD /* (1<<20) */		/* SAD[20] source address fix */
+//* grape del */							  UX_RZ_DMA_CHCFG_DAD		/* (1<<21) */	/* DAD[21] destination address fix */
+// grape del															/* TM[22] single transfer mode (default) */
+																		/* DEM[24] comp. interrupt NO mask (default ) */
+																		/* SBE[27] quit transfer without flash (default) */
+																		/* RSEL[28] Next0 (default) */
+																		/* RSW[29] NO flip RSEL after comp. (default) */
+																		/* REN[30] 0 default??? */
+																		/* DMS[31] register mode (default) */
+    						  );
+#else
     _ux_hcd_rz_dma_register_write(hcd_rz, UX_RZ_DMA_CHCFG(UX_RZ_DMA_RX_CH),
                               (UX_RZ_DMA_RX_CH & 0x7) | 
 							  UX_RZ_DMA_CHCFG_REQD |
@@ -268,6 +318,8 @@ st_r_drv_dmac_config_t dma_config;
 							  (0x2<<8) |
 							  (0x2<<12) | (0x2<<16) |
 							  UX_RZ_DMA_CHCFG_DAD);
+#endif
+
 #else
     dma_usb_in_handle = open(DEVICE_INDENTIFIER "dma_usb_in", O_WRONLY);
 

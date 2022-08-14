@@ -49,9 +49,9 @@
 #define UX_HCD_RZ_H
 
 #include "mcu_board_select.h"
-
-//#define UX_RZ_HCD_USE_DMA
-
+#if (TARGET_RZA1 == TARGET_RZA1H)
+#define UX_RZ_HCD_USE_DMA	/* grape */
+#endif
 /* Define RZ generic definitions.  */
 
 #define UX_RZ_CONTROLLER                            3

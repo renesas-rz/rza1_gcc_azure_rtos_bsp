@@ -147,7 +147,10 @@ ULONG           rz_register;
         fifo_addr =  UX_RZ_HC_D0FIFO;
 
         /* Select trigger for D0.  */
+#if 0	/* grape */
         _ux_hcd_rz_dma_register_clear(hcd_rz, UX_RZ_DMA_RS5, (1<<2));
+#endif
+
 #else
         fifo_addr =  (VOID *) UX_RZ_HC_D0FIFO;
 #endif
@@ -162,7 +165,10 @@ ULONG           rz_register;
         fifo_addr =  UX_RZ_HC_D1FIFO;
 
         /* Select trigger for D1.  */
+#if 0	/* grape */
         _ux_hcd_rz_dma_register_set(hcd_rz, UX_RZ_DMA_RS5, (1<<2));
+#endif
+
 #else
         fifo_addr =  (VOID *) UX_RZ_HC_D1FIFO;
 #endif
@@ -235,7 +241,11 @@ ULONG           rz_register;
     _ux_hcd_rz_dma_register_write(hcd_rz, UX_RZ_DMA_N0TB(UX_RZ_DMA_TX_CH), (ULONG)payload_length);
 
     /* Flush cache.  */
+#if 1	/* grape */
+    BSP_DCache_FlushRange((void*)payload_buffer, payload_length);
+#else
     l2x0_flush_range((uint32_t)payload_buffer, (uint32_t)(payload_buffer + payload_length));
+#endif
 
     /* Check if we have a short packet.  */
     if (payload_length % max_packet_size)
