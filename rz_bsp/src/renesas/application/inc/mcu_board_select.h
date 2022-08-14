@@ -48,7 +48,7 @@
 #define TARGET_GUI_RGB8888		(3)
 
 /* User Select macro */
-#define TARGET_RZA1             (TARGET_RZA1LU)
-#define TARGET_BOARD            (TARGET_BOARD_STREAM_IT2)
+#define TARGET_RZA1             (TARGET_RZA1H)
+#define TARGET_BOARD            (TARGET_BOARD_RSK)
 #define TARGET_GUI_BPP			(TARGET_GUI_NONE)
 #endif /* MCU_SEL_H */

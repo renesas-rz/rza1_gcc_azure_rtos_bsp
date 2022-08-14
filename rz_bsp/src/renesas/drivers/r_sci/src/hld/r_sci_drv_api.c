@@ -91,8 +91,13 @@ int scifOutputDebugString (uint8_t *pbyBuffer, uint32_t uiCount);
 
 static int_t scif_open (st_stream_ptr_t pStream);
 static void scif_close(st_stream_ptr_t pStream);
+#if 1	/* grape */
+int scif_read (st_stream_ptr_t pStream, uint8_t *pbyBuffer, uint32_t uiCount);
+int scif_write (st_stream_ptr_t pStream, uint8_t *pbyBuffer, uint32_t uiCount);
+#else
 static int scif_read (st_stream_ptr_t pStream, uint8_t *pbyBuffer, uint32_t uiCount);
 static int scif_write (st_stream_ptr_t pStream, uint8_t *pbyBuffer, uint32_t uiCount);
+#endif
 static int scif_control(st_stream_ptr_t pStream, uint32_t ctlCode, void *pCtlStruct);
 static int_t scif_get_version(st_stream_ptr_t stream_ptr, st_ver_info_t *pVerInfo);
 
@@ -349,7 +354,11 @@ static void scif_close(st_stream_ptr_t pStream)
                 IN  uiCount - The number of bytes to read
  Return value:  data count for success or Error Code on error
  ******************************************************************************/
+#if 1	/* grape */
+int scif_read (st_stream_ptr_t pStream, uint8_t *pbyBuffer, uint32_t uiCount)
+#else
 static int scif_read (st_stream_ptr_t pStream, uint8_t *pbyBuffer, uint32_t uiCount)
+#endif
 {
     /* File stream is not used */
     (void) pStream;
@@ -378,7 +387,11 @@ static int scif_read (st_stream_ptr_t pStream, uint8_t *pbyBuffer, uint32_t uiCo
                 IN  uiCount - The number of bytes to write
  Return value:  data count for success or Error Code on error
  ******************************************************************************/
+#if 1	/* grape */
+int scif_write (st_stream_ptr_t pStream, uint8_t *pbyBuffer, uint32_t uiCount)
+#else
 static int scif_write (st_stream_ptr_t pStream, uint8_t *pbyBuffer, uint32_t uiCount)
+#endif
 {
     /* File stream is not used */
     (void) pStream;
